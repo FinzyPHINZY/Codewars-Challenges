@@ -6,4 +6,4 @@ function maps(x) {
   return arr;
 }
 
-maps([1, 2, 3]);
+maps([2, 3, 4]);
