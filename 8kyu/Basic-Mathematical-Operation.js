@@ -9,8 +9,9 @@ function basicOp(operation, value1, value2) {
   } else if (operation === "/") {
     return value1 / value2;
   } else {
-    return "Invald!";
+    return "Invalid!";
   }
 }
 
 console.log(basicOp("+", 2, 3));
+
