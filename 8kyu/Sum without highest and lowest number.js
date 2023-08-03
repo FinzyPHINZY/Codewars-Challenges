@@ -14,3 +14,5 @@
 // Input validation
 
 // If an empty value ( null, None, Nothing etc. ) is given instead of an array, or the given array is an empty list or a list with only 1 element, return 0.
+
+function sumArray(array) {}
