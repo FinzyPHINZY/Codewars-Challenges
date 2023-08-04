@@ -10,7 +10,6 @@ function count(string) {
   for (const char of string) {
     charCounts[char] = (charCounts[char] || 0) + 1;
   }
-
   return charCounts;
 }
 
