@@ -1,6 +1,7 @@
-// Clock shows h hours, m minutes and s seconds after midnight.
+// Clock shows h hours, m minutes, and s seconds after midnight.
 
-// Your task is to write a function which returns the time since midnight in milliseconds.
+// Your task is to write a function that returns the time since midnight in milliseconds.
+
 // Example:
 
 // h = 0
