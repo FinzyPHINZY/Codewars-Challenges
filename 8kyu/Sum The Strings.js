@@ -9,3 +9,12 @@
 // "", "" --> "0"
 // "2", "" --> "2"
 // "-5", "3" --> "-2"
+
+function sumStr(a, b) {
+  a = Number(a);
+  b = Number(b);
+  const output = String(a + b);
+  return output;
+}
+
+console.log(sumStr("4", "5"));
