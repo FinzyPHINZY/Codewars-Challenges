@@ -24,5 +24,35 @@
 //     +5 dog years for each year after that
 
 var humanYearsCatYearsDogYears = function (humanYears) {
-  return [0, 0, 0];
+  //   let catYears = 0;
+  //   let dogYears = 0;
+
+  //   if (humanYears >= 1) {
+  //     catYears = 15;
+  //     dogYears = 15;
+
+  //     if (humanYears >= 2) {
+  //       catYears += 9;
+  //       dogYears += 9;
+
+  //       for (let i = 3; i <= humanYears; i++) {
+  //         catYears += 4;
+  //         dogYears += 5;
+  //       }
+  //     }
+  //   }
+
+  //   return `[${humanYears}, ${catYears}, ${dogYears}]`;
+
+  if (humanYears === 1) {
+    return [1, 15, 15];
+  } else if (humanYears === 2) {
+    return [2, 24, 24];
+  } else {
+    const catYears = 24 + (humanYears - 2) * 4;
+    const dogYears = 24 + (humanYears - 2) * 5;
+    return [humanYears, catYears, dogYears];
+  }
 };
+
+console.log(humanYearsCatYearsDogYears(10));
