@@ -19,7 +19,7 @@
 // });
 
 function abbrevName(name) {
-  // code 
+  // 
   // Take the first letter of each name
   // Convert to uppercase
   // Return the letters with a dot in between them.
