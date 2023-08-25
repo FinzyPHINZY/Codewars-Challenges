@@ -14,3 +14,16 @@
 
 //     The first argument can be an empty string
 //     In languages with no distinct character data type, the second argument will be a string of length 1
+
+function strCount(str, letter) {
+  //code here
+  let result = 0;
+  for (alp of str) {
+    if (alp === letter) {
+      result += 1;
+    }
+  }
+  return result;
+}
+
+console.log(strCount("Helolo", "o"));
