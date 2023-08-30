@@ -18,4 +18,17 @@
 
 function XO(str) {
   //code here
+  const lowerCaseStr = str.toLowerCase(); // Convert to lowercase for case-insensitive comparison
+  let xCount = 0;
+  let oCount = 0;
+
+  for (let i = 0; i < lowerCaseStr.length; i++) {
+    if (lowerCaseStr[i] === "x") {
+      xCount++;
+    } else if (lowerCaseStr[i] === "o") {
+      oCount++;
+    }
+  }
+
+  return xCount === oCount;
 }
