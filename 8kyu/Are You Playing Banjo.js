@@ -11,11 +11,11 @@
 function areYouPlayingBanjo(name) {
   // Implement me
 
-  if (name[0] === name[0].toUpperCase() || name[0] === "r") {
+  if (name[0] === "r".toUpperCase() || name[0] === "r") {
     return `${name} plays banjo`;
   } else {
-    return `${name} does not plays banjo`;
+    return `${name} does not play banjo`;
   }
 }
 
-console.log(areYouPlayingBanjo("Raul"));
+console.log(areYouPlayingBanjo("Adam"));
