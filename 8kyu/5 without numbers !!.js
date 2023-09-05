@@ -5,5 +5,7 @@
 // Good luck :)
 
 function unusualFive() {
-  return 5;
+  return "james".length;
 }
+
+console.log(unusualFive());
