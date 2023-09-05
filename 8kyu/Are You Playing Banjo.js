@@ -7,3 +7,13 @@
 // name + " does not play banjo"
 
 // Names given are always valid strings.
+
+function areYouPlayingBanjo(name) {
+  // Implement me
+  const arg = r;
+
+  if (name[0] === r.toUpperCase()) {
+    return name + " plays banjo";
+  }
+  return name;
+}
