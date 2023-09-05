@@ -10,13 +10,12 @@
 
 function areYouPlayingBanjo(name) {
   // Implement me
-  const arg = "r";
 
-  if (name[0] === arg.toUpperCase()) {
+  if (name[0] === name[0].toUpperCase() || name[0] === "r") {
     return `${name} plays banjo`;
   } else {
-    return `${name}  does not plays banjo`;
+    return `${name} does not plays banjo`;
   }
 }
 
-console.log(areYouPlayingBanjo("raul"));
+console.log(areYouPlayingBanjo("Raul"));
