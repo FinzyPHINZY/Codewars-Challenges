@@ -9,3 +9,16 @@
 // "!Hi!"    ---> "!Hi"
 // "Hi! Hi!" ---> "Hi! Hi"
 // "Hi"      ---> "Hi"
+function remove(string) {
+  //coding and coding....
+  const splited = string.split("");
+  let newString = "";
+  for (const str of splited) {
+    if (str !== "!") {
+      newString += str;
+    }
+  }
+  return newString;
+}
+
+console.log(remove("hi! hi!"));
