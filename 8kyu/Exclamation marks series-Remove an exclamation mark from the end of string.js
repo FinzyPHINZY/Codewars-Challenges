@@ -9,15 +9,16 @@
 // "!Hi!"    ---> "!Hi"
 // "Hi! Hi!" ---> "Hi! Hi"
 // "Hi"      ---> "Hi"
-function remove(string) {
-  //coding and coding....
-  //   if string ends '!'. remove it from string
+// function remove(string) {
+//   //coding and coding....
+//   //   if string ends '!'. remove it from string
 
-  if (string.endsWith("!")) {
-    return string.slice(0, -1);
-  } else {
-    return string;
-  }
-}
+//   if (string.endsWith("!")) {
+//     return string.slice(0, -1);
+//   } else {
+//     return string;
+//   }
+// }
 
+remove = (string) => (string.endsWith("!") ? string.slice(0, -1) : string);
 console.log(remove("hi!!! hi!g"));
