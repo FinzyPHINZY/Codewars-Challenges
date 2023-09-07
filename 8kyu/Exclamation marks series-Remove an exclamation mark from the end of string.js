@@ -11,14 +11,13 @@
 // "Hi"      ---> "Hi"
 function remove(string) {
   //coding and coding....
-  const splited = string.split("");
-  let newString = "";
-  for (const str of splited) {
-    if (str !== "!") {
-      newString += str;
-    }
+  //   if string ends '!'. remove it from string
+
+  if (string.endsWith("!")) {
+    return string.slice(0, -1);
+  } else {
+    return string;
   }
-  return newString;
 }
 
-console.log(remove("hi! hi!"));
+console.log(remove("hi!!! hi!g"));
