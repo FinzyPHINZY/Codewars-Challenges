@@ -1,0 +1,23 @@
+{
+  "name": "codewars-challenges",
+  "version": "1.0.0",
+  "description": "I'm documenting my daily CodeWars katas. \r You should check them out!",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FinzyPhinzy/Codewars-Challenges.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FinzyPhinzy/Codewars-Challenges/issues"
+  },
+  "homepage": "https://github.com/FinzyPhinzy/Codewars-Challenges#readme",
+  "devDependencies": {
+    "jest": "^29.6.4"
+  }
+}
