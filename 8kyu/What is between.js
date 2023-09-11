@@ -8,4 +8,14 @@
 
 function between(a, b) {
   // your code here
+  let output = [];
+  if (a < b) {
+    for (let i = a; i <= b; i++) {
+      output.push(i);
+    }
+  }
+  return output;
 }
+
+console.log(between(-2, 4));
+3;
