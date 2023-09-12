@@ -27,3 +27,7 @@ function digitize(n) {
 }
 
 console.log(digitize(1234));
+
+// function digitize(n) {
+//   return String(n).split("").map(Number).reverse();
+// }
