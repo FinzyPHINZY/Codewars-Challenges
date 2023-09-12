@@ -13,3 +13,19 @@
 // ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5"
 
 // Note: In COBOL, it should return "found the needle at position 6"
+
+function findNeedle(haystack) {
+  // your code here
+
+  let char;
+  for (let i = 0; i < haystack.length; i++) {
+    if (haystack[i] === "needle") {
+      char = i;
+    }
+  }
+  return `found the needle at position ${char}`;
+}
+
+console.log(
+  findNeedle(["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"])
+);
