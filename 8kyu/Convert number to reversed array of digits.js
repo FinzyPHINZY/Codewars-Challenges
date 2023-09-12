@@ -9,7 +9,21 @@
 
 function digitize(n) {
   //code here
-  return n.reverse();
+
+  let stringN = String(n);
+  console.log(typeof stringN);
+  let split = stringN.split("");
+  console.log(split);
+
+  let reverse = split.reverse();
+  console.log(reverse);
+  let returnArr = [];
+  for (let i = 0; i < reverse.length; i++) {
+    let loopOutput = Number(reverse[i]);
+    console.log(typeof loopOutput);
+    returnArr.push(loopOutput);
+  }
+  return returnArr;
 }
 
-console.log(digitize([1, 2, 3, 4]));
+console.log(digitize(1234));
