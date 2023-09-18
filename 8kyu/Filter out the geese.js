@@ -19,5 +19,28 @@
 function gooseFilter(birds) {
   var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
 
-  // return an array containing all of the strings in the input array except those that match strings in geese
+  //   let arr = [];
+
+  //   // return an array containing all of the strings in the input array except those that match strings in geese
+
+  //   for (key of birds) {
+  //     if (!geese.includes(key)) {
+  //       arr.push(key);
+  //     }
+  //   }
+
+  //   return arr;
+
+  return birds.filter((b) => !geese.includes(b));
 }
+
+console.log(
+  gooseFilter([
+    "Mallard",
+    "Barbary",
+    "Hook Bill",
+    "African",
+    "Blue Swedish",
+    "Crested",
+  ])
+);
