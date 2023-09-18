@@ -7,9 +7,15 @@
 
 function divisibleBy(numbers, divisor) {
   let arr = [];
-  for (let i = numbers[0]; i <= numbers.length; i++) {
-    if (i % divisor === 0) {
-      arr.push(i);
+  //   for (let i = numbers[0]; i <= numbers.length; i++) {
+  //     if (i % divisor === 0) {
+  //       arr.push(i);
+  //     }
+  //   }
+
+  for (const num of numbers) {
+    if (num % divisor === 0) {
+      arr.push(num);
     }
   }
   return arr;
@@ -19,3 +25,6 @@ console.log(divisibleBy([1, 2, 3, 4, 5, 6], 2));
 console.log(divisibleBy([1, 2, 3, 4, 5, 6], 3));
 console.log(divisibleBy([0, 1, 2, 3, 4, 5, 6], 4));
 console.log(divisibleBy([0], 4));
+
+console.log(divisibleBy([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]));
+console.log(divisibleBy([1, 3, 5], 2));
