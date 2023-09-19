@@ -13,14 +13,21 @@
 
 // * [1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12] -> [1, 2, 3, 4, 5, 7, 9, 10, 11, 12]
 function mergeArrays(arr1, arr2) {
-  const arr = [];
-  arr1.forEach((num) => {
-    arr.push(num);
-  });
-  arr2.forEach((num) => {
-    arr.push(num);
-  });
-  return arr.sort((a, b) => a - b);
+  //   const arr = [];
+  //   arr1.forEach((num) => {
+  //     arr.push(num);
+  //   });
+  //   arr2.forEach((num) => {
+  //     arr.push(num);
+  //   });
+  //   return arr.sort((a, b) => a - b);
+  const mergedSet = new Set([...arr1, ...arr2]);
+  console.log(mergedSet);
+
+  // Convert the Set back to an array and sort it in ascending order
+  const mergedArray = Array.from(mergedSet).sort((a, b) => a - b);
+
+  return mergedArray;
 }
 
 console.log(mergeArrays([1, 3, 5, 7, 9], [10, 8, 6, 4, 2]));
