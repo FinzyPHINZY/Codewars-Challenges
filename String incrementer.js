@@ -28,3 +28,24 @@
 //   doTest("009", "010");
 //   doTest("fo99obar99", "fo99obar100");
 // });
+
+function incrementString(strng) {
+  // return incrementedString
+  //break down string.
+
+  let newStr = strng.split("");
+  //   console.log(newStr);
+
+  let lastKey = newStr.pop();
+  lastKey++;
+  console.log(lastKey);
+
+  //   newStr.pop();
+
+  newStr.push(lastKey);
+
+  return newStr.join("");
+  //   console.log(typeof lastKey);
+}
+
+console.log(incrementString("foobar000"));
