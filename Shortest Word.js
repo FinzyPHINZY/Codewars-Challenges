@@ -13,9 +13,6 @@
 //   })
 
 function findShort(s) {
-  // Split words.
-  // Loop through each word and checking its length
-
   const newStr = s.split(" ");
   let resultArr = [];
 
