@@ -19,11 +19,22 @@ function findShort(s) {
   for (let i = 0; i < newStr.length; i++) {
     resultArr.push(newStr[i].length);
   }
+
   return Math.min(...resultArr);
 }
 
-// function findShort(s){
-//   return Math.min(...s.split(" ").map (s => s.length));
-// }
+function findShort(s) {
+  return Math.min(...s.split(" ").map((s) => s.length));
+}
 
-console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
+function findShort(s) {
+  // body
+  const newStr = s.split(" ");
+
+  newStr.sort((a, b) => a.length - b.length);
+  console.log(newStr);
+  return newStr[0].length;
+}
+
+console.log(findShort("bitcoin take over the world maybe who knows perhaps")); //3
+console.log(findShort("Let's travel abroad shall we")); // 2
