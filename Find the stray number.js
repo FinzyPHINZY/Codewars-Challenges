@@ -17,5 +17,16 @@
 // });
 
 function stray(numbers) {
-  return 0;
+  let a = numbers.sort();
+
+  console.log(a);
+
+  if (a[0] != a[1]) {
+    return a[0];
+  }
+  return a[a.length - 1];
 }
+
+console.log(stray([1, 1, 2]));
+// console.log(stray([1, 2, 1]));
+console.log(stray([17, 17, 3, 17, 17, 17, 17]));
