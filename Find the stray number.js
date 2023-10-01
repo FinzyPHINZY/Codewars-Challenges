@@ -8,6 +8,14 @@
 // [1, 1, 2] ==> 2
 // [17, 17, 3, 17, 17, 17, 17] ==> 3
 
+// describe("Sample Tests", () => {
+//   it("Should pass Sample Tests", () => {
+//     assert.strictEqual(stray([1, 1, 2]), 2);
+//     assert.strictEqual(stray([1, 2, 1]), 2);
+//     assert.strictEqual(stray([2, 1, 1]), 2);
+//   });
+// });
+
 function stray(numbers) {
   return 0;
 }
