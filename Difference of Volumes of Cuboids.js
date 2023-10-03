@@ -18,7 +18,7 @@ function findDifference(a, b) {
   let aTimes = a[0] * a[1] * a[2];
   let bTimes = b[0] * b[1] * b[2];
 
-  return aTimes - bTimes;
+  return Math.abs(aTimes - bTimes);
 }
 
 console.log(findDifference([4, 4, 7], [3, 9, 3]));
