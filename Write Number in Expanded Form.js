@@ -34,6 +34,15 @@ function expandedForm(num) {
   //   return expandedParts.join(" + ");
 }
 
+// Another way to solve:
+// const expandedForm = n => n.toString()
+//                             .split("")
+//                             .reverse()
+//                             .map( (a, i) => a * Math.pow(10, i))
+//                             .filter(a => a > 0)
+//                             .reverse()
+//                             .join(" + ");
+
 // Test cases
 console.log(expandedForm(12)); // Should return '10 + 2'
 console.log(expandedForm(42)); // Should return '40 + 2'
