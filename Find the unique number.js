@@ -6,3 +6,16 @@
 // It’s guaranteed that array contains at least 3 numbers.
 
 // The tests contain some very huge arrays, so think about performance.
+
+function findUniq(arr) {
+  // do magic
+  const sorted = arr.sort();
+  //   return sorted;
+  if (sorted[0] == sorted[1]) {
+    return sorted[sorted.length - 1];
+  } else {
+    return sorted[0];
+  }
+}
+
+console.log(findUniq([1, 1, 1, 2, 1, 1]));
