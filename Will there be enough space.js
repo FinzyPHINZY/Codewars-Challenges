@@ -14,3 +14,29 @@
 
 // cap = 10, on = 5, wait = 5 --> 0 # He can fit all 5 passengers
 // cap = 100, on = 60, wait = 50 --> 10 # He can't fit 10 of the 50 waiting
+
+// describe("Basic Tests", function () {
+//   it("Testing for fixed tests", () => {
+//     assert.strictEqual(enough(10, 5, 5), 0);
+//     assert.strictEqual(enough(100, 60, 50), 10);
+//     assert.strictEqual(enough(20, 5, 5), 0);
+//   });
+// });
+
+// function enough(cap, on, wait) {
+//   // your code here
+
+//   const sumOnWait = on + wait;
+//   if (cap >= sumOnWait) {
+//     return 0;
+//   } else {
+//     return Math.abs(cap - sumOnWait);
+//   }
+// }
+
+enough = (cap, on, wait) =>
+  cap >= on + wait ? 0 : Math.abs(cap - (on + wait));
+
+console.log(enough(10, 5, 5));
+console.log(enough(100, 60, 50));
+console.log(enough(20, 5, 5));
