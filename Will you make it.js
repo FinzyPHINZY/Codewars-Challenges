@@ -5,3 +5,16 @@
 // Considering these factors, write a function that tells you if it is possible to get to the pump or not.
 
 // Function should return true if it is possible and false if not.
+
+// describe("zeroFill", function() {
+//     it("Sample Tests", function() {
+//       assert.equal(zeroFuel(50, 25, 2), true);
+//       assert.equal(zeroFuel(100, 50, 1), false);
+//     });
+//   });
+
+const zeroFuel = (distanceToPump, mpg, fuelLeft) =>
+  distanceToPump <= mpg * fuelLeft;
+
+console.log(zeroFuel(50, 25, 2));
+console.log(zeroFuel(100, 50, 1));
