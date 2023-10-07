@@ -6,4 +6,29 @@
 
 // If the sperm contains the X chromosome, return "Congratulations! You're going to have a daughter."; If the sperm contains the Y chromosome, return "Congratulations! You're going to have a son.";
 
-function chromosomeCheck(sperm) {}
+// const Test = require("@codewars/test-compat");
+
+// describe("Tests", () => {
+//   it("test", () => {
+//     Test.assertEquals(
+//       chromosomeCheck("XY"),
+//       "Congratulations! You're going to have a son."
+//     );
+//     Test.assertEquals(
+//       chromosomeCheck("XX"),
+//       "Congratulations! You're going to have a daughter."
+//     );
+//   });
+// });
+
+function chromosomeCheck(sperm) {
+  const test = sperm.toLowerCase();
+  if (test == "xx") {
+    return `Congratulations! You're going to have a daughter.`;
+  } else {
+    return `Congratulations! You're going to have a son.`;
+  }
+}
+
+console.log(chromosomeCheck("Xx"));
+console.log(chromosomeCheck("XY"));
