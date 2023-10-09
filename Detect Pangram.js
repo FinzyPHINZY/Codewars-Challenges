@@ -8,9 +8,18 @@
 //       assert.strictEqual(isPangram(string), true)
 //     })
 //     it("test2", () => {
-//       var string = "This is not a pangram."
+//       var string = "This is not a pangram"
 //       assert.strictEqual(isPangram(string), false)
 //     });
 //   });
 
-function isPangram(string) {}
+function isPangram(string) {
+  string = string.toLowerCase();
+  return "abcdefghijklmnopqrstuvwxyz".split("").every(function (x) {
+    console.log(string.indexOf(x) !== -1);
+    return string.indexOf(x) !== -1;
+  });
+}
+
+// console.log(isPangram("The quick brown fox jumps over the lazy dog"));
+console.log(isPangram("This is not a pangram"));
