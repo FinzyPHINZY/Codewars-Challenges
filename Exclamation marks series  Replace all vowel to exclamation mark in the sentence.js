@@ -24,6 +24,10 @@ function replace(s) {
   return s.join("");
 }
 
+function replace(s){
+  return s.replace(/[aeoiu]/ig, '!')  
+}
+
 console.log(replace("Hi!"));
 console.log(replace("!Hi! Hi!"));
 console.log(replace("aeiou"));
