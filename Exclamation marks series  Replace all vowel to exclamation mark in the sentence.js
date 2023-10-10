@@ -7,3 +7,23 @@
 // replace("!Hi! Hi!") === "!H!! H!!"
 // replace("aeiou") === "!!!!!"
 // replace("ABCDE") === "!BCD!"
+
+function replace(s) {
+  //coding and coding....
+
+  const vowels = "aeiouAEIOU";
+
+  s = s.split("");
+
+  for (let i = 0; i < s.length; i++) {
+    if (vowels.includes(s[i])) {
+      s[i] = "!";
+    }
+  }
+
+  return s.join("");
+}
+
+console.log(replace("Hi!"));
+console.log(replace("!Hi! Hi!"));
+console.log(replace("aeiou"));
