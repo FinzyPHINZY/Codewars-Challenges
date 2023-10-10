@@ -43,5 +43,31 @@
 //     if you want to translate, please ask before translating
 
 function dirReduc(arr) {
-  // ...
+  const oppositeDirections = {
+    NORTH: "SOUTH",
+    SOUTH: "NORTH",
+    EAST: "WEST",
+    WEST: "EAST",
+  };
+
+  const reducedDirections = [];
+
+  for (const direction of arr) {
+    const lastDirection = reducedDirections[reducedDirections.length - 1];
+
+    if (lastDirection === oppositeDirections[direction]) {
+      // If the current direction is opposite to the last one, remove the last one.
+      reducedDirections.pop();
+    } else {
+      // Otherwise, add the current direction to the result.
+      reducedDirections.push(direction);
+    }
+  }
+
+  return reducedDirections;
 }
+
+// Example usage:
+const directions = ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"];
+const simplifiedDirections = dirReduc(directions);
+console.log(simplifiedDirections);
