@@ -8,7 +8,8 @@
 
 function sumDigits(number) {
   // turn number into a string and split
-  number = String(99).split("");
+  number = Math.abs(number);
+  number = String(number).split("");
 
   let result = 0;
 
@@ -16,7 +17,8 @@ function sumDigits(number) {
     result += Number(num);
   });
 
-  return Math.abs(result);
+  return result;
 }
 
 console.log(sumDigits(99));
+console.log(sumDigits(-32));
