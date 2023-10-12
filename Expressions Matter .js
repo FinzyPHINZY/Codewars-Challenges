@@ -74,3 +74,5 @@
 // After placing signs and brackets, the Maximum value obtained from the expression (1+2) * 3 = 9.
 
 // expressionsMatter(1,1,1)  ==>  return 3
+
+//   PREP: PARAMETERS; RETURN; EXAMPLES; PSEUDOCODE;
