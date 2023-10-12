@@ -79,6 +79,15 @@
 
 function expressionMatter(a, b, c) {
   let highestValue = 0;
+
+  //   bind operand calculations in a variable
+
+  let calc1 = a + b + c;
+  let calc2 = a + b * c;
+  let calc3 = (a + b) * c;
+  let calc4 = a + b * c;
+  let calcl5 = a * b * c;
+
   return highestValue; // highest achievable result
 }
 
