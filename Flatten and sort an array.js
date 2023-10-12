@@ -42,7 +42,7 @@ function flattenAndSort(array) {
     }
   }
 
-  return result.sort();
+  return result.sort((a, b) => a - b);
 }
 
 console.log(
