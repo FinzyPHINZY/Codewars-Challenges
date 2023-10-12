@@ -76,3 +76,11 @@
 // expressionsMatter(1,1,1)  ==>  return 3
 
 //   PREP: PARAMETERS; RETURN; EXAMPLES; PSEUDOCODE;
+
+function expressionMatter(a, b, c) {
+  let highestValue = 0;
+  return highestValue; // highest achievable result
+}
+
+console.log(expressionMatter(1, 2, 3)); //9
+console.log(expressionMatter(1, 1, 1)); //3
