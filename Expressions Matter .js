@@ -88,6 +88,10 @@ function expressionMatter(a, b, c) {
   let calc4 = a + b * c;
   let calcl5 = a * b * c;
 
+  const arr = [calc1, calc2, calc3, calc4, calcl5];
+
+  highestValue = Math.max(...arr);
+
   return highestValue; // highest achievable result
 }
 
