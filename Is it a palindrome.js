@@ -6,5 +6,6 @@
 
 function isPalindrome(x) {
   // your code here
-  retur;
+  x = x.toLowerCase();
+  return x == x.split("").reverse().join("");
 }
