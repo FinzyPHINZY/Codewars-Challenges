@@ -27,3 +27,32 @@
 
 //     In the result codes and their values are in the same order as in M.
 //     See "Samples Tests" for the return.
+
+function stockList(listOfArt, listOfCat) {
+  // ...
+
+  if (listOfArt.length === 0 || listOfCat.length === 0) {
+    return "";
+  }
+
+  // Initialize a dictionary to store the sum for each category
+  const categorySums = {};
+
+  // Iterate through the stocklist
+  for (const book of listOfArt) {
+    const [code, quantity] = book.split(" ");
+    const category = code[0];
+
+    if (listOfCat.includes(category)) {
+      categorySums[category] =
+        (categorySums[category] || 0) + parseInt(quantity, 10);
+    }
+  }
+
+  // Create the result string
+  const result = listOfCat
+    .map((category) => `(${category} : ${categorySums[category] || 0})`)
+    .join(" - ");
+
+  return result;
+}
