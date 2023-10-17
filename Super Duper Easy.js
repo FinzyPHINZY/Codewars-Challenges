@@ -10,3 +10,5 @@ function problem(x) {
     return x * 50 + 6;
   }
 }
+
+problem = (x) => (typeof x == "string" ? "Error" : x * 50 + 6);
