@@ -13,3 +13,5 @@
 function reverseList(list) {
   return list.reverse();
 }
+
+reverseList = (list) => list.reverse();
