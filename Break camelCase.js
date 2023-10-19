@@ -4,3 +4,6 @@
 // "camelCasing"  =>  "camel Casing"
 // "identifier"   =>  "identifier"
 // ""             =>  ""
+
+// complete the function
+function solution(string) {}
