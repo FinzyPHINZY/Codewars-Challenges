@@ -21,3 +21,7 @@ function distinct(a) {
 
   return result;
 }
+
+function distinct(a) {
+  return [...new Set(a)];
+}
