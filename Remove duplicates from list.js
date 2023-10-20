@@ -7,3 +7,17 @@
 // Input -> Output
 // [1, 1, 2] -> [1, 2]
 // [1, 2, 1, 1, 3, 2] -> [1, 2, 3]
+
+function distinct(a) {
+  const seen = new Set();
+  const result = [];
+
+  for (const item of a) {
+    if (!seen.has(item)) {
+      seen.add(item);
+      result.push(item);
+    }
+  }
+
+  return result;
+}
