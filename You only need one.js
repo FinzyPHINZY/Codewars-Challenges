@@ -18,6 +18,7 @@
 //   //   }
 // }
 
+
 const check = (a, x) => a.includes(x);
 
 console.log(check(["bolu", "mabel", "samuel", "ernest"], "bolua"));
