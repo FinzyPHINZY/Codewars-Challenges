@@ -10,7 +10,6 @@
 
 // Tested values are all between 0 and 100. Theres is no need to check for negative values or values greater than 100.
 function getGrade(s1, s2, s3) {
-  // Code here
 
   //   get the average of the values
   const averageValue = (s1 + s2 + s3) / 3;
