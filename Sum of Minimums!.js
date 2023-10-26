@@ -14,3 +14,7 @@
 // Note: You will always be given a non-empty list containing positive values.
 
 // ENJOY CODING :)
+
+function sumOfMinimums(arr) {
+  // your code here
+}
