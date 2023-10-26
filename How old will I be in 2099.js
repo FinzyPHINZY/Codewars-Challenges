@@ -13,4 +13,16 @@ function calculateAge(birthYear, currentYear) {
   //   if currentYear is greater than birthyear, return You are ${curentyear - birthyear } years old
   //   if birthyear is greater than currentYear, return you will be born in  .... years.
   // if birthYear equals current Year, return you were born this very year!
+
+  if (currentYear > birthYear) {
+    return `You are ${currentYear - birthYear} years old.`;
+  } else if (currentYear < birthYear) {
+    return `You will be born in ${birthYear - currentYear} years.`;
+  } else {
+    return `You were born this very year!`;
+  }
 }
+
+console.log(calculateAge(2012, 2016));
+console.log(calculateAge(2000, 1990));
+console.log(calculateAge(3400, 3400));
