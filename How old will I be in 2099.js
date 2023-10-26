@@ -8,6 +8,9 @@
 
 // Good Luck!
 
-function calculateAge() {
+function calculateAge(birthYear, currentYear) {
   // enter your code here.
+  //   if currentYear is greater than birthyear, return You are ${curentyear - birthyear } years old
+  //   if birthyear is greater than currentYear, return you will be born in  .... years.
+  // if birthYear equals current Year, return you were born this very year!
 }
