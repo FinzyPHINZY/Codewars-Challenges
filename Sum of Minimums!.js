@@ -17,4 +17,28 @@
 
 function sumOfMinimums(arr) {
   // your code here
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    // console.log(Math.min(...arr[i]));
+    const minOfRow = Math.min(...arr[i]);
+    sum += minOfRow;
+  }
+  return sum;
 }
+
+console.log(
+  sumOfMinimums([
+    [1, 2, 3, 4, 5],
+    [5, 6, 7, 8, 9],
+    [20, 21, 34, 56, 100],
+  ])
+);
+
+console.log(
+  sumOfMinimums([
+    [11, 12, 14, 54],
+    [67, 89, 90, 56],
+    [7, 9, 4, 3],
+    [9, 8, 6, 7],
+  ])
+);
