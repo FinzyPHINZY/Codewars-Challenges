@@ -8,6 +8,10 @@
 
 // Good Luck!
 
+// Errors after first test:
+// Expected: 'You are 1 year old.', instead got: 'You are 1 years old.'
+// Expected: 'You will be born in 1 year.', instead got: 'You will be born in 1 years.'
+
 function calculateAge(birthYear, currentYear) {
   // enter your code here.
   //   if currentYear is greater than birthyear, return You are ${curentyear - birthyear } years old
@@ -15,9 +19,17 @@ function calculateAge(birthYear, currentYear) {
   // if birthYear equals current Year, return you were born this very year!
 
   if (currentYear > birthYear) {
-    return `You are ${currentYear - birthYear} years old.`;
+    if (currentYear - birthYear > 1) {
+      return `You are ${currentYear - birthYear} years old.`;
+    } else {
+      return `You are ${currentYear - birthYear} year old.`;
+    }
   } else if (currentYear < birthYear) {
-    return `You will be born in ${birthYear - currentYear} years.`;
+    if (birthYear - currentYear > 1) {
+      return `You will be born in ${birthYear - currentYear} years.`;
+    } else {
+      return `You will be born in ${birthYear - currentYear} year.`;
+    }
   } else {
     return `You were born this very year!`;
   }
