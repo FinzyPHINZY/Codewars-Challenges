@@ -28,4 +28,18 @@
 
 function calculateYears(principal, interest, tax, desired) {
   // your code
+  let years = 0;
+
+  while (principal < desired) {
+    const interestEarned = principal * interest;
+    const taxesPaid = interestEarned * tax;
+
+    principal += interestEarned - taxesPaid;
+    years++;
+  }
+
+  return years;
 }
+
+console.log(calculateYears(1000, 0.05, 0.18, 1100));
+console.log(calculateYears(1000, 0.01625, 0.18, 1200));
