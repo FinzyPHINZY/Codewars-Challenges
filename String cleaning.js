@@ -9,4 +9,6 @@
 
 function stringClean(s) {
   // Function will return the cleaned string
+  let cleanedText = s.replace(/\d/g, "");
+  return cleanedText;
 }
