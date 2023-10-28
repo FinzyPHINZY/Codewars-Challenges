@@ -16,7 +16,7 @@
 //     assert.deepEqual(solution([2, 20, 10]), [2, 10, 20]);
 //   });
 // });
-
+//
 function solution(nums) {
   if (nums === null) {
     return [];
