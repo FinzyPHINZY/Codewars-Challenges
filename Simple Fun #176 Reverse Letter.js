@@ -28,4 +28,17 @@
 
 function reverseLetter(str) {
   //coding and coding..
+  let letters = "abcdefghijklmnopqrstuvwxyz";
+  let result = [];
+  str = str.split("").reverse();
+  str.forEach((e) => {
+    if (letters.includes(e)) {
+      result.push(e);
+    }
+  });
+
+  return result.join("");
 }
+
+console.log(reverseLetter("krishan"));
+console.log(reverseLetter("ab23c"));
