@@ -13,3 +13,4 @@ function sumTwoSmallestNumbers(numbers) {
 }
 
 console.log(sumTwoSmallestNumbers([10, 343445353, 3453445, 3453545353453]));
+
