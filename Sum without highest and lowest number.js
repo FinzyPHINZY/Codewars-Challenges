@@ -18,7 +18,7 @@
 function sumArray(array) {
   // filter out max and min
   // create new array;
-  //   input remaining values into array
+  // input remaining values into array
 
   for (let i = 0; i < array.length; i++) {
     if (!arr || array.length <= 2) {
