@@ -11,6 +11,7 @@
 
 // Input: [-2.398]
 // Output: -2.398
+
 // Assumptions
 
 //     You can assume that you are only given numbers.
