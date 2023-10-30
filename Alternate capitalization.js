@@ -13,3 +13,7 @@
 // Indexed capitalization
 
 // Even-odd disparity
+
+function capitalize(s) {
+  return [];
+}
