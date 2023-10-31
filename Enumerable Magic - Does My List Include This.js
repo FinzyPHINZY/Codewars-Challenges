@@ -16,4 +16,6 @@ function include(arr, item) {
   return arr.includes(item);
 }
 
+include = (arr, item) => arr.includes(item);
+
 console.log(include([1, 2, 3, 4], 4));
