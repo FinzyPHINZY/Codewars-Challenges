@@ -24,3 +24,5 @@ function plural(n) {
     return false;
   }
 }
+
+plural = (n) => (n !== 1 ? true : false);
