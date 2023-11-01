@@ -1,5 +1,5 @@
 // function solution(str, ending) {
-//   // TODO: complete
+//   // TODO: complete 
 //   if (str.endsWith(ending)) {
 //     return true;
 //   } else {
