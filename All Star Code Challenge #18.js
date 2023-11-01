@@ -11,7 +11,6 @@
 // str_count("", 'z'); // returns 0
 
 // Notes
-
 //     The first argument can be an empty string
 //     In languages with no distinct character data type, the second argument will be a string of length 1
 
