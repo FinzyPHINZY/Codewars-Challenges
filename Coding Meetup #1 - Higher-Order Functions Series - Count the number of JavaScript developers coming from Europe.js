@@ -47,13 +47,9 @@
 
 function countDevelopers(list) {
   // your awesome code here :)
-  let count = 0;
-  for (let item = 0; item < list.length; item++) {
-    if (list[item].continent === "Europe") {
-      count++;
-      return `${count}, ${list[item].firstName} is the only ${list[item].language} developer`;
-    }
-  }
+  return list
+    .filter((developer) => developer.language === "JavaScript")
+    .filter((developer) => developer.continent === "Europe").length;
 }
 
 console.log(
@@ -89,6 +85,22 @@ console.log(
       continent: "Asia",
       age: 30,
       language: "CSS",
+    },
+    {
+      firstName: "Oliver",
+      lastName: "Q.",
+      country: "Australia",
+      continent: "Oceania",
+      age: 19,
+      language: "HTML",
+    },
+    {
+      firstName: "Lukas",
+      lastName: "R.",
+      country: "Austria",
+      continent: "Europe",
+      age: 89,
+      language: "HTML",
     },
   ])
 );
