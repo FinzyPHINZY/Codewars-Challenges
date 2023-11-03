@@ -7,3 +7,12 @@
 // Numbers may be positive or negative, integers or floats.
 
 // Floats with decimal part non equal to zero are considered UNeven for this kata.
+
+function testEven(n) {
+  //Your awesome code here!
+  if (n === 0 || n % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
