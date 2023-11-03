@@ -16,3 +16,5 @@ function testEven(n) {
     return false;
   }
 }
+
+testEven = (n) => n === 0 || n % 2 === 0;
