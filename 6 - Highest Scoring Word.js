@@ -9,3 +9,17 @@
 // If two words score the same, return the word that appears earliest in the original string.
 
 // All letters will be lowercase and all inputs will be valid.
+
+//Test Cases
+// describe("Basic tests", () => {
+//     it("Testing for fixed tests", () => {
+//       assert.strictEqual(high('man i need a taxi up to ubud'), 'taxi');
+//       assert.strictEqual(high('what time are we climbing up the volcano'), 'volcano');
+//       assert.strictEqual(high('take me to semynak'), 'semynak');
+//       assert.strictEqual(high('aa b'), 'aa');
+//       assert.strictEqual(high('b aa'), 'b');
+//       assert.strictEqual(high('bb d'), 'bb');
+//       assert.strictEqual(high('d bb'), 'd');
+//       assert.strictEqual(high('aaa b'), 'aaa');
+//     })
+//   });
