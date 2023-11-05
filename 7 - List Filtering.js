@@ -7,8 +7,7 @@
 
 function filter_list(l) {
   // Return a new array with the strings filtered out
-  const filtered = l.filter((num) => typeof num === "number");
-  return filtered;
+  return l.filter((num) => typeof num === "number");
 }
 
 console.log(filter_list([1, "a", "b", 0, 15]));
