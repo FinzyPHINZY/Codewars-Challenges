@@ -22,3 +22,20 @@ String.prototype.toAlternatingCase = function () {
     })
     .join("");
 };
+
+function altCase(str) {
+  str = str.split("");
+
+  let result = str.map((e) => {
+    if (e === e.toUpperCase()) {
+      return e.toLowerCase();
+    } else {
+      return e.toUpperCase();
+    }
+    // return e;
+  });
+  return result.join("");
+}
+
+// console.log("hello WORLD".toAlternatingCase());
+console.log(altCase("HeLlo wOrld"));
