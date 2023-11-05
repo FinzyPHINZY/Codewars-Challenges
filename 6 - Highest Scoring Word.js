@@ -27,9 +27,10 @@
 // Pseudo-Code
 // 1. function to calculate score of words
 // 2. split array into parts separated by spaces
+
 function high(x) {
-  let score = 0;
   function wordScore(word) {
+    let score = 0;
     for (let i = 0; i < word.length; i++) {
       score += word.charCodeAt(i) - 96;
     }
@@ -56,5 +57,8 @@ function high(x) {
 }
 
 console.log(high("man i need a taxi up to ubud")); //taxi
+
+console.log(high("aa b"));
+console.log(high("b aa"));
 
 console.log(high("what time are we climbing up the volcano")); // volcano
