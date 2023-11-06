@@ -3,10 +3,7 @@ function squareSum(numbers) {
   numbers.forEach(function (num) {
     result += num * num;
   });
-  //   for (var i = 0; i < numbers.length; i++) {
-  //     // result += numbers[i] * numbers[i];
-  //     result = result + numbers[i] * numbers[i];
-  //   }
+
   return result;
 }
 
