@@ -5,3 +5,5 @@ class Kata {
     return length * width * height;
   }
 }
+
+console.log(Kata(10, 6, 2));
