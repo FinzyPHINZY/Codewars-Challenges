@@ -18,4 +18,4 @@ function between(a, b) {
 }
 
 console.log(between(-2, 4));
-3;
+console.log(between(1, 4));
