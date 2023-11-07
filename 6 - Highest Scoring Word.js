@@ -28,32 +28,26 @@
 // 1. function to calculate score of words
 // 2. split array into parts separated by spaces
 
-function high(x) {
-  function wordScore(word) {
-    let score = 0;
-    for (let i = 0; i < word.length; i++) {
-      score += word.charCodeAt(i) - 96;
-    }
-    return score;
+function wordScore(word) {
+  let score = 0;
+  for (let i = 0; i < word.length; i++) {
+    score += word.charCodeAt(i) - 96;
   }
+  return score;
+}
 
+function high(x) {
   const words = x.split(" ");
-
-  let highestScore = 0;
-  let highestScoreWord = "";
+  let result = [];
 
   for (const word of words) {
-    const score = wordScore(word);
-    if (
-      score > highestScore ||
-      (score === highestScore && word < highestScoreWord)
-    ) {
-      highestScore = score;
-      highestScoreWord = word;
-    }
+    result.push(wordScore(word));
   }
 
-  return highestScoreWord;
+  let highestScore = Math.max(...result);
+  let highestScoreIndex = result.indexOf(highestScore);
+
+  return words[highestScoreIndex];
 }
 
 console.log(high("man i need a taxi up to ubud")); //taxi
