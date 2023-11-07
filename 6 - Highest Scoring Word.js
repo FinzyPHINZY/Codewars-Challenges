@@ -51,8 +51,6 @@ function high(x) {
 }
 
 console.log(high("man i need a taxi up to ubud")); //taxi
-
 console.log(high("aa b"));
 console.log(high("b aa"));
-
 console.log(high("what time are we climbing up the volcano")); // volcano
