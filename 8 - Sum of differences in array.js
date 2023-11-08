@@ -10,13 +10,27 @@
 
 function sumOfDifferences(arr) {
   //Sort the array in descending order of the elements
+  if (arr.length <= 1) return 0;
+
   arr = arr.sort((a, b) => b - a);
 
-  //Bind calculations in variables
-  let output1 = arr[0] - arr[1];
-  let output2 = arr[1] - arr[2];
+  // Initialize the sum of differences
+  let sum = 0;
 
-  return output1 + output2;
+  // Calculate the sum of differences between consecutive pairs
+  for (let i = 0; i < arr.length - 1; i++) {
+    sum += arr[i] - arr[i + 1];
+  }
+
+  return sum;
 }
 
-console.log(sumOfDifferences([2, 1, 10]));
+console.log(sumOfDifferences([2, 1, 10])); //9
+console.log(sumOfDifferences([-3, -2, -1])); //2
+console.log(sumOfDifferences([-17, 17])); //34*
+console.log(sumOfDifferences([])); //0
+console.log(sumOfDifferences([0])); //0
+console.log(sumOfDifferences([-1])); //0
+console.log(sumOfDifferences([-4, -8, -7, -4])); //4
+console.log(sumOfDifferences([-1, -1])); //0
+console.log(sumOfDifferences([1, -12, 13, -13])); //26
