@@ -10,3 +10,7 @@
 // Please keep in mind that the test cases ensure that the number of people in the bus is always >= 0. So the returned integer can't be negative.
 
 // The second value in the first pair in the array is 0, since the bus is empty in the first bus stop
+
+var number = function (busStops) {
+  // Good Luck!
+};
