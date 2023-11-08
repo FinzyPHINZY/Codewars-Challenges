@@ -13,4 +13,24 @@
 
 var number = function (busStops) {
   // Good Luck!
+  let numOfPeopleLeftAtLastBusStop = 0;
+  busStops.forEach((e) => {
+    numOfPeopleLeftAtLastBusStop += numOfPeopleLeftInBusStop(e);
+  });
+  return numOfPeopleLeftAtLastBusStop;
 };
+
+function numOfPeopleLeftInBusStop(arr) {
+  return arr[0] - arr[1];
+}
+
+console.log(
+  number([
+    [3, 0],
+    [9, 1],
+    [4, 10],
+    [12, 2],
+    [6, 1],
+    [7, 10],
+  ])
+); //17
