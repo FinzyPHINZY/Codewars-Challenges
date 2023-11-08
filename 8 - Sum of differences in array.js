@@ -25,6 +25,9 @@ function sumOfDifferences(arr) {
   return sum;
 }
 
+sumOfDifferences = (arr) =>
+  arr.length <= 1 ? 0 : Math.max(...arr) - Math.min(...arr);
+
 console.log(sumOfDifferences([2, 1, 10])); //9
 console.log(sumOfDifferences([-3, -2, -1])); //2
 console.log(sumOfDifferences([-17, 17])); //34*
