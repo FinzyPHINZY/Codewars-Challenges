@@ -19,3 +19,7 @@
 //     assert.strictEqual(correct("PAR15"), "PARIS");
 //   });
 // });
+
+function correct(string) {
+  // your code here
+}
