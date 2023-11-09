@@ -22,4 +22,20 @@
 
 function correct(string) {
   // your code here
+
+  string = string.replace(/5/g, "S");
+
+  // Replace 0 with O
+  string = string.replace(/0/g, "O");
+
+  // Replace 1 with I
+  string = string.replace(/1/g, "I");
+
+  return string;
 }
+
+console.log(correct("DUBL1N"));
+console.log(correct("BUDAPE5T"));
+console.log(correct("51NGAPORE"));
+console.log(correct("L0ND0N"));
+console.log(correct("PAR15"));
