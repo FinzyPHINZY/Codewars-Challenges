@@ -8,3 +8,14 @@
 // O is misinterpreted as 0
 // I is misinterpreted as 1
 // The test cases contain numbers only by mistake.
+
+// Test Cases
+// describe("Tests", () => {
+//   it("test", () => {
+//     assert.strictEqual(correct("L0ND0N"), "LONDON");
+//     assert.strictEqual(correct("DUBL1N"), "DUBLIN");
+//     assert.strictEqual(correct("51NGAP0RE"), "SINGAPORE");
+//     assert.strictEqual(correct("BUDAPE5T"), "BUDAPEST");
+//     assert.strictEqual(correct("PAR15"), "PARIS");
+//   });
+// });
