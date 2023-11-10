@@ -15,3 +15,5 @@
 
 // Input: ["sheep", "sheep", "wolf"]
 // Output: "Pls go away and stop eating my sheep"
+
+function warnTheSheep(queue) {}
