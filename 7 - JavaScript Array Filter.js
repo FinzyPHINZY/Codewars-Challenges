@@ -16,4 +16,13 @@
 
 function getEvenNumbers(numbersArray) {
   // filter out the odd numbers
+  let result = numbersArray.filter((num) => {
+    return num % 2 === 0;
+  });
+  return result;
 }
+console.log(getEvenNumbers([1, 2, 3, 6, 8, 10]));
+console.log(getEvenNumbers([1, 2]));
+console.log(getEvenNumbers([12, 14, 15]));
+console.log(getEvenNumbers([13, 15]));
+console.log(getEvenNumbers([1, 3, 9]));
