@@ -34,4 +34,14 @@
 
 function betterThanAverage(classPoints, yourPoints) {
   // Your code here
+  let classTotal = 0;
+  classPoints.forEach((num) => {
+    classTotal += num;
+  });
+
+  classAverage = classTotal / classPoints.length;
+
+  return classAverage < yourPoints ? true : false;
 }
+
+console.log(betterThanAverage([2, 3], 5));
