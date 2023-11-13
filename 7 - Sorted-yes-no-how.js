@@ -45,20 +45,29 @@ console.log(isSortedAndHow([1, 2]));
 console.log(isSortedAndHow([15, 7, 3, -8]));
 console.log(isSortedAndHow([-8877, -2803, 1048, 4104, 5869, 7093, 9399]));
 
-// loop through and check if array is lesss or higher than
-// function checkOrder(array) {
-//   let ascendingOrder = array.sort((a, b) => a > b);
-//   console.log(ascendingOrder);
-//   let descendingOrder = array.sort((a, b) => b > a);
-//   console.log(descendingOrder);
-//   if (array === ascendingOrder) {
-//     return "ascending";
-//   } else if (array === descendingOrder) {
-//     return "descending";
-//   } else {
-//     return "no";
-//   }
-// }
+function isSortedAndHow(array) {
+  // Check if the array is sorted in ascending order
+  if (
+    array.every((value, index, arr) => index === 0 || value >= arr[index - 1])
+  ) {
+    return "yes, ascending";
+  }
+  // Check if the array is sorted in descending order
+  else if (
+    array.every((value, index, arr) => index === 0 || value <= arr[index - 1])
+  ) {
+    return "yes, descending";
+  }
+  // If neither ascending nor descending, then the array is not sorted
+  else {
+    return "no";
+  }
+}
 
-// console.log(checkOrder([1, 2]));
-// console.log(checkOrder([15, 7, 3, -8]));
+function isSortedAndHow(arr) {
+  return arr.every((x, i) => i == 0 || arr[i] >= arr[i - 1])
+    ? "yes, ascending"
+    : arr.every((x, i) => i == 0 || arr[i] <= arr[i - 1])
+    ? "yes, descending"
+    : "no";
+}
