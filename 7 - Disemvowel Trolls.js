@@ -30,4 +30,13 @@ function disemvowel(str) {
   return result.join("");
 }
 
+const vowels = "aeiou";
+
+function disemvowel(str) {
+  return str
+    .split("")
+    .filter((letter) => !vowels.includes(letter.toLowerCase()))
+    .join("");
+}
+
 console.log(disemvowel("This website is for losers lol"));
