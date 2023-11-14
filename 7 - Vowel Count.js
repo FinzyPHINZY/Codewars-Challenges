@@ -13,5 +13,18 @@
 // });
 
 function getCount(str) {
-  return 0;
+  //   forEach loop
+  let count = 0;
+  let vowels = "aeiou";
+  str = str.split("");
+
+  str.forEach((e) => {
+    if (vowels.includes(e)) {
+      count += 1;
+    }
+  });
+
+  return count;
+  // reduce method
 }
+console.log(getCount("abracadabra"));
