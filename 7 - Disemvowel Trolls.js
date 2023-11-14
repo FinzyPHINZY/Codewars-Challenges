@@ -17,3 +17,7 @@
 //       assert.strictEqual(disemvowel("What are you, a communist?"), "Wht r y,  cmmnst?")
 //       })
 //     })
+
+function disemvowel(str) {
+  return str;
+}
