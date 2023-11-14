@@ -19,5 +19,15 @@
 //     })
 
 function disemvowel(str) {
-  return str;
+  str = str.split("");
+  const vowels = "aeiouAEIOU";
+  const result = [];
+  str.forEach((e) => {
+    if (!vowels.includes(e)) {
+      result.push(e);
+    }
+  });
+  return result.join("");
 }
+
+console.log(disemvowel("This website is for losers lol"));
