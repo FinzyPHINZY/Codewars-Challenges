@@ -5,6 +5,13 @@
 
 // The input string will only consist of lower case letters and/or spaces.
 
+// Test Cases:
+// describe("Vowels Count Tests", function () {
+//   it("should return 5 for 'abracadabra'", function () {
+//     assert.strictEqual(getCount("abracadabra"), 5);
+//   });
+// });
+
 function getCount(str) {
   return 0;
 }
