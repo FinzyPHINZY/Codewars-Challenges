@@ -12,3 +12,7 @@
 // // "What was the name of your first pet?"
 // "Skippy" --> "##ippy"
 // "Nananananananananananananananana Batman!" --> "####################################man!"
+
+function maskify(cc) {
+  // return masked string
+}
