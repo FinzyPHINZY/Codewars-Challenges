@@ -23,7 +23,17 @@
 // });
 
 function maskify(cc) {
-  // return masked string
+  // Check if the string has more than 4 characters
+  if (cc.length > 4) {
+    // Use the repeat method to create a string of '#' characters
+    let maskedPart = "#".repeat(cc.length - 4);
+
+    // Concatenate the masked part with the last four characters
+    return maskedPart + cc.slice(-4);
+  } else {
+    // If the string has 4 or fewer characters, return it as is
+    return cc;
+  }
 }
 
 console.log(maskify("4556364607935616")); // "############5616"
