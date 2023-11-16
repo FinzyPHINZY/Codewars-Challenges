@@ -10,3 +10,16 @@
 // 121 --> 144
 // 625 --> 676
 // 114 --> -1 since 114 is not a perfect square
+
+function findNextSquare(sq) {
+  // Return the next square if sq is a perfect square, -1 otherwise
+  const sqrt = Math.sqrt(sq);
+  if (Number.isInteger(sqrt)) {
+    // If it's a perfect square, find the next one
+    const nextSquare = Math.pow(sqrt + 1, 2);
+    return nextSquare;
+  } else {
+    // If it's not a perfect square, return -1
+    return -1;
+  }
+}
