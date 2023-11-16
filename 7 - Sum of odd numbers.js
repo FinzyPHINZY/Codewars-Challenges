@@ -11,3 +11,8 @@
 
 // 1 -->  1
 // 2 --> 3 + 5 = 8
+
+function rowSumOddNumbers(n) {
+  // TODO
+  return Math.pow(n, 3);
+}
