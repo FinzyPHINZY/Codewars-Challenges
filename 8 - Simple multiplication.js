@@ -11,3 +11,4 @@ function simpleMultiplication(number) {
 }
 
 console.log(simpleMultiplication(10));
+console.log(simpleMultiplication(9));
