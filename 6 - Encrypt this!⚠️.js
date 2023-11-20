@@ -18,4 +18,30 @@
 
 const encryptThis = function (text) {
   // Solution here!
+  // Split the input text into words
+  const words = text.split(" ");
+
+  // Encrypt each word according to the rules
+  const encryptedWords = words.map((word) => {
+    if (word.length === 0) {
+      return "";
+    }
+
+    const firstCharCode = word.charCodeAt(0);
+    let encryptedWord = firstCharCode.toString();
+
+    if (word.length > 1) {
+      // Swap the second letter with the last letter
+      encryptedWord +=
+        word[word.length - 1] + word.substring(2, word.length - 1) + word[1];
+    }
+
+    return encryptedWord;
+  });
+
+  // Join the encrypted words into a string and return
+  return encryptedWords.join(" ");
 };
+
+console.log(encryptThis("A"));
+console.log(encryptThis("A wise old owl lived in an oak"));
