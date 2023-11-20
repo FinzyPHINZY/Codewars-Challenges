@@ -7,5 +7,11 @@
 // Tested years are in range 1600 ≤ year ≤ 4000.
 
 function isLeapYear(year) {
-  // TODO
+  // Years divisible by 4 are leap years
+  // Years divisible by 100 are not leap years, unless they are also divisible by 400
+  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 }
+
+console.log(isLeapYear(2000));
+console.log(isLeapYear(2015));
+console.log(isLeapYear(2100));
