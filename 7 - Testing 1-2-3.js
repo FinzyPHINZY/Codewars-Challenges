@@ -19,3 +19,5 @@ var number = function (array) {
 
   return result;
 };
+
+console.log(number(["a", "b", "c"]));
