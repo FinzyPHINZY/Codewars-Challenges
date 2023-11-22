@@ -14,9 +14,17 @@
 
 function noOdds(values) {
   // Return all non-odd values
-  for (const num of values) {
-    if (num % 2 == 0) console.log(num);
-  }
+
+  //   Using For Of Loop
+  //   const result = [];
+  //   for (const num of values) {
+  //     if (num % 2 == 0) result.push(num);
+  //   }
+  //   return result;
+
+  //   Using Array.Filter Method
+  let newVal = values.filter((num) => num % 2 == 0);
+  return newVal;
 }
 
 console.log(noOdds([0, 1, 2, 3]));
