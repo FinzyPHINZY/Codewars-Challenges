@@ -14,4 +14,9 @@
 
 function noOdds(values) {
   // Return all non-odd values
+  for (const num of values) {
+    if (num % 2 == 0) console.log(num);
+  }
 }
+
+console.log(noOdds([0, 1, 2, 3]));
