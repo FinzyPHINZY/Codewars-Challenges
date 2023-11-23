@@ -25,5 +25,16 @@
 // });
 
 function SeriesSum(n) {
-  // Happy Coding ^_^
+  for (var s = 0, i = 0; i < n; i++) {
+    console.log(1 + i * 3);
+    s += 1 / (1 + i * 3);
+  }
+
+  return s.toFixed(2);
 }
+
+console.log(SeriesSum(1));
+console.log(SeriesSum(2));
+console.log(SeriesSum(3));
+console.log(SeriesSum(4));
+console.log(SeriesSum(5));
