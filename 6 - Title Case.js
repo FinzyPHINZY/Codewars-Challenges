@@ -23,11 +23,72 @@
 //       "A Clash of Kings"
 //     );
 //     Test.assertEquals(
-//       titleCase("THE WIND IN THE WILLOWS", "The In"),
-//       "The Wind in the Willows"
-//     );
+//   titleCase("THE WIND IN THE WILLOWS", "The In"),
+//   "The Wind in the Willows"
+// );
 //     Test.assertEquals(titleCase("the quick brown fox"), "The Quick Brown Fox");
 //   });
 // });
 
-function titleCase(title, minorWords) {}
+// function titleCase(title, minor) {
+//   let words = title.toLowerCase().split(" ");
+//   let output = "";
+//   if (minor) {
+//     minor = minor.toLowerCase();
+//     for (let word of words) {
+//       // console.log(word, word.slice(1));
+//       if (!minor.includes(word) ) {
+//         word = word[0].toUpperCase() + word.slice(1);
+//         output += " " + word;
+//       } else {
+//         output += " " + word;
+//       }
+//     }
+//   } else {
+//     for (let word of words) {
+//       // console.log(word, word.slice(1));
+
+//       word = word[0].toUpperCase() + word.slice(1);
+//       output += " " + word;
+//     }
+//   }
+
+//   return output.charAt(0).toUpperCase() + output.slice(1);
+// }
+
+// console.log(titleCase("a clash of KINGS", "a an the of"));
+// console.log(titleCase("THE WIND IN THE WILLOWS", "The In"));
+// console.log(titleCase("the quick brown fox"), "");
+
+function titleCase(title, minor) {
+  let words = title.toLowerCase().split(" ");
+  let wordUpper = [];
+
+  if (minor) {
+    // convert minor words into lowercase
+    minor = minor.toLowerCase();
+    for (let w of words) {
+      if (!minor.includes(w)) {
+        wordUpper.push(w[0].toUpperCase() + w.slice(1));
+      } else {
+        wordUpper.push(w.toLowerCase());
+      }
+    }
+  } else {
+    for (let w of words) {
+      wordUpper.push(w[0].toUpperCase() + w.slice(1));
+    }
+  }
+
+  let result = wordUpper.join(" ");
+
+  return result[0].toUpperCase() + result.slice(1);
+}
+
+console.log(titleCase("a clash of KINGS", "a an the of"));
+console.log(titleCase("THE WIND IN THE WILLOWS", "The In"));
+console.log(titleCase("the quick brown fox"), "");
+
+// console.log(titleCase("a clash of KINGS"));
+// console.log(titleCase("THE WIND IN THE WILLOWS"));
+// console.log(titleCase("the quick brown fox"));
