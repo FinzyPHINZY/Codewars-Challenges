@@ -14,6 +14,16 @@
 // 2 --> 1 + 1/4 --> "1.25"
 // 5 --> 1 + 1/4 + 1/7 + 1/10 + 1/13 --> "1.57"
 
+// Test Cases:
+// describe("Tests", () => {
+//   it("test", () => {
+//     Test.assertEquals(SeriesSum(1), "1.00");
+//     Test.assertEquals(SeriesSum(2), "1.25");
+//     Test.assertEquals(SeriesSum(3), "1.39");
+//     Test.assertEquals(SeriesSum(4), "1.49");
+//   });
+// });
+
 function SeriesSum(n) {
   // Happy Coding ^_^
 }
