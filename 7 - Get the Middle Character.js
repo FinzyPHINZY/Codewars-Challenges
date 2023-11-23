@@ -32,3 +32,8 @@ function getMiddle(s) {
     return s.charAt(middleIndex1) + s.charAt(middleIndex2);
   }
 }
+
+console.log(getMiddle("test"));
+console.log(getMiddle("middle"));
+console.log(getMiddle("a"));
+console.log(getMiddle("testing"));
