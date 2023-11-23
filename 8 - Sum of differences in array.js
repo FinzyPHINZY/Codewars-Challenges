@@ -25,6 +25,7 @@ function sumOfDifferences(arr) {
   return sum;
 }
 
+//The kata can be solved by just removing the lowest element from the highest element in the array
 sumOfDifferences = (arr) =>
   arr.length <= 1 ? 0 : Math.max(...arr) - Math.min(...arr);
 
