@@ -16,6 +16,15 @@
 
 // Some random tests might fail due to a bug in the JavaScript implementation. Simply resubmit if that happens to you.
 
+// Test Cases
+// describe("Basic tests", () => {
+//   it("Testing for fixed tests", () => {
+//     assert.strictEqual(predictAge(65, 60, 75, 55, 60, 63, 64, 45), 86);
+//   });
+// });
+
 function predictAge(age1, age2, age3, age4, age5, age6, age7, age8) {
   // your code
 }
+
+console.log(predictAge(65, 60, 75, 55, 60, 64, 64, 45));
