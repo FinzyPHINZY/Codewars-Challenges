@@ -16,3 +16,7 @@
 //     Test.assertEquals(move(2, 5), 12);
 //   });
 // });
+
+function move(position, roll) {
+  // return the new position
+}
