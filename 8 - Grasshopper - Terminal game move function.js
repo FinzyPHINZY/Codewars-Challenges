@@ -19,4 +19,9 @@
 
 function move(position, roll) {
   // return the new position
+  return roll * 2 + position;
 }
+
+console.log(move(0, 4));
+console.log(move(3, 6));
+console.log(move(2, 5));
