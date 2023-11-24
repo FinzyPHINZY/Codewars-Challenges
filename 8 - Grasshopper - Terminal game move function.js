@@ -22,6 +22,8 @@ function move(position, roll) {
   return roll * 2 + position;
 }
 
+move = (position, roll) => roll * 2 + position;
+
 console.log(move(0, 4));
 console.log(move(3, 6));
 console.log(move(2, 5));
