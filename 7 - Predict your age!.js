@@ -30,11 +30,7 @@ function predictAge(age1, age2, age3, age4, age5, age6, age7, age8) {
     return accumulator + currentValue * currentValue;
   }, 0);
 
-  const square = Math.sqrt(ageSquareTotal);
-
-  const result = square / 2;
-
-  return Math.floor(result);
+  return Math.floor(Math.sqrt(ageSquareTotal) / 2);
 }
 
 console.log(predictAge(65, 60, 75, 55, 60, 63, 64, 45));
