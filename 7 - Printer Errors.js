@@ -28,16 +28,15 @@
 
 function printerError(s) {
   // your code
-  const colors = "abcdefghijklmn";
-  let colorCount = 0;
+  const colors = "abcdefghijklm";
+
   let errorCount = 0;
   for (const color of s) {
-    colorCount++;
     if (!colors.includes(color)) {
       errorCount++;
     }
   }
-  return errorCount + "/" + colorCount;
+  return errorCount + "/" + s.length;
 }
 
 console.log(printerError("aaabbbbhaijjjm"));
