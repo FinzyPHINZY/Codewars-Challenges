@@ -13,8 +13,13 @@
 //   });
 // });
 
+// 2lw+2lh+2hw (length * width + length * height + width * height)
+
 function getSize(width, height, depth) {
-  return Array;
+  const surfaceArea = 2 * (depth * width + depth * height + width * height);
+  const volume = width * height * depth;
+  return [surfaceArea, volume];
 }
 
-console.log(getSize());
+console.log(getSize(4, 2, 6));
+console.log(getSize(10, 10, 10));
