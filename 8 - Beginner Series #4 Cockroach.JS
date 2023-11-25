@@ -17,6 +17,13 @@
 //   });
 // });
 
+// k/h = 27.777778 cm/s
+
 function cockroachSpeed(s) {
   //Good Luck!
+  return Math.floor((100000 * s) / 3600);
 }
+
+console.log(cockroachSpeed(1.08));
+console.log(cockroachSpeed(1.09));
+console.log(cockroachSpeed(0));
