@@ -18,6 +18,14 @@
 // s="aaaxbbbbyyhwawiwjjjwwm"
 // printer_error(s) => "8/22"
 
+// Test Cases
+// describe("printerError", function () {
+//   it("Basic tests", function () {
+//     var s = "aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz";
+//     Test.assertEquals(printerError(s), "3/56");
+//   });
+// });
+
 function printerError(s) {
   // your code
 }
