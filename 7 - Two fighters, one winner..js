@@ -43,3 +43,72 @@
 
 //     });
 //   });
+function Fighter(name, health, damagePerAttack) {
+  this.name = name;
+  this.health = health;
+  this.damagePerAttack = damagePerAttack;
+  this.toString = function () {
+    return this.name;
+  };
+}
+
+function declareWinner(fighter1, fighter2, firstAttacker) {
+  // Determine the order of attack
+  let attacker = fighter1.name === firstAttacker ? fighter1 : fighter2;
+  let defender = attacker === fighter1 ? fighter2 : fighter1;
+
+  // Simulate the fight until one of the fighters is defeated
+  while (fighter1.health > 0 && fighter2.health > 0) {
+    defender.health -= attacker.damagePerAttack;
+
+    // Swap attacker and defender for the next round
+    [attacker, defender] = [defender, attacker];
+  }
+
+  // Determine the winner based on health
+  if (fighter1.health <= 0) {
+    return fighter2.name;
+  } else {
+    return fighter1.name;
+  }
+}
+
+// Example usage:
+console.log(
+  declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Lew")
+); // Output: "Lew"
+console.log(
+  declareWinner(
+    new Fighter("Harald", 20, 5),
+    new Fighter("Harry", 5, 4),
+    "Harald"
+  )
+);
+console.log(
+  declareWinner(
+    new Fighter("Harald", 20, 5),
+    new Fighter("Harry", 5, 4),
+    "Harry"
+  )
+);
+
+console.log(
+  declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Lew")
+);
+console.log(
+  declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Harry")
+);
+console.log(
+  declareWinner(
+    new Fighter("Harald", 20, 5),
+    new Fighter("Harry", 5, 4),
+    "Harry"
+  )
+);
+console.log(
+  declareWinner(
+    new Fighter("Harald", 20, 5),
+    new Fighter("Harry", 5, 4),
+    "Harald"
+  )
+);
