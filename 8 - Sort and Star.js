@@ -16,4 +16,45 @@
 //     });
 //   });
 
-function twoSort(s) {}
+function twoSort(s) {
+  // Sort the array alphabetically
+  const sortedArray = s.sort();
+
+  // Extract the first string from the sorted array
+  const firstString = sortedArray[0];
+
+  // Insert "***" between each letter of the first string
+  const result = firstString.split("").join("***");
+
+  return result;
+}
+
+console.log(
+  twoSort([
+    "bitcoin",
+    "take",
+    "over",
+    "the",
+    "world",
+    "maybe",
+    "who",
+    "knows",
+    "perhaps",
+  ])
+);
+console.log(
+  twoSort([
+    "turns",
+    "out",
+    "random",
+    "test",
+    "cases",
+    "are",
+    "easier",
+    "than",
+    "writing",
+    "out",
+    "basic",
+    "ones",
+  ])
+);
