@@ -18,15 +18,7 @@
 
 function twoSort(s) {
   // Sort the array alphabetically
-  const sortedArray = s.sort();
-
-  // Extract the first string from the sorted array
-  const firstString = sortedArray[0];
-
-  // Insert "***" between each letter of the first string
-  const result = firstString.split("").join("***");
-
-  return result;
+  return s.sort()[0].split("").join("***");
 }
 
 console.log(
