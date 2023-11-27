@@ -9,6 +9,23 @@
 
 // Good luck :)
 
+// Test Cases:
+// describe("Find Nearest square number", () => {
+//   it("Sample tests", () => {
+//     assert.strictEqual(nearestSq(1), 1, "nearestSq(1) = 1");
+//     assert.strictEqual(nearestSq(2), 1, "nearestSq(2) = 1");
+//     assert.strictEqual(nearestSq(10), 9, "nearestSq(10) = 9");
+//     assert.strictEqual(nearestSq(111), 121, "nearestSq(111) = 121");
+//     assert.strictEqual(nearestSq(9999), 10000, "nearestSq(9999) = 10000");
+//   });
+// });
+
 function nearestSq(n) {
   // your code
 }
+
+console.log(nearestSq(1));
+console.log(nearestSq(2));
+console.log(nearestSq(10));
+console.log(nearestSq(111));
+console.log(nearestSq(9999));
