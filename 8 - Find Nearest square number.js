@@ -9,12 +9,6 @@
 
 // Good luck :)
 
-// Check my other katas:
-
-// Alphabetically ordered
-
-// Case-sensitive!
-
-// Not prime numbers
-
-// Find your caterer
+function nearestSq(n) {
+  // your code
+}
