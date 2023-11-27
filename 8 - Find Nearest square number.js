@@ -22,6 +22,15 @@
 
 function nearestSq(n) {
   // your code
+  const sqN = Math.sqrt(n);
+
+  const ceilSqrt = Math.ceil(sqN);
+  const floorSqrt = Math.floor(sqN);
+
+  const ceilSq = ceilSqrt * ceilSqrt;
+  const floorSq = floorSqrt * floorSqrt;
+
+  return Math.abs(n - floorSq) < Math.abs(n - ceilSq) ? floorSq : ceilSq;
 }
 
 console.log(nearestSq(1));
