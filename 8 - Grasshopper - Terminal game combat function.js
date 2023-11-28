@@ -13,6 +13,13 @@
 //   });
 // });
 
-function combat(health, damage) {
+const combat = (health, damage) => {
   // Write your code here
-}
+  let xp = health - damage;
+
+  return xp >= 1 ? xp : 0;
+};
+
+console.log(combat(100, 5));
+console.log(combat(92, 8));
+console.log(combat(20, 30));
