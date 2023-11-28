@@ -12,3 +12,7 @@
 //     Test.assertEquals(combat(20, 30), 0, "Health cannot go below 0");
 //   });
 // });
+
+function combat(health, damage) {
+  // Write your code here
+}
