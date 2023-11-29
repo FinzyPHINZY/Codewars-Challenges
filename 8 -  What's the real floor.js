@@ -17,3 +17,18 @@
 // 5  =>  4
 // 15  =>  13
 // -3  =>  -3
+
+// Test Cases:
+// describe("Tests", () => {
+//   it("test", () => {
+//     assert.strictEqual(getRealFloor(1), 0);
+//     assert.strictEqual(getRealFloor(5), 4);
+//     assert.strictEqual(getRealFloor(15), 13);
+//     assert.strictEqual(getRealFloor(-2), -2);
+//   });
+// });
+
+console.log(getRealFloor(1));
+console.log(getRealFloor(5));
+console.log(getRealFloor(15));
+console.log(getRealFloor(-2));
