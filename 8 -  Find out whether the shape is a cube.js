@@ -29,6 +29,10 @@
 //   });
 // });
 
+var cubeChecker = function (volume, side) {
+  return false;
+};
+
 console.log(cubeChecker(56.3, 1));
 console.log(cubeChecker(-1, 2));
 console.log(cubeChecker(8, 3));
