@@ -30,7 +30,7 @@
 // });
 
 var cubeChecker = function (volume, side) {
-  return false;
+  return volume < 1 ? false : side * side * side === volume ? true : false;
 };
 
 console.log(cubeChecker(56.3, 1));
