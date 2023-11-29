@@ -13,3 +13,28 @@
 // Return false for invalid numbers too (e.g volume or side is less than or equal to 0).
 
 // Note: side will be an integer
+
+// Test Cases:
+// describe("Tests", () => {
+//   it("test", () => {
+//     Test.assertEquals(cubeChecker(56.3, 1), false);
+//     Test.assertEquals(cubeChecker(-1, 2), false);
+//     Test.assertEquals(cubeChecker(8, 3), false);
+//     Test.assertEquals(cubeChecker(8, 2), true);
+//     Test.assertEquals(cubeChecker(-8, -2), false);
+//     Test.assertEquals(cubeChecker(0, 0), false);
+//     Test.assertEquals(cubeChecker(1, 5), false);
+//     Test.assertEquals(cubeChecker(125, 5), true);
+//     Test.assertEquals(cubeChecker(125, -5), false);
+//   });
+// });
+
+console.log(cubeChecker(56.3, 1));
+console.log(cubeChecker(-1, 2));
+console.log(cubeChecker(8, 3));
+console.log(cubeChecker(8, 2));
+console.log(cubeChecker(-8, -2));
+console.log(cubeChecker(0, 0));
+console.log(cubeChecker(1, 5));
+console.log(cubeChecker(125, 5));
+console.log(cubeChecker(125, -5));
