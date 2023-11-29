@@ -28,6 +28,8 @@
 //   });
 // });
 
+function getRealFloor(n) {}
+
 console.log(getRealFloor(1));
 console.log(getRealFloor(5));
 console.log(getRealFloor(15));
