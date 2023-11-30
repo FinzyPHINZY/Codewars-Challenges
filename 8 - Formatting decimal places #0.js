@@ -18,13 +18,13 @@
 
 function twoDecimalPlaces(n) {
   // Your code here
-  return n.toFixed(2);
+  return Number(n.toFixed(2));
 }
 
-// const twoDecimalPlaces = (n) => n.toFixed(2);
+// const twoDecimalPlaces = (n) => Number(n.toFixed(2));
 
 // const twoDecimalPlaces = function (n) {
-//   return n.toFixed(2);
+//   return Number(n.toFixed(2));
 // };
 
 console.log(twoDecimalPlaces(4.659725356));
