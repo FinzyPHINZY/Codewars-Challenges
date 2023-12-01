@@ -35,7 +35,12 @@
 
 function remainder(n, m) {
   // Divide the larger argument by the smaller argument and return the remainder
-  return n / m;
+  const formula = n / m;
+  if (!formula || formula === Infinity) {
+    return NaN;
+  } else {
+    return formula;
+  }
 }
 
 console.log(remainder(17, 5));
