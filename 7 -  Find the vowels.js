@@ -13,6 +13,23 @@
 // Vowels in this context refers to: a e i o u y (including upper case)
 // This is indexed from [1..n] (not zero indexed!)
 
+// Test Cases:
+// describe("Basic tests", function(){
+//     it("Test", () => {
+//       assert.deepEqual(vowelIndices("mmm"), []);
+//       assert.deepEqual(vowelIndices("apple"), [1,5]);
+//       assert.deepEqual(vowelIndices("super"), [2,4]);
+//       assert.deepEqual(vowelIndices("orange"), [1,3,6]);
+//       assert.deepEqual(vowelIndices("supercalifragilisticexpialidocious"), [2,4,7,9,12,14,16,19,21,24,25,27,29,31,32,33]);
+//     })
+//   });
+
 function vowelIndices(word) {
   //your code here
 }
+
+console.log(vowelIndices("mmm"));
+console.log(vowelIndices("apple"));
+console.log(vowelIndices("super"));
+console.log(vowelIndices("orange"));
+console.log(vowelIndices("supercalifragilisticexpialidocious"));
