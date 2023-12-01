@@ -26,10 +26,24 @@
 
 function vowelIndices(word) {
   //your code here
+  let vowels = "aeiouy";
+  word = word.toLowerCase();
+  let indexArray = [];
+
+  for (let i = 0; i < word.length; i++) {
+    if (vowels.includes(word[i])) {
+      indexArray.push(i + 1);
+    }
+  }
+
+  return indexArray;
 }
 
 console.log(vowelIndices("mmm"));
+console.log(vowelIndices("greet"));
 console.log(vowelIndices("apple"));
 console.log(vowelIndices("super"));
 console.log(vowelIndices("orange"));
+console.log(vowelIndices("BsHqrlQOJDc"));
+console.log(vowelIndices("YDwh"));
 console.log(vowelIndices("supercalifragilisticexpialidocious"));
