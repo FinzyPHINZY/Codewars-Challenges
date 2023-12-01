@@ -27,6 +27,16 @@ function defineSuit(card) {
   }
 }
 
+function defineSuit(card) {
+  const s = {
+    "♣": "clubs",
+    "♠": "spades",
+    "♦": "diamonds",
+    "♥": "hearts",
+  };
+  return s[card.charAt(card.length - 1)];
+}
+
 console.log(defineSuit("Q♠"));
 console.log(defineSuit("9♦"));
 console.log(defineSuit("J♥"));
