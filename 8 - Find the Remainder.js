@@ -23,6 +23,22 @@
 // m = 1
 // result - division by zero (refer to the specifications on how to handle this in your language)
 
+// Test Cases:
+// describe('Remainder Function', () => {
+//     it('Should handle arguments and math as defined in specificaitons', () => {
+//       assert.strictEqual(remainder(17,5), 2, 'Returned value should be the value left over after dividing as much as possible. For input n = 17, m = 5');
+//       assert.strictEqual(remainder(13, 72), remainder(72, 13), 'The order the arguments are passed should not matter');
+//       assert.isNaN(remainder(1, 0), 'Divide by zero should return NaN');
+//       assert.isNaN(remainder(0, 0), 'Divide by zero should return NaN');
+//     });
+//   });
+
 function remainder(n, m) {
   // Divide the larger argument by the smaller argument and return the remainder
+  return n / m;
 }
+
+console.log(remainder(17, 5));
+console.log(remainder(13, 72));
+console.log(remainder(1, 0));
+console.log(remainder(0, 0));
