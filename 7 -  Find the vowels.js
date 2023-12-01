@@ -12,3 +12,7 @@
 // NOTES
 // Vowels in this context refers to: a e i o u y (including upper case)
 // This is indexed from [1..n] (not zero indexed!)
+
+function vowelIndices(word) {
+  //your code here
+}
