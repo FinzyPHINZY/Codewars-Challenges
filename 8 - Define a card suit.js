@@ -13,3 +13,20 @@
 // it('Testing №2 for "Q♠"', () => assert.strictEqual(defineSuit('Q♠'), 'spades'));
 // it('Testing №3 for "9♦"', () => assert.strictEqual(defineSuit('9♦'), 'diamonds'));
 // it('Testing №4 for "J♥"', () => assert.strictEqual(defineSuit('J♥'), 'hearts'));
+
+function defineSuit(card) {
+  // good luck
+  if (card.slice(-1) === "♠") {
+    return "spades";
+  } else if (card.slice(-1) === "♦") {
+    return "diamonds";
+  } else if (card.slice(-1) === "♥") {
+    return "hearts";
+  } else {
+    return "clubs";
+  }
+}
+
+console.log(defineSuit("Q♠"));
+console.log(defineSuit("9♦"));
+console.log(defineSuit("J♥"));
