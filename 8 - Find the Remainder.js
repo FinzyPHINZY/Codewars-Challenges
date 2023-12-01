@@ -22,3 +22,7 @@
 // n = 0
 // m = 1
 // result - division by zero (refer to the specifications on how to handle this in your language)
+
+function remainder(n, m) {
+  // Divide the larger argument by the smaller argument and return the remainder
+}
