@@ -10,6 +10,17 @@
 // 3, 3 --> 9
 // Note: for the purposes of this kata you will assume that it is a square if its length and width are equal, otherwise it is a rectangle.
 
+// Test Cases
+// describe("Tests", () => {
+//   it("test", () => {
+//     assert.strictEqual(areaOrPerimeter(3, 3), 9);
+//     assert.strictEqual(areaOrPerimeter(6, 10), 32);
+//   });
+// });
+
 const areaOrPerimeter = function (l, w) {
   // Return your answer
 };
+
+console.log(areaOrPerimeter(3, 3));
+console.log(areaOrPerimeter(6, 10));
