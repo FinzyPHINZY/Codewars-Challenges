@@ -19,6 +19,10 @@
 
 function largestPairSum(numbers) {
   //TODO: Write your Code here
+  numbers = numbers.sort((a, b) => {
+    return a - b;
+  });
+  return numbers[numbers.length - 1] + numbers[numbers.length - 2];
 }
 
 console.log(largestPairSum([10, 14, 2, 23, 19]));
