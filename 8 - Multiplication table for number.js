@@ -29,8 +29,14 @@
 
 function multiTable(number) {
   // good luck
+  let table = [];
+  for (let i = 1; i <= 10; i++) {
+    table.push(`${i} * ${number} = ${i * number}`);
+    console.log(table);
+  }
+  return table.join("\n");
 }
 
 console.log(multiTable(5));
-console.log(multiTable(2));
-console.log(multiTable(1));
+// console.log(multiTable(2));
+// console.log(multiTable(1));
