@@ -35,12 +35,10 @@
 
 function remainder(n, m) {
   // Divide the larger argument by the smaller argument and return the remainder
-  const formula = n / m;
-  if (!formula || formula === Infinity) {
-    return NaN;
-  } else {
-    return formula;
-  }
+  const min = Math.min(n, m);
+  const max = Math.max(n, m);
+
+  return min ? max % min : NaN;
 }
 
 console.log(remainder(17, 5));
