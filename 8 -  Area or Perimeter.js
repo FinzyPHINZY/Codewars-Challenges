@@ -27,5 +27,11 @@ const areaOrPerimeter = function (l, w) {
   }
 };
 
+// const areaOrPerimeter = function (l, w) {
+//     // Return your answer
+//     return l === w ?   l * w : l * 2 + w * 2;
+
+//   };
+
 console.log(areaOrPerimeter(3, 3));
 console.log(areaOrPerimeter(6, 10));
