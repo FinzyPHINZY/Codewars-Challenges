@@ -11,6 +11,25 @@
 
 // Note: String will have at least one element; words will always be separated by a space.
 
+// describe("Sample Tests", () => {
+//   it(`Testing for "apple ban"`, () => {
+//     const actual = addLength("apple ban");
+//     assert.isDefined(
+//       actual,
+//       "You need to return an array. Did you log to the console instead?"
+//     );
+//     assert.deepEqual(actual, ["apple 5", "ban 3"]);
+//   });
+//   it(`Testing for "you will win"`, () =>
+//     assert.deepEqual(addLength("you will win"), ["you 3", "will 4", "win 3"]));
+// });
+
 function addLength(str) {
   //start-here
+  const splited = str.split(" ");
+  console.log(splited);
 }
+
+console.log(addLength("apple ban"));
+console.log(addLength("you will win"));
+console.log(addLength("apple ban"));
