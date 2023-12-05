@@ -77,8 +77,10 @@
 // });
 
 function trueOrFalse(val) {
-  if (val) return "true";
-  else return "false";
+  //   if (val) return "true";
+  //   else return "false";
+
+  return val ? "true" : "false";
 }
 
 console.log(trueOrFalse(undefined));
