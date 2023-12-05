@@ -26,10 +26,14 @@
 
 function addLength(str) {
   //start-here
+  const result = [];
+
   const splited = str.split(" ");
-  console.log(splited);
+  for (let i = 0; i < splited.length; i++) {
+    result.push(`${splited[i]} ${splited[i].length}`);
+  }
+  return result;
 }
 
 console.log(addLength("apple ban"));
 console.log(addLength("you will win"));
-console.log(addLength("apple ban"));
