@@ -31,7 +31,17 @@
 //   });
 // });
 
-function pipeFix(numbers) {}
+function pipeFix(numbers) {
+  const min = Math.min(...numbers);
+  const max = Math.max(...numbers);
+
+  const result = [];
+
+  for (let i = min; i <= max; i++) {
+    result.push(i);
+  }
+  return result;
+}
 
 console.log(pipeFix([1, 2, 3, 5, 6, 8, 9]));
 console.log(pipeFix([1, 2, 3, 12]));
