@@ -54,5 +54,9 @@ function roundToNext5(n) {
   return n + adjustment;
 }
 
+function roundToNext5(n) {
+  return Math.ceil(n / 5) * 5;
+}
+
 console.log(roundToNext5(-1));
 console.log(roundToNext5(-519203));
