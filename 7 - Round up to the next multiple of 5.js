@@ -48,16 +48,11 @@ function roundToNext5(n) {
   if (remainder === 0) {
     return n;
   }
+  const adjustment = n < 0 ? -remainder : 5 - remainder;
 
-  return n + (5 - remainder);
+  // Round up to the next multiple of 5
+  return n + adjustment;
 }
 
-console.log(roundToNext5(0));
-console.log(roundToNext5(1));
-console.log(roundToNext5(-5));
-console.log(roundToNext5(3));
-console.log(roundToNext5(5));
-console.log(roundToNext5(7));
-console.log(roundToNext5(20));
-console.log(roundToNext5(39));
-console.log(roundToNext5(900));
+console.log(roundToNext5(-1));
+console.log(roundToNext5(-519203));
