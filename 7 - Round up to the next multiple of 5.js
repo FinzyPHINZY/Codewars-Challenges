@@ -19,6 +19,45 @@
 
 // You can assume that all inputs are valid integers.
 
+// Test Cases:
+// describe("Basic tests", () => {
+//   it("Testing for fixed tests", () => {
+//     [
+//       [0, 0],
+//       [1, 5],
+//       [-1, 0],
+//       [-5, -5],
+//       [3, 5],
+//       [5, 5],
+//       [7, 10],
+//       [20, 20],
+//       [39, 40],
+//       [990, 990],
+//       [121, 125],
+//       [555, 555],
+//     ].forEach(([x, exp]) =>
+//       assert.strictEqual(roundToNext5(x), exp, `Input: ${x}`)
+//     );
+//   });
+// });
+
 function roundToNext5(n) {
   // ...
+  const remainder = n % 5;
+
+  if (remainder === 0) {
+    return n;
+  }
+
+  return n + (5 - remainder);
 }
+
+console.log(roundToNext5(0));
+console.log(roundToNext5(1));
+console.log(roundToNext5(-5));
+console.log(roundToNext5(3));
+console.log(roundToNext5(5));
+console.log(roundToNext5(7));
+console.log(roundToNext5(20));
+console.log(roundToNext5(39));
+console.log(roundToNext5(900));
