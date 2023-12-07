@@ -26,13 +26,12 @@
 
 // 0=0
 
-var SequenceSum = (function () {
-  function SequenceSum() {}
+function SequenceSum(count) {
+  let statement = "";
 
-  SequenceSum.showSequence = function (count) {
-    // for
-    //while
-  };
-
-  return SequenceSum;
-})();
+  for (let i = 0; i <= count; i++) {
+    statement += i;
+  }
+  return statement;
+  //while
+}
