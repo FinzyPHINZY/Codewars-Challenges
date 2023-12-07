@@ -55,6 +55,14 @@ function rowWeights(array) {
   return [weight2, weight1];
 }
 
+function rowWeights(array) {
+  let t1 = array.filter((x, i) => i % 2 == 0).reduce((a, item) => a + item, 0);
+
+  let t2 = array.filter((x, i) => i % 2 != 0).reduce((a, item) => a + item, 0);
+
+  return [t1, t2];
+}
+
 console.log(rowWeights([80]));
 console.log(rowWeights([0, 80]));
 console.log(rowWeights([100, 50]));
