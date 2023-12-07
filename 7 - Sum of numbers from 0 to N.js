@@ -34,15 +34,19 @@
 //   });
 // });
 
-function SequenceSum(count) {
-  let statement = "";
+var SequenceSum = (function () {
+  function SequenceSum() {}
 
-  for (let i = 0; i <= count; i++) {
-    statement += i;
-  }
-  return statement.split("").join("+");
-  //while
-}
+  SequenceSum.showSequence = function (count) {
+    if (count > 0)
+      return (
+        [...Array(count + 1).keys()].join("+") +
+        " = " +
+        (count * (count + 1)) / 2
+      );
+    if (count == 0) return "0=0";
+    return count + "<0";
+  };
 
-console.log(SequenceSum(6));
-console.log(SequenceSum(10));
+  return SequenceSum;
+})();
