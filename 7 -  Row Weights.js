@@ -26,3 +26,7 @@
 // Playing with Numbers Series
 // Playing With Lists/Arrays Series
 // For More Enjoyable Katas
+
+function rowWeights(array) {
+  //your code here
+}
