@@ -16,6 +16,11 @@
 
 function findLongest(array) {
   // code here
+  //   convert nums to
+  const strNums = [...array.map((num) => num.toString())];
+  const length = strNums.map((num) => num.length);
+  const highestlength = Math.max(...length);
+  return Number(strNums.find((num) => num.length === highestlength));
 }
 
 console.log(findLongest([1, 10, 100]));
