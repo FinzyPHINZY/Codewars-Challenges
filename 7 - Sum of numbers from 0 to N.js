@@ -26,12 +26,23 @@
 
 // 0=0
 
+// Test Cases:
+
+// describe("Tests", () => {
+//   it("test", () => {
+//     assert.strictEqual(SequenceSum.showSequence(6), "0+1+2+3+4+5+6 = 21");
+//   });
+// });
+
 function SequenceSum(count) {
   let statement = "";
 
   for (let i = 0; i <= count; i++) {
     statement += i;
   }
-  return statement;
+  return statement.split("").join("+");
   //while
 }
+
+console.log(SequenceSum(6));
+console.log(SequenceSum(10));
