@@ -25,3 +25,14 @@
 // Output:
 
 // 0=0
+
+var SequenceSum = (function () {
+  function SequenceSum() {}
+
+  SequenceSum.showSequence = function (count) {
+    // for
+    //while
+  };
+
+  return SequenceSum;
+})();
