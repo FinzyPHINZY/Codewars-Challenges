@@ -46,9 +46,17 @@
 
 function rowWeights(array) {
   //your code here
+  let weight1 = 0;
+  let weight2 = 0;
+
+  array.forEach((weight, i) => {
+    (i + 1) % 2 === 0 ? (weight1 += weight) : (weight2 += weight);
+  });
+  return [weight2, weight1];
 }
 
 console.log(rowWeights([80]));
+console.log(rowWeights([0, 80]));
 console.log(rowWeights([100, 50]));
 console.log(rowWeights([50, 60, 70, 80]));
 console.log(rowWeights([13, 27, 49]));
