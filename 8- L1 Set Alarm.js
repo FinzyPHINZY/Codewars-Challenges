@@ -10,6 +10,17 @@
 // false    | true     => false
 // false    | false    => false
 
+// Test Casesdescribe("Test Suite",()=>{
+// it("Fixed tests", () => {
+//   assert.strictEqual(setAlarm(true, true), false, "Should be false.");
+//   assert.strictEqual(setAlarm(false, true), false, "Should be false.");
+//   assert.strictEqual(setAlarm(true, false), true, "Should be true.");
+// });
+
 function setAlarm(employed, vacation) {
   // code here
 }
+
+console.log(setAlarm(true, true));
+console.log(setAlarm(false, true));
+console.log(setAlarm(true, false));
