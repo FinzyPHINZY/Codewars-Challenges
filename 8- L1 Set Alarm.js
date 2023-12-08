@@ -9,3 +9,7 @@
 // true     | false    => true
 // false    | true     => false
 // false    | false    => false
+
+function setAlarm(employed, vacation) {
+  // code here
+}
