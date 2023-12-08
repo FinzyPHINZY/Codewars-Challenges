@@ -19,6 +19,8 @@
 
 function setAlarm(employed, vacation) {
   // code here
+
+  return employed && vacation === false ? true : false;
 }
 
 console.log(setAlarm(true, true));
