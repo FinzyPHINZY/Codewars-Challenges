@@ -13,3 +13,7 @@
 
 // Output
 // Output will be the shortened string, e.g., "Friday May 2".
+
+function shortenToDate(longDate) {
+  // your code here
+}
