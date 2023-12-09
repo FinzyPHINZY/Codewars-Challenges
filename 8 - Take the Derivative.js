@@ -16,4 +16,15 @@
 // The output of this function should be a string
 // The exponent will never be 1, and neither number will ever be 0
 
+// Test Cases:
+// describe("Tests", () => {
+//   it("test", () => {
+//     Test.assertEquals(derive(7, 8), "56x^7");
+//     Test.assertEquals(derive(5, 9), "45x^8");
+//   });
+// });
+
 function derive(coefficient, exponent) {}
+
+console.log(derive(7, 8));
+console.log(derive(5, 9));
