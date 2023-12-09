@@ -9,6 +9,20 @@
 // 3) n = 100, x = 5, y = 3 => false because 100 is not divisible by 3
 // 4) n =  12, x = 7, y = 5 => false because  12 is neither divisible by 7 nor 5
 
+// describe("Basic tests", () => {
+//   it("Fixed Tests", () => {
+//     assert.strictEqual(isDivisible(3, 3, 4), false);
+//     assert.strictEqual(isDivisible(12, 3, 4), true);
+//     assert.strictEqual(isDivisible(8, 3, 4), false);
+//     assert.strictEqual(isDivisible(48, 3, 4), true);
+//   });
+// });
+
 function isDivisible(n, x, y) {
   // code here
 }
+
+console.log(isDivisible(3, 3, 4));
+console.log(isDivisible(12, 3, 4));
+console.log(isDivisible(8, 3, 4));
+console.log(isDivisible(48, 3, 4));
