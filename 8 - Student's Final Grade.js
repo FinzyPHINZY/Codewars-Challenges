@@ -24,3 +24,19 @@
 // 55, 0 --> 0
 // 20, 2 --> 0
 // *Use Comparison and Logical Operators.
+
+// Test Cases:
+
+// describe("Basic tests", () => {
+//   it("Testing for fixed tests", () => {
+//     assert.strictEqual(finalGrade(100, 12), 100);
+//     assert.strictEqual(finalGrade(85, 5), 90);
+//   });
+// });
+
+function finalGrade(exam, projects) {
+  return; // final grade
+}
+
+console.log(finalGrade(100, 12));
+console.log(finalGrade(85, 5));
