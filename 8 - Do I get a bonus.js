@@ -23,6 +23,7 @@
 
 function bonusTime(salary, bonus) {
   // your code here
+  return bonus ? `£${salary * 10}` : `£${salary}`;
 }
 
 console.log(bonusTime(10000, true));
@@ -31,4 +32,4 @@ console.log(bonusTime(10000, false));
 console.log(bonusTime(60000, false));
 console.log(bonusTime(2, true));
 console.log(bonusTime(78, false));
-console.log(bonusTime(67, 890, true));
+console.log(bonusTime(67890, true));
