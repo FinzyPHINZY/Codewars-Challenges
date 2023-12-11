@@ -31,6 +31,12 @@ describe("nbDig", () => {
 
 function nbDig(n, d) {
   // your code
+  let count = 0;
+  for (let k = 0; k <= n; k++) {
+    const square = (k * k).toString();
+    count += square.split("").filter((digit) => digit == d).length;
+  }
+  return count;
 }
 
 console.log(nbDig(5750, 0));
