@@ -15,6 +15,27 @@
 // 5, 2, "divide"   --> 2.5
 // Try to do it without using if statements!
 
+// describe("Basic tests", () => {
+//     it("Testing for fixed tests", () => {
+//       assert.strictEqual(arithmetic(1, 2, "add"), 3, "'add' should return the two numbers added together!");
+//       assert.strictEqual(arithmetic(8, 2, "subtract"), 6, "'subtract' should return a minus b!");
+//       assert.strictEqual(arithmetic(5, 2, "multiply"), 10, "'multiply' should return a multiplied by b!");
+//       assert.strictEqual(arithmetic(8, 2, "divide"), 4, "'divide' should return a divided by b!");
+//     })
+//   })
+
 function arithmetic(a, b, operator) {
   //your code here!
+  return operator === "add"
+    ? a + b
+    : operator === "subtract"
+    ? a - b
+    : operator === "multiply"
+    ? a * b
+    : a / b;
 }
+
+console.log(arithmetic(1, 2, "add"));
+console.log(arithmetic(8, 2, "subtract"));
+console.log(arithmetic(5, 2, "multiply"));
+console.log(arithmetic(8, 2, "divide"));
