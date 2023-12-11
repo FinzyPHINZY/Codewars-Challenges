@@ -18,7 +18,19 @@
 
 function oddCount(n) {
   // your code here
+  let count = 0;
+  for (let i = n; i > 1; i--) {
+    if (i % 2 !== 0) count++;
+  }
+  return count;
+}
+
+// Faster solution:
+function oddCount(n) {
+  return Math.floor(n / 2);
 }
 
 console.log(oddCount(15));
 console.log(oddCount(15023));
+console.log(oddCount(7227359842447705)); //3613679921223852
+console.log(oddCount(2225355834232568)); //1112677917116284
