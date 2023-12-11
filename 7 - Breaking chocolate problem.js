@@ -8,7 +8,6 @@
 // If input data is invalid you should return 0 (as in no breaks are needed if we do not have any chocolate to split). Input will always be a non-negative integer.
 
 // Test Cases:
-
 // describe("Tests", () => {
 //   it("test", () => {
 //     Test.assertEquals(breakChocolate(5, 5), 24);
@@ -17,7 +16,7 @@
 // });
 
 function breakChocolate(n, m) {
-  return 0;
+  return n <= 0 || m <= 0 ? 0 : n * m - 1;
 }
 
 console.log(breakChocolate(5, 5));
