@@ -8,6 +8,17 @@
 // 15 -> 7 (because odd numbers below 15 are [1, 3, 5, 7, 9, 11, 13])
 // Expect large Inputs!
 
+// Test Cases;
+// describe("Basic tests", () => {
+//     it("Testing for fixed tests", () => {
+//      assert.strictEqual(oddCount(15), 7, "Oops! Wrong.");
+//      assert.strictEqual(oddCount(15023), 7511, "Oops! Wrong.");
+//    });
+//  });
+
 function oddCount(n) {
   // your code here
 }
+
+console.log(oddCount(15));
+console.log(oddCount(15023));
