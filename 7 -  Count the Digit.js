@@ -19,3 +19,7 @@
 // 1, 16, 81, 100, 121, 144, 169, 196, 361, 441.
 // So there are 11 digits 1 for the squares of numbers between 0 and 25.
 // Note that 121 has twice the digit 1.
+
+function nbDig(n, d) {
+  // your code
+}
