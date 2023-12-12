@@ -19,6 +19,18 @@
 
 function factorial(n) {
   // Calculate the factorial here
+  const arr = [];
+  if (n === 0) {
+    return 1;
+  } else {
+    for (let i = n; i > 0; i--) {
+      arr.push(i);
+    }
+  }
+
+  return arr.reduce((pre, cur) => {
+    pre * cur;
+  }, 0);
 }
 
 console.log(factorial(0));
