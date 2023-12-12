@@ -17,6 +17,17 @@
 
 // I have also created other katas. Take a look if you enjoyed this kata!
 
+// Test Cases:
+// describe("KataTests", function () {
+//   it("exampleTests", function () {
+//     Test.assertEquals(dontGiveMeFive(1, 9), 8);
+//     Test.assertEquals(dontGiveMeFive(4, 17), 12);
+//   });
+// });
+
 function dontGiveMeFive(start, end) {
   return 0;
 }
+
+console.log(dontGiveMeFive(1, 9));
+console.log(dontGiveMeFive(4, 17));
