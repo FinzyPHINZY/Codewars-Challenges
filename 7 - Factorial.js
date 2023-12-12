@@ -19,6 +19,10 @@
 
 function factorial(n) {
   // Calculate the factorial here
+  if (n < 0 || n > 12) {
+    // Throw a RangeError if the input is out of range
+    throw new RangeError("Input must be between 0 and 12");
+  }
   const arr = [];
   if (n === 0) {
     return 1;
@@ -28,9 +32,7 @@ function factorial(n) {
     }
   }
 
-  return arr.reduce((pre, cur) => {
-    pre * cur;
-  }, 0);
+  return arr.reduce((pre, cur) => pre * cur, 1);
 }
 
 console.log(factorial(0));
