@@ -10,3 +10,7 @@
 
 // ("1", "22") --> "1221"
 // ("22", "1") --> "1221"
+
+function solution(a, b) {
+  // your code here
+}
