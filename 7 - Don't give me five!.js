@@ -26,7 +26,18 @@
 // });
 
 function dontGiveMeFive(start, end) {
-  return 0;
+  let nums = [];
+  for (let i = start; i <= end; i++) {
+    nums.push(String(i));
+  }
+
+  let count = 0;
+  nums.forEach((num) => {
+    if (!num.includes("5")) {
+      count++;
+    }
+  });
+  return count;
 }
 
 console.log(dontGiveMeFive(1, 9));
