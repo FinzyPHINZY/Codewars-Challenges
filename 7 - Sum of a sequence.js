@@ -17,3 +17,7 @@
 
 // Sum of a sequence (this kata)
 // Sum of a Sequence [Hard-Core Version]
+
+const sequenceSum = (begin, end, step) => {
+  // May the Force be with you
+};
