@@ -33,13 +33,12 @@
 // });
 
 function stringy(size) {
-  // your code here
   const result = [];
   for (let i = 1; i <= size; i++) {
-    i % 2 == 0 ? result.push(0) : result.push(1);
+    result.push(i % 2 == 0 ? "0" : "1");
   }
 
-  return String(result.join(""));
+  return result.join("");
 }
 
 console.log(stringy(3));
