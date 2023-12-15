@@ -13,3 +13,7 @@
 
 // "anyone else" --> 0
 // "Zach" --> 18
+
+function howManyLightsabersDoYouOwn(name) {
+  return;
+}
