@@ -36,12 +36,9 @@ function stringy(size) {
   // your code here
   const result = [];
   for (let i = 1; i <= size; i++) {
-    if (i % 2 == 0) {
-      result.push(0);
-    } else {
-      result.push(1);
-    }
+    i % 2 == 0 ? result.push(0) : result.push(1);
   }
+
   return String(result.join(""));
 }
 
