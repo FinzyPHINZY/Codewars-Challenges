@@ -14,6 +14,7 @@
 // "anyone else" --> 0
 // "Zach" --> 18
 
+// TE
 function howManyLightsabersDoYouOwn(name) {
-  return;
+  return name == "Zach" ? 18 : 0;
 }
