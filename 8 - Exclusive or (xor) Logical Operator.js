@@ -30,6 +30,8 @@ function xor(a, b) {
     : a === true || b === true
     ? true
     : false;
+
+  // return a != b;
 }
 
 console.log(xor(false, false));
