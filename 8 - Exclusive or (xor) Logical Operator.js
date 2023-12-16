@@ -25,6 +25,11 @@
 
 function xor(a, b) {
   // TODO: Program Me
+  return a === true && b === true
+    ? false
+    : a === true || b === true
+    ? true
+    : false;
 }
 
 console.log(xor(false, false));
