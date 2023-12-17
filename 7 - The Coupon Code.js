@@ -13,4 +13,22 @@
 // Examples: checkCoupon("123", "123", "July 9, 2015", "July 9, 2015") === true;
 // checkCoupon("123", "123", "July 9, 2015", "July 2, 2015") === false;
 
+// Fixed Test Cases:
+
+describe("Tests", () => {
+  it("test", () => {
+    assert.strictEqual(
+      checkCoupon("123", "123", "September 5, 2014", "October 1, 2014"),
+      true
+    );
+    assert.strictEqual(
+      checkCoupon("123a", "123", "September 5, 2014", "October 1, 2014"),
+      false
+    );
+  });
+});
+
 function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {}
+
+console.log(checkCoupon("123", "123", "September 5, 2014", "October 1, 2014"));
+console.log(checkCoupon("123a", "123", "September 5, 2014", "October 1, 2014"));
