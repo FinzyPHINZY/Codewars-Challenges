@@ -15,20 +15,25 @@
 
 // Fixed Test Cases:
 
-describe("Tests", () => {
-  it("test", () => {
-    assert.strictEqual(
-      checkCoupon("123", "123", "September 5, 2014", "October 1, 2014"),
-      true
-    );
-    assert.strictEqual(
-      checkCoupon("123a", "123", "September 5, 2014", "October 1, 2014"),
-      false
-    );
-  });
-});
+// describe("Tests", () => {
+//   it("test", () => {
+//     assert.strictEqual(
+//       checkCoupon("123", "123", "September 5, 2014", "October 1, 2014"),
+//       true
+//     );
+//     assert.strictEqual(
+//       checkCoupon("123a", "123", "September 5, 2014", "October 1, 2014"),
+//       false
+//     );
+//   });
+// });
 
-function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {}
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
+  currentDate = new Date(currentDate);
+  expirationDate = new Date(expirationDate);
+  console.log([currentDate, expirationDate]);
+  return enteredCode === correctCode && currentDate <= expirationDate;
+}
 
 console.log(checkCoupon("123", "123", "September 5, 2014", "October 1, 2014"));
 console.log(checkCoupon("123a", "123", "September 5, 2014", "October 1, 2014"));
