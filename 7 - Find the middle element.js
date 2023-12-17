@@ -15,4 +15,30 @@
 // gimme([5, 10, 14]) => 1
 // 10 is the number that fits between 5 and 14 and the index of 10 in the input array is 1.
 
+// Test Cases:
+
+// describe("Basic Test", function () {
+//   it("Tests for integers", function () {
+//     doTest([2, 3, 1], 0);
+//     doTest([5, 10, 14], 1);
+//   });
+//   it("Tests for floats", function () {
+//     doTest([2.1, 3.2, 1.4], 0);
+//     doTest([5.9, 10.4, 14.2], 1);
+//   });
+//   it("Tests for negative numbers", function () {
+//     doTest([-2, -3, -1], 0);
+//     doTest([-5, -10, -14], 1);
+//   });
+//   it("Tests for mixed numbers", function () {
+//     doTest([-2, -3.2, 1], 0);
+//     doTest([-5.2, -10.6, 14], 0);
+//   });
+// });
+
 function gimme(triplet) {}
+
+console.log(gimme([2, 3, 1]));
+console.log(gimme([5, 10, 14]));
+console.log(gimme([-2, -3, -1]));
+console.log(gimme([-5, -10, -14]));
