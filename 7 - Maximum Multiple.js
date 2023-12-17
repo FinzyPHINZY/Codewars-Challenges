@@ -27,6 +27,26 @@
 // Explanation:
 // (185) is divisible by (37) , (185) is less than or equal to bound (200) , and (185) is > 0 .
 
+// Fixed test cases:
+
+describe("Basic tests", () => {
+  it("Testing for fixed tests", () => {
+    assert.strictEqual(maxMultiple(2, 7), 6);
+    assert.strictEqual(maxMultiple(3, 10), 9);
+    assert.strictEqual(maxMultiple(7, 17), 14);
+    assert.strictEqual(maxMultiple(10, 50), 50);
+    assert.strictEqual(maxMultiple(37, 200), 185);
+    assert.strictEqual(maxMultiple(7, 100), 98);
+  });
+});
+
 function maxMultiple(divisor, bound) {
   //your code here
 }
+
+console.log(maxMultiple(2, 7));
+console.log(maxMultiple(3, 10));
+console.log(maxMultiple(7, 17));
+console.log(maxMultiple(10, 50));
+console.log(maxMultiple(37, 200));
+console.log(maxMultiple(7, 100));
