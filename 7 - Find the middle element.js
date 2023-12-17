@@ -36,7 +36,18 @@
 //   });
 // });
 
-function gimme(triplet) {}
+function gimme(triplet) {
+  // let min =
+  for (let i = 0; i < triplet.length; i++) {
+    if (
+      triplet[i] !== Math.min(...triplet) &&
+      triplet[i] !== Math.max(...triplet)
+    ) {
+      console.log(triplet[i]);
+      return triplet.indexOf(triplet[i]);
+    }
+  }
+}
 
 console.log(gimme([2, 3, 1]));
 console.log(gimme([5, 10, 14]));
