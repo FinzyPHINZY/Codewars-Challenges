@@ -42,7 +42,13 @@
 //   });
 // });
 
-function twoOldestAges(ages) {}
+function twoOldestAges(ages) {
+  ages = ages.sort((a, b) => {
+    return b - a;
+  });
+
+  return [ages[1], ages[0]];
+}
 
 console.log(twoOldestAges([1, 5, 87, 45, 8, 8]));
 console.log(twoOldestAges([6, 5, 83, 5, 3, 18]));
