@@ -15,3 +15,13 @@
 // inAscOrder([1,6,10,18,2,4,20]); // returns false
 // inAscOrder([9,8,7,6,5,4,3,2,1]); // returns false because the numbers are in DESCENDING order
 // N.B. If your solution passes all fixed tests but fails at the random tests, make sure you aren't mutating the input array.
+
+function inAscOrder(arr) {
+  // Code your algorithm here :)
+  // Hmmm ... maybe we should try our luck out ...
+  // if (Math.random() > 0.5) {
+  //  return true;
+  // } else {
+  //  return false;
+  // }
+}
