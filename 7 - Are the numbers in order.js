@@ -29,12 +29,18 @@
 
 function inAscOrder(arr) {
   // Code your algorithm here :)
-  // Hmmm ... maybe we should try our luck out ...
-  // if (Math.random() > 0.5) {
-  //  return true;
-  // } else {
-  //  return false;
-  // }
+
+  let newArr = arr.filter((num) => typeof num === "number");
+
+  let sorted = newArr.sort((a, b) => a - b);
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== sorted[i]) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 console.log(inAscOrder([1, 2, 4, 7, 19]));
