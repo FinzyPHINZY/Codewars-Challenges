@@ -11,6 +11,23 @@
 // solve("CODe") = "CODE". Uppercase characters > lowecase. Change only the "e" to uppercase.
 // solve("coDE") = "code". Upper == lowercase. Change all to lowercase.
 
+// Test Cases:
+// describe("Basic tests", function () {
+//   Test.assertEquals(solve("code"), "code");
+//   Test.assertEquals(solve("CODe"), "CODE");
+//   Test.assertEquals(solve("COde"), "code");
+//   Test.assertEquals(solve("Code"), "code");
+// });
+
 function solve(s) {
   //..
+  s = s.split("");
+
+  let lowercaseCount = 0;
+  let uppercaseCount = 0;
 }
+
+console.log(solve("code"));
+console.log(solve("CODe"));
+console.log(solve("COde"));
+console.log(solve("Code"));
