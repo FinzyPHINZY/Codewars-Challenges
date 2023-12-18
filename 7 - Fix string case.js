@@ -10,3 +10,7 @@
 // solve("coDe") = "code". Lowercase characters > uppercase. Change only the "D" to lowercase.
 // solve("CODe") = "CODE". Uppercase characters > lowecase. Change only the "e" to uppercase.
 // solve("coDE") = "code". Upper == lowercase. Change all to lowercase.
+
+function solve(s) {
+  //..
+}
