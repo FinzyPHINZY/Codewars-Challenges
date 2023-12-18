@@ -16,6 +16,17 @@
 // inAscOrder([9,8,7,6,5,4,3,2,1]); // returns false because the numbers are in DESCENDING order
 // N.B. If your solution passes all fixed tests but fails at the random tests, make sure you aren't mutating the input array.
 
+// Test Cases:
+
+// describe("Description Examples", () => {
+//     it("Should pass description examples", () => {
+//       assert.strictEqual(inAscOrder([1, 2, 4, 7, 19]), true, 'The list of numbers "1, 2, 4, 7, 19" is in ascending order');
+//       assert.strictEqual(inAscOrder([1, 2, 3, 4, 5]), true, 'The list of numbers "1, 2, 3, 4, 5" is in ascending order');
+//       assert.strictEqual(inAscOrder([1, 6, 10, 18, 2, 4, 20]), false, 'The list of numbers "1, 6, 10, 18, 2, 4, 20" is not in ascending order');
+//       assert.strictEqual(inAscOrder([9, 8, 7, 6, 5, 4, 3, 2, 1]), false, 'The list of numbers "9, 8, 7, 6, 5, 4, 3, 2, 1" is in DESCENDING order not ascending order');
+//     });
+//   });
+
 function inAscOrder(arr) {
   // Code your algorithm here :)
   // Hmmm ... maybe we should try our luck out ...
@@ -25,3 +36,8 @@ function inAscOrder(arr) {
   //  return false;
   // }
 }
+
+console.log(inAscOrder([1, 2, 4, 7, 19]));
+console.log(inAscOrder([1, 2, 3, 4, 5]));
+console.log(inAscOrder([1, 6, 10, 18, 2, 4, 20]));
+console.log(inAscOrder([9, 8, 7, 6, 5, 4, 3, 2, 1]));
