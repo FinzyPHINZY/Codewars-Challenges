@@ -21,10 +21,16 @@
 
 function solve(s) {
   //..
-  s = s.split("");
+  let splitedS = s.split("");
 
   let lowercaseCount = 0;
   let uppercaseCount = 0;
+
+  splitedS.forEach((letter) => {
+    letter === letter.toLowerCase() ? lowercaseCount++ : uppercaseCount++;
+  });
+
+  return uppercaseCount > lowercaseCount ? s.toUpperCase() : s.toLowerCase();
 }
 
 console.log(solve("code"));
