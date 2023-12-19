@@ -11,4 +11,12 @@
 
 // Courtesy of projecteuler.net (Problem 1)
 
-function solution(number) {}
+// Test Cases:
+
+// describe("basic tests", function () {
+//   test(10, 23);
+// });
+
+function solution(number) {
+  let sum;
+}
