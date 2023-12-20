@@ -20,6 +20,14 @@
 
 function digitalRoot(n) {
   // ...
+  if (n < 10) {
+    return n;
+  }
+
+  let digits = n.toString().split("").map(Number);
+
+  let sum = digits.reduce((pre, cur) => pre + cur, 0);
+  return digitalRoot(sum);
 }
 
 console.log(digitalRoot(16));
