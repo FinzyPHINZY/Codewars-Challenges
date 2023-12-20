@@ -11,6 +11,16 @@
 // 132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
 // 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
 
+// describe("Tests", () => {
+//   it("test", () => {
+//     assert.strictEqual(digitalRoot(16), 7);
+//     assert.strictEqual(digitalRoot(456), 6);
+//   });
+// });
+
 function digitalRoot(n) {
   // ...
 }
+
+console.log(digitalRoot(16));
+console.log(digitalRoot(456));
