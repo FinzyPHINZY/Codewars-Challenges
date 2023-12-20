@@ -31,9 +31,18 @@
 // });
 
 function duplicateCount(text) {
-  //...
-  const set = new Set(text);
-  console.log(set);
+  var lower = text.toLowerCase();
+  var count = 0;
+  var used = [];
+
+  lower.split("").forEach((letter) => {
+    if (!used.includes(letter) && lower.split(letter).length - 1 > 1) {
+      count++;
+      used.push(letter);
+    }
+  });
+
+  return count;
 }
 
 console.log(duplicateCount(""));
