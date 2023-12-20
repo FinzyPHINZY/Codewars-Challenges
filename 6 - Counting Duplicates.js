@@ -13,6 +13,32 @@
 // "aA11" -> 2 # 'a' and '1'
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
 
+// Test Cases:
+
+// describe("Tests", () => {
+//   it("test", () => {
+//     assert.strictEqual(duplicateCount(""), 0);
+//     assert.strictEqual(duplicateCount("abcde"), 0);
+//     assert.strictEqual(duplicateCount("aabbcde"), 2);
+//     assert.strictEqual(duplicateCount("aabBcde"), 2, "should ignore case");
+//     assert.strictEqual(duplicateCount("Indivisibility"), 1);
+//     assert.strictEqual(
+//       duplicateCount("Indivisibilities"),
+//       2,
+//       "characters may not be adjacent"
+//     );
+//   });
+// });
+
 function duplicateCount(text) {
   //...
+  const set = new Set(text);
+  console.log(set);
 }
+
+console.log(duplicateCount(""));
+console.log(duplicateCount("abcde"));
+console.log(duplicateCount("aabbcde"));
+console.log(duplicateCount("aabBcde"));
+console.log(duplicateCount("Indivisibility"));
+console.log(duplicateCount("Indivisibilities"));
