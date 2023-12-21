@@ -23,8 +23,32 @@
 //   });
 
 function duplicateEncode(word) {
-  // ...
+  // Convert the word to lowercase to ignore case
+  const lowerWord = word.toLowerCase();
+
+  // Create an object to store the count of each character
+  const charCount = {};
+
+  // Count the occurrences of each character in the word
+  for (const char of lowerWord) {
+    charCount[char] = (charCount[char] || 0) + 1;
+  }
+  console.log(charCount);
+
+  // Use the count to generate the encoded string
+  const result = lowerWord
+    .split("")
+    .map((char) => (charCount[char] > 1 ? ")" : "("))
+    .join("");
+
+  return result;
 }
+
+// Examples
+console.log(duplicateEncode("din")); // "((("
+console.log(duplicateEncode("recede")); // "()()()"
+console.log(duplicateEncode("Success")); // ")())())"
+console.log(duplicateEncode("(( @")); // "))(("
 
 console.log(duplicateEncode("din"));
 console.log(duplicateEncode("recede"));
