@@ -9,3 +9,5 @@
 // "The_Stealth_Warrior" gets converted to "TheStealthWarrior"
 
 // "The_Stealth-Warrior" gets converted to "TheStealthWarrior"
+
+function toCamelCase(str) {}
