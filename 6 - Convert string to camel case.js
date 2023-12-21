@@ -22,11 +22,15 @@
 //   });
 
 function toCamelCase(str) {
-  // Check if string is empty
-  if (!str) return str;
-  return str.replace(/[-_](.)/g, function (match, group1) {
-    return group1.toLowerCase();
-  });
+  let arr = str.split("");
+  for (let i = 0; i < arr.length; i++) {
+    let letter = arr[i];
+    if (letter == "_" || letter == "-") {
+      arr[i + 1] = arr[i + 1].toUpperCase();
+      arr[i] = "";
+    }
+  }
+  return arr.join("");
 }
 
 console.log(toCamelCase("the_stealth_warrior"));
