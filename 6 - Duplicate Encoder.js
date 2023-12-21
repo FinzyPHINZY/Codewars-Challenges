@@ -11,6 +11,22 @@
 // Notes
 // Assertion messages may be unclear about what they display in some languages. If you read "...It Should encode XXX", the "XXX" is the expected result, not the input!
 
+// Test Cases:
+
+// describe("Duplicate Encoder", () => {
+//     it("Testing for fixed tests", () => {
+//       assert.strictEqual(duplicateEncode("din"),"(((");
+//       assert.strictEqual(duplicateEncode("recede"),"()()()");
+//       assert.strictEqual(duplicateEncode("Success"),")())())","should ignore case");
+//       assert.strictEqual(duplicateEncode("(( @"),"))((");
+//     });
+//   });
+
 function duplicateEncode(word) {
   // ...
 }
+
+console.log(duplicateEncode("din"));
+console.log(duplicateEncode("recede"));
+console.log(duplicateEncode("Success"));
+console.log(duplicateEncode("(( @"));
