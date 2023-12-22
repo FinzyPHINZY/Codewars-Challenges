@@ -17,6 +17,23 @@
 
 // Error checking for text strings or other invalid inputs is not required, only valid positive non-zero integers will be passed into the function.
 
+// Test Cases:
+
+it("Narcissistic numbers", function () {
+  dotest(7, true);
+  dotest(153, true);
+});
+
+it("Not narcissistic numbers", function () {
+  dotest(122, false);
+  dotest(487, false);
+});
+
 function narcissistic(value) {
   // Code me to return true or false
 }
+
+console.log(narcissistic(7));
+console.log(narcissistic(153));
+console.log(narcissistic(122));
+console.log(narcissistic(487));
