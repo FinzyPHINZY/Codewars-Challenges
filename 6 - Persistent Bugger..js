@@ -9,6 +9,20 @@
 // 999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2)
 // 4 --> 0 (because 4 is already a one-digit number)
 
+// describe("Persistent Bugger.", () => {
+//   it("Fixed tests", () => {
+//     assert.strictEqual(persistence(39), 3);
+//     assert.strictEqual(persistence(4), 0);
+//     assert.strictEqual(persistence(25), 2);
+//     assert.strictEqual(persistence(999), 4);
+//   });
+// });
+
 function persistence(num) {
   //code me
 }
+
+console.log(persistence(39));
+console.log(persistence(4));
+console.log(persistence(25));
+console.log(persistence(999));
