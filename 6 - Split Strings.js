@@ -8,4 +8,18 @@
 // * 'abc' =>  ['ab', 'c_']
 // * 'abcdef' => ['ab', 'cd', 'ef']
 
+// Test Cases:
+
+// describe("Split Strings", () => {
+//   it("Basic tests", () => {
+//     assert.deepEqual(solution("abcdef"), ["ab", "cd", "ef"]);
+//     assert.deepEqual(solution("abcdefg"), ["ab", "cd", "ef", "g_"]);
+//     assert.deepEqual(solution(""), []);
+//   });
+// });
+
 function solution(str) {}
+
+console.log(solution("abcdef"));
+console.log(solution("abcdefg"));
+console.log(solution(""));
