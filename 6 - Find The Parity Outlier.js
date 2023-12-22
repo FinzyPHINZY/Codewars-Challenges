@@ -9,19 +9,25 @@
 // [160, 3, 1719, 19, 11, 13, -21] --> 160 (the only even number)
 
 // Test cases:
-
-describe("Tests", () => {
-  it("test", () => {
-    Test.assertEquals(findOutlier([0, 1, 2]), 1);
-    Test.assertEquals(findOutlier([1, 2, 3]), 2);
-    Test.assertEquals(findOutlier([2, 6, 8, 10, 3]), 3);
-    Test.assertEquals(findOutlier([0, 0, 3, 0, 0]), 3);
-    Test.assertEquals(findOutlier([1, 1, 0, 1, 1]), 0);
-  });
-});
+// describe("Tests", () => {
+//   it("test", () => {
+//     Test.assertEquals(findOutlier([0, 1, 2]), 1);
+//     Test.assertEquals(findOutlier([1, 2, 3]), 2);
+//     Test.assertEquals(findOutlier([2, 6, 8, 10, 3]), 3);
+//     Test.assertEquals(findOutlier([0, 0, 3, 0, 0]), 3);
+//     Test.assertEquals(findOutlier([1, 1, 0, 1, 1]), 0);
+//   });
+// });
 
 function findOutlier(integers) {
   //your code here
+  let oddCount = [];
+  let evenCount = [];
+  integers.forEach((num) => {
+    num % 2 === 0 ? evenCount.push(num) : oddCount.push(num);
+  });
+
+  return evenCount.length === 1 ? evenCount[0] : oddCount[0];
 }
 
 console.log(findOutlier([0, 1, 2]));
