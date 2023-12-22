@@ -20,6 +20,22 @@
 
 function persistence(num) {
   //code me
+  let count = 0;
+
+  // Convert the number to a string to easily access its digits
+  while (num >= 10) {
+    // Multiply the digits of the current number
+    num = num
+      .toString()
+      .split("")
+      .map(Number)
+      .reduce((a, b) => a * b);
+
+    // Increment the persistence count
+    count++;
+  }
+
+  return count;
 }
 
 console.log(persistence(39));
