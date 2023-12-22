@@ -21,11 +21,16 @@
 
 function findOutlier(integers) {
   //your code here
-  let oddCount = [];
-  let evenCount = [];
-  integers.forEach((num) => {
-    num % 2 === 0 ? evenCount.push(num) : oddCount.push(num);
-  });
+  //   let oddCount = [];
+  //   let evenCount = [];
+  //   integers.forEach((num) => {
+  //     num % 2 === 0 ? evenCount.push(num) : oddCount.push(num);
+  //   });
+
+  //   return evenCount.length === 1 ? evenCount[0] : oddCount[0];
+
+  let oddCount = integers.filter((num) => num % 2 !== 0);
+  let evenCount = integers.filter((num) => num % 2 === 0);
 
   return evenCount.length === 1 ? evenCount[0] : oddCount[0];
 }
