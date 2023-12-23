@@ -28,6 +28,8 @@ var countBits = function (n) {
   return count;
 };
 
+countBits = (n) => n.toString(2).split("0").join("").length;
+
 console.log(countBits(0));
 console.log(countBits(4));
 console.log(countBits(7));
