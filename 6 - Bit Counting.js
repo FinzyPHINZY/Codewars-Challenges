@@ -17,6 +17,15 @@
 
 var countBits = function (n) {
   // Program Me
+  // Convert the integer to its binary representation
+  let count = 0;
+  n = n.toString(2);
+  for (let i = 0; i < n.length; i++) {
+    if (n[i] == 1) {
+      count++;
+    }
+  }
+  return count;
 };
 
 console.log(countBits(0));
@@ -24,3 +33,4 @@ console.log(countBits(4));
 console.log(countBits(7));
 console.log(countBits(9));
 console.log(countBits(10));
+console.log(countBits(1234));
