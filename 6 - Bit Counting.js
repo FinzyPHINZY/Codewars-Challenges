@@ -5,6 +5,22 @@
 
 // Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
 
+// describe("Basic tests", () => {
+//   it("Testing for fixed tests", () => {
+//     assert.strictEqual(countBits(0), 0);
+//     assert.strictEqual(countBits(4), 1);
+//     assert.strictEqual(countBits(7), 3);
+//     assert.strictEqual(countBits(9), 2);
+//     assert.strictEqual(countBits(10), 2);
+//   });
+// });
+
 var countBits = function (n) {
   // Program Me
 };
+
+console.log(countBits(0));
+console.log(countBits(4));
+console.log(countBits(7));
+console.log(countBits(9));
+console.log(countBits(10));
