@@ -29,3 +29,7 @@
 
 // Note:
 // If you are given an array with multiple answers, return the lowest correct index.
+
+function findEvenIndex(arr) {
+  //Code goes here!
+}
