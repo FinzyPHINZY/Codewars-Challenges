@@ -16,3 +16,8 @@ decodeMorse('.... . -.--   .--- ..- -.. .')
 NOTE: For coding purposes you have to use ASCII characters . and -, not Unicode characters.
 
 */
+
+decodeMorse = function (morseCode) {
+  // Your code here
+  // You can use MORSE_CODE[morse]
+};
