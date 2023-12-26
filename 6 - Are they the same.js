@@ -31,20 +31,57 @@
 // describe("Tests", () => {
 //   it("test", () => {
 //     let a1 = [121, 144, 19, 161, 19, 144, 19, 11];
-//     let a2 = [
-//       11 * 11,
-//       121 * 121,
-//       144 * 144,
-//       19 * 19,
-//       161 * 161,
-//       19 * 19,
-//       144 * 144,
-//       19 * 19,
-//     ];
+// let a2 = [
+//   11 * 11,
+//   121 * 121,
+//   144 * 144,
+//   19 * 19,
+//   161 * 161,
+//   19 * 19,
+//   144 * 144,
+//   19 * 19,
+// ];
 //     assert.isTrue(comp(a1, a2));
 //   });
 // });
 
 function comp(array1, array2) {
-  //your code here
+  // Check if both arrays are non-null and have the same length
+  if (!array1 || !array2 || array1.length !== array2.length) {
+    return false;
+  }
+
+  // Sort both arrays
+  array1.sort((a, b) => a - b);
+  array2.sort((a, b) => a - b);
+
+  // Check if each element in array2 is the square of a corresponding element in array1
+  return array1.every((value, index) => value * value === array2[index]);
 }
+
+console.log(
+  comp(
+    [121, 144, 19, 161, 19, 144, 19, 11],
+    [
+      11 * 11,
+      121 * 121,
+      144 * 144,
+      19 * 19,
+      161 * 161,
+      19 * 19,
+      144 * 144,
+      19 * 19,
+    ]
+  )
+);
+
+console.log(
+  comp(
+    [121, 144, 19, 161, 19, 144, 19, 11],
+    [121, 14641, 20736, 36100, 25921, 361, 20736, 361]
+  )
+);
+
+console.log(comp([2, 2, 3], [4, 9, 9]));
+console.log(comp([4, 4], [1, 31]));
+console.log(comp([], null));
