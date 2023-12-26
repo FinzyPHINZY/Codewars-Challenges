@@ -27,6 +27,24 @@
 // a or b might be nil or null or None or nothing (except in C++, COBOL, Crystal, D, Dart, Elixir, Fortran, F#, Haskell, Nim, OCaml, Pascal, Perl, PowerShell, Prolog, PureScript, R, Racket, Rust, Shell, Swift).
 // If a or b are nil (or null or None, depending on the language), the problem doesn't make sense so return false.
 
+// Test Cases:
+// describe("Tests", () => {
+//   it("test", () => {
+//     let a1 = [121, 144, 19, 161, 19, 144, 19, 11];
+//     let a2 = [
+//       11 * 11,
+//       121 * 121,
+//       144 * 144,
+//       19 * 19,
+//       161 * 161,
+//       19 * 19,
+//       144 * 144,
+//       19 * 19,
+//     ];
+//     assert.isTrue(comp(a1, a2));
+//   });
+// });
+
 function comp(array1, array2) {
   //your code here
 }
