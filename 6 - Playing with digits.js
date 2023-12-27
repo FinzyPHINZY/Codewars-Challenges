@@ -19,6 +19,19 @@
 
 // n = 46288; p = 3 ---> 51 since 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688 = 46288 * 51
 
+// Test Cases:
+// describe("Tests", () => {
+//   it("test", () => {
+//     Test.assertEquals(digPow(89, 1), 1);
+//     Test.assertEquals(digPow(92, 1), -1);
+//     Test.assertEquals(digPow(46288, 3), 51);
+//   });
+// });
+
 function digPow(n, p) {
   // ...
 }
+
+console.log(digPow(89, 1));
+console.log(digPow(92, 1));
+console.log(digPow(46288, 3));
