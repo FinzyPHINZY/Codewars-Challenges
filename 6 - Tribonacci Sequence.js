@@ -31,10 +31,18 @@ function tribonacci(signature, n) {
   //your code here
   if (n === 0) {
     return [];
+  } else if (n <= 3) {
+    return signature.slice(0, n);
   }
+  for (let i = 3; i < n; i++) {
+    let nextTerm = signature[i - 1] + signature[i - 2] + signature[i - 3];
+    signature.push(nextTerm);
+  }
+
+  return signature;
 }
 
-console.log(tribonacci([1, 1, 1], 10));
+console.log(tribonacci([1, 1, 1], 8));
 console.log(tribonacci([0, 0, 1], 10));
 console.log(tribonacci([0, 1, 1], 10));
 console.log(tribonacci([1, 0, 0], 10));
