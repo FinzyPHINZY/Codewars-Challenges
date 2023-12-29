@@ -13,3 +13,7 @@
 // is_prime(1)  /* false */
 // is_prime(2)  /* true  */
 // is_prime(-1) /* false */
+
+function isPrime(num) {
+  //TODO
+}
