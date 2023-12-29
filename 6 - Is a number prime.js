@@ -14,6 +14,40 @@
 // is_prime(2)  /* true  */
 // is_prime(-1) /* false */
 
+// Test Cases:
+
+// Test.assertEquals(isPrime(0), false, "0 is not prime");
+// Test.assertEquals(isPrime(1), false, "1 is not prime");
+// Test.assertEquals(isPrime(2), true, "2 is prime");
+// Test.assertEquals(isPrime(73), true, "73 is prime");
+// Test.assertEquals(isPrime(75), false, "75 is not prime");
+// Test.assertEquals(isPrime(-1), false, "-1 is not prime");
+
+// Test.assertEquals(isPrime(4), false, "4 is not prime");
+// Test.assertEquals(isPrime(6), false, "6 is not prime");
+// Test.assertEquals(isPrime(8), false, "8 is not prime");
+// Test.assertEquals(isPrime(9), false, "9 is not prime");
+// Test.assertEquals(isPrime(45), false, "45 is not prime");
+// Test.assertEquals(isPrime(-5), false, "-5 is not prime");
+// Test.assertEquals(isPrime(-8), false, "-8 is not prime");
+// Test.assertEquals(isPrime(-41), false, "-41 is not prime");
+
 function isPrime(num) {
   //TODO
 }
+
+console.log(isPrime(0));
+console.log(isPrime(1));
+console.log(isPrime(2));
+console.log(isPrime(73));
+console.log(isPrime(75));
+console.log(isPrime(-1));
+
+console.log(isPrime(4));
+console.log(isPrime(6));
+console.log(isPrime(8));
+console.log(isPrime(9));
+console.log(isPrime(45));
+console.log(isPrime(-5));
+console.log(isPrime(-8));
+console.log(isPrime(-41));
