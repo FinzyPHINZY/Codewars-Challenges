@@ -22,6 +22,19 @@
 //   "***********"
 // ]
 
+// Test Cases:
+// describe("Tests", () => {
+//   it("test", () => {
+//     Test.assertDeepEquals(towerBuilder(1), ["*"]);
+//     Test.assertDeepEquals(towerBuilder(2), [" * ", "***"]);
+//     Test.assertDeepEquals(towerBuilder(3), ["  *  ", " *** ", "*****"]);
+//   });
+// });
+
 function towerBuilder(nFloors) {
   // build here
 }
+
+console.log(towerBuilder(1));
+console.log(towerBuilder(2));
+console.log(towerBuilder(3));
