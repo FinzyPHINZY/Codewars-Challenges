@@ -19,7 +19,14 @@
 // });
 
 function sortArray(array) {
-  // Return a sorted array.
+  const oddNum = array.filter((num) => num % 2 !== 0);
+  const evenNum = array.filter((num) => num % 2 == 0);
+
+  const sortedOdd = oddNum.sort((a, b) => a - b);
+  const result = array.map((num) => {
+    return num % 2 !== 0 ? sortedOdd.shift() : num;
+  });
+  return result;
 }
 
 console.log(sortArray([5, 3, 2, 8, 1, 4]));
