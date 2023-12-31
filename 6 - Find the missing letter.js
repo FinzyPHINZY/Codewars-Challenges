@@ -41,6 +41,27 @@ function findMissingLetter(array) {
   const difference = newArr.filter((e) => !array.includes(e));
   return difference.join("");
 }
+// Improved solution:
+
+function findMissingLetter(array) {
+  const letters =
+    array[0].toLowerCase() === array[0]
+      ? "abcdefghijklmnopqrstuvwxyz"
+      : "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const firstCharCode = array[0].charCodeAt(0);
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].charCodeAt(0) !== firstCharCode + i) {
+      return String.fromCharCode(firstCharCode + i);
+    }
+  }
+
+  // In case no missing letter is found (should not happen given the problem description)
+  return null;
+}
+
+console.log(findMissingLetter(["a", "b", "c", "d", "f"])); // Should return 'e'
+console.log(findMissingLetter(["O", "Q", "R", "S"])); // Should return 'P'
 
 console.log(findMissingLetter(["a", "b", "c", "d", "f"]));
 console.log(findMissingLetter(["i", "j", "k", "m", "n"]));
