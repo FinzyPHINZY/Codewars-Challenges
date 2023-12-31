@@ -26,8 +26,22 @@
 // });
 
 function findMissingLetter(array) {
-  return " ";
+  const letters =
+    array[0] === array[0].toLowerCase()
+      ? "abcdefghijklmnopqrstuvwxyz"
+      : "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  let first_letter = letters.indexOf(array[0]);
+
+  let newArr = [];
+
+  for (let i = first_letter; i <= array.length + first_letter; i++) {
+    newArr.push(letters[i]);
+  }
+  const difference = newArr.filter((e) => !array.includes(e));
+  return difference.join("");
 }
 
 console.log(findMissingLetter(["a", "b", "c", "d", "f"]));
+console.log(findMissingLetter(["i", "j", "k", "m", "n"]));
 console.log(findMissingLetter(["O", "Q", "R", "S"]));
