@@ -25,6 +25,26 @@
 
 // (Condition 2) not fulfilled).
 
+// Test cases:
+
+// describe("Sample tests", () => {
+//   it("h = 3.0, bounce = 0.66, window = 1.5", () => {
+//     assert.strictEqual(bouncingBall(3.0, 0.66, 1.5), 3);
+//   });
+
+//   it("h = 30.0, bounce = 0.66, window = 1.5", () => {
+//     assert.strictEqual(bouncingBall(30.0, 0.66, 1.5), 15);
+//   });
+
+//   it("h = 3.0, bounce = 1.0, window = 1.5", () => {
+//     assert.strictEqual(bouncingBall(3.0, 1.0, 1.5), -1);
+//   });
+// });
+
 function bouncingBall(h, bounce, window) {
   // your code here
 }
+
+console.log(bouncingBall(3.0, 0.66, 1.5));
+console.log(bouncingBall(30.0, 0.66, 1.5));
+console.log(bouncingBall(3.0, 1.0, 1.5));
