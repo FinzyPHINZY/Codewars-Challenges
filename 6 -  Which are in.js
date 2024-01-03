@@ -39,4 +39,6 @@ describe("Tests", () => {
   });
 });
 
-// console.log(sameOrderedMembers())
+function inArray(array1, array2) {
+  //...
+}
