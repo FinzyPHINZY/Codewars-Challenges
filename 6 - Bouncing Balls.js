@@ -43,6 +43,19 @@
 
 function bouncingBall(h, bounce, window) {
   // your code here
+  if (h > 0 && bounce > 0 && bounce < 1 && window < h) {
+    let count = 0;
+
+    while (h > window) {
+      count++; // ball falls
+      h *= bounce; // ball bounces back up
+      if (h > window) count++; // ball rises again
+    }
+
+    return count;
+  } else {
+    return -1;
+  }
 }
 
 console.log(bouncingBall(3.0, 0.66, 1.5));
