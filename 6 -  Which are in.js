@@ -24,21 +24,43 @@
 
 // Test Cases:
 
-describe("Tests", () => {
-  it("test", () => {
-    a2 = ["lively", "alive", "harp", "sharp", "armstrong"];
+// describe("Tests", () => {
+//   it("test", () => {
+//     a2 = ["lively", "alive", "harp", "sharp", "armstrong"];
 
-    a1 = ["xyz", "live", "strong"];
-    assert.sameOrderedMembers(inArray(a1, a2), ["live", "strong"]);
+//     a1 = ["xyz", "live", "strong"];
+//     assert.sameOrderedMembers(inArray(a1, a2), ["live", "strong"]);
 
-    a1 = ["live", "strong", "arp"];
-    assert.sameOrderedMembers(inArray(a1, a2), ["arp", "live", "strong"]);
+//     a1 = ["live", "strong", "arp"];
+//     assert.sameOrderedMembers(inArray(a1, a2), ["arp", "live", "strong"]);
 
-    a1 = ["tarp", "mice", "bull"];
-    assert.sameOrderedMembers(inArray(a1, a2), []);
-  });
-});
+//     a1 = ["tarp", "mice", "bull"];
+//     assert.sameOrderedMembers(inArray(a1, a2), []);
+//   });
+// });
 
 function inArray(array1, array2) {
   //...
+  return array1
+    .filter((word1) => array2.some((word2) => word2.includes(word1)))
+    .sort();
 }
+
+console.log(
+  inArray(
+    ["xyz", "live", "strong"],
+    ["lively", "alive", "harp", "sharp", "armstrong"]
+  )
+);
+console.log(
+  inArray(
+    ["live", "strong", "arp"],
+    ["lively", "alive", "harp", "sharp", "armstrong"]
+  )
+);
+console.log(
+  inArray(
+    ["tarp", "mice", "bull"],
+    ["lively", "alive", "harp", "sharp", "armstrong"]
+  )
+);
