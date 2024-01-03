@@ -21,3 +21,22 @@
 // Arrays are written in "general" notation. See "Your Test Cases" for examples in your language.
 // In Shell bash a1 and a2 are strings. The return is a string where words are separated by commas.
 // Beware: In some languages r must be without duplicates.
+
+// Test Cases:
+
+describe("Tests", () => {
+  it("test", () => {
+    a2 = ["lively", "alive", "harp", "sharp", "armstrong"];
+
+    a1 = ["xyz", "live", "strong"];
+    assert.sameOrderedMembers(inArray(a1, a2), ["live", "strong"]);
+
+    a1 = ["live", "strong", "arp"];
+    assert.sameOrderedMembers(inArray(a1, a2), ["arp", "live", "strong"]);
+
+    a1 = ["tarp", "mice", "bull"];
+    assert.sameOrderedMembers(inArray(a1, a2), []);
+  });
+});
+
+// console.log(sameOrderedMembers())
