@@ -40,13 +40,21 @@ function mxdiflg(a1, a2) {
   if (a1.length < 1 || a2.length < 1) {
     return -1;
   } else {
-    const a1_total = a1.reduce((a, b) => {
-      return a + b;
-    }, "");
-    const a2_total = a2.reduce((a, b) => {
-      return a + b;
-    }, "");
-    return a1_total.length - a2_total.length;
+    const a1_mapped = a1.map((word) => {
+      return word.length;
+    });
+    const a2_mapped = a2.map((word) => {
+      return word.length;
+    });
+    const a1_max = Math.max(...a1_mapped);
+    const a2_max = Math.max(...a2_mapped);
+    const a1_min = Math.min(...a1_mapped);
+    const a2_min = Math.min(...a2_mapped);
+
+    let a1max_a2min = a1_max - a2_min;
+    let a2max_a1min = a2_max - a1_min;
+
+    return Math.max(a1max_a2min, a2max_a1min);
   }
 }
 console.log(mxdiflg(s1, s2));
