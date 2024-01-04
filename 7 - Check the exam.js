@@ -13,3 +13,7 @@
 // checkExam(["a", "a", "c", "b"], ["a", "a", "b",  ""]) → 7
 // checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"]) → 16
 // checkExam(["b", "c", "b", "a"], ["",  "a", "a", "c"]) → 0
+
+function checkExam(array1, array2) {
+  // good luck
+}
