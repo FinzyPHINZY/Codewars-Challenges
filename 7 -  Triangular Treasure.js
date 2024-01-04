@@ -15,3 +15,6 @@
 // 2 --> 3
 // 3 --> 6
 // -10 --> 0
+
+// Return the nth triangular number
+function triangular(n) {}
