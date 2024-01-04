@@ -16,5 +16,19 @@
 // 3 --> 6
 // -10 --> 0
 
+// Test Cases:
+
+describe("Basic tests", () => {
+  it("Testing for fixed tests", () => {
+    assert.strictEqual(triangular(2), 3);
+    assert.strictEqual(triangular(4), 10);
+    assert.strictEqual(triangular(-454), 0);
+  });
+});
+
 // Return the nth triangular number
 function triangular(n) {}
+
+console.log(triangular(2));
+console.log(triangular(4));
+console.log(triangular(-454));
