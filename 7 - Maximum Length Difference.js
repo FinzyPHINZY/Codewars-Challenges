@@ -15,6 +15,38 @@
 // input : 2 strings with substrings separated by ,
 // output: number as a string
 
+// Test Cases:
+// describe("mxdiflg", function () {
+//   it("Basic tests", function () {
+var s1 = [
+  "hoqq",
+  "bbllkw",
+  "oox",
+  "ejjuyyy",
+  "plmiis",
+  "xxxzgpsssa",
+  "xxwwkktt",
+  "znnnnfqknaz",
+  "qqquuhii",
+  "dvvvwz",
+];
+var s2 = ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"];
+//     assert.strictEqual(mxdiflg(s1, s2), 13);
+//   });
+// });
+
 function mxdiflg(a1, a2) {
   // your code
+  if (a1.length < 1 || a2.length < 1) {
+    return -1;
+  } else {
+    const a1_total = a1.reduce((a, b) => {
+      return a + b;
+    }, "");
+    const a2_total = a2.reduce((a, b) => {
+      return a + b;
+    }, "");
+    return a1_total.length - a2_total.length;
+  }
 }
+console.log(mxdiflg(s1, s2));
