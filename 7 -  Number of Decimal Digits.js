@@ -21,7 +21,7 @@
 
 function digits(n) {
   // TODO
-  return n.toString().split("").length;
+  return n.toString().length;
 }
 
 console.log(digits(0));
