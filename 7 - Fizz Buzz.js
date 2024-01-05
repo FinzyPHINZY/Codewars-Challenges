@@ -13,3 +13,8 @@
 // Method calling example:
 
 // fizzbuzz(3) -->  [1, 2, "Fizz"]
+
+// Return an array
+function fizzbuzz(n) {
+  //
+}
