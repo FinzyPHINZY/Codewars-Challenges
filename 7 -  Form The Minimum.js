@@ -37,6 +37,8 @@
 
 function minValue(values) {
   //your code here
+  let output = new Set(values.sort());
+  return Number([...output].join(""));
 }
 
 console.log(minValue([1, 3, 1]));
