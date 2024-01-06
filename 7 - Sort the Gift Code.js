@@ -13,3 +13,7 @@
 // "abcdef"                      -- => "abcdef"
 // "pqksuvy"                     -- => "kpqsuvy"
 // "zyxwvutsrqponmlkjihgfedcba"  -- => "abcdefghijklmnopqrstuvwxyz"
+
+function sortGiftCode(code) {
+  //TODO
+}
