@@ -24,8 +24,15 @@
 
 function isPowerOfTwo(n) {
   //.. should return true or false ..
+  let multiples = [];
+  for (let i = 1; i <= n; i *= 2) {
+    multiples.push(i);
+  }
+
+  return multiples.includes(n);
 }
 
 console.log(isPowerOfTwo(2));
+console.log(isPowerOfTwo(10));
 console.log(isPowerOfTwo(4096));
 console.log(isPowerOfTwo(5));
