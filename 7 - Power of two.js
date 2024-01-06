@@ -13,6 +13,19 @@
 // isPowerOfTwo(333)  // -> false
 // Beware of certain edge cases - for example, 1 is a power of 2 since 2^0 = 1 and 0 is not a power of 2.
 
+// Test Cases:
+// describe("Tests", () => {
+//   it("test", () => {
+//     Test.assertEquals(isPowerOfTwo(2), true);
+//     Test.assertEquals(isPowerOfTwo(4096), true);
+//     Test.assertEquals(isPowerOfTwo(5), false);
+//   });
+// });
+
 function isPowerOfTwo(n) {
   //.. should return true or false ..
 }
+
+console.log(isPowerOfTwo(2));
+console.log(isPowerOfTwo(4096));
+console.log(isPowerOfTwo(5));
