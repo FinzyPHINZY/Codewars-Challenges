@@ -14,6 +14,21 @@
 // "pqksuvy"                     -- => "kpqsuvy"
 // "zyxwvutsrqponmlkjihgfedcba"  -- => "abcdefghijklmnopqrstuvwxyz"
 
+// describe("Tests", () => {
+//   it("test", () => {
+//     Test.assertEquals(sortGiftCode("abcdef"), "abcdef");
+//     Test.assertEquals(sortGiftCode("pqksuvy"), "kpqsuvy");
+//     Test.assertEquals(
+//       sortGiftCode("zyxwvutsrqponmlkjihgfedcba"),
+//       "abcdefghijklmnopqrstuvwxyz"
+//     );
+//   });
+// });
+
 function sortGiftCode(code) {
   //TODO
 }
+
+console.log(sortGiftCode("abcdef"));
+console.log(sortGiftCode("pqksuvy"));
+console.log(sortGiftCode("zyxwvutsrqponmlkjihgfedcba"));
