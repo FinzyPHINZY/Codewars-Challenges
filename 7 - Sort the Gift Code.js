@@ -27,6 +27,7 @@
 
 function sortGiftCode(code) {
   //TODO
+  return code.split("").sort().join("");
 }
 
 console.log(sortGiftCode("abcdef"));
