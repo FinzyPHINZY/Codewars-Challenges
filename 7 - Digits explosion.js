@@ -10,3 +10,6 @@
 function explode(s) {
   return "";
 }
+
+console.log(explode("312"));
+console.log(explode("102269"));
