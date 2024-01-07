@@ -8,7 +8,17 @@
 // "102269" should return "12222666666999999999"
 
 function explode(s) {
-  return "";
+  // initialize result array to contain all elements
+  const result = [];
+
+  //   Split s and iterate over each element
+  s.split("").forEach((num) => {
+    // push each num into the result array after implementing the repeat method
+    result.push(num.repeat(Number(num)));
+  });
+
+  //   Return Result
+  return result.join("");
 }
 
 console.log(explode("312"));
