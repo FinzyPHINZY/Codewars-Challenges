@@ -27,8 +27,16 @@
 
 function wordsToMarks(string) {
   //your code here
+  let total = 0;
+
+  for (let i = 0; i < string.length; i++) {
+    total += string.charCodeAt(i) - 96;
+  }
+  return total;
 }
 
+console.log(wordsToMarks("love"));
+console.log(wordsToMarks("friendship"));
 console.log(wordsToMarks("attitude"));
 console.log(wordsToMarks("friends"));
 console.log(wordsToMarks("family"));
