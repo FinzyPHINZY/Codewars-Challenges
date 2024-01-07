@@ -15,12 +15,22 @@
 
 // Test cases:
 
-describe("Basic tests", () => {
-  it("Testing for fixed tests", () => {
-    assert.strictEqual(wordsToMarks("attitude"), 100);
-    assert.strictEqual(wordsToMarks("friends"), 75);
-    assert.strictEqual(wordsToMarks("family"), 66);
-    assert.strictEqual(wordsToMarks("selfness"), 99);
-    assert.strictEqual(wordsToMarks("knowledge"), 96);
-  });
-});
+// describe("Basic tests", () => {
+//   it("Testing for fixed tests", () => {
+//     assert.strictEqual(wordsToMarks("attitude"), 100);
+//     assert.strictEqual(wordsToMarks("friends"), 75);
+//     assert.strictEqual(wordsToMarks("family"), 66);
+//     assert.strictEqual(wordsToMarks("selfness"), 99);
+//     assert.strictEqual(wordsToMarks("knowledge"), 96);
+//   });
+// });
+
+function wordsToMarks(string) {
+  //your code here
+}
+
+console.log(wordsToMarks("attitude"));
+console.log(wordsToMarks("friends"));
+console.log(wordsToMarks("family"));
+console.log(wordsToMarks("selfness"));
+console.log(wordsToMarks("knowledge"));
