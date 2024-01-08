@@ -11,4 +11,18 @@
 // var addThree = add(3);
 // addThree(3); // 6
 
-function add(n) {}
+// Test Cases:
+// describe("Tests", () => {
+//   it("test", () => {
+//     Test.assertEquals(add(1)(3), 4, "add one to three equals four");
+//   });
+// });
+
+function add(n) {
+  function addFunc(x) {
+    return n + x;
+  }
+  return addFunc(3);
+}
+
+console.log(add(3));
