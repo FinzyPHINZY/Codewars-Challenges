@@ -17,6 +17,12 @@
 
 function mygcd(x, y) {
   //your code here
+  const highestInt = Math.max(x, y);
+  const numArray = [];
+  for (let i = 0; i <= highestInt; i++) {
+    numArray.push(i);
+  }
+  return Math.max(...numArray.filter((num) => x % num === 0 && y % num === 0));
 }
 
 console.log(mygcd(30, 12));
