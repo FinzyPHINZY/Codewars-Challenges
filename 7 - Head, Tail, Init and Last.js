@@ -28,3 +28,13 @@
 // head([1,2,3,4,5]); => 1
 // tail([1,2,3,4,5]); => [2,3,4,5]
 // Most tests consist of 100 randomly generated arrays, each with four tests, one for each operation. There are 400 tests overall. No empty arrays will be given. Haskell has QuickCheck tests
+
+// Test Cases:
+// describe("Array methods", function () {
+//   it("Sample Tests", function () {
+//     assert.strictEqual(head([5, 1]), 5);
+//     assert.deepEqual(tail([1]), []);
+//     assert.deepEqual(init([1, 5, 7, 9]), [1, 5, 7]);
+//     assert.strictEqual(last([7, 2]), 2);
+//   });
+// });
