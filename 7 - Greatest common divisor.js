@@ -25,6 +25,7 @@ function mygcd(x, y) {
   return Math.max(...numArray.filter((num) => x % num === 0 && y % num === 0));
 }
 
+console.log(mygcd(2672, 5678));
 console.log(mygcd(30, 12));
 console.log(mygcd(36, 12));
 console.log(mygcd(8, 9));
