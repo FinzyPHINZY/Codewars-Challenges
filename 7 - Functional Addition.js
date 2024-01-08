@@ -18,11 +18,11 @@
 //   });
 // });
 
-function add(n) {
-  function addFunc(x) {
+const addOne = function (n) {
+  const add = function (x) {
     return n + x;
-  }
-  return addFunc(3);
-}
+  };
+  return add(x);
+};
 
-console.log(add(3));
+console.log(add(10));
