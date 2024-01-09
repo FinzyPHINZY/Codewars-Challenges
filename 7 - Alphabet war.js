@@ -31,3 +31,8 @@
 function alphabetWar(fight) {
   return "Let's fight again!";
 }
+
+console.log(alphabetWar("z"));
+console.log(alphabetWar("zdqmwpbs"));
+console.log(alphabetWar("zzzzs"));
+console.log(alphabetWar("wwwwwwz"));
