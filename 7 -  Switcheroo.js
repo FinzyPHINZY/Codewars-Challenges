@@ -7,3 +7,5 @@
 
 // 'acb' --> 'bca'
 // 'aabacbaa' --> 'bbabcabb'
+
+function switcheroo(x) {}
