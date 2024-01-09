@@ -31,9 +31,9 @@
 
 function adjacentElementsProduct(array) {
   // max product
-  let maxProduct = 0;
+  let maxProduct = array[0] * array[1];
 
-  for (let i = 0; i < array.length; i++) {
+  for (let i = 1; i < array.length; i++) {
     if (array[i] * array[i + 1] > maxProduct) {
       maxProduct = array[i] * array[i + 1];
     }
