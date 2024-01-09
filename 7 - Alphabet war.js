@@ -27,3 +27,7 @@
 // alphabetWar("zdqmwpbs"); //=> Let's fight again!
 // alphabetWar("zzzzs");    //=> Right side wins!
 // alphabetWar("wwwwwwz");  //=> Left side wins!
+
+function alphabetWar(fight) {
+  return "Let's fight again!";
+}
