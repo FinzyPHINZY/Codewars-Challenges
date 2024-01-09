@@ -20,3 +20,7 @@
 // adjacentElementsProduct([-23, 4, -5, 99, -27, 329, -2, 7, -921])  ==>  return -14
 // Explanation:
 // The maximum product obtained from multiplying -2 * 7 = -14, and they're adjacent numbers in the array.
+
+function adjacentElementsProduct(array) {
+  // max product
+}
