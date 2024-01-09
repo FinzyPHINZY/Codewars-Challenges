@@ -18,7 +18,19 @@
 //   });
 // });
 
-function switcheroo(x) {}
+function switcheroo(x) {
+  let output = "";
+  for (let i = 0; i < x.length; i++) {
+    if (x[i] === "a") {
+      output += "b";
+    } else if (x[i] === "b") {
+      output += "a";
+    } else {
+      output += x[i];
+    }
+  }
+  return output;
+}
 
 console.log(switcheroo("abc"));
 console.log(switcheroo("aaabcccbaaa"));
