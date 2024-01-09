@@ -21,6 +21,20 @@
 // Explanation:
 // The maximum product obtained from multiplying -2 * 7 = -14, and they're adjacent numbers in the array.
 
+// describe("Positive numbers", function () {
+//   Test.assertEquals(adjacentElementsProduct([5, 8]), 40);
+//   Test.assertEquals(adjacentElementsProduct([1, 2, 3]), 6);
+//   Test.assertEquals(adjacentElementsProduct([1, 5, 10, 9]), 90);
+//   Test.assertEquals(adjacentElementsProduct([4, 12, 3, 1, 5]), 48);
+//   Test.assertEquals(adjacentElementsProduct([5, 1, 2, 3, 1, 4]), 6);
+// });
+
 function adjacentElementsProduct(array) {
   // max product
 }
+
+console.log(adjacentElementsProduct([5, 8]));
+console.log(adjacentElementsProduct([1, 2, 3]));
+console.log(adjacentElementsProduct([1, 5, 10, 9]));
+console.log(adjacentElementsProduct([4, 12, 3, 1, 5]));
+console.log(adjacentElementsProduct([5, 1, 2, 3, 1, 4]));
