@@ -19,7 +19,14 @@
 //   });
 
 var filterString = function (value) {
-  //Complete this function :)
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+  return Number(
+    value
+      .split("")
+      .filter((e) => numbers.includes(Number(e)))
+      .join("")
+  );
 };
 
 console.log(filterString("123"));
