@@ -29,7 +29,32 @@
 // alphabetWar("wwwwwwz");  //=> Left side wins!
 
 function alphabetWar(fight) {
-  return "Let's fight again!";
+  let leftSide = 0;
+  let rightSide = 0;
+  fight.split("").forEach((letter) => {
+    if (letter === "w") {
+      leftSide += 4;
+    } else if (letter === "p") {
+      leftSide += 3;
+    } else if (letter === "b") {
+      leftSide += 2;
+    } else if (letter === "s") {
+      leftSide += 1;
+    } else if (letter === "m") {
+      rightSide += 4;
+    } else if (letter === "q") {
+      rightSide += 3;
+    } else if (letter === "d") {
+      rightSide += 2;
+    } else if (letter === "z") {
+      rightSide += 1;
+    }
+  });
+  return leftSide === rightSide
+    ? "Let's fight again!"
+    : leftSide > rightSide
+    ? "Left side wins! "
+    : "Right side wins!";
 }
 
 console.log(alphabetWar("z"));
