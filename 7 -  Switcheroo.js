@@ -8,4 +8,18 @@
 // 'acb' --> 'bca'
 // 'aabacbaa' --> 'bbabcabb'
 
+// Test Cases:
+
+// describe("Switcheroo", () => {
+//   it("Fixed tests", () => {
+//     assert.strictEqual(switcheroo("abc"), "bac");
+//     assert.strictEqual(switcheroo("aaabcccbaaa"), "bbbacccabbb");
+//     assert.strictEqual(switcheroo("ccccc"), "ccccc");
+//   });
+// });
+
 function switcheroo(x) {}
+
+console.log(switcheroo("abc"));
+console.log(switcheroo("aaabcccbaaa"));
+console.log(switcheroo("ccccc"));
