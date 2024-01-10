@@ -19,7 +19,19 @@
 //     });
 //   });
 
-function myLanguages(results) {}
+function myLanguages(results) {
+  const sortedDataArray = Object.entries(results).sort((a, b) => b[1] - a[1]);
+
+  const sortedData = Object.fromEntries(sortedDataArray);
+
+  const output = [];
+  for (const [key, value] of Object.entries(sortedData)) {
+    if (value >= 60) {
+      output.push(key);
+    }
+  }
+  return output;
+}
 
 console.log(myLanguages({ Java: 10, Ruby: 80, Python: 65 }));
 console.log(myLanguages({ Hindi: 60, Greek: 71, Dutch: 93 }));
