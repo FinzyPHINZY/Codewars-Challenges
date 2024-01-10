@@ -17,6 +17,7 @@
 
 function evenNumbers(array, number) {
   // good luck
+  return array.filter((num) => num % 2 === 0).slice(-number);
 }
 
 console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
