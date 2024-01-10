@@ -20,17 +20,22 @@
 //   });
 
 function myLanguages(results) {
-  const sortedDataArray = Object.entries(results).sort((a, b) => b[1] - a[1]);
+  //   const sortedDataArray = Object.entries(results).sort((a, b) => b[1] - a[1]);
 
-  const sortedData = Object.fromEntries(sortedDataArray);
+  //   const sortedData = Object.fromEntries(sortedDataArray);
 
-  const output = [];
-  for (const [key, value] of Object.entries(sortedData)) {
-    if (value >= 60) {
-      output.push(key);
-    }
-  }
-  return output;
+  //   const output = [];
+  //   for (const [key, value] of Object.entries(sortedData)) {
+  //     if (value >= 60) {
+  //       output.push(key);
+  //     }
+  //   }
+  //   return output;
+
+  return Object.entries(results)
+    .filter(([key, value]) => value >= 60)
+    .sort(([key1, value1], [key2, value2]) => [key2, value2] - [key1, value1])
+    .map(([key, value]) => key);
 }
 
 console.log(myLanguages({ Java: 10, Ruby: 80, Python: 65 }));
