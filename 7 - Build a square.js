@@ -10,4 +10,17 @@
 // +++
 // +++
 
+// Test Cases:
+// describe("Tests", () => {
+//   it("test", () => {
+//     Test.assertEquals(
+//       generateShape(8),
+//       "++++++++\n++++++++\n++++++++\n++++++++\n++++++++\n++++++++\n++++++++\n++++++++"
+//     );
+//   });
+// });
+
 function generateShape(integer) {}
+
+console.log(generateShape(8));
+console.log(generateShape(50));
