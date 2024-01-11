@@ -20,7 +20,23 @@
 //   });
 // });
 
-function generateShape(integer) {}
+function generateShape(integer) {
+  // Create the square using nested loops
+  let shape = "";
+  for (let i = 0; i < integer; i++) {
+    for (let j = 0; j < integer; j++) {
+      shape += "+";
+    }
+    shape += "\n";
+  }
 
+  return shape;
+}
+
+function generateShape(n) {
+  return ("+".repeat(n) + "\n").repeat(n).trim();
+}
+
+console.log(generateShape(3));
 console.log(generateShape(8));
 console.log(generateShape(50));
