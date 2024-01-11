@@ -9,3 +9,5 @@
 // +++
 // +++
 // +++
+
+function generateShape(integer) {}
