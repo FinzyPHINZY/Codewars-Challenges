@@ -1,5 +1,7 @@
 "use strict";
 
+const { kMaxLength } = require("buffer");
+
 // DESCRIPTION:
 // You are given an array(list) strarr of strings and an integer k. Your task is to return the first longest string consisting of k consecutive strings taken in the array.
 
@@ -42,11 +44,26 @@
 //   })
 
 function longestConsec(strarr, k) {
-  // your code
+  if (strarr.length < 1 || strarr.length < k) return "";
+  const resultArray = [];
+
+  for (let i = 0; i < strarr.length - k + 1; i++) {
+    let concatenatedString = "";
+
+    for (let j = 0; j < k; j++) {
+      concatenatedString += strarr[i + j];
+    }
+
+    resultArray.push(concatenatedString);
+  }
+
+  const maxLength = Math.max(...resultArray.map((word) => word.length));
+  const longest_Words = resultArray.filter((word) => word.length === maxLength);
+  return longest_Words[0];
 }
 
 console.log(
-  longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], 2)
+  longestConsec(["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"], 2)
 );
 console.log(
   longestConsec(
@@ -82,3 +99,19 @@ console.log(
   longestConsec(["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 15)
 );
 console.log(longestConsec(["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 0));
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+("use strict");
+
+function longestConsec(strarr, k) {
+  if (k <= 0 || k > strarr.length) {
+    return "";
+  }
+
+  return strarr
+    .map((value, index) => strarr.slice(index, index + k).join(""))
+    .reduce((longest, current) =>
+      current.length > longest.length ? current : longest
+    );
+}
