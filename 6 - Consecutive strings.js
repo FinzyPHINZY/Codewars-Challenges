@@ -24,3 +24,7 @@
 
 // Note
 // consecutive strings : follow one after another without an interruption
+
+function longestConsec(strarr, k) {
+  // your code
+}
