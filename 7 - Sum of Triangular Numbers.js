@@ -15,6 +15,24 @@
 
 // Triangular Numbers cannot be negative so return 0 if a negative number is given.
 
+// Test Cases:
+
+// describe("Tests", () => {
+//   it("test", () => {
+//     Test.assertEquals(sumTriangularNumbers(6), 56);
+//     Test.assertEquals(sumTriangularNumbers(34), 7140);
+//     Test.assertEquals(sumTriangularNumbers(-291), 0);
+//     Test.assertEquals(sumTriangularNumbers(943), 140205240);
+//     Test.assertEquals(sumTriangularNumbers(-971), 0);
+//   });
+// });
+
 function sumTriangularNumbers(n) {
   return 0;
 }
+
+console.log(sumTriangularNumbers(6)); // 56
+console.log(sumTriangularNumbers(34)); // 7140
+console.log(sumTriangularNumbers(-291)); // 0
+console.log(sumTriangularNumbers(943)); //140205240
+console.log(sumTriangularNumbers(-971)); //0
