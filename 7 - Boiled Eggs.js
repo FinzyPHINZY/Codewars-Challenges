@@ -16,6 +16,23 @@
 // 5 --> 5
 // 10 --> 10
 
+// Test Cases:
+
+// describe("Boiled Eggs", function () {
+//   it("should calculate the cooking time", function () {
+//     assert.strictEqual(cookingTime(0), 0, "0 eggs");
+//     assert.strictEqual(cookingTime(5), 5, "5 eggs");
+//     assert.strictEqual(cookingTime(10), 10, "10 eggs");
+//   });
+// });
+
 function cookingTime(eggs) {
   // TODO
+  for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+  }
 }
+
+console.log(cookingTime(0));
+console.log(cookingTime(5));
+console.log(cookingTime(10));
