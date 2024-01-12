@@ -13,6 +13,8 @@
 
 // input: names - unsorted array
 // output: sorted array
-sortme = function (names) {};
+const sortme = function (names) {
+  return names.sort();
+};
 
 console.log(sortme(["one", "two", "three"]));
