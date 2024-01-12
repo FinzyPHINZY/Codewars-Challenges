@@ -28,9 +28,13 @@
 
 function cookingTime(eggs) {
   // TODO
-  for (let i = 0; i < array.length; i++) {
-    const element = array[i];
-  }
+  const batches = Math.ceil(eggs / 8);
+  console.log(batches);
+
+  // Calculate the total cooking time in minutes
+  const totalTime = batches * 5;
+
+  return totalTime;
 }
 
 console.log(cookingTime(0));
