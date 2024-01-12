@@ -28,11 +28,18 @@
 // });
 
 function sumTriangularNumbers(n) {
-  return 0;
+  if (n < 0) return 0;
+  // Calculate the nth Triangular Number
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+    sum += (i * (i + 1)) / 2;
+  }
+
+  return sum;
 }
 
 console.log(sumTriangularNumbers(6)); // 56
 console.log(sumTriangularNumbers(34)); // 7140
-console.log(sumTriangularNumbers(-291)); // 0
+console.log(sumTriangularNumbers(-291)); // 0s
 console.log(sumTriangularNumbers(943)); //140205240
 console.log(sumTriangularNumbers(-971)); //0
