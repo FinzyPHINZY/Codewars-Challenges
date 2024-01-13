@@ -52,6 +52,7 @@ function partlist(arr) {
   for (let i = 1; i < arr.length; i++) {
     const part1 = arr.slice(0, i).join(" ");
     const part2 = arr.slice(i).join(" ");
+    console.log("PART1: " + part1 + "\n " + "PART2: " + part2);
 
     result.push([part1, part2]);
   }
