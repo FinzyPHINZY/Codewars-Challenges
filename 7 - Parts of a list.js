@@ -21,3 +21,7 @@
 // or
 // a = ["az", "toto", "picaro", "zone", "kiwi"] -->
 // "(az, toto picaro zone kiwi)(az toto, picaro zone kiwi)(az toto picaro, zone kiwi)(az toto picaro zone, kiwi)"
+
+function partlist(arr) {
+  // your code
+}
