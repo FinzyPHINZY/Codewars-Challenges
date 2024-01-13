@@ -43,6 +43,7 @@
 
 function overTheRoad(address, n) {
   //code here
+  return 2 * n + 1 - address;
 }
 
 console.log(overTheRoad(1, 3));
