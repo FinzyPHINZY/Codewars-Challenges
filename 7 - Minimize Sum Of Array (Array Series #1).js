@@ -17,6 +17,19 @@
 // Explanation:
 // The minimum sum obtained from summing each two integers product ,  9*0 + 8*2 +7*4 +6*5 = 74
 
+// Test Cases":
+// describe("Basic Tests", function () {
+//   it("should return the minimum sum", function () {
+//     Test.assertEquals(minSum([5, 4, 2, 3]), 22);
+//     Test.assertEquals(minSum([12, 6, 10, 26, 3, 24]), 342);
+//     Test.assertEquals(minSum([9, 2, 8, 7, 5, 4, 0, 6]), 74);
+//   });
+// });
+
 function minSum(arr) {
   // your code here
 }
+
+console.log(minSum([5, 4, 2, 3]));
+console.log(minSum([12, 6, 10, 26, 3, 24]));
+console.log(minSum([9, 2, 8, 7, 5, 4, 0, 6]));
