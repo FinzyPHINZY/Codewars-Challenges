@@ -28,6 +28,18 @@
 
 function minSum(arr) {
   // your code here
+  arr = arr.sort((a, b) => a - b);
+  const minArr = arr.slice(0, arr.length / 2);
+  const maxArr = arr.slice(arr.length / 2).reverse();
+
+  const productArr = [];
+  for (let i = 0; i < minArr.length; i++) {
+    productArr.push(minArr[i] * maxArr[i]);
+  }
+
+  return productArr.reduce((acc, arr) => {
+    return acc + arr;
+  }, 0);
 }
 
 console.log(minSum([5, 4, 2, 3]));
