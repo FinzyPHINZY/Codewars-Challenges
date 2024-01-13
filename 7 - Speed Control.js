@@ -24,4 +24,20 @@
 
 function gps(s, x) {
   // your code
+  if (x.length <= 1) {
+    return 0;
+  }
+
+  let maxSpeed = 0;
+
+  for (let i = 0; i < x.length - 1; i++) {
+    const deltaDistance = x[i + 1] - x[i];
+    const speed = Math.floor((3600 * deltaDistance) / s);
+
+    if (speed > maxSpeed) {
+      maxSpeed = speed;
+    }
+  }
+
+  return maxSpeed;
 }
