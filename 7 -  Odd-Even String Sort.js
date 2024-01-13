@@ -21,7 +21,17 @@
 // odd ones are 1, 3, 5, 7, so the second group is 'oeas'
 // And the final string to return is 'Cdwr oeas'
 
+// describe("Other Tests", function () {
+//   it("Static Ones", function () {
+//     assert.strictEqual(sortMyString("CodeWars"), "CdWr oeas");
+//     assert.strictEqual(sortMyString("YCOLUE'VREER"), "YOU'RE CLEVER");
+//   });
+// });
+
 function sortMyString(S) {
   // your code here
   return "";
 }
+
+console.log(sortMyString("CodeWars"));
+console.log(sortMyString("YCOLUE'VREER"));
