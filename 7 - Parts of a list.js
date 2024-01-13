@@ -22,6 +22,31 @@
 // a = ["az", "toto", "picaro", "zone", "kiwi"] -->
 // "(az, toto picaro zone kiwi)(az toto, picaro zone kiwi)(az toto picaro, zone kiwi)(az toto picaro zone, kiwi)"
 
+// Test Cases;
+
+describe("partlist", function () {
+  it("1st Basic tests", function () {
+    testing(partlist(["I", "wish", "I", "hadn't", "come"]), [
+      ["I", "wish I hadn't come"],
+      ["I wish", "I hadn't come"],
+      ["I wish I", "hadn't come"],
+      ["I wish I hadn't", "come"],
+    ]);
+    testing(partlist(["cdIw", "tzIy", "xDu", "rThG"]), [
+      ["cdIw", "tzIy xDu rThG"],
+      ["cdIw tzIy", "xDu rThG"],
+      ["cdIw tzIy xDu", "rThG"],
+    ]);
+    testing(partlist(["vJQ", "anj", "mQDq", "sOZ"]), [
+      ["vJQ", "anj mQDq sOZ"],
+      ["vJQ anj", "mQDq sOZ"],
+      ["vJQ anj mQDq", "sOZ"],
+    ]);
+  });
+});
+
 function partlist(arr) {
   // your code
 }
+
+console.log(partlist(["I", "wish", "I", "hadn't", "come"])); //[["I", "wish I hadn't come"],["I wish", "I hadn't come"],["I wish I", "hadn't come"],["I wish I hadn't", "come"],]
