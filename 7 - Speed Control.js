@@ -21,3 +21,7 @@
 //  (3600 * delta_distance) / s.
 
 // Happy coding!
+
+function gps(s, x) {
+  // your code
+}
