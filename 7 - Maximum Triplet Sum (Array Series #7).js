@@ -49,6 +49,13 @@
 
 function maxTriSum(numbers) {
   //your code here
+  const numArr = [];
+  new Set(numbers).forEach((num) => numArr.push(num));
+
+  return numArr
+    .sort((a, b) => a - b)
+    .slice(-3)
+    .reduce((a, b) => a + b, 0);
 }
 
 console.log(maxTriSum([3, 2, 6, 8, 2, 3]));
