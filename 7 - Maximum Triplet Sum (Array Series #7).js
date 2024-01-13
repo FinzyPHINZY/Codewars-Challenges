@@ -29,3 +29,7 @@
 // As the triplet that maximize the sum {12 , 29 , 0} in order , their sum is (41) ,
 
 // Note : duplications are not included when summing , (i.e) the numbers added only once .
+
+function maxTriSum(numbers) {
+  //your code here
+}
