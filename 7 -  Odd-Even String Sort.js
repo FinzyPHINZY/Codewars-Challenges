@@ -30,7 +30,13 @@
 
 function sortMyString(S) {
   // your code here
-  return "";
+  let odds = [];
+  let evens = [];
+  S = S.split("");
+  S.forEach((letter, i) => {
+    i % 2 === 0 ? odds.push(letter) : evens.push(letter);
+  });
+  return odds.join("") + " " + evens.join("");
 }
 
 console.log(sortMyString("CodeWars"));
