@@ -14,3 +14,7 @@
 // More examples can be found in the test cases.
 
 // Good luck!
+
+function solve(arr) {
+  return [];
+}
