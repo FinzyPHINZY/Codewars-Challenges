@@ -13,3 +13,7 @@
 //  2.  If the character in the string is whitespace then pass over it as if it was an empty seat
 // Example
 // wave("hello") => {"Hello", "hEllo", "heLlo", "helLo", "hellO"}
+
+function wave(str) {
+  // Code here
+}
