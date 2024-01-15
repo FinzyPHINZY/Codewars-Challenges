@@ -27,7 +27,9 @@
 // });
 
 function solve(arr) {
-  return [];
+  const reversed = arr.reverse();
+  const output = new Set(reversed);
+  return [...output].reverse();
 }
 
 console.log(solve([3, 4, 4, 3, 6, 3]));
