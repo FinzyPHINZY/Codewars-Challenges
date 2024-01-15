@@ -61,9 +61,17 @@
 // });
 
 function wave(str) {
-  // Code here
+  const result = [];
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== " ") {
+      result.push(str.slice(0, i) + str[i].toUpperCase() + str.slice(i + 1));
+    }
+  }
+
+  return result;
 }
 
 console.log(wave("hello"));
-console.log(wave("codewars"));
-console.log(wave("two words"));
+// console.log(wave("codewars"));
+// console.log(wave("two words"));
