@@ -32,6 +32,31 @@
 
 // P.S. The situation in this kata can be likened to the more-computer-science-related idea of a thread pool, with relation to running multiple processes at the same time: https://en.wikipedia.org/wiki/Thread_pool
 
+// Test Cases;
+
+describe("Sample tests", function () {
+  it("Simple tests", () => {
+    assert.strictEqual(queueTime([], 1), 0);
+    assert.strictEqual(queueTime([1, 2, 3, 4], 1), 10);
+    assert.strictEqual(queueTime([2, 2, 3, 3, 4, 4], 2), 9);
+    assert.strictEqual(queueTime([1, 2, 3, 4, 5], 100), 5);
+  });
+
+  it("Examples", () => {
+    assert.strictEqual(queueTime([5, 3, 4], 1), 12);
+    assert.strictEqual(queueTime([10, 2, 3, 3], 2), 10);
+    assert.strictEqual(queueTime([2, 3, 10, 2], 2), 12);
+  });
+});
+
 function queueTime(customers, n) {
   //TODO
 }
+
+console.log(queueTime([], 0));
+console.log(queueTime([1, 2, 3, 4], 1));
+console.log(queueTime([2, 2, 3, 3, 4, 4], 2));
+console.log(queueTime([1, 2, 3, 4, 5], 100));
+console.log(queueTime([5, 3, 4], 1));
+console.log(queueTime([10, 2, 3, 3], 2));
+console.log(queueTime([2, 3, 10, 2], 2));
