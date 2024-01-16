@@ -30,24 +30,12 @@
 // The questions array is already defined for you and is not the same as the one in the example.
 
 // Test Cases:
+// describe("Tests", () => {
+//   it("test", () => {
+//     Test.expect(questions[0].usersAnswer === null);
+//   });
+// });
 
-describe("Tests", () => {
-  it("test", () => {
-    Test.expect(questions[0].usersAnswer === null);
-  });
+questions.forEach(function (i) {
+  i.usersAnswer = null;
 });
-
-var questions = [
-  {
-    question: "What's the currency of the USA?",
-    choices: ["US dollar", "Ruble", "Horses", "Gold"],
-    corAnswer: 0,
-  },
-  {
-    question: "Where was the American Declaration of Independence signed?",
-    choices: ["Philadelphia", "At the bottom", "Frankie's Pub", "China"],
-    corAnswer: 0,
-  },
-];
-
-console.log(questions[0].usersAnswer);
