@@ -32,8 +32,25 @@
 // });
 
 var palindromeChainLength = function (n) {
-  return 0;
+  var steps = 0;
+
+  while (!isPalindrome(n)) {
+    n = n + reverseNumber(n);
+    steps++;
+  }
+
+  return steps;
 };
+
+function isPalindrome(num) {
+  var numStr = num.toString();
+  return numStr === numStr.split("").reverse().join("");
+}
+
+function reverseNumber(num) {
+  var reversedStr = num.toString().split("").reverse().join("");
+  return parseInt(reversedStr);
+}
 
 console.log(palindromeChainLength(1));
 console.log(palindromeChainLength(88));
