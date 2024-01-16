@@ -34,7 +34,26 @@
 // });
 
 function add(num1, num2) {
-  return num1 + num2;
+  // Convert numbers to arrays of digits
+  const arrA = String(num1).split("").map(Number);
+  const arrB = String(num2).split("").map(Number);
+
+  // Ensure the arrays have the same length by padding with zeros
+  const maxLength = Math.max(arrA.length, arrB.length);
+  const paddedArrA = Array(maxLength - arrA.length)
+    .fill(0)
+    .concat(arrA);
+  const paddedArrB = Array(maxLength - arrB.length)
+    .fill(0)
+    .concat(arrB);
+
+  // Perform silly addition
+  const result = paddedArrA.map((digitA, index) => digitA + paddedArrB[index]);
+
+  // Convert the result array back to a number
+  const finalResult = parseInt(result.join(""));
+
+  return finalResult;
 }
 
 console.log(add(2, 11));
@@ -43,7 +62,7 @@ console.log(add(0, 0));
 console.log(add(16, 18));
 console.log(add(26, 39));
 console.log(add(122, 81));
-console.log(add(1222, 30277));
-console.log(add(1236, 30977));
-console.log(add(38810, 1383));
-console.log(add(49999, 49999));
+// console.log(add(1222, 30277));
+// console.log(add(1236, 30977));
+// console.log(add(38810, 1383));
+// console.log(add(49999, 49999));
