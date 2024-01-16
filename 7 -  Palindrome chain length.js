@@ -18,6 +18,25 @@
 // 1353 + 3531 = 4884     - step 4, palindrome!
 // 4884 is a palindrome and we needed 4 steps to obtain it, so answer for 87 is 4.
 
+// Test Cases:
+// describe("Sample tests", () => {
+//   it("Palindromes", () => {
+//     assert.equal(palindromeChainLength(1), 0);
+//     assert.equal(palindromeChainLength(88), 0);
+//   });
+//   it("Not palindromes", () => {
+//     assert.equal(palindromeChainLength(87), 4);
+//     assert.equal(palindromeChainLength(89), 24);
+//     assert.equal(palindromeChainLength(10), 1);
+//   });
+// });
+
 var palindromeChainLength = function (n) {
   return 0;
 };
+
+console.log(palindromeChainLength(1));
+console.log(palindromeChainLength(88));
+console.log(palindromeChainLength(87));
+console.log(palindromeChainLength(89));
+console.log(palindromeChainLength(10));
