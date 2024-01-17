@@ -11,3 +11,5 @@
 // ie:["1", "2", "3"] to [1, 2, 3]
 
 // Note that you can receive floats as well.
+
+function toNumberArray(stringarray) {}
