@@ -11,10 +11,23 @@
 
 const orderedCount = function (text) {
   // Implement me!
-  let output = [];
-  const letters = new Set(text);
-  //   text.split('');
-  return letters;
+
+  const charCountMap = new Map();
+
+  for (const char of text) {
+    if (charCountMap.has(char)) {
+      charCountMap.set(char, charCountMap.get(char) + 1);
+    } else {
+      charCountMap.set(char, 1);
+    }
+  }
+
+  const result = Array.from(charCountMap.entries()).map(([char, count]) => [
+    char,
+    count,
+  ]);
+
+  return result;
 };
 
 console.log(orderedCount("abracadabra"));
