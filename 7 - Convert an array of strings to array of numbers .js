@@ -12,4 +12,15 @@
 
 // Note that you can receive floats as well.
 
+// describe("Example tests", () => {
+//   it('Running toNumberArray("1.1","2.2","3.3")...', function () {
+//     assert.sameOrderedMembers(
+//       toNumberArray(["1.1", "2.2", "3.3"]),
+//       [1.1, 2.2, 3.3]
+//     );
+//   });
+// });
+
 function toNumberArray(stringarray) {}
+
+console.log(toNumberArray(["1.1", "2.2", "3.3"]));
