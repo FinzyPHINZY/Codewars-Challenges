@@ -21,6 +21,12 @@
 //   });
 // });
 
-function toNumberArray(stringarray) {}
+function toNumberArray(stringarray) {
+  const output = [];
+  for (let i = 0; i < stringarray.length; i++) {
+    output.push(parseFloat(stringarray[i], 10));
+  }
+  return output;
+}
 
 console.log(toNumberArray(["1.1", "2.2", "3.3"]));
