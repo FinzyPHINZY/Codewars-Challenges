@@ -11,5 +11,10 @@
 
 const orderedCount = function (text) {
   // Implement me!
-  return [];
+  let output = [];
+  const letters = new Set(text);
+  //   text.split('');
+  return letters;
 };
+
+console.log(orderedCount("abracadabra"));
