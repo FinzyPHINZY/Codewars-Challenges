@@ -24,7 +24,18 @@
 //   });
 
 function reverseNumber(n) {
-  return 0;
+  if (n >= 0) {
+    return parseInt(n.toString().split("").reverse().join(""));
+  } else {
+    return -parseInt(
+      n
+        .toString()
+        .split("")
+        .filter((num) => typeof num !== "number")
+        .reverse()
+        .join("")
+    );
+  }
 }
 
 console.log(reverseNumber(123));
