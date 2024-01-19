@@ -47,4 +47,4 @@ Your contributions are highly welcome!
 
 ## License
 
-This repository is licensed under the MIT License
+This repository is licensed under the MIT License. Feel free to use the code and adapt it for your own purposes.
