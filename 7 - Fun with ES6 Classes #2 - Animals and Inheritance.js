@@ -34,3 +34,19 @@
 // The Dog constructor should accept 4 arguments in the specified order: name, age, status, master. master is the name of the dog's master which will be a string. Furthermore, dogs should have 4 legs and a species of "dog".
 
 // Dogs have an identical introduce/Introduce method as any other animal, but they have their own method called greetMaster/GreetMaster which accepts no arguments and returns "Hello (insert_master_name_here)" (of course not the literal string but replace the (insert_master_name_here) with the name of the dog's master).
+
+// Get Coding :)
+
+class Shark extends Animal {
+  constructor(/* Insert your parameters here */) {
+    super(/* Make a call to the parent class's constructor with the correct arguments */);
+  }
+}
+
+class Cat extends Animal {
+  // Do the same here as you did for Shark - define your constructor function and any other methods you need
+}
+
+class Dog extends Animal {
+  // On your own now - you can do it :D
+}
