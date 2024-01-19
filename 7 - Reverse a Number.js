@@ -24,18 +24,20 @@
 //   });
 
 function reverseNumber(n) {
-  if (n >= 0) {
-    return parseInt(n.toString().split("").reverse().join(""));
-  } else {
-    return -parseInt(
-      n
-        .toString()
-        .split("")
-        .filter((num) => typeof num !== "number")
-        .reverse()
-        .join("")
-    );
-  }
+  //   if (n >= 0) {
+  //     return parseInt(n.toString().split("").reverse().join(""));
+  //   } else {
+  //     return -parseInt(
+  //       n
+  //         .toString()
+  //         .split("")
+  //         .filter((num) => typeof num !== "number")
+  //         .reverse()
+  //         .join("")
+  //     );
+  //   }
+  const result = parseInt(n.toString().split("").reverse().join(""));
+  return n < 0 ? -result : result;
 }
 
 console.log(reverseNumber(123));
