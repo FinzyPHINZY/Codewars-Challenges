@@ -9,3 +9,7 @@
 //  123 ->  321
 // -456 -> -654
 // 1000 ->    1
+
+function reverseNumber(n) {
+  return 0;
+}
