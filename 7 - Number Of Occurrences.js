@@ -11,3 +11,7 @@
 // arr.numberOfOccurrences(4) === 0;
 // arr.numberOfOccurrences(2) === 2;
 // arr.numberOfOccurrences(3) === 1;
+
+Object.defineProperty(Array.prototype, "numberOfOccurrences", {
+  value: function numberOfOccurrences(element) {},
+});
