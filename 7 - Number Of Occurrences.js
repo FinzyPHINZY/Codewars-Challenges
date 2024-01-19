@@ -24,6 +24,8 @@
 //     });
 //   });
 
-Object.defineProperty(Array.prototype, "numberOfOccurrences", {
-  value: function numberOfOccurrences(element) {},
-});
+Array.prototype.numberOfOccurrences = function (search) {
+  return this.filter(function (num) {
+    return search === num;
+  }).length;
+};
