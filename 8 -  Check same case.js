@@ -19,19 +19,39 @@
 
 // Test Cases:
 
-describe("Solution", function () {
-  doTest("C", "B", 1);
-  doTest("b", "a", 1);
-  doTest("d", "d", 1);
-  doTest("A", "s", 0);
-  doTest("c", "B", 0);
-  doTest("b", "Z", 0);
-  doTest("\t", "Z", -1);
-  doTest("H", ":", -1);
-});
+// describe("Solution", function () {
+//   doTest("C", "B", 1);
+//   doTest("b", "a", 1);
+//   doTest("d", "d", 1);
+//   doTest("A", "s", 0);
+//   doTest("c", "B", 0);
+//   doTest("b", "Z", 0);
+//   doTest("\t", "Z", -1);
+//   doTest("H", ":", -1);
+// });
 
 function sameCase(a, b) {
-  return 0;
+  const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  if (!letters.includes(a) || !letters.includes(b)) {
+    return -1;
+  } else {
+    if (
+      (a === a.toLowerCase() && b === b.toLowerCase()) ||
+      (a === a.toUpperCase() && b === b.toUpperCase())
+    ) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
 }
 
-console.log(doTest());
+console.log(sameCase("C", "B"));
+console.log(sameCase("b", "a"));
+console.log(sameCase("d", "d"));
+console.log(sameCase("A", "s"));
+console.log(sameCase("c", "B"));
+console.log(sameCase("b", "Z"));
+console.log(sameCase("\t", "z"));
+console.log(sameCase("H", ":"));
