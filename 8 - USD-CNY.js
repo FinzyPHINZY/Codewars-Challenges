@@ -17,8 +17,10 @@
 // });
 
 function usdcny(usd) {
-  return `${usd * 6.75} Chinese Yuan`;
+  const result = (usd * 6.75).toFixed(2);
+  return `${result} Chinese Yuan`;
 }
 
 console.log(usdcny(15));
 console.log(usdcny(465));
+console.log(usdcny(3018));
