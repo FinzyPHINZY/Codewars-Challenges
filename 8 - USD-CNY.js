@@ -8,4 +8,17 @@
 // 465 -> '3138.75 Chinese Yuan'
 // The conversion rate you should use is 6.75 CNY for every 1 USD. All numbers should be represented as a string with 2 decimal places. (e.g. "21.00" NOT "21.0" or "21")
 
-function usdcny(usd) {}
+// Test Cases:
+// describe("Basic tests", () => {
+//   it("Testing for fixed tests", () => {
+//     assert.strictEqual(usdcny(15), "101.25 Chinese Yuan");
+//     assert.strictEqual(usdcny(465), "3138.75 Chinese Yuan");
+//   });
+// });
+
+function usdcny(usd) {
+  return `${usd * 6.75} Chinese Yuan`;
+}
+
+console.log(usdcny(15));
+console.log(usdcny(465));
