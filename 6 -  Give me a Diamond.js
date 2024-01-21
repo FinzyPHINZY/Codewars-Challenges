@@ -51,7 +51,6 @@ function diamond(n) {
 
   for (let i = 1; i <= n; i++) {
     const spaces = Math.abs(halfSize - i);
-    console.log(spaces);
     const stars = n - 2 * spaces;
 
     diamondString += " ".repeat(spaces) + "*".repeat(stars) + "\n";
