@@ -17,3 +17,7 @@
 
 // [1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]
 // Note: In the C and NASM languages you are given the third parameter which is the number of segment blocks.
+
+function dataReverse(data) {
+  // Your code here
+}
