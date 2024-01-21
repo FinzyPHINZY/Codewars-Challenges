@@ -17,3 +17,7 @@
 
 // '0' and '?' returns -1
 // =
+
+function sameCase(a, b) {
+  return 0;
+}
