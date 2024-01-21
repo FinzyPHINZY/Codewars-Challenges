@@ -18,6 +18,18 @@
 // [1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]
 // Note: In the C and NASM languages you are given the third parameter which is the number of segment blocks.
 
+// Test Cases:
+
 function dataReverse(data) {
   // Your code here
+  const segmentSize = 8;
+  const reversedData = [];
+
+  // Loop through the data array in reverse order of segments
+  for (let i = data.length - segmentSize; i >= 0; i -= segmentSize) {
+    // Extract a segment of 8 bits and push it to the reversedData array
+    reversedData.push(...data.slice(i, i + segmentSize));
+  }
+
+  return reversedData;
 }
