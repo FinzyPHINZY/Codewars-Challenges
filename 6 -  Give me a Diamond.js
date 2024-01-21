@@ -26,8 +26,30 @@
 
 // "  *\n ***\n*****\n ***\n  *\n"
 
+// Test Cases:
+// describe("diamond()", function () {
+//   it("Valid diamonds", () => {
+//     assert.strictEqual(diamond(1), "*\n");
+//     assert.strictEqual(diamond(3), " *\n***\n *\n");
+//     assert.strictEqual(diamond(5), "  *\n ***\n*****\n ***\n  *\n");
+//   });
+
+//   it("Invalid diamonds", () => {
+//     assert.strictEqual(diamond(2), null);
+//     assert.strictEqual(diamond(-3), null);
+//     assert.strictEqual(diamond(0), null);
+//   });
+// });
+
 function diamond(n) {
   2;
   return "";
   3;
 }
+
+console.log(diamond(1));
+console.log(diamond(3));
+console.log(diamond(5));
+console.log(diamond(2));
+console.log(diamond(-3));
+console.log(diamond(0));
