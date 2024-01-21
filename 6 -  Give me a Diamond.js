@@ -42,9 +42,22 @@
 // });
 
 function diamond(n) {
-  2;
-  return "";
-  3;
+  if (n <= 0 || n % 2 === 0) {
+    return null;
+  }
+
+  let diamondString = "";
+  const halfSize = Math.floor(n / 2) + 1;
+
+  for (let i = 1; i <= n; i++) {
+    const spaces = Math.abs(halfSize - i);
+    console.log(spaces);
+    const stars = n - 2 * spaces;
+
+    diamondString += " ".repeat(spaces) + "*".repeat(stars) + "\n";
+  }
+
+  return diamondString;
 }
 
 console.log(diamond(1));
