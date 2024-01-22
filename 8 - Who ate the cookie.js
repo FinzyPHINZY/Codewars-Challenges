@@ -8,3 +8,7 @@
 // Note: Make sure you return the correct message with correct spaces and punctuation.
 
 // Please leave feedback for this kata. Cheers!
+
+function cookie(x) {
+  // ...
+}
