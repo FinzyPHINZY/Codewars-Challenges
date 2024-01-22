@@ -41,6 +41,25 @@
 // n >= 10	90
 // You can use if..else or ternary operator to complete it.
 
+// Test Cases:
+// describe("Tests", () => {
+//   it("Sample tests", () => {
+//     assert.strictEqual(saleHotdogs(1), 100);
+//     assert.strictEqual(saleHotdogs(4), 400);
+//     assert.strictEqual(saleHotdogs(5), 475);
+//     assert.strictEqual(saleHotdogs(9), 855);
+//     assert.strictEqual(saleHotdogs(10), 900);
+//     assert.strictEqual(saleHotdogs(100), 9000);
+//   });
+// });
+
 function saleHotdogs(n) {
   return;
 }
+
+console.log(saleHotdogs(1));
+console.log(saleHotdogs(4));
+console.log(saleHotdogs(5));
+console.log(saleHotdogs(9));
+console.log(saleHotdogs(10));
+console.log(saleHotdogs(100));
