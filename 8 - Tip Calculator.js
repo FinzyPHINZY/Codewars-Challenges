@@ -15,4 +15,16 @@
 // ...or null in Java
 // ...or -1 in C#
 // Because you're a nice person, you always round up the tip, regardless of the service.
+
+// Test Cases:
+// describe("Tests", () => {
+//   it("test", () => {
+//     Test.assertEquals(calculateTip(20, "Excellent"), 4);
+//     Test.assertEquals(calculateTip(26.95, "good"), 3);
+//   });
+// });
+
 function calculateTip(amount, rating) {}
+
+console.log(calculateTip(20, "Excellent"));
+console.log(calculateTip(26.95, "Good"));
