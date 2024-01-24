@@ -23,4 +23,15 @@
 
 // If you make it, return "Alive!", if not, return "Shark Bait!".
 
+// Test Cases:
+describe("Example tests", () => {
+  Test.assertEquals(shark(12, 50, 4, 8, true), "Alive!");
+  Test.assertEquals(shark(7, 55, 4, 16, true), "Alive!");
+  Test.assertEquals(shark(24, 0, 4, 8, true), "Shark Bait!");
+});
+
 function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin) {}
+
+console.log(shark(12, 50, 4, 8, true));
+console.log(shark(7, 55, 4, 16, true));
+console.log(shark(24, 0, 4, 8, true));
