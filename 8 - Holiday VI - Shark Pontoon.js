@@ -24,13 +24,26 @@
 // If you make it, return "Alive!", if not, return "Shark Bait!".
 
 // Test Cases:
-describe("Example tests", () => {
-  Test.assertEquals(shark(12, 50, 4, 8, true), "Alive!");
-  Test.assertEquals(shark(7, 55, 4, 16, true), "Alive!");
-  Test.assertEquals(shark(24, 0, 4, 8, true), "Shark Bait!");
-});
+// describe("Example tests", () => {
+//   Test.assertEquals(shark(12, 50, 4, 8, true), "Alive!");
+//   Test.assertEquals(shark(7, 55, 4, 16, true), "Alive!");
+//   Test.assertEquals(shark(24, 0, 4, 8, true), "Shark Bait!");
+// });
 
-function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin) {}
+function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin) {
+  if (dolphin) {
+    sharkSpeed /= 2;
+  }
+
+  // Time it takes for you to reach the pontoon
+  const yourTime = pontoonDistance / youSpeed;
+
+  // Time it takes for the shark to reach you
+  const sharkTime = sharkDistance / sharkSpeed;
+
+  // Compare the times and return the result
+  return yourTime < sharkTime ? "Alive!" : "Shark Bait!";
+}
 
 console.log(shark(12, 50, 4, 8, true));
 console.log(shark(7, 55, 4, 16, true));
