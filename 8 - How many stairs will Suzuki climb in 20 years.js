@@ -73,10 +73,7 @@
 //   });
 // });
 
-function stairsIn20(s) {
-  //your code here
-  return s.flat().reduce((sum, num) => sum + num, 0) * 20;
-}
+stairsIn20 = (s) => s.flat().reduce((sum, num) => sum + num, 0) * 20;
 
 var sunday = [
     6737, 7244, 5776, 9826, 7057, 9247, 5842, 5484, 6543, 5153, 6832, 8274,
