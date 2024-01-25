@@ -33,6 +33,18 @@
 // titanic.isWorthIt() // return false
 // Good luck and may you find GOOOLD!
 
+// Test Cases
+// describe('Captain, we see some ships!', () => {
+//     it("Empty ship (draft: 0, crew: 0)", () => {
+//       let emptyShip = new Ship(0,0);
+//       assert.isFalse(emptyShip.isWorthIt());
+//     });
+//     it("A worth ship (draft: 100, crew: 20)", () => {
+//       let aWorthyShip = new Ship(100,20);
+//       assert.isTrue(aWorthyShip.isWorthIt());
+//     });
+//   });
+
 class Ship {
   constructor(draft, crew) {
     this.draft = draft;
@@ -40,4 +52,15 @@ class Ship {
   }
 
   //YOUR CODE HERE...
+  //Check if existing code works properly
+  //Initialize new method: isWorthIt();
+  isWorthIt() {
+    console.log("We can go now. i'm fucking psyched");
+  }
 }
+
+let emptyShip = new Ship(0, 0);
+let aWorthyShip = new Ship(100, 20);
+
+console.log(emptyShip.isWorthIt());
+console.log(aWorthyShip.isWorthIt());
