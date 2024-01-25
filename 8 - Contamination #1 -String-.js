@@ -16,18 +16,20 @@
 // text after  = "zzz"
 
 // Test Cases;
-describe("Tests", () => {
-  it("test", () => {
-    Test.assertEquals(contamination("abc", "z"), "zzz");
-    Test.assertEquals(contamination("", "z"), "");
-    Test.assertEquals(contamination("abc", ""), "");
-    Test.assertEquals(contamination("_3ebzgh4", "&"), "&&&&&&&&");
-    Test.assertEquals(contamination("//case", " "), "      ");
-  });
-});
+// describe("Tests", () => {
+//   it("test", () => {
+//     Test.assertEquals(contamination("abc", "z"), "zzz");
+//     Test.assertEquals(contamination("", "z"), "");
+//     Test.assertEquals(contamination("abc", ""), "");
+//     Test.assertEquals(contamination("_3ebzgh4", "&"), "&&&&&&&&");
+//     Test.assertEquals(contamination("//case", " "), "      ");
+//   });
+// });
 
 function contamination(text, char) {
   // Code here ;)
+
+  return char.repeat(text.length);
 }
 
 console.log(contamination("abc", "z"));
