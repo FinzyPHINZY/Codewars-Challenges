@@ -54,7 +54,7 @@ class Ship {
   //YOUR CODE HERE...
   isWorthIt() {
     const crewDraft = this.crew * 1.5;
-    return this.draft - crewDraft > 20 ? true : false;
+    return this.draft - crewDraft > 20;
   }
 }
 
