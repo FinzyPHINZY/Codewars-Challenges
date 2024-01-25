@@ -16,6 +16,16 @@
 // Division should be integer division. For example, this should return 2, not 2.666666...:
 // eight(dividedBy(three()));
 
+// Test Cases:
+// describe("Tests", () => {
+//   it("test", () => {
+//     assert.strictEqual(seven(times(five())), 35);
+//     assert.strictEqual(four(plus(nine())), 13);
+//     assert.strictEqual(eight(minus(three())), 5);
+//     assert.strictEqual(six(dividedBy(two())), 3);
+//   });
+// });
+
 function zero() {}
 function one() {}
 function two() {}
@@ -31,3 +41,8 @@ function plus() {}
 function minus() {}
 function times() {}
 function dividedBy() {}
+
+console.log(seven(times(five())));
+console.log(four(plus(nine())));
+console.log(eight(minus(three())));
+console.log(six(dividedBy(two())));
