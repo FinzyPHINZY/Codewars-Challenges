@@ -52,10 +52,11 @@ class Ship {
   }
 
   //YOUR CODE HERE...
-  //Check if existing code works properly
-  //Initialize new method: isWorthIt();
   isWorthIt() {
     console.log("We can go now. i'm fucking psyched");
+
+    const crewDraft = this.crew * 1.5;
+    return this.draft > crewDraft ? true : false;
   }
 }
 
