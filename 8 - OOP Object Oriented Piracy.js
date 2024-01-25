@@ -32,3 +32,12 @@
 
 // titanic.isWorthIt() // return false
 // Good luck and may you find GOOOLD!
+
+class Ship {
+  constructor(draft, crew) {
+    this.draft = draft;
+    this.crew = crew;
+  }
+
+  //YOUR CODE HERE...
+}
