@@ -14,3 +14,7 @@
 // text before = "abc"
 // character   = "z"
 // text after  = "zzz"
+
+function contamination(text, char) {
+  // Code here ;)
+}
