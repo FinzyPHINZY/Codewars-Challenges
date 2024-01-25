@@ -53,15 +53,19 @@ class Ship {
 
   //YOUR CODE HERE...
   isWorthIt() {
-    console.log("We can go now. i'm fucking psyched");
-
     const crewDraft = this.crew * 1.5;
-    return this.draft > crewDraft ? true : false;
+    return this.draft - crewDraft > 20 ? true : false;
   }
 }
 
 let emptyShip = new Ship(0, 0);
 let aWorthyShip = new Ship(100, 20);
+let ship1 = new Ship(35, 10); //false
+let ship2 = new Ship(35, 20); //false
+let ship3 = new Ship(156, 96); // false
 
 console.log(emptyShip.isWorthIt());
 console.log(aWorthyShip.isWorthIt());
+console.log(ship1.isWorthIt());
+console.log(ship2.isWorthIt());
+console.log(ship3.isWorthIt());
