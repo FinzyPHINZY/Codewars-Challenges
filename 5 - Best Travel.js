@@ -24,6 +24,22 @@
 // try not to modify the input list of distances ls
 // in some languages this "list" is in fact a string (see the Sample Tests).
 
+// Test  Cases;
+// describe("chooseBestSum", function () {
+//   it("Basic tests ", function () {
+//     var ts = [50, 55, 56, 57, 58];
+//     Test.assertEquals(chooseBestSum(163, 3, ts), 163);
+//     ts = [50];
+//     Test.assertEquals(chooseBestSum(163, 3, ts), null);
+//     ts = [91, 74, 73, 85, 73, 81, 87];
+//     Test.assertEquals(chooseBestSum(230, 3, ts), 228);
+//   });
+// });
+
 function chooseBestSum(t, k, ls) {
   // your code
 }
+
+console.log(chooseBestSum(163, 3, [50, 55, 56, 57, 58]));
+console.log(chooseBestSum(163, 3, [50]));
+console.log(chooseBestSum(230, 3, [91, 74, 73, 85, 73, 81, 87]));
