@@ -23,3 +23,7 @@
 // Notes:
 // try not to modify the input list of distances ls
 // in some languages this "list" is in fact a string (see the Sample Tests).
+
+function chooseBestSum(t, k, ls) {
+  // your code
+}
