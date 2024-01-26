@@ -36,8 +36,29 @@
 //   });
 // });
 
+// Copy code
 function chooseBestSum(t, k, ls) {
-  // your code
+  let result = null; // Change -1 to null
+
+  function getAllCombinations(arr, length) {
+    const combinations = [];
+
+    function generateCombinations(current, start) {
+      if (current.length === length) {
+        combinations.push([...current]);
+        return;
+      }
+
+      for (let i = start; i < arr.length; i++) {
+        current.push(arr[i]);
+        generateCombinations(current, i + 1);
+        current.pop();
+      }
+    }
+
+    generateCombinations([], 0);
+    return combinations;
+  }
 }
 
 console.log(chooseBestSum(163, 3, [50, 55, 56, 57, 58]));
