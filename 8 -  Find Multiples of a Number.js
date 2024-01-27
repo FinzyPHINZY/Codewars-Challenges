@@ -16,6 +16,13 @@
 
 function findMultiples(integer, limit) {
   //your code here
+  const output = [];
+
+  for (let i = integer; i <= limit; i += integer) {
+    output.push(i);
+  }
+
+  return output;
 }
 
 console.log(findMultiples(5, 25));
