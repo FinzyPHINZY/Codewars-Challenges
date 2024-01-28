@@ -38,6 +38,24 @@
 
 function meeting(s) {
   // your code
+  //   Main Objectives
+
+  // 1.  makes this string uppercase and splitted into first and last names✅
+  s = s.toUpperCase().split(";");
+
+  // 2.  gives it sorted in alphabetical order by last name.
+
+  // //  split names seperately into array;
+  let namesArray = [];
+  s.forEach((fullName) => {
+    namesArray.push(fullName.split(":"));
+  });
+  namesArray = namesArray.forEach((name) => name.sort((a, b) => a[1] - b[1]));
+  return namesArray;
+  //  loop through each name and destructure into first name and last name
+
+  //   const [firstName, lastName] = namesArray;
+  //   return firstName;
 }
 
 console.log(
@@ -45,13 +63,13 @@ console.log(
     "Alexis:Wahl;John:Bell;Victoria:Schwarz;Abba:Dorny;Grace:Meta;Ann:Arno;Madison:STAN;Alex:Cornwell;Lewis:Kern;Megan:Stan;Alex:Korn"
   )
 );
-console.log(
-  meeting(
-    "John:Gates;Michael:Wahl;Megan:Bell;Paul:Dorries;James:Dorny;Lewis:Steve;Alex:Meta;Elizabeth:Russel;Anna:Korn;Ann:Kern;Amber:Cornwell"
-  )
-);
-console.log(
-  meeting(
-    "Alex:Arno;Alissa:Cornwell;Sarah:Bell;Andrew:Dorries;Ann:Kern;Haley:Arno;Paul:Dorny;Madison:Kern"
-  )
-);
+// console.log(
+//   meeting(
+//     "John:Gates;Michael:Wahl;Megan:Bell;Paul:Dorries;James:Dorny;Lewis:Steve;Alex:Meta;Elizabeth:Russel;Anna:Korn;Ann:Kern;Amber:Cornwell"
+//   )
+// );
+// console.log(
+//   meeting(
+//     "Alex:Arno;Alissa:Cornwell;Sarah:Bell;Andrew:Dorries;Ann:Kern;Haley:Arno;Paul:Dorny;Madison:Kern"
+//   )
+// );
