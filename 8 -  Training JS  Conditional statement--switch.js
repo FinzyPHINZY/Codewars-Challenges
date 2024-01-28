@@ -67,6 +67,18 @@
 
 // When you have finished, click "Test" to test your code against initial tests and "Attempt" to test your code against all tests. If you pass in all tests you can click "Submit" to submit your code.
 
+// Test Cases:
+// describe("Tests", () => {
+//   it("test", () => {
+//     Test.assertSimilar(howManydays(1),31);
+//     Test.assertSimilar(howManydays(2),28);
+//     Test.assertSimilar(howManydays(3),31);
+//     Test.assertSimilar(howManydays(4),30);
+//     Test.assertSimilar(howManydays(12),31);
+//   });
+// });
+
+
 function howManydays(month){
     var days;
     switch (){
@@ -74,3 +86,9 @@ function howManydays(month){
     }
     return days;
   }
+
+  console.log(howManydays(1))
+  console.log(howManydays(2))
+  console.log(howManydays(3))
+  console.log(howManydays(4))
+  console.log(howManydays(12))
