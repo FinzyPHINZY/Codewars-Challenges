@@ -17,3 +17,7 @@
 
 // Notes
 // You can see another examples in the "Sample tests".
+
+function meeting(s) {
+  // your code
+}
