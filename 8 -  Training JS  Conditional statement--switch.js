@@ -66,3 +66,11 @@
 // Tip: Using default for most of the cases can reduce your work.
 
 // When you have finished, click "Test" to test your code against initial tests and "Attempt" to test your code against all tests. If you pass in all tests you can click "Submit" to submit your code.
+
+function howManydays(month){
+    var days;
+    switch (){
+    
+    }
+    return days;
+  }
