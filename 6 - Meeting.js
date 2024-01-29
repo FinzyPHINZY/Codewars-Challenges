@@ -40,7 +40,7 @@ function meeting(s) {
   let string = s
     .toUpperCase()
     .split(";")
-    .map((str) => str.split(":").r`everse().join(", "))
+    .map((str) => str.split(":").reverse().join(", "))
     .sort()
     .join(")(");
 
@@ -61,4 +61,4 @@ console.log(
 //   meeting(
 //     "Alex:Arno;Alissa:Cornwell;Sarah:Bell;Andrew:Dorries;Ann:Kern;Haley:Arno;Paul:Dorny;Madison:Kern"
 //   )
-// );
+// )
