@@ -10,6 +10,18 @@
 // [12, 10, 8, 12, 7, 6, 4, 10, 12, 10]          -->  12
 // [12, 10, 8, 8, 3, 3, 3, 3, 2, 4, 10, 12, 10]  -->   3
 
+// Test Cases:
+// describe("Sample tests", function () {
+//   it("should test", function () {
+//     var arr = [12, 10, 8, 12, 7, 6, 4, 10, 12];
+//     assert.strictEqual(highestRank(arr), 12);
+//   });
+// });
+
 function highestRank(arr) {
   //Your Code logic should written here
 }
+
+console.log(highestRank([12, 10, 8, 12, 7, 6, 4, 10, 12]));
+console.log(highestRank([12, 10, 8, 12, 7, 6, 4, 10, 12, 10]));
+console.log(highestRank([12, 10, 8, 8, 3, 3, 3, 3, 2, 4, 10, 12, 10]));
