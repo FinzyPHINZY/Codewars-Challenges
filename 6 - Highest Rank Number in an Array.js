@@ -20,8 +20,30 @@
 
 function highestRank(arr) {
   //Your Code logic should written here
+
+  const frequencyMap = {};
+
+  arr.forEach((num) => {
+    frequencyMap[num] = (frequencyMap[num] || 0) + 1;
+  });
+
+  let maxFrequency = 0;
+  let result = 0;
+
+  for (const num in frequencyMap) {
+    const frequency = frequencyMap[num];
+
+    if (
+      frequency > maxFrequency ||
+      (frequency === maxFrequency && num > result)
+    ) {
+      maxFrequency = frequency;
+      result = num;
+    }
+  }
+  return Number(result);
 }
 
 console.log(highestRank([12, 10, 8, 12, 7, 6, 4, 10, 12]));
-console.log(highestRank([12, 10, 8, 12, 7, 6, 4, 10, 12, 10]));
-console.log(highestRank([12, 10, 8, 8, 3, 3, 3, 3, 2, 4, 10, 12, 10]));
+// console.log(highestRank([12, 10, 8, 12, 7, 6, 4, 10, 12, 10]));
+// console.log(highestRank([12, 10, 8, 8, 3, 3, 3, 3, 2, 4, 10, 12, 10]));
