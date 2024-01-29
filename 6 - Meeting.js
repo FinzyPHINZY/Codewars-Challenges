@@ -37,25 +37,14 @@
 // });
 
 function meeting(s) {
-  // your code
-  //   Main Objectives
+  let string = s
+    .toUpperCase()
+    .split(";")
+    .map((str) => str.split(":").r`everse().join(", "))
+    .sort()
+    .join(")(");
 
-  // 1.  makes this string uppercase and splitted into first and last names✅
-  s = s.toUpperCase().split(";");
-
-  // 2.  gives it sorted in alphabetical order by last name.
-
-  // //  split names seperately into array;
-  let namesArray = [];
-  s.forEach((fullName) => {
-    namesArray.push(fullName.split(":"));
-  });
-  namesArray = namesArray.forEach((name) => name.sort((a, b) => a[1] - b[1]));
-  return namesArray;
-  //  loop through each name and destructure into first name and last name
-
-  //   const [firstName, lastName] = namesArray;
-  //   return firstName;
+  return "(" + string + ")";
 }
 
 console.log(
