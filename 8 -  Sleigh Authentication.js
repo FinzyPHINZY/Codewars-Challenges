@@ -14,8 +14,36 @@
 // sleigh.authenticate("Santa Claus", "Ho Ho!"); // must return FALSE
 // sleigh.authenticate("jhoffner", "CodeWars"); // Nope, even Jake is not allowed to use the sleigh ;)
 
+// Test Cases:
+
+describe("Santa's Sleigh", function () {
+  var sleigh = new Sleigh();
+
+  var testCredentials = function (name, password, correct) {
+    Test.assertEquals(
+      sleigh.authenticate(name, password),
+      correct,
+      'Tested name "' + name + '" and password "' + password + '"'
+    );
+  };
+
+  it("must authenticate with correct credentials", function () {
+    testCredentials("Santa Claus", "Ho Ho Ho!", true);
+  });
+
+  it("must not authenticate with incorrect credentials", function () {
+    testCredentials("Santa", "Ho Ho Ho!", false);
+    testCredentials("Santa Claus", "Ho Ho!", false);
+    testCredentials("jhoffner", "CodeWars", false);
+  });
+});
+
 function Sleigh() {}
 
 Sleigh.prototype.authenticate = function (name, password) {
   // TODO
+
+  return name === "Santa Claus" && password === "Ho Ho Ho!";
 };
+
+Sleigh.authenticate("Santa Claus", "Ho Ho Ho");
