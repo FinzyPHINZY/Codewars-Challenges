@@ -31,4 +31,28 @@
 // 3 <= arr.length <= 10^4
 // 1 <= groupLen <= 10
 
+// Test Cases:
+// describe("Fixed Tests", function() {
+//     it("Simple Cases", function() {
+//       assert.strictEqual(consecutiveNums([1, 3, 5], 1), true);
+//       assert.strictEqual(consecutiveNums([1, 2, 3, 3, 3, 3], 3), false);
+//       assert.strictEqual(consecutiveNums([5, 6, 3, 4], 2), true);
+//       assert.strictEqual(consecutiveNums([1, 3, 4, 5], 2), false);
+//       assert.strictEqual(consecutiveNums([1, 2, 3, 6, 2, 3, 4, 7, 8], 3), true);
+//       assert.strictEqual(consecutiveNums([1, 2, 3, 4, 5], 4), false);
+//       assert.strictEqual(consecutiveNums([6, 6, 6, 9, 7, 8, 7, 5, 8, 5, 7, 8], 4), true);
+//       assert.strictEqual(consecutiveNums([3, 9, 2, 2, 7, 6, 5, 8, 5, 2, 7, 4, 5, 3, 4, 4, 6, 2, 3, 4], 4), false);
+//       assert.strictEqual(consecutiveNums([3, 4, 1, 2, 3, 2, 3, 4, 5], 3), true);
+//       assert.strictEqual(consecutiveNums([9, 9, 7, 3, 3, 1, 1, 1, 2, 8, 8, 7, 2, 2, 3], 3), true);
+//       assert.strictEqual(consecutiveNums([5, 5, 7, 3, 3, 1, 1, 1, 2, 6, 6, 7, 2, 2, 3], 3), true);
+//     });
+//   });
+
 function consecutiveNums(arr, groupLen) {}
+
+console.log(consecutiveNums([1, 3, 5], 1));
+console.log(consecutiveNums([1, 2, 3, 3, 3, 3], 3));
+console.log(consecutiveNums([5, 6, 3, 4], 2));
+console.log(consecutiveNums([1, 3, 4, 5], 2));
+console.log(consecutiveNums([1, 2, 3, 6, 2, 3, 4, 7, 8], 3));
+console.log(consecutiveNums([1, 2, 3, 4, 5], 4));
