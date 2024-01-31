@@ -23,13 +23,17 @@
 
 function uniTotal(string) {
   // total up dem unicodes!
+  return string
+    .split("")
+    .map((e, i) => string.charCodeAt(i))
+    .reduce((sum, num) => sum + num, 0);
 }
 
-console.log(doTest("", 0));
-console.log(doTest("a", 97));
-console.log(doTest("b", 98));
-console.log(doTest("c", 99));
-console.log(doTest("d", 100));
-console.log(doTest("e", 101));
-console.log(doTest("aaa", 291));
-console.log(doTest("Mary Had A Little Lamb", 1873));
+console.log(uniTotal(""));
+console.log(uniTotal("a"));
+console.log(uniTotal("b"));
+console.log(uniTotal("c"));
+console.log(uniTotal("d"));
+console.log(uniTotal("e"));
+console.log(uniTotal("aaa"));
+console.log(uniTotal("Mary Had A Little Lamb"));
