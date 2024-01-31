@@ -48,7 +48,45 @@
 //     });
 //   });
 
-function consecutiveNums(arr, groupLen) {}
+function consecutiveNums(arr, groupLen) {
+  if (arr.length % groupLen !== 0) return false;
+  if (groupLen === 1) return true;
+  const sortedArr = arr.sort((a, b) => a - b);
+  const elObj = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    if (!elObj[arr[i]]) elObj[arr[i]] = 0;
+    elObj[arr[i]]++;
+  }
+
+  for (let i = 0; i < sortedArr.length; i++) {
+    const currArr = [];
+    const currNumber = sortedArr[i];
+    if (!elObj[currNumber]) continue;
+    else {
+      currArr.push(currNumber);
+      elObj[currNumber]--;
+    }
+
+    while (currArr.length !== groupLen) {
+      const nextNumber = currArr[currArr.length - 1] + 1;
+      if (elObj[nextNumber]) {
+        currArr.push(nextNumber);
+        elObj[nextNumber]--;
+      } else return false;
+    }
+  }
+
+  return true;
+}
+function isConsecutive(group) {
+  for (let i = 1; i < group.length; i++) {
+    if (group[i] !== group[i - 1] + 1) {
+      return false;
+    }
+  }
+  return true;
+}
 
 console.log(consecutiveNums([1, 3, 5], 1));
 console.log(consecutiveNums([1, 2, 3, 3, 3, 3], 3));
