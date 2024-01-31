@@ -30,3 +30,5 @@
 // Input Constraints
 // 3 <= arr.length <= 10^4
 // 1 <= groupLen <= 10
+
+function consecutiveNums(arr, groupLen) {}
