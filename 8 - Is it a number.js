@@ -14,6 +14,21 @@
 // isDigit("3 5")
 // isDigit("zero")
 
+// Test Cases:
+
+describe("Solution", function () {
+  it("basic tests", function () {
+    var input = "s2324";
+    Test.assertEquals(isDigit(input), false);
+
+    input = "-234.4";
+    Test.assertEquals(isDigit(input), true);
+  });
+});
+
 function isDigit(s) {
   //your code
 }
+
+console.log(isDigit("s2324"));
+console.log(isDigit("-234.4"));
