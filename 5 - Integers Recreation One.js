@@ -26,9 +26,46 @@
 //   })
 
 function listSquared(m, n) {
-  // your code
+  function getDivisors(num) {
+    let divisors = [];
+    for (let i = 1; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) {
+        divisors.push(i);
+        if (i !== num / i) {
+          divisors.push(num / i);
+        }
+      }
+    }
+    return divisors;
+  }
+
+  function isSquare(num) {
+    return Math.sqrt(num) % 1 === 0;
+  }
+
+  function sumOfSquaredDivisors(num) {
+    return getDivisors(num)
+      .map((divisor) => divisor * divisor)
+      .reduce((sum, square) => sum + square, 0);
+  }
+
+  let result = [];
+  for (let i = m; i <= n; i++) {
+    const sum = sumOfSquaredDivisors(i);
+    if (isSquare(sum)) {
+      result.push([i, sum]);
+    }
+  }
+
+  //   return result;
 }
 
+// Sample tests
 console.log(listSquared(1, 250));
 console.log(listSquared(42, 250));
-console.log(listSquared(259, 500));
+console.log(listSquared(250, 500));
+
+// console.log(listSquared(1, 246));
+console.log(listSquared(1, 250));
+// console.log(listSquared(42, 250));
+// console.log(listSquared(259, 500));
