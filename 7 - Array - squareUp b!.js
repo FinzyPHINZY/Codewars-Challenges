@@ -20,9 +20,19 @@
 // });
 
 function squareUp(n) {
-  return []; // Do your magic!
+  let result = [];
+
+  for (let i = 1; i <= n; i++) {
+    let row = Array(n).fill(0); // Create a row filled with zeros
+    for (let j = 1; j <= i; j++) {
+      row[n - j] = j; // Set the last j elements of the row to the values 1, 2, ..., j
+    }
+    result = result.concat(row);
+  }
+
+  return result;
 }
 
 console.log(squareUp(4));
-console.log(squareUp(9));
+// console.log(squareUp(9));
 console.log(squareUp(1));
