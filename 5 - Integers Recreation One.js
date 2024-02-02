@@ -15,3 +15,7 @@
 
 // Note
 // In Fortran - as in any other language - the returned string is not permitted to contain any redundant trailing whitespace: you can use dynamically allocated character strings.
+
+function listSquared(m, n) {
+  // your code
+}
