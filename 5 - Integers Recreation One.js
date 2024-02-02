@@ -16,6 +16,19 @@
 // Note
 // In Fortran - as in any other language - the returned string is not permitted to contain any redundant trailing whitespace: you can use dynamically allocated character strings.
 
+// Test Cases:
+// describe('Testing...', function(){
+//     it("Basic tests",function() {
+//       assert.deepEqual(listSquared(1, 250), [[1, 1], [42, 2500], [246, 84100]])
+//       assert.deepEqual(listSquared(42, 250), [[42, 2500], [246, 84100]])
+//       assert.deepEqual(listSquared(250, 500), [[287, 84100]])
+//     })
+//   })
+
 function listSquared(m, n) {
   // your code
 }
+
+console.log(listSquared(1, 250));
+console.log(listSquared(42, 250));
+console.log(listSquared(259, 500));
