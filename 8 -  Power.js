@@ -19,10 +19,15 @@
 // });
 
 function numberToPower(number, power) {
-  console.info(Math.log2(1024));
-  // Code here
+  if (power === 0) return 1;
+  let arr = [];
+  for (let i = 0; i < power; i++) {
+    arr.push(number);
+  }
+  return arr.reduce((sum, num) => sum * num, 1);
 }
 
 console.log(numberToPower(4, 2));
 console.log(numberToPower(10, 4));
 console.log(numberToPower(10, 0));
+console.log(numberToPower(5, 1));
