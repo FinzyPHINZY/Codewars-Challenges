@@ -2,7 +2,7 @@
 
 Welcome to my CodeWars Challenges Repository! Here you'll find a collection of CodeWars kata that I've successfully solved. Each file is named according to its kata rank, providing a quick reference to the difficulty level.
 
-[URL:] (https://www.codewars.com/users/FinzyPHINZY/badges/large)
+<img src="URL:https://www.codewars.com/users/FinzyPHINZY/badges/large"/>
 
 ## Table of Contents
 
