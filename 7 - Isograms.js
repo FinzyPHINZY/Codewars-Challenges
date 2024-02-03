@@ -19,11 +19,12 @@
 //       assert.strictEqual( isIsogram("moOse"), false, "same chars may not be same case" );
 //       assert.strictEqual( isIsogram("isIsogram"), false );
 //       assert.strictEqual( isIsogram(""), true, "an empty string is a valid isogram" );
-//     });
+//     });s
 //   });
 
 function isIsogram(str) {
-  //...
+  //   str = str.toLowerCase();
+  return new Set(str.toLowerCase()).size === str.length;
 }
 
 console.log(isIsogram("Dermatoglyphics"));
