@@ -10,6 +10,25 @@
 // isIsogram "moose" = false
 // isIsogram "aba" = false
 
+// Test Cases:
+// describe("Tests", () => {
+//     it("test", () => {
+//       assert.strictEqual( isIsogram("Dermatoglyphics"), true );
+//       assert.strictEqual( isIsogram("isogram"), true );
+//       assert.strictEqual( isIsogram("aba"), false, "same chars may not be adjacent" );
+//       assert.strictEqual( isIsogram("moOse"), false, "same chars may not be same case" );
+//       assert.strictEqual( isIsogram("isIsogram"), false );
+//       assert.strictEqual( isIsogram(""), true, "an empty string is a valid isogram" );
+//     });
+//   });
+
 function isIsogram(str) {
   //...
 }
+
+console.log(isIsogram("Dermatoglyphics"));
+console.log(isIsogram("isogram"));
+console.log(isIsogram("aba"));
+console.log(isIsogram("moOse"));
+console.log(isIsogram("isIsogram"));
+console.log(isIsogram(""));
