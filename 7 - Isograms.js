@@ -9,3 +9,7 @@
 // isIsogram "Dermatoglyphics" = true
 // isIsogram "moose" = false
 // isIsogram "aba" = false
+
+function isIsogram(str) {
+  //...
+}
