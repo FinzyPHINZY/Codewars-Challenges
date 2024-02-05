@@ -20,6 +20,53 @@
 
 // [1, 2, 33] is invalid because 33 is not a single-digit integer
 
+// Test Cases:
+// describe("Tests", () => {
+//     it("test", () => {
+//       assert.sameOrderedMembers(upArray([4,3,2,5]), [4,3,2,6]);
+//       assert.sameOrderedMembers(upArray([2,3,9,9]), [2,4,0,0]);
+//       assert.sameOrderedMembers(upArray(    [9,9]),   [1,0,0]);
+//       assert.sameOrderedMembers(upArray(    [0,7]),     [0,8]);
+//       assert.sameOrderedMembers(upArray([1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0]), [1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,1]);
+
+//       assert.isNull(upArray([1,-9]));
+//       assert.isNull(upArray([1,10]));
+//     });
+//   });
+
 function upArray(arr) {
   // ...
+  if (
+    !Array.isArray(arr) ||
+    arr.length === 0 ||
+    arr.some((num) => typeof num !== "number" || num < 0 || num > 9)
+  ) {
+    return null;
+  }
+
+  arr[arr.length - 1] += 1;
+
+  for (let i = arr.length - 1; i > 0; i--) {
+    console.log(arr[i]);
+    if (arr[i] === 10) {
+      arr[i] = 0;
+      arr[i - 1] += 1;
+    }
+  }
+
+  if (arr[0] === 10) {
+    arr[0] = 0;
+    arr.unshift(1);
+  }
+  console.log(arr);
 }
+
+// console.log(upArray([4, 3, 2, 5]));
+console.log(upArray([2, 3, 9, 9]));
+// console.log(upArray([9, 9]));
+// console.log(upArray([0, 7]));
+// console.log(
+//   upArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
+// );
+// console.log(upArray([1, -9]));
+// console.log(upArray([1, 2, 33]));
