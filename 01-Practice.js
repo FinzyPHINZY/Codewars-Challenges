@@ -35,7 +35,7 @@ function partlist(arr) {
   return result;
 }
 
-console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
+// console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
 
 // //////////////////////////////////////////////////////////////////////////////////
 // Your task is to write a function which returns the sum of following series upto nth term(parameter).
@@ -48,10 +48,21 @@ console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
 // 1 --> 1 --> "1.00"
 // 2 --> 1 + 1/4 --> "1.25"
 // 5 --> 1 + 1/4 + 1/7 + 1/10 + 1/13 --> "1.57"
-function seriesSum(num) {
-  for (let i = 0; i < num; i++) {
-    console.log(1 + 1 / 1 + 3);
+// function seriesSum(n) {
+//   for (let s = 0, i = 0; i < n; i++) {
+//     s += 1 / 1 + i * 3;
+//   }
 
-    console.log(1 + 1 + 3);
-  }
-}
+//   console.log(s.toFixed(2));
+//   return s;
+// }
+
+// console.log(seriesSum(5));
+
+// DESCRIPTION:
+// Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+// Examples:
+// * 'abc' =>  ['ab', 'c_']
+// * 'abcdef' => ['ab', 'cd', 'ef']
+
+function solution(str) {}
