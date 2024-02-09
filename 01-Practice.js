@@ -65,4 +65,17 @@ function partlist(arr) {
 // * 'abc' =>  ['ab', 'c_']
 // * 'abcdef' => ['ab', 'cd', 'ef']
 
-function solution(str) {}
+function solution(str) {
+  if (str.length % 2 !== 0) {
+    str += "_";
+  }
+  let result = [];
+
+  for (let i = 0; i < str.length; i += 2) {
+    result.push(str.slice(i, i + 2));
+  }
+  return result;
+}
+
+console.log(solution("abc"));
+console.log(solution("abcdef"));
