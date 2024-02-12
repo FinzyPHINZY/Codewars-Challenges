@@ -13,16 +13,20 @@
 //   });
 // });
 
-function spacify(str) {
-  let result = [];
-  let spaces = " ".repeat(str.length);
-  str = str.split("");
-  for (let i = 0; i < str.length; i++) {
-    result.push(str[i]);
-    result.push(spaces[i]);
-  }
+// function spacify(str) {
+//   let result = [];
+//   let spaces = " ".repeat(str.length);
+//   str = str.split("");
+//   for (let i = 0; i < str.length; i++) {
+//     result.push(str[i]);
+//     result.push(spaces[i]);
+//   }
 
-  return result.join("").trim();
+//   return result.join("").trim();
+// }
+
+function spacify(str) {
+  return str.split("").join(" ");
 }
 
 console.log(spacify("hello world"));
