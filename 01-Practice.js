@@ -192,3 +192,23 @@ function filter_list(arr) {
 // a or b might be [] or {} (all languages except R, Shell).
 // a or b might be nil or null or None or nothing (except in C++, COBOL, Crystal, D, Dart, Elixir, Fortran, F#, Haskell, Nim, OCaml, Pascal, Perl, PowerShell, Prolog, PureScript, R, Racket, Rust, Shell, Swift).
 // If a or b are nil (or null or None, depending on the language), the problem doesn't make sense so return false.
+
+function comp(a, b) {
+  a.map((num) => num * num);
+
+  return a.every((num) => b.includes(num));
+}
+
+console.log(
+  comp(
+    [121, 144, 19, 161, 19, 144, 19, 11],
+    [121, 14641, 20736, 361, 25921, 361, 20736, 361]
+  )
+);
+
+console.log(
+  comp(
+    [121, 144, 19, 161, 19, 144, 19, 11],
+    [132, 14641, 20736, 361, 25921, 361, 20736, 361]
+  )
+);
