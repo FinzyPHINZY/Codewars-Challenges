@@ -194,9 +194,7 @@ function filter_list(arr) {
 // If a or b are nil (or null or None, depending on the language), the problem doesn't make sense so return false.
 
 function comp(a, b) {
-  a.map((num) => num * num);
-
-  return a.every((num) => b.includes(num));
+  return a.map((num) => num * num).every((num) => b.includes(num));
 }
 
 console.log(
