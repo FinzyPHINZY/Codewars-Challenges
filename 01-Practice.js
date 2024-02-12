@@ -162,6 +162,150 @@ function filter_list(arr) {
   return arr.filter((char) => typeof char === "number");
 }
 
-console.log(filter_list([1, 2, "a", "b"]));
-console.log(filter_list([1, "a", "b", 0, 15]));
-console.log(filter_list([1, 2, "aasf", "1", "123", 123]));
+// console.log(filter_list([1, 2, "a", "b"]));
+// console.log(filter_list([1, "a", "b", 0, 15]));
+// console.log(filter_list([1, 2, "aasf", "1", "123", 123]));
+
+// DESCRIPTION:
+// Given two arrays a and b write a function comp(a, b) (orcompSame(a, b)) that checks whether the two arrays have the "same" elements, with the same multiplicities (the multiplicity of a member is the number of times it appears). "Same" means, here, that the elements in b are the elements in a squared, regardless of the order.
+
+// Examples
+// Valid arrays
+// a = [121, 144, 19, 161, 19, 144, 19, 11]
+// b = [121, 14641, 20736, 361, 25921, 361, 20736, 361]
+// comp(a, b) returns true because in b 121 is the square of 11, 14641 is the square of 121, 20736 the square of 144, 361 the square of 19, 25921 the square of 161, and so on. It gets obvious if we write b's elements in terms of squares:
+
+// a = [121, 144, 19, 161, 19, 144, 19, 11]
+// b = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]
+// Invalid arrays
+// If, for example, we change the first number to something else, comp is not returning true anymore:
+
+// a = [121, 144, 19, 161, 19, 144, 19, 11]
+// b = [132, 14641, 20736, 361, 25921, 361, 20736, 361]
+// comp(a,b) returns false because in b 132 is not the square of any number of a.
+
+// a = [121, 144, 19, 161, 19, 144, 19, 11]
+// b = [121, 14641, 20736, 36100, 25921, 361, 20736, 361]
+// comp(a,b) returns false because in b 36100 is not the square of any number of a.
+
+// Remarks
+// a or b might be [] or {} (all languages except R, Shell).
+// a or b might be nil or null or None or nothing (except in C++, COBOL, Crystal, D, Dart, Elixir, Fortran, F#, Haskell, Nim, OCaml, Pascal, Perl, PowerShell, Prolog, PureScript, R, Racket, Rust, Shell, Swift).
+// If a or b are nil (or null or None, depending on the language), the problem doesn't make sense so return false.
+
+function comp(a, b) {
+  return a.map((num) => num * num).every((num) => b.includes(num));
+}
+
+// console.log(
+//   comp(
+//     [121, 144, 19, 161, 19, 144, 19, 11],
+//     [121, 14641, 20736, 361, 25921, 361, 20736, 361]
+//   )
+// );
+
+// console.log(
+//   comp(
+//     [121, 144, 19, 161, 19, 144, 19, 11],
+//     [132, 14641, 20736, 361, 25921, 361, 20736, 361]
+//   )
+// );
+
+// DESCRIPTION:
+// Friday 13th or Black Friday is considered as unlucky day. Calculate how many unlucky days are in the given year.
+// Find the number of Friday 13th in the given year.
+// Input: Year in Gregorian calendar as integer.
+// Output: Number of Black Fridays in the year as an integer.
+// Examples:
+// unluckyDays(2015) == 3
+// unluckyDays(1986) == 1
+
+function unluckyDays(year) {
+  //your code here
+  let count = 0;
+
+  for (let month = 0; month < 12; month++) {
+    let day = new Date(year, month, 13);
+    if (day.getDay() === 5) count++;
+  }
+
+  return count;
+}
+
+// console.log(unluckyDays(2015));
+// console.log(unluckyDays(1986));
+
+// DESCRIPTION:
+// Digital root is the recursive sum of all the digits in a number.
+// Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.
+// Examples
+//     16  -->  1 + 6 = 7
+//    942  -->  9 + 4 + 2 = 15  -->  1 + 5 = 6
+// 132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
+// 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
+
+function digitalRoot(n) {
+  // ...
+  if (n < 10) return n;
+
+  let sum = n
+    .toString()
+    .split("")
+    .map(Number)
+    .reduce((sum, num) => sum + num, 0);
+  // console.log(sum);
+
+  return digitalRoot(sum);
+}
+
+// console.log(digitalRoot(16));
+// console.log(digitalRoot(942));
+// console.log(digitalRoot(132189));
+// console.log(digitalRoot(493193));
+
+// DESCRIPTION:
+// Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
+// For example (Input --> Output):
+// 39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit)
+// 999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2)
+// 4 --> 0 (because 4 is already a one-digit number)
+
+function persistence(num) {
+  //code me
+  let count = 0;
+  while (num > 9) {
+    num = num
+      .toString()
+      .split("")
+      .map(Number)
+      .reduce((sum, num) => sum * num, 1);
+    count++;
+  }
+  return count;
+}
+
+// console.log(persistence(39));
+// console.log(persistence(999));
+// console.log(persistence(4));
+
+// DESCRIPTION:
+// In the following 6 digit number:
+// 283910
+// 91 is the greatest sequence of 2 consecutive digits.
+// In the following 10 digit number:
+// 1234567890
+// 67890 is the greatest sequence of 5 consecutive digits.
+// Complete the solution so that it returns the greatest sequence of five consecutive digits found within the number given. The number will be passed in as a string of only digits. It should return a five digit integer. The number passed may be as large as 1000 digits.
+
+function solution(digits) {
+  if (digits.length <= 5) return digits;
+  digits = digits.toString();
+
+  let arr = [];
+  for (let i = 0; i <= digits.length - 5; i++) {
+    arr.push(digits.slice(i, i + 5));
+  }
+  return Math.max(...arr.map(Number));
+}
+
+console.log(solution(1234567890));
