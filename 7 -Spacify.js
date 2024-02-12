@@ -14,7 +14,15 @@
 // });
 
 function spacify(str) {
-  // return
+  let result = [];
+  let spaces = " ".repeat(str.length);
+  str = str.split("");
+  for (let i = 0; i < str.length; i++) {
+    result.push(str[i]);
+    result.push(spaces[i]);
+  }
+
+  return result.join("").trim();
 }
 
 console.log(spacify("hello world"));
