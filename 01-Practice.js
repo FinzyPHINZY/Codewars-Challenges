@@ -246,9 +246,19 @@ function unluckyDays(year) {
 
 function digitalRoot(n) {
   // ...
+  if (n < 10) return n;
+
+  let sum = n
+    .toString()
+    .split("")
+    .map(Number)
+    .reduce((sum, num) => sum + num, 0);
+  // console.log(sum);
+
+  return digitalRoot(sum);
 }
 
-console.log(digitalRoot(16));
-console.log(digitalRoot(942));
-console.log(digitalRoot(132189));
-console.log(digitalRoot(493193));
+// console.log(digitalRoot(16));
+// console.log(digitalRoot(942));
+// console.log(digitalRoot(132189));
+// console.log(digitalRoot(493193));
