@@ -15,3 +15,11 @@
 // For example, decode("h3 th2r2") would return "hi there".
 
 // For the sake of simplicity, you can assume that any numbers passed into the function will correspond to vowels.
+
+function encode(string) {
+  return;
+}
+
+function decode(string) {
+  return;
+}
