@@ -272,8 +272,18 @@ function digitalRoot(n) {
 
 function persistence(num) {
   //code me
+  let count = 0;
+  while (num > 9) {
+    num = num
+      .toString()
+      .split("")
+      .map(Number)
+      .reduce((sum, num) => sum * num, 1);
+    count++;
+  }
+  return count;
 }
 
-console.log(persistence(39));
-console.log(persistence(999));
-console.log(persistence(4));
+// console.log(persistence(39));
+// console.log(persistence(999));
+// console.log(persistence(4));
