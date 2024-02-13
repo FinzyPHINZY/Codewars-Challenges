@@ -308,4 +308,72 @@ function solution(digits) {
   return Math.max(...arr.map(Number));
 }
 
-console.log(solution(1234567890));
+// console.log(solution(1234567890));
+
+// DESCRIPTION:
+// Task
+// You are given a dictionary/hash/object containing some languages and your test results in the given languages. Return the list of languages where your test score is at least 60, in descending order of the scores.
+
+// Note: the scores will always be unique (so no duplicate values)
+
+// Examples
+// {"Java": 10, "Ruby": 80, "Python": 65}    -->  ["Ruby", "Python"]
+// {"Hindi": 60, "Dutch" : 93, "Greek": 71}  -->  ["Dutch", "Greek", "Hindi"]
+// {"C++": 50, "ASM": 10, "Haskell": 20}     -->  []
+
+function myLanguages(results) {
+  return Object.entries(results)
+    .filter((lang) => lang[1] >= 60)
+    .map((lang) => lang[0]);
+}
+
+// console.log(myLanguages({ Java: 10, Ruby: 80, Python: 65 }));
+// console.log(myLanguages({ Hindi: 60, Greek: 71, Dutch: 93 }));
+// console.log(myLanguages({ "C++": 50, ASM: 10, Haskell: 20 }));
+
+// DESCRIPTION:
+// If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+// Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
+
+// Additionally, if the number is negative, return 0.
+
+// Note: If the number is a multiple of both 3 and 5, only count it once.
+
+// Courtesy of projecteuler.net (Problem 1)
+
+// Test Cases:
+
+// describe("basic tests", function () {
+//   test(10, 23);
+// });
+
+function test(num) {
+  let sum = 0;
+
+  for (let i = 0; i < num; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      sum += i;
+    }
+  }
+
+  return sum;
+}
+
+// console.log(test(10));
+
+// You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+// Complete the method which accepts such an array, and returns that single different number.
+// The input array will always be valid! (odd-length >= 3)
+// Examples
+// [1, 1, 2] ==> 2
+// [17, 17, 3, 17, 17, 17, 17] ==> 3
+
+function stray(arr) {
+  arr = arr.sort();
+
+  return arr[0] === arr[1] ? arr[arr.length - 1] : arr[1];
+}
+
+console.log(stray([1, 1, 2]));
+console.log(stray([17, 17, 3, 17, 17, 17, 17]));
