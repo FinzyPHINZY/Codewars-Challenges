@@ -327,6 +327,23 @@ function myLanguages(results) {
     .map((lang) => lang[0]);
 }
 
-console.log(myLanguages({ Java: 10, Ruby: 80, Python: 65 }));
-console.log(myLanguages({ Hindi: 60, Greek: 71, Dutch: 93 }));
-console.log(myLanguages({ "C++": 50, ASM: 10, Haskell: 20 }));
+// console.log(myLanguages({ Java: 10, Ruby: 80, Python: 65 }));
+// console.log(myLanguages({ Hindi: 60, Greek: 71, Dutch: 93 }));
+// console.log(myLanguages({ "C++": 50, ASM: 10, Haskell: 20 }));
+
+// DESCRIPTION:
+// If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+// Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
+
+// Additionally, if the number is negative, return 0.
+
+// Note: If the number is a multiple of both 3 and 5, only count it once.
+
+// Courtesy of projecteuler.net (Problem 1)
+
+// Test Cases:
+
+// describe("basic tests", function () {
+//   test(10, 23);
+// });
