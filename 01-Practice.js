@@ -347,3 +347,7 @@ function myLanguages(results) {
 // describe("basic tests", function () {
 //   test(10, 23);
 // });
+
+function test() {}
+
+console.log(test(10));
