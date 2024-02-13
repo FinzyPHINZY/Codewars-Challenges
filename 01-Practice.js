@@ -368,3 +368,12 @@ function test(num) {
 // Examples
 // [1, 1, 2] ==> 2
 // [17, 17, 3, 17, 17, 17, 17] ==> 3
+
+function stray(arr) {
+  arr = arr.sort();
+
+  return arr[0] === arr[1] ? arr[arr.length - 1] : arr[1];
+}
+
+console.log(stray([1, 1, 2]));
+console.log(stray([17, 17, 3, 17, 17, 17, 17]));
