@@ -24,7 +24,14 @@
 // });
 
 function toBinary(n) {
-  return n;
+  let binary = "";
+
+  while (n > 0) {
+    let remainder = n % 2;
+    binary = remainder + binary;
+    n = Math.floor(n / 2);
+  }
+  return Number(binary);
 }
 
 console.log(toBinary(1));
