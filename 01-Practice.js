@@ -396,7 +396,11 @@ function stray(arr) {
 // Notes
 // You can see another examples in the "Sample tests".
 
-function meeting(s) {}
+function meeting(s) {
+  // TO uppercase
+  // gives it sorted in alphabetical order by last name.
+  // When the last names are the same, sort them by first name. Last name and first name of a guest come in the result between parentheses separated by a comma.
+}
 
 console.log(
   meeting(
