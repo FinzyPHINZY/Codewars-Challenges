@@ -24,14 +24,16 @@
 // });
 
 function toBinary(n) {
-  let binary = "";
+  //   let binary = "";
 
-  while (n > 0) {
-    let remainder = n % 2;
-    binary = remainder + binary;
-    n = Math.floor(n / 2);
-  }
-  return Number(binary);
+  //   while (n > 0) {
+  //     let remainder = n % 2;
+  //     binary = remainder + binary;
+  //     n = Math.floor(n / 2);
+  //   }
+  //   return Number(binary);
+
+  return n.toString(2);
 }
 
 console.log(toBinary(1));
