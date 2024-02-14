@@ -13,6 +13,21 @@
 // toBinary(5)  /* should return 101 */
 // toBinary(11) /* should return 1011 */
 
+// Test Cases:
+// describe("Basic tests", () => {
+//   it("Testing for fixed tests", () => {
+//     assert.strictEqual(toBinary(1), 1);
+//     assert.strictEqual(toBinary(2), 10);
+//     assert.strictEqual(toBinary(3), 11);
+//     assert.strictEqual(toBinary(5), 101);
+//   });
+// });
+
 function toBinary(n) {
   return n;
 }
+
+console.log(toBinary(1));
+console.log(toBinary(2));
+console.log(toBinary(3));
+console.log(toBinary(5));
