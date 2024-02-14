@@ -397,3 +397,9 @@ function stray(arr) {
 // You can see another examples in the "Sample tests".
 
 function meeting(s) {}
+
+console.log(
+  meeting(
+    "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"
+  )
+);
