@@ -15,3 +15,7 @@
 // "ABC123!@€£#$%^&*()_-+=}{[]|\':;?/>.<,~" ===> 0
 
 // "abcdefghijklmnopqrstuvwxyz" ===> 26
+
+function lowercaseCount(str) {
+  //How many?
+}
