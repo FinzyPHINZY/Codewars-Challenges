@@ -398,8 +398,15 @@ function stray(arr) {
 
 function meeting(s) {
   // TO uppercase
-  // gives it sorted in alphabetical order by last name.
+  s = s
+    .toUpperCase()
+    // gives it sorted in alphabetical order by last name.
+    .split(";")
+    .map((name) => name.split(":").reverse().join(", "))
+    .sort()
+    .join("")("");
   // When the last names are the same, sort them by first name. Last name and first name of a guest come in the result between parentheses separated by a comma.
+  return s;
 }
 
 console.log(
