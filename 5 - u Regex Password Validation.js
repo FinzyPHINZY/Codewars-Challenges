@@ -8,3 +8,6 @@
 // contains an uppercase letter
 // contains a digit
 // only contains alphanumeric characters (note that '_' is not alphanumeric)
+
+// assign your RegExp to REGEXP:
+const REGEXP = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/;
