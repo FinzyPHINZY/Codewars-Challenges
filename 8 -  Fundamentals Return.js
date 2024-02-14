@@ -19,40 +19,39 @@
 // Note: All math operations will be: a (operation) b
 
 // Test Cases:
-
-describe("Basic tests", () => {
-  it("Testing for fixed tests", () => {
-    assert.strictEqual(add(1, 2), 3);
-    assert.strictEqual(multiply(1, 2), 2);
-    assert.strictEqual(divide(2, 1), 2);
-    assert.strictEqual(mod(1, 2), 1);
-    assert.strictEqual(exponent(1, 2), 1);
-    assert.strictEqual(subt(1, 2), -1);
-  });
-});
+// describe("Basic tests", () => {
+//   it("Testing for fixed tests", () => {
+//     assert.strictEqual(add(1, 2), 3);
+//     assert.strictEqual(multiply(1, 2), 2);
+//     assert.strictEqual(divide(2, 1), 2);
+//     assert.strictEqual(mod(1, 2), 1);
+//     assert.strictEqual(exponent(1, 2), 1);
+//     assert.strictEqual(subt(1, 2), -1);
+//   });
+// });
 
 function add(a, b) {
-  return;
+  return a + b;
 }
 
 function divide(a, b) {
-  return;
+  return a / b;
 }
 
 function multiply(a, b) {
-  return;
+  return a * b;
 }
 
 function mod(a, b) {
-  return;
+  return a % b;
 }
 
 function exponent(a, b) {
-  return;
+  return a ** b;
 }
 
 function subt(a, b) {
-  return;
+  return a - b;
 }
 
 console.log(add(1, 2));
