@@ -18,6 +18,19 @@
 
 // Note: All math operations will be: a (operation) b
 
+// Test Cases:
+
+describe("Basic tests", () => {
+  it("Testing for fixed tests", () => {
+    assert.strictEqual(add(1, 2), 3);
+    assert.strictEqual(multiply(1, 2), 2);
+    assert.strictEqual(divide(2, 1), 2);
+    assert.strictEqual(mod(1, 2), 1);
+    assert.strictEqual(exponent(1, 2), 1);
+    assert.strictEqual(subt(1, 2), -1);
+  });
+});
+
 function add(a, b) {
   return;
 }
@@ -41,3 +54,10 @@ function exponent(a, b) {
 function subt(a, b) {
   return;
 }
+
+console.log(add(1, 2));
+console.log(multiply(1, 2));
+console.log(divide(2, 1));
+console.log(mod(1, 2));
+console.log(exponent(1, 2));
+console.log(subt(1, 2));
