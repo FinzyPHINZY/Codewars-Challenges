@@ -88,6 +88,19 @@
 
 function giveMeFive(obj) {
   //coding here
+
+  let array = [];
+
+  for (let key in obj) {
+    if (key.length === 5) {
+      array.push(key);
+    }
+    if (obj[key].toString().length === 5) {
+      array.push(obj[key]);
+    }
+  }
+
+  return array;
 }
 
 console.log(giveMeFive({ Our: "earth", is: "a", beautyful: "world" }));
