@@ -76,3 +76,7 @@
 // At the end, return your array.
 
 // You should use for..in in your code, otherwise your solution may not pass this kata.
+
+function giveMeFive(obj) {
+  //coding here
+}
