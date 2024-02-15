@@ -77,6 +77,21 @@
 
 // You should use for..in in your code, otherwise your solution may not pass this kata.
 
+// Test Cases:
+// describe("Tests", () => {
+//     it("test", () => {
+//       Test.assertSimilar(giveMeFive({Our:"earth",is:"a",beautyful:"world"}),["earth","world"]);
+//       Test.assertSimilar(giveMeFive({Ihave:"enough", money:"to",buy:"a",car:"model"}),["Ihave","money","model"]);
+//       Test.assertSimilar(giveMeFive({Pears:"than",apple:"sweet"}),["Pears","apple","sweet"]);
+
+//     });
+
 function giveMeFive(obj) {
   //coding here
 }
+
+console.log(giveMeFive({ Our: "earth", is: "a", beautyful: "world" }));
+console.log(
+  giveMeFive({ Ihave: "enough", money: "to", buy: "a", car: "model" })
+);
+console.log(giveMeFive({ Pears: "than", apple: "sweet" }));
