@@ -5,16 +5,17 @@
 // For the ASCII table you can refer to http://www.asciitable.com/
 
 // Test Cases:
-describe("Tests", () => {
-  it("test", () => {
-    Test.assertEquals(getASCII("A"), 65);
-    Test.assertEquals(getASCII(" "), 32);
-    Test.assertEquals(getASCII("!"), 33);
-  });
-});
+// describe("Tests", () => {
+//   it("test", () => {
+//     Test.assertEquals(getASCII("A"), 65);
+//     Test.assertEquals(getASCII(" "), 32);
+//     Test.assertEquals(getASCII("!"), 33);
+//   });
+// });
 
 function getASCII(c) {
   // ...
+  return c.charCodeAt(0);
 }
 
 console.log(getASCII("A"));
