@@ -437,12 +437,9 @@ function meeting(s) {
 // b = [121, 14641, 20736, 36100, 25921, 361, 20736, 361]
 // comp(a,b) returns false because in b 36100 is not the square of any number of a.
 
-// Remarks
-// a or b might be [] or {} (all languages except R, Shell).
-// a or b might be nil or null or None or nothing (except in C++, COBOL, Crystal, D, Dart, Elixir, Fortran, F#, Haskell, Nim, OCaml, Pascal, Perl, PowerShell, Prolog, PureScript, R, Racket, Rust, Shell, Swift).
-// If a or b are nil (or null or None, depending on the language), the problem doesn't make sense so return false.
-
-function comp(a, b) {}
+function comp(a, b) {
+  a.map((num) => num * num).every((num) => b.includes(num));
+}
 
 console.log(
   comp(
@@ -465,4 +462,3 @@ console.log(
     ]
   )
 );
-console.log(comp());
