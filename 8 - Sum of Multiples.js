@@ -23,6 +23,15 @@
 
 function sumMul(n, m) {
   //your idea here
+
+  if (n < 1 || m < 1) return "INVALID";
+  let array = [];
+
+  for (let i = 1; i < m; i++) {
+    array.push(n * i);
+  }
+
+  return array.filter((num) => num < m).reduce((sum, num) => sum + num, 0);
 }
 
 console.log(sumMul(0, 0));
