@@ -565,4 +565,24 @@ function solution(digits, length) {
 // Notes
 // You can see another examples in the "Sample tests".
 
-function meeting(s) {}
+// prep
+
+function meeting(s) {
+  // split the names into individuals
+
+  let names = s.split(";");
+
+  // loop through the names and reverse them
+  names = names
+    .map((name) => name.split(":").reverse().join(", "))
+    .sort()
+    .join(")(");
+
+  return `(${names})`;
+}
+
+// console.log(
+//   meeting(
+//     "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"
+//   )
+// );
