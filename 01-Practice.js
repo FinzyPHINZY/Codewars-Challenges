@@ -441,24 +441,37 @@ function comp(a, b) {
   a.map((num) => num * num).every((num) => b.includes(num));
 }
 
-console.log(
-  comp(
-    [121, 144, 19, 161, 19, 144, 19, 11][
-      (121, 14641, 20736, 361, 25921, 361, 20736, 361)
-    ]
-  )
-);
-console.log(
-  comp(
-    [121, 144, 19, 161, 19, 144, 19, 11][
-      (132, 14641, 20736, 361, 25921, 361, 20736, 361)
-    ]
-  )
-);
-console.log(
-  comp(
-    [121, 144, 19, 161, 19, 144, 19, 11][
-      (121, 14641, 20736, 36100, 25921, 361, 20736, 361)
-    ]
-  )
-);
+// console.log(
+//   comp(
+//     [121, 144, 19, 161, 19, 144, 19, 11][
+//       (121, 14641, 20736, 361, 25921, 361, 20736, 361)
+//     ]
+//   )
+// );
+// console.log(
+//   comp(
+//     [121, 144, 19, 161, 19, 144, 19, 11][
+//       (132, 14641, 20736, 361, 25921, 361, 20736, 361)
+//     ]
+//   )
+// );
+// console.log(
+//   comp(
+//     [121, 144, 19, 161, 19, 144, 19, 11][
+//       (121, 14641, 20736, 36100, 25921, 361, 20736, 361)
+//     ]
+//   )
+// );
+
+// DESCRIPTION:
+// Friday 13th or Black Friday is considered as unlucky day. Calculate how many unlucky days are in the given year.
+// Find the number of Friday 13th in the given year.
+// Input: Year in Gregorian calendar as integer.
+// Output: Number of Black Fridays in the year as an integer.
+// Examples:
+// unluckyDays(2015) == 3
+// unluckyDays(1986) == 1
+
+function unluckyDays(year) {
+  //your code here
+}
