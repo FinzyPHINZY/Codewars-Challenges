@@ -441,24 +441,148 @@ function comp(a, b) {
   a.map((num) => num * num).every((num) => b.includes(num));
 }
 
-console.log(
-  comp(
-    [121, 144, 19, 161, 19, 144, 19, 11][
-      (121, 14641, 20736, 361, 25921, 361, 20736, 361)
-    ]
-  )
-);
-console.log(
-  comp(
-    [121, 144, 19, 161, 19, 144, 19, 11][
-      (132, 14641, 20736, 361, 25921, 361, 20736, 361)
-    ]
-  )
-);
-console.log(
-  comp(
-    [121, 144, 19, 161, 19, 144, 19, 11][
-      (121, 14641, 20736, 36100, 25921, 361, 20736, 361)
-    ]
-  )
-);
+// console.log(
+//   comp(
+//     [121, 144, 19, 161, 19, 144, 19, 11][
+//       (121, 14641, 20736, 361, 25921, 361, 20736, 361)
+//     ]
+//   )
+// );
+// console.log(
+//   comp(
+//     [121, 144, 19, 161, 19, 144, 19, 11][
+//       (132, 14641, 20736, 361, 25921, 361, 20736, 361)
+//     ]
+//   )
+// );
+// console.log(
+//   comp(
+//     [121, 144, 19, 161, 19, 144, 19, 11][
+//       (121, 14641, 20736, 36100, 25921, 361, 20736, 361)
+//     ]
+//   )
+// );
+
+// DESCRIPTION:
+// Friday 13th or Black Friday is considered as unlucky day. Calculate how many unlucky days are in the given year.
+// Find the number of Friday 13th in the given year.
+// Input: Year in Gregorian calendar as integer.
+// Output: Number of Black Fridays in the year as an integer.
+// Examples:
+// unluckyDays(2015) == 3
+// unluckyDays(1986) == 1
+
+function unluckyDays(year) {
+  //your code here
+  let count = 0;
+  for (let month = 0; month < 12; month++) {
+    let date = new Date(year, month, 13);
+    if (date.getDay() == 5) count++;
+  }
+  return count;
+}
+
+// console.log(unluckyDays(2015));
+// console.log(unluckyDays(1986));
+
+// DESCRIPTION:
+// Digital root is the recursive sum of all the digits in a number.
+// Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.
+// Examples
+//     16  -->  1 + 6 = 7
+//    942  -->  9 + 4 + 2 = 15  -->  1 + 5 = 6
+// 132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
+// 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
+
+// PREP
+// pARAMETERS
+// RETURN
+// EXAMPLES
+// PSEUDO
+
+function digitalRoot(n) {
+  // ...
+  if (n < 9) return n;
+
+  let sum = n
+    .toString()
+    .split("")
+    .map(Number)
+    .reduce((a, b) => a + b);
+
+  return digitalRoot(sum);
+}
+
+// console.log(digitalRoot(16));
+// console.log(digitalRoot(942));
+// console.log(digitalRoot(132189));
+// console.log(digitalRoot(493193));
+
+// DESCRIPTION:
+// In the following 6 digit number:
+// 283910
+// 91 is the greatest sequence of 2 consecutive digits.
+// In the following 10 digit number:
+// 1234567890
+// 67890 is the greatest sequence of 5 consecutive digits.
+// Complete the solution so that it returns the greatest sequence of five consecutive digits found within the number given. The number will be passed in as a string of only digits. It should return a five digit integer. The number passed may be as large as 1000 digits.
+
+// PREP
+
+function solution(digits, length) {
+  // split the numbers into 5 sequential digits using loops and put them into and array
+  let array = [];
+  for (let i = 0; i <= digits.length - length; i++) {
+    let sequence = digits.slice(i, i + length);
+    array.push(sequence);
+  }
+
+  // return the highest digit in the array
+  ////// convert array elements to integers
+  array = array.map(Number);
+  return Math.max(...array);
+  // return highestSequence;
+}
+
+// console.log(solution("1234567890", 5));
+// console.log(solution("283910", 2));
+
+// DESCRIPTION:
+// John has invited some friends. His list is:
+
+// s = "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill";
+// Could you make a program that
+
+// makes this string uppercase
+// gives it sorted in alphabetical order by last name.
+// When the last names are the same, sort them by first name. Last name and first name of a guest come in the result between parentheses separated by a comma.
+
+// So the result of function meeting(s) will be:
+
+// "(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)"
+// It can happen that in two distinct families with the same family name two people have the same first name too.
+
+// Notes
+// You can see another examples in the "Sample tests".
+
+// prep
+
+function meeting(s) {
+  // split the names into individuals
+
+  let names = s.split(";");
+
+  // loop through the names and reverse them
+  names = names
+    .map((name) => name.split(":").reverse().join(", "))
+    .sort()
+    .join(")(");
+
+  return `(${names})`;
+}
+
+// console.log(
+//   meeting(
+//     "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"
+//   )
+// );
