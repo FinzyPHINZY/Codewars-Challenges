@@ -494,6 +494,26 @@ function unluckyDays(year) {
 // 132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
 // 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
 
+// PREP
+// pARAMETERS
+// RETURN
+// EXAMPLES
+// PSEUDO
+
 function digitalRoot(n) {
   // ...
+  if (n < 9) return n;
+
+  let sum = n
+    .toString()
+    .split("")
+    .map(Number)
+    .reduce((a, b) => a + b);
+
+  return digitalRoot(sum);
 }
+
+// console.log(digitalRoot(16));
+// console.log(digitalRoot(942));
+// console.log(digitalRoot(132189));
+// console.log(digitalRoot(493193));
