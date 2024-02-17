@@ -474,4 +474,10 @@ function comp(a, b) {
 
 function unluckyDays(year) {
   //your code here
+  for (let month = 0; month < 12; month++) {
+    console.log(month);
+  }
 }
+
+console.log(unluckyDays(2015));
+console.log(unluckyDays(1986));
