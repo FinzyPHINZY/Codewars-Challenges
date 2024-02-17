@@ -527,4 +527,22 @@ function digitalRoot(n) {
 // 67890 is the greatest sequence of 5 consecutive digits.
 // Complete the solution so that it returns the greatest sequence of five consecutive digits found within the number given. The number will be passed in as a string of only digits. It should return a five digit integer. The number passed may be as large as 1000 digits.
 
-function solution(digits) {}
+// PREP
+
+function solution(digits, length) {
+  // split the numbers into 5 sequential digits using loops and put them into and array
+  let array = [];
+  for (let i = 0; i <= digits.length - length; i++) {
+    let sequence = digits.slice(i, i + length);
+    array.push(sequence);
+  }
+
+  // return the highest digit in the array
+  ////// convert array elements to integers
+  array = array.map(Number);
+  return Math.max(...array);
+  // return highestSequence;
+}
+
+// console.log(solution("1234567890", 5));
+// console.log(solution("283910", 2));
