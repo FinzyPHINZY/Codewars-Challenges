@@ -35,3 +35,7 @@
 // sum of all digits to the left of the middle digit(s) -> 10
 // sum of all digits to the right of the middle digit(s) -> 20
 // 10 and 20 are not equal, so it's not balanced.
+
+function balancedNum(number) {
+  return "Do your magic!";
+}
