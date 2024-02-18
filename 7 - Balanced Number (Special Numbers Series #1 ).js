@@ -36,6 +36,40 @@
 // sum of all digits to the right of the middle digit(s) -> 20
 // 10 and 20 are not equal, so it's not balanced.
 
+// Test Cases:
+
+// describe("Check less than thousand", function () {
+//   it("Check balanced number", function () {
+//     Test.assertEquals(balancedNum(7), "Balanced");
+//     Test.assertEquals(balancedNum(959), "Balanced");
+//     Test.assertEquals(balancedNum(13), "Balanced");
+//     Test.assertEquals(balancedNum(432), "Not Balanced");
+//     Test.assertEquals(balancedNum(424), "Balanced");
+//   });
+//   it("Check Larger number", function () {
+//     Test.assertEquals(balancedNum(1024), "Not Balanced");
+//     Test.assertEquals(balancedNum(66545), "Not Balanced");
+//     Test.assertEquals(balancedNum(295591), "Not Balanced");
+//     Test.assertEquals(balancedNum(1230987), "Not Balanced");
+//     Test.assertEquals(balancedNum(56239814), "Balanced");
+//   });
+// });
+
 function balancedNum(number) {
   return "Do your magic!";
 }
+
+console.log("BALANCED!");
+console.log(balancedNum(7));
+console.log(balancedNum(959));
+console.log(balancedNum(13));
+console.log(balancedNum(432));
+console.log(balancedNum(424));
+
+//
+console.log("NOT BALANCED");
+console.log(balancedNum(1024));
+console.log(balancedNum(66545));
+console.log(balancedNum(295591));
+console.log(balancedNum(1230987));
+console.log(balancedNum(56239814));
