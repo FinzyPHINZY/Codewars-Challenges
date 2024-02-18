@@ -55,8 +55,10 @@
 //   });
 // });
 
+// SOLUTION
 function balancedNum(number) {
   number = number.toString();
+
   let length = number.length;
   if (length < 3) return "Balanced";
   // check if numberlength is even or odd
@@ -90,6 +92,28 @@ function balancedNum(number) {
       .reduce((sum, num) => sum + num, 0);
     return left == right ? "Balanced" : "Not Balanced";
   }
+}
+
+// REFACTORED SOLUTION
+function balancedNum(number) {
+  number = number.toString();
+  const length = number.length;
+
+  if (length < 3) return "Balanced";
+
+  const sumDigits = (numStr) =>
+    numStr.split("").reduce((sum, num) => sum + parseInt(num), 0);
+
+  const middleIndex = length / 2;
+  const leftLength = length % 2 === 0 ? middleIndex - 1 : middleIndex;
+  const rightStartIndex = length % 2 === 0 ? middleIndex + 1 : -middleIndex;
+
+  const left = number.slice(0, leftLength);
+
+  const right = number.slice(rightStartIndex);
+  //   return [left, right];
+
+  return sumDigits(left) === sumDigits(right) ? "Balanced" : "Not Balanced";
 }
 
 console.log(balancedNum(7));
