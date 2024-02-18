@@ -56,18 +56,50 @@
 // });
 
 function balancedNum(number) {
-  return "Do your magic!";
+  number = number.toString();
+  let length = number.length;
+  if (length < 3) return "Balanced";
+  // check if numberlength is even or odd
+  if (length % 2 !== 0) {
+    // if odd,split num into 2 parts excluding middle num;
+    let left = number.slice(0, length / 2);
+    let right = number.slice(-length / 2, length);
+
+    left = left
+      .split("")
+      .map(Number)
+      .reduce((sum, num) => sum + num, 0);
+    right = right
+      .split("")
+      .map(Number)
+      .reduce((sum, num) => sum + num, 0);
+
+    return left == right ? "Balanced" : "Not Balanced";
+  } else {
+    // if even, split number into two excluding 2 middle nums;
+    let left = number.slice(0, length / 2 - 1);
+    let right = number.slice(-length / 2 + 1);
+
+    left = left
+      .split("")
+      .map(Number)
+      .reduce((sum, num) => sum + num, 0);
+    right = right
+      .split("")
+      .map(Number)
+      .reduce((sum, num) => sum + num, 0);
+    return left == right ? "Balanced" : "Not Balanced";
+  }
 }
 
-console.log("BALANCED!");
 console.log(balancedNum(7));
 console.log(balancedNum(959));
 console.log(balancedNum(13));
 console.log(balancedNum(432));
 console.log(balancedNum(424));
 
-//
-console.log("NOT BALANCED");
+console.log(" ".repeat(10));
+
 console.log(balancedNum(1024));
 console.log(balancedNum(66545));
 console.log(balancedNum(295591));
