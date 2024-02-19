@@ -14,11 +14,11 @@
 // [ 'My', 'name', 'is', 'John' ]
 // In the example above, we use the space as the separator, divide a sentence into 4 words. If we specify the second parameters, it will be like this:
 
-// var str="My name is John";
-// var words1=str.split(" ",3);
-// console.log("words1:",words1);
-// var words2=str.split(" ",5);
-// console.log("words2:",words2);
+// var str = "My name is John";
+// var words1 = str.split(" ", 3);
+// console.log("words1:", words1);
+// var words2 = str.split(" ", 5);
+// console.log("words2:", words2);
 
 // //output:
 // words1:[ 'My', 'name', 'is' ]
@@ -88,7 +88,10 @@
 //   });
 
 function splitAndMerge(string, separator) {
-  return string.split(" ").join("").split("").join(separator);
+  return string
+    .split(" ")
+    .map((e) => e.split("").join(separator))
+    .join(" ");
 }
 
 console.log(splitAndMerge("My name is John", " "));
