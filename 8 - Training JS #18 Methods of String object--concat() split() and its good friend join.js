@@ -77,6 +77,21 @@
 // splitAndMerge("Hello World!", ".")     ==  "H.e.l.l.o W.o.r.l.d.!"
 // splitAndMerge("Hello World!", ",")     ==  "H,e,l,l,o W,o,r,l,d,!"
 
+// Test Cases:
+// describe("Sample Tests", () => {
+//     it("Should pass sample tests", () => {
+//       assert.strictEqual(splitAndMerge("My name is John"," ") , "M y n a m e i s J o h n");
+//       assert.strictEqual(splitAndMerge("My name is John","-") , "M-y n-a-m-e i-s J-o-h-n");
+//       assert.strictEqual(splitAndMerge("Hello World!",".") , "H.e.l.l.o W.o.r.l.d.!");
+//       assert.strictEqual(splitAndMerge("Hello World!",",") , "H,e,l,l,o W,o,r,l,d,!");
+//     });
+//   });
+
 function splitAndMerge(string, separator) {
   return;
 }
+
+console.log(splitAndMerge("My name is John", " "));
+console.log(splitAndMerge("My name is John", "-"));
+console.log(splitAndMerge("Hello World!", "."));
+console.log(splitAndMerge("Hello World!", ","));
