@@ -13,7 +13,24 @@
 //     Test.assertSimilar(isVow([101,121,110,113,113,103,121,121,101,107,103]),["e",121,110,113,113,103,121,121,"e",107,103]);
 //     });
 
-function isVow(a) {}
+function isVow(a) {
+  let output = [];
+  a.forEach((char) => {
+    if (
+      char === 97 ||
+      char === 101 ||
+      char === 105 ||
+      char === 111 ||
+      char === 117
+    ) {
+      output.push(String.fromCharCode(char));
+    } else {
+      output.push(char);
+    }
+  });
+
+  return output;
+}
 
 console.log(
   isVow([
