@@ -17,3 +17,9 @@
 //     Test.assertEquals(combineNames("James", "Stevens"), "James Stevens");
 //   });
 // });
+
+function combineNames(firstName, secondName) {
+  return firstName.concat(" ", secondName);
+}
+
+console.log(combineNames("James", "Steve"));
