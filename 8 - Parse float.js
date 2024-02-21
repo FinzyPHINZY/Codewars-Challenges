@@ -11,7 +11,8 @@
 // });
 
 function parseF(s) {
-  return null;
+  const result = parseFloat(s);
+  return isNaN(result) ? null : result;
 }
 
 console.log(parseF("1"));
