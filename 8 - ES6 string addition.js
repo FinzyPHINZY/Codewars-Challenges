@@ -9,3 +9,20 @@
 // + , .concat() & .join() will not be allowed in this exercise. I have also removed some other methods that can be used to cheat!
 
 // If one of the arguments is a number your code must coerce it into being a string.
+
+// Test Cases:
+// describe("add", () => {
+//   it("should work for sample tests", () => {
+//     assert.strictEqual(joinStrings("string1", "string2"), "string1 string2");
+//     assert.strictEqual(joinStrings("testing", "testing"), "testing testing");
+//     assert.strictEqual(joinStrings(134, 234), "134 234");
+//   });
+// });
+
+function joinStrings(string1, string2) {
+  // code here
+}
+
+console.log(joinStrings("string1", "string2"));
+console.log(joinStrings("testing", "testing"));
+console.log(joinStrings(134, 234));
