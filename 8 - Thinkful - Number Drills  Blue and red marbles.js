@@ -24,6 +24,10 @@
 
 function guessBlue(blueStart, redStart, bluePulled, redPulled) {
   // Your code here.
+  const blueMarblesLeft = blueStart - bluePulled;
+  const marblesLeft = blueMarblesLeft + (redStart - redPulled);
+
+  return blueMarblesLeft / marblesLeft;
 }
 
 console.log(guessBlue(5, 5, 2, 3));
