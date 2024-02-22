@@ -20,7 +20,16 @@
 //     })
 //   })
 
-function outed(meet, boss) {}
+function outed(meet, boss) {
+  const workerCount = Object.keys(meet).length;
+  let score = 0;
+  for (const [key, value] of Object.entries(meet)) {
+    key === boss ? (score += value * 2) : (score += value);
+  }
+  console.log(score);
+
+  return score / workerCount > 5 ? "Nice Work Champ!" : "Get Out Now!";
+}
 
 console.log(
   outed(
