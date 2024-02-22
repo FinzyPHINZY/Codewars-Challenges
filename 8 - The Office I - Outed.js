@@ -11,7 +11,6 @@
 // Note that your boss is in the room (boss), their score is worth double it's face value (but they are still just one person!).
 
 // Test Cases:
-
 // describe("Example tests",() =>{
 //     it("Should pass Example tests",() =>{
 //       assert.strictEqual(outed({'tim':0, 'jim':2, 'randy':0, 'sandy':7, 'andy':0, 'katie':5, 'laura':1, 'saajid':2, 'alex':3, 'john':2, 'mr':0}, 'laura'), 'Get Out Now!');
@@ -26,7 +25,6 @@ function outed(meet, boss) {
   for (const [key, value] of Object.entries(meet)) {
     key === boss ? (score += value * 2) : (score += value);
   }
-  console.log(score);
 
   return score / workerCount > 5 ? "Nice Work Champ!" : "Get Out Now!";
 }
