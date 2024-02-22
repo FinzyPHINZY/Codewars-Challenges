@@ -13,6 +13,19 @@
 // the number of red marbles pulled out so far (always lower than the starting number of red marbles)
 // guessBlue() should return the probability of drawing a blue marble, expressed as a float. For example, guessBlue(5, 5, 2, 3) should return 0.6.
 
+// // Test Cases:
+// describe("Tests", () => {
+//   it("test", () => {
+//     Test.assertEquals(guessBlue(5, 5, 2, 3), 0.6);
+//     Test.assertEquals(guessBlue(5, 7, 4, 3), 0.2);
+//     Test.assertEquals(guessBlue(12, 18, 4, 6), 0.4);
+//   });
+// });
+
 function guessBlue(blueStart, redStart, bluePulled, redPulled) {
   // Your code here.
 }
+
+console.log(guessBlue(5, 5, 2, 3));
+console.log(guessBlue(5, 7, 4, 3));
+console.log(guessBlue(12, 18, 4, 6));
