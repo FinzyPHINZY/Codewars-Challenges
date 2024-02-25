@@ -17,7 +17,7 @@
 
 function odds(values) {
   // arrow it
-  // return values.filter( => );
+  return values.filter((num) => num % 2 !== 0);
 }
 
 console.log(odds([]));
