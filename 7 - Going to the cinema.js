@@ -21,3 +21,7 @@
 //     (with card the total price is 634, with tickets 645)
 // movie(100, 10, 0.95) should return 24
 //     (with card the total price is 235, with tickets 240)
+
+function movie(card, ticket, perc) {
+  // your code
+}
