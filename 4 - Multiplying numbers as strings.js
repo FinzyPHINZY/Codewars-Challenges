@@ -7,3 +7,5 @@
 // Answer should be returned as a string
 // The returned "number" should not start with zeros e.g. 0123 is invalid
 // Note: 100 randomly generated tests!
+
+function multiply(a, b) {}
