@@ -25,6 +25,35 @@
 // strong_num(150) ==> return "Not Strong !!"
 // Since the sum of its digits' factorial of 1! + 5! + 0! = 122 is not equal to number itself, Then it's Not Strong .
 
+// Test Cases:
+// describe("Fixed Tests", () => {
+//   it("Testing for 1", () => {
+//     Test.assertEquals(strong(1), "STRONG!!!!");
+//   });
+//   it("Testing for 2", () => {
+//     Test.assertEquals(strong(2), "STRONG!!!!");
+//   });
+//   it("Testing for 145", () => {
+//     Test.assertEquals(strong(145), "STRONG!!!!");
+//   });
+//   it("Testing for 7", () => {
+//     Test.assertEquals(strong(7), "Not Strong !!");
+//   });
+//   it("Testing for 93", () => {
+//     Test.assertEquals(strong(93), "Not Strong !!");
+//   });
+//   it("Testing for 185", () => {
+//     Test.assertEquals(strong(185), "Not Strong !!");
+//   });
+// });
+
 function strong(n) {
   return "STRONG!!!!" || "Not Strong !!";
 }
+
+console.log(strong(1));
+console.log(strong(2));
+console.log(strong(145));
+console.log(strong(7));
+console.log(strong(93));
+console.log(strong(185));
