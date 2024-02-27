@@ -27,4 +27,23 @@
 // });
 
 // Add rooms here
-var rooms = {};
+var rooms = {
+  room1: {
+    name: "Room 1",
+    description: "This is the first room. It has a table and a chair.",
+    completed: false,
+  },
+  room2: {
+    name: "Room 2",
+    description:
+      "You've entered the second room. It's dimly lit with a mysterious aura.",
+    completed: false,
+    puzzle: "Solve the riddle to proceed.",
+  },
+  room3: {
+    name: "Room 3",
+    description: "Welcome to the final room. The exit is within your grasp.",
+    completed: false,
+    key: "Golden key",
+  },
+};
