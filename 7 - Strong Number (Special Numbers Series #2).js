@@ -24,3 +24,7 @@
 
 // strong_num(150) ==> return "Not Strong !!"
 // Since the sum of its digits' factorial of 1! + 5! + 0! = 122 is not equal to number itself, Then it's Not Strong .
+
+function strong(n) {
+  return "STRONG!!!!" || "Not Strong !!";
+}
