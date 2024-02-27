@@ -48,7 +48,24 @@
 // });
 
 function strong(n) {
-  return "STRONG!!!!" || "Not Strong !!";
+  //   return "STRONG!!!!" || "Not Strong !!";
+  // split (n) to allow iteration of each number
+  let number = n.toString().split("").map(Number);
+  //   create an array containing the factorial of each splited elements in the arguement
+  let factorialArray = [];
+  //   run an iteration for n.split() length times to generate the factorial of each number and push it to factorial array
+  number.forEach((num) => {
+    let result = 1;
+    for (let i = 1; i <= num; i++) {
+      result *= i;
+    }
+
+    factorialArray.push(result);
+  });
+  // return not strong if the reduced value doesnt equal the original value and vice versa
+
+  let newValue = factorialArray.reduce((sum, num) => sum + num, 0);
+  return newValue === n ? "STRONG!!!!" : "Not Strong !!";
 }
 
 console.log(strong(1));
