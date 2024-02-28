@@ -19,3 +19,7 @@
 // For example:
 
 // "Jędrzej Błądziński"  -->  "Jedrzej Bladzinski"
+
+function correctPolishLetters(string) {
+  // your code
+}
