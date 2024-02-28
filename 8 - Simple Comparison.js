@@ -19,7 +19,7 @@
 
 function add(a, b) {
   // code here
-  return a == b ? true : false;
+  return a == b;
 }
 
 console.log(add("1", 1));
