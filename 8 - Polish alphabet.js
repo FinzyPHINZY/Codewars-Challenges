@@ -21,14 +21,28 @@
 // "Jędrzej Błądziński"  -->  "Jedrzej Bladzinski"
 
 // Test Cases:
-describe("Tests", () => {
-  correctPolishLetters("Jędrzej Błądziński"), "Jedrzej Bladzinski";
-  correctPolishLetters("Lech Wałęsa"), "Lech Walesa";
-  correctPolishLetters("Maria Skłodowska-Curie"), "Maria Sklodowska-Curie";
-});
+// describe("Tests", () => {
+//   correctPolishLetters("Jędrzej Błądziński"), "Jedrzej Bladzinski";
+//   correctPolishLetters("Lech Wałęsa"), "Lech Walesa";
+//   correctPolishLetters("Maria Skłodowska-Curie"), "Maria Sklodowska-Curie";
+// });
 
 function correctPolishLetters(string) {
   // your code
+  const polishLetters = {
+    ą: "a",
+    ć: "c",
+    ę: "e",
+    ł: "l",
+    ń: "n",
+    ó: "o",
+    ś: "s",
+    ź: "z",
+    ż: "z",
+  };
+
+  // Replace Polish letters with their counterparts without diacritics
+  return string.replace(/[ąćęłńóśźż]/g, (letter) => polishLetters[letter]);
 }
 
 console.log(correctPolishLetters("Jędrzej Błądziński"));
