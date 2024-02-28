@@ -20,6 +20,17 @@
 
 // "Jędrzej Błądziński"  -->  "Jedrzej Bladzinski"
 
+// Test Cases:
+describe("Tests", () => {
+  correctPolishLetters("Jędrzej Błądziński"), "Jedrzej Bladzinski";
+  correctPolishLetters("Lech Wałęsa"), "Lech Walesa";
+  correctPolishLetters("Maria Skłodowska-Curie"), "Maria Sklodowska-Curie";
+});
+
 function correctPolishLetters(string) {
   // your code
 }
+
+console.log(correctPolishLetters("Jędrzej Błądziński"));
+console.log(correctPolishLetters("Lech Wałęsa"));
+console.log(correctPolishLetters("Maria Skłodowska-Curie"));
