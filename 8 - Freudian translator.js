@@ -9,6 +9,30 @@
 
 // In this kata, the function will take a string as its argument, and return a string with every word replaced by the explanation to everything, according to Freud. Note that an empty string, or no arguments, should return an empty string.
 
+// Tedt Cases:
+// describe("Tests", () => {
+//   it("test", () => {
+//     Test.assertSimilar(toFreud(""), "");
+//     Test.assertSimilar(toFreud("test"), "sex");
+//     Test.assertSimilar(toFreud("This is a test"), "sex sex sex sex");
+//     Test.assertSimilar(toFreud("This is a longer test"), "sex sex sex sex sex");
+//     Test.assertSimilar(
+//       toFreud("You're becoming a true freudian expert"),
+//       "sex sex sex sex sex sex"
+//     );
+//   });
+// });
+
 function toFreud(string) {
-  return result;
+  if (!string) return ""; // Return an empty string if input is empty or undefined
+  return string
+    .split(" ")
+    .map((word) => "sex")
+    .join(" ");
 }
+
+console.log(toFreud(""));
+console.log(toFreud("test"));
+console.log(toFreud("This is a test"));
+console.log(toFreud("This is a longer test"));
+console.log(toFreud("You're becoming a true freudian expert"));
