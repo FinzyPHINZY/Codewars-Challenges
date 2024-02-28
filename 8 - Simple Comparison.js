@@ -19,7 +19,7 @@
 
 function add(a, b) {
   // code here
-  typeof a === typeof b ? true : false;
+  return typeof a === typeof b ? true : false;
 }
 
 console.log(add("1", 1));
