@@ -10,3 +10,8 @@
 // "!Hi!"    ---> "Hi!"
 // "Hi! Hi!" ---> "Hi Hi!"
 // "Hi"      ---> "Hi!"
+
+function remove(string) {
+  //coding and coding....
+  return "";
+}
