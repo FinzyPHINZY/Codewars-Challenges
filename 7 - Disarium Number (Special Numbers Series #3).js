@@ -29,6 +29,13 @@
 
 function disariumNumber(n) {
   //your code here
+  let powered = n
+    .toString()
+    .split("")
+    .map((num, i) => Math.pow(Number(num), i + 1))
+    .reduce((sum, num) => sum + num, 0);
+
+  return n === powered ? "Disarium !!" : "Not !!";
 }
 
 console.log(disariumNumber(89));
