@@ -22,7 +22,14 @@
 // });
 
 function remove(string) {
-  return "";
+  let lastChar = string.length - 1;
+  if (string[lastChar] !== "!") return string;
+
+  while (string[lastChar] === "!") {
+    lastChar--;
+  }
+
+  return string.substring(0, lastChar + 1);
 }
 
 console.log(remove("Hi!"));
