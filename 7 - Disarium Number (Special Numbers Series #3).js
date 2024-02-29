@@ -18,6 +18,21 @@
 // Explanation:
 // Since , 51 + 62 + 43 = 105 != 564 , thus output is "Not !!"
 
+// Test Cases:
+// describe("Basic tests", () => {
+//   Test.assertEquals(disariumNumber(89), "Disarium !!");
+//   Test.assertEquals(disariumNumber(564), "Not !!");
+//   Test.assertEquals(disariumNumber(1024), "Not !!");
+//   Test.assertEquals(disariumNumber(135), "Disarium !!");
+//   Test.assertEquals(disariumNumber(136586), "Not !!");
+// });
+
 function disariumNumber(n) {
   //your code here
 }
+
+console.log(disariumNumber(89));
+console.log(disariumNumber(564));
+console.log(disariumNumber(1024));
+console.log(disariumNumber(135));
+console.log(disariumNumber(136586));
