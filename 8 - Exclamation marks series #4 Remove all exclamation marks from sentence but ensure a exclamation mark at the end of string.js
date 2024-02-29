@@ -25,7 +25,21 @@
 
 function remove(string) {
   //coding and coding....
-  return "";
+  let lastIndex = string.length - 1;
+
+  // Remove exclamation marks from the end of the string
+  while (lastIndex >= 0 && string[lastIndex] === "!") {
+    lastIndex--;
+  }
+
+  string = string.substring(0, lastIndex + 1);
+
+  // Add one exclamation mark at the end of the string if needed
+  if (string[lastIndex] !== "!") {
+    string += "!";
+  }
+
+  return string;
 }
 
 console.log(remove("Hi!"));
