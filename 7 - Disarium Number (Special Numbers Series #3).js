@@ -17,3 +17,7 @@
 // disariumNumber(564) ==> return "Not !!"
 // Explanation:
 // Since , 51 + 62 + 43 = 105 != 564 , thus output is "Not !!"
+
+function disariumNumber(n) {
+  //your code here
+}
