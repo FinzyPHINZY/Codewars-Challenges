@@ -5,7 +5,6 @@
 // Write a function that takes two arguments, ppg (points per game) and mpg (minutes per game) and returns a straight extrapolation of ppg per 48 minutes rounded to the nearest tenth. Return 0 if 0.
 
 // Examples:
-
 // pointsPer48(12, 20) // 28.8
 // pointsPer48(10, 10) // 48
 // pointsPer48(5, 17) // 14.1
@@ -14,4 +13,14 @@
 // All inputs will be either be an integer or float.
 // Follow your dreams!
 
-function pointsPer48(ppg, mpg) {}
+function pointsPer48(ppg, mpg) {
+  if (ppg === 0 && mpg === 0) return 0;
+
+  let result = (ppg / mpg) * 48;
+  return Number.isInteger(result) ? result : result.toFixed(1);
+}
+
+console.log(pointsPer48(12, 20));
+console.log(pointsPer48(10, 10));
+console.log(pointsPer48(5, 17));
+console.log(pointsPer48(0, 0));
