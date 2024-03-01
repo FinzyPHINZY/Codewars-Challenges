@@ -32,3 +32,7 @@
 // For s = "-c--b--a-", the output should be "-a--b--c-".
 
 // For s = "Codewars", the output should be "aCdeorsw".
+
+function sortString(s) {
+  //coding and coding..
+}
