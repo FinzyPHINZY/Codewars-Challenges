@@ -51,7 +51,15 @@
 //   });
 
 function gaslighting(shirtWord, yourWord, friendsLetters) {
-  return true || false;
+  const res = [];
+  for (let i = 0; i < shirtWord.length; i++) {
+    if (shirtWord[i] !== yourWord[i]) {
+      res.push(shirtWord[i]);
+      res.push(yourWord[i]);
+    }
+  }
+
+  return !res.every((letter) => !friendsLetters.includes(letter));
 }
 
 console.log(gaslighting("snack", "snake", "c"));
