@@ -39,3 +39,7 @@
 // Your friend doesn't know what the letters l and e from smi(le) look like in sign language.
 // So he cannot say that those letters are not r or k from smi(rk) because he wouldn't know
 // So your friend cannot figure out if you are fooling him.
+
+function gaslighting(shirtWord, yourWord, friendsLetters) {
+  return true || false;
+}
