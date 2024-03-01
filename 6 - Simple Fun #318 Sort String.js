@@ -33,6 +33,43 @@
 
 // For s = "Codewars", the output should be "aCdeorsw".
 
+// Test Cases:
+
+describe("Basic Tests", function () {
+  it("It should works for basic tests.", function () {
+    Test.assertEquals(sortString("cba"), "abc");
+
+    Test.assertEquals(sortString("Cba"), "abC");
+
+    Test.assertEquals(sortString("cCBbAa"), "AaBbcC");
+
+    Test.assertEquals(sortString("c b a"), "a b c");
+
+    Test.assertEquals(sortString("-c--b--a-"), "-a--b--c-");
+
+    Test.assertEquals(sortString("Codewars"), "aCdeorsw");
+
+    Test.assertEquals(
+      sortString(
+        " MkWD{RB=//k-^ J@,xH Vfi uAz+$ kV _[ }a!}%pSBwn !kKB (b  q PQF +}wS  .kfU r wFNEs#NsR UVMdG"
+      ),
+      " AaBB{Bb=//D-^ d@,Ef FfF GHi+$ Jk _[ }k!}%kkKkM !MnN (N  p PqQ +}Rr  .RSS s suUUV#VVW wwwxz"
+    );
+  });
+});
+
 function sortString(s) {
   //coding and coding..
 }
+
+console.log(sortString("cba"));
+console.log(sortString("Cba"));
+console.log(sortString("cCBbAa"));
+console.log(sortString("c b a"));
+console.log(sortString("-c--b--a-"));
+console.log(sortString("Codewars"));
+console.log(
+  sortString(
+    " MkWD{RB=//k-^ J@,xH Vfi uAz+$ kV _[ }a!}%pSBwn !kKB (b  q PQF +}wS  .kfU r wFNEs#NsR UVMdG"
+  )
+);
