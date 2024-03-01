@@ -13,3 +13,5 @@
 // Notes:
 // All inputs will be either be an integer or float.
 // Follow your dreams!
+
+function pointsPer48(ppg, mpg) {}
