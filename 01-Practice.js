@@ -598,8 +598,14 @@ function meeting(s) {
 // {"Hindi": 60, "Dutch" : 93, "Greek": 71}  -->  ["Dutch", "Greek", "Hindi"]
 // {"C++": 50, "ASM": 10, "Haskell": 20}     -->  []
 
-function myLanguages(results) {}
+function myLanguages(results) {
+  // split results
+  // filter by key[value]
+  return Object.entries(results)
+    .filter(([key, value]) => value > 50)
+    .sort((a, b) => b[1] - a[1]);
+}
 
-console.log(myLanguages({ Java: 10, Ruby: 80, Python: 65 }));
-console.log(myLanguages({ Hindi: 60, Greek: 71, Dutch: 93 }));
-console.log(myLanguages({ "C++": 50, ASM: 10, Haskell: 20 }));
+// console.log(myLanguages({ Java: 10, Ruby: 80, Python: 65 }));
+// console.log(myLanguages({ Hindi: 60, Greek: 71, Dutch: 93 }));
+// console.log(myLanguages({ "C++": 50, ASM: 10, Haskell: 20 }));
