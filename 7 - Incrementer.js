@@ -14,6 +14,41 @@
 // [4, 6, 9, 1, 3]  -->  [5, 8, 2, 5, 8]  #  [4+1, 6+2, 9+3, 1+4, 3+5]
 //                                        #  9+3 = 12  -->  2
 
+// Test Cases:
+// describe("Basic Tests", function () {
+//   it("Testing for []", () => assert.deepEqual(incrementer([]), []));
+//   it("Testing for [1, 2, 3]", () =>
+//     assert.deepEqual(incrementer([1, 2, 3]), [2, 4, 6]));
+//   it("Testing for [4, 6, 7, 1, 3]", () =>
+//     assert.deepEqual(incrementer([4, 6, 7, 1, 3]), [5, 8, 0, 5, 8]));
+//   it("Testing for [3, 6, 9, 8, 9]", () =>
+//     assert.deepEqual(incrementer([3, 6, 9, 8, 9]), [4, 8, 2, 2, 4]));
+//   it("Testing for [1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 9, 9, 8]", () =>
+//     assert.deepEqual(
+//       incrementer([1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 9, 9, 8]),
+//       [2, 4, 6, 8, 0, 2, 4, 6, 8, 9, 0, 1, 2, 2]
+//     ));
+// });
+
 function incrementer(nums) {
   // code goes here
+  return nums
+    .map((num, i) => num + (i + 1))
+    .map((num) => {
+      if (num < 10) return num;
+      let mulnum = num.toString().split("");
+      return Number(mulnum[mulnum.length - 1]);
+    });
 }
+
+const incrementer = ($) =>
+  $.map((el, i) => el + i + 1)
+    .map(String)
+    .map((e) => e.slice(-1))
+    .map(Number);
+
+// console.log(incrementer([]));
+// console.log(incrementer([1, 2, 3]));
+// console.log(incrementer([4, 6, 7, 1, 3]));
+// console.log(incrementer([3, 6, 9, 8, 9]));
+// console.log(incrementer([1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 9, 9, 8]));
