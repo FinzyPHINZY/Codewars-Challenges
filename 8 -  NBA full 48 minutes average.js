@@ -18,8 +18,7 @@ function pointsPer48(ppg, mpg) {
 
   let score = (ppg / mpg) * 48;
 
-  let result = Number(Number.isInteger(score) ? score : score.toFixed(1));
-  return result;
+  return Number(Number.isInteger(score) ? score : score.toFixed(1));
 }
 console.log(pointsPer48(12, 20));
 console.log(pointsPer48(10, 10));
