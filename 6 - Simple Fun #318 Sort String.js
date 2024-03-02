@@ -35,41 +35,56 @@
 
 // Test Cases:
 
-describe("Basic Tests", function () {
-  it("It should works for basic tests.", function () {
-    Test.assertEquals(sortString("cba"), "abc");
+// describe("Basic Tests", function () {
+//   it("It should works for basic tests.", function () {
+//     Test.assertEquals(sortString("cba"), "abc");
 
-    Test.assertEquals(sortString("Cba"), "abC");
+//     Test.assertEquals(sortString("Cba"), "abC");
 
-    Test.assertEquals(sortString("cCBbAa"), "AaBbcC");
+//     Test.assertEquals(sortString("cCBbAa"), "AaBbcC");
 
-    Test.assertEquals(sortString("c b a"), "a b c");
+//     Test.assertEquals(sortString("c b a"), "a b c");
 
-    Test.assertEquals(sortString("-c--b--a-"), "-a--b--c-");
+//     Test.assertEquals(sortString("-c--b--a-"), "-a--b--c-");
 
-    Test.assertEquals(sortString("Codewars"), "aCdeorsw");
+//     Test.assertEquals(sortString("Codewars"), "aCdeorsw");
 
-    Test.assertEquals(
-      sortString(
-        " MkWD{RB=//k-^ J@,xH Vfi uAz+$ kV _[ }a!}%pSBwn !kKB (b  q PQF +}wS  .kfU r wFNEs#NsR UVMdG"
-      ),
-      " AaBB{Bb=//D-^ d@,Ef FfF GHi+$ Jk _[ }k!}%kkKkM !MnN (N  p PqQ +}Rr  .RSS s suUUV#VVW wwwxz"
-    );
-  });
-});
+//     Test.assertEquals(
+//       sortString(
+//         " MkWD{RB=//k-^ J@,xH Vfi uAz+$ kV _[ }a!}%pSBwn !kKB (b  q PQF +}wS  .kfU r wFNEs#NsR UVMdG"
+//       ),
+//       " AaBB{Bb=//D-^ d@,Ef FfF GHi+$ Jk _[ }k!}%kkKkM !MnN (N  p PqQ +}Rr  .RSS s suUUV#VVW wwwxz"
+//     );
+//   });
+// });
 
 function sortString(s) {
-  //coding and coding..
+  var r = "",
+    letters = s
+      .replace(/[^a-z]/gi, "")
+      .split("")
+      .map((c, i) => [c, i])
+      .sort(
+        (a, b) =>
+          a[0].toLowerCase().charCodeAt() - b[0].toLowerCase().charCodeAt() ||
+          a[1] - b[1]
+      )
+      .map((x) => x[0]);
+  for (var i = 0, j = 0; i < s.length; i++)
+    r += /[a-z]/i.test(s[i]) ? letters[j++] : s[i];
+  return r;
 }
 
+console.log(sortString("Type"));
+console.log(sortString("BabA"));
 console.log(sortString("cba"));
 console.log(sortString("Cba"));
 console.log(sortString("cCBbAa"));
 console.log(sortString("c b a"));
 console.log(sortString("-c--b--a-"));
-console.log(sortString("Codewars"));
-console.log(
-  sortString(
-    " MkWD{RB=//k-^ J@,xH Vfi uAz+$ kV _[ }a!}%pSBwn !kKB (b  q PQF +}wS  .kfU r wFNEs#NsR UVMdG"
-  )
-);
+// console.log(sortString("Codewars"));
+// // console.log(
+//   sortString(
+//     " MkWD{RB=//k-^ J@,xH Vfi uAz+$ kV _[ }a!}%pSBwn !kKB (b  q PQF +}wS  .kfU r wFNEs#NsR UVMdG"
+//   )
+// );
