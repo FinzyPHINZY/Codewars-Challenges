@@ -17,3 +17,7 @@
 //     +'20,21,22,23,24\n'
 //     +'30,31,32,33,34'
 // Array's length > 2.
+
+function toCsvText(array) {
+  // good luck
+}
