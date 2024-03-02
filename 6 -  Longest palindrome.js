@@ -8,28 +8,13 @@
 // For example if passed "Hannah" it should return 6 and if passed "aabbcc_yYx_" it should return 9 because one possible palindrome would be "abcyxycba".
 
 function longestPalindrome(str) {
-  //Good Luck // Convert the string to lowercase to make it case insensitive
-  str = str.toLowerCase();
-
-  // Create a map to store the frequency of characters
-  const charCount = new Map();
-  for (const char of str) {
-    if (charCount.has(char)) {
-      charCount.set(char, charCount.get(char) + 1);
-    } else {
-      charCount.set(char, 1);
-    }
+  var s = str.toLowerCase();
+  var arr = "abcdefghijklmnopqrstuvwxyz0123456789";
+  var count = 0;
+  for (var i = 0; i < arr.length; ++i) {
+    var c = 0;
+    for (var j = 0; j < s.length; ++j) if (s[j] == arr[i]) c++;
+    count += Math.floor(c / 2) * 2;
   }
-
-  // Count the number of characters with odd frequency
-  let oddCount = 0;
-  for (const count of charCount.values()) {
-    if (count % 2 !== 0) {
-      oddCount++;
-    }
-  }
-
-  // The length of the longest palindrome is the length of the input string
-  // minus the number of characters with odd frequency
-  return Math.max(1, str.length - oddCount);
+  return count == s.length ? count : ++count;
 }
