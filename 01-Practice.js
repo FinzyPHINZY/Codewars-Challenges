@@ -1,5 +1,7 @@
 "use strict";
 
+const { max } = require("moment");
+
 // This file contains the katas i found tough. It will include the solutions i did without any help and improved solutions that arise to the wider scope of my knowledge as time goes on.
 
 // DESCRIPTION:
@@ -679,4 +681,77 @@ function multiplicationTable(size) {
   return table;
 }
 
-console.log(multiplicationTable(3));
+// console.log(multiplicationTable(3));
+
+// Task
+// Implement a function which accepts 2 arguments: string and separator.
+// The expected algorithm: split the string into words by spaces, split each word into separate characters and join them back with the specified separator, join all the resulting "words" back into a sentence with spaces.
+// For example:
+// splitAndMerge("My name is John", " ")  ==  "M y n a m e i s J o h n"
+// splitAndMerge("My name is John", "-")  ==  "M-y n-a-m-e i-s J-o-h-n"
+// splitAndMerge("Hello World!", ".")     ==  "H.e.l.l.o W.o.r.l.d.!"
+// splitAndMerge("Hello World!", ",")     ==  "H,e,l,l,o W,o,r,l,d,!"
+
+function splitAndMerge(string, seperator) {
+  return string
+    .split(" ")
+    .map((word) => word.split("").join(seperator))
+    .join(" ");
+}
+
+// console.log(splitAndMerge("My name is John", " "));
+// console.log(splitAndMerge("My name is John", "-"));
+// console.log(splitAndMerge("Hello World!", "."));
+// console.log(splitAndMerge("Hello World!", ","));
+
+// DESCRIPTION:
+// In the following 6 digit number:
+// 283910
+// 91 is the greatest sequence of 2 consecutive digits.
+// In the following 10 digit number:
+// 1234567890
+// 67890 is the greatest sequence of 5 consecutive digits.
+// Complete the solution so that it returns the greatest sequence of five consecutive digits found within the number given. The number will be passed in as a string of only digits. It should return a five digit integer. The number passed may be as large as 1000 digits.
+
+function solution(digits) {
+  // let arr = [];
+  // digits = digits.toString();
+  // for (let i = 0; i <= digits.length - 5; i++) {
+  //   arr.push(digits.slice(i, i + 5));
+  // }
+  // return Math.max(...arr.map(Number));
+
+  let maxSequence = 0;
+  for (let i = 0; i <= digits.length - 5; i++) {
+    let sequence = parseInt(digits.substring(i, i + 5));
+    if (sequence > maxSequence) {
+      maxSequence = sequence;
+    }
+  }
+  return maxSequence;
+}
+
+// console.log(solution(1234567890));
+
+// Your task is to write a function which returns the sum of following series upto nth term(parameter).
+// Series: 1 + 1/4 + 1/7 + 1/10 + 1/13 + 1/16 +...
+// Rules:
+// You need to round the answer to 2 decimal places and return it as String.
+// If the given value is 0 then it should return 0.00
+// You will only be given Natural Numbers as arguments.
+// Examples:(Input --> Output)
+// 1 --> 1 --> "1.00"
+// 2 --> 1 + 1/4 --> "1.25"
+// 5 --> 1 + 1/4 + 1/7 + 1/10 + 1/13 --> "1.57"
+
+function nthTerm(num) {
+  for (var s = 0, i = 0; i < num; i++) {
+    // console.log(i + (1 / 3 + i));
+    s += 1 / (1 + i * 3);
+  }
+  return s.toFixed(2);
+}
+
+console.log(nthTerm(1));
+console.log(nthTerm(2));
+console.log(nthTerm(5));
