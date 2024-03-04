@@ -743,3 +743,15 @@ function solution(digits) {
 // 1 --> 1 --> "1.00"
 // 2 --> 1 + 1/4 --> "1.25"
 // 5 --> 1 + 1/4 + 1/7 + 1/10 + 1/13 --> "1.57"
+
+function nthTerm(num) {
+  for (var s = 0, i = 0; i < num; i++) {
+    // console.log(i + (1 / 3 + i));
+    s += 1 / (1 + i * 3);
+  }
+  return s.toFixed(2);
+}
+
+console.log(nthTerm(1));
+console.log(nthTerm(2));
+console.log(nthTerm(5));
