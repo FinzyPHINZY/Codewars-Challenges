@@ -690,9 +690,14 @@ function multiplicationTable(size) {
 // splitAndMerge("Hello World!", ".")     ==  "H.e.l.l.o W.o.r.l.d.!"
 // splitAndMerge("Hello World!", ",")     ==  "H,e,l,l,o W,o,r,l,d,!"
 
-function splitAndMerge(string, seperator) {}
+function splitAndMerge(string, seperator) {
+  return string
+    .split(" ")
+    .map((word) => word.split("").join(seperator))
+    .join(" ");
+}
 
-console.log(splitAndMerge("My name is John", " "));
-console.log(splitAndMerge("My name is John", "-"));
-console.log(splitAndMerge("Hello World!", "."));
-console.log(splitAndMerge("Hello World!", ","));
+// console.log(splitAndMerge("My name is John", " "));
+// console.log(splitAndMerge("My name is John", "-"));
+// console.log(splitAndMerge("Hello World!", "."));
+// console.log(splitAndMerge("Hello World!", ","));
