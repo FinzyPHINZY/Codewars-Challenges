@@ -752,6 +752,139 @@ function nthTerm(num) {
   return s.toFixed(2);
 }
 
-console.log(nthTerm(1));
-console.log(nthTerm(2));
-console.log(nthTerm(5));
+// console.log(nthTerm(1));
+// console.log(nthTerm(2));
+// console.log(nthTerm(5));
+
+// Description:
+// The museum of incredible dull things
+
+// The museum of incredible dull things wants to get rid of some exhibitions. Miriam, the interior architect, comes up with a plan to remove the most boring exhibitions. She gives them a rating, and then removes the one with the lowest rating.
+
+// However, just as she finished rating all exhibitions, she's off to an important fair, so she asks you to write a program that tells her the ratings of the items after one removed the lowest one. Fair enough.
+// Task
+
+// Given an array of integers, remove the smallest value. Do not mutate the original array/list. If there are multiple elements with the same value, remove the one with a lower index. If you get an empty array/list, return an empty array/list.
+
+// Don't change the order of the elements that are left.
+// Examples
+
+// * Input: [1,2,3,4,5], output = [2,3,4,5]
+// * Input: [5,3,2,1,4], output = [5,3,2,4]
+// * Input: [2,2,1,2,1], output = [2,2,2,1
+
+function museum(arr) {
+  const output = [];
+  let min = arr.indexOf(Math.min(...arr));
+  arr.forEach((num, i) => {
+    if (i !== min) {
+      output.push(num);
+    }
+  });
+
+  return output;
+}
+
+// console.log(museum([1, 2, 3, 4, 5]));
+// console.log(museum([5, 3, 2, 1, 4]));
+// console.log(museum([2, 2, 1, 2, 1]));
+
+// Your task is to write a function which returns the sum of following series upto nth term(parameter).
+// Series: 1 + 1/4 + 1/7 + 1/10 + 1/13 + 1/16 +...
+// Rules:
+// You need to round the answer to 2 decimal places and return it as String.
+// If the given value is 0 then it should return 0.00
+// You will only be given Natural Numbers as arguments.
+// Examples:(Input --> Output)
+// 1 --> 1 --> "1.00"
+// 2 --> 1 + 1/4 --> "1.25"
+// 5 --> 1 + 1/4 + 1/7 + 1/10 + 1/13 --> "1.57"
+
+function nthTerm(n) {
+  let sum = 0;
+  for (let i = 0; i < n; i++) {
+    sum += 1 / (1 + 3 * i);
+  }
+  return sum.toFixed(2);
+}
+
+// console.log(nthTerm(1));
+// console.log(nthTerm(2));
+// console.log(nthTerm(5));
+
+// DESCRIPTION:
+// Create a function that returns the CSV representation of a two-dimensional numeric array.
+// Example:
+// input:
+//  [[ 0, 1, 2, 3, 4 ],
+//   [ 10,11,12,13,14 ],
+//   [ 20,21,22,23,24 ],
+//   [ 30,31,32,33,34 ]]
+
+// output:
+//      '0,1,2,3,4\n'
+//     +'10,11,12,13,14\n'
+//     +'20,21,22,23,24\n'
+//     +'30,31,32,33,34'
+// Array's length > 2.
+
+function toCsvText(array) {
+  // good luck
+  return array.join("\n");
+}
+
+// console.log(
+//   toCsvText([
+//     [0, 1, 2, 3, 4],
+//     [10, 11, 12, 13, 14],
+//     [20, 21, 22, 23, 24],
+//     [30, 31, 32, 33, 34],
+//   ])
+// );
+
+// DESCRIPTION:
+// Friday 13th or Black Friday is considered as unlucky day. Calculate how many unlucky days are in the given year.
+// Find the number of Friday 13th in the given year.
+// Input: Year in Gregorian calendar as integer.
+// Output: Number of Black Fridays in the year as an integer.
+// Examples:
+// unluckyDays(2015) == 3
+// unluckyDays(1986) == 1
+
+function unluckyDays(year) {
+  //your code here
+  let count = 0;
+  for (let month = 0; month < 12; month++) {
+    const date = new Date(year, month, 13); // returns every day of the year thats 13;
+    if (date.getDay() === 5) count++; //5 equals friday. this logs all the dates that is on friday
+  }
+
+  return count;
+}
+
+// console.log(unluckyDays(2015));
+// console.log(unluckyDays(1986));
+
+// DESCRIPTION:
+// Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+// Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+// If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.
+// Examples
+// "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+// "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+// ""  -->  ""
+
+function order(words) {
+  // ...
+  // split words into an array to enable sorting;
+  return words
+    .split(" ")
+    .sort((a, b) => {
+      return a.match(/\d+/) - b.match(/\d+/);
+    })
+    .join(" ");
+}
+
+// console.log(order("is2 Thi1s T4est 3a"));
+// console.log(order("4of Fo1r pe6ople g3ood th5e the2"));
+// console.log(order(""));
