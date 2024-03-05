@@ -40,6 +40,25 @@
 
 function formatDuration(seconds) {
   // Complete this function
+  if (seconds === 0) return "now";
+
+  const timeUnits = ["year", "day", "hour", "minute", "second"];
+  const timeValues = [31536000, 86400, 3600, 60, 1];
+  let result = [];
+
+  for (let i = 0; i < timeUnits.length; i++) {
+    const unit = timeUnits[i];
+    const value = timeValues[i];
+    if (seconds >= value) {
+      const count = Math.floor(seconds / value);
+      result.push(count + " " + unit + (count > 1 ? "s" : ""));
+      seconds %= value;
+    }
+  }
+
+  return result.length > 1
+    ? result.join(", ").replace(/,([^,]*)$/, " and$1")
+    : result[0];
 }
 
 console.log(formatDuration(1));
