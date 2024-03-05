@@ -22,6 +22,35 @@
 
 function firstNonRepeatingLetter(s) {
   // Add your code here
+  // Convert the string to lowercase to handle case-insensitivity
+  const lowercaseStr = s.toLowerCase();
+  const charCount = {};
+
+  // Count occurrences of each character
+  for (let char of lowercaseStr) {
+    charCount[char] = (charCount[char] || 0) + 1;
+  }
+
+  // Find the first character with count 1 and return its original case
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
+    if (charCount[lowercaseStr[i]] === 1) {
+      return char;
+    }
+  }
+
+  // Return empty string if all characters are repeating
+  return "";
+}
+
+function firstNonRepeatingLetter(s) {
+  let str = s.toLowerCase();
+  for (let i = 0; i < str.length; i++) {
+    if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
+      return s[i];
+    }
+  }
+  return "";
 }
 
 console.log(firstNonRepeatingLetter("a"));
