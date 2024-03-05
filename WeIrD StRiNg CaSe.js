@@ -8,3 +8,7 @@
 // Examples:
 // "String" => "StRiNg"
 // "Weird string case" => "WeIrD StRiNg CaSe"
+
+function toWeirdCase(string) {
+  //TODO
+}
