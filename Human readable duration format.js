@@ -28,6 +28,22 @@
 
 // A unit of time must be used "as much as possible". It means that the function should not return 61 seconds, but 1 minute and 1 second instead. Formally, the duration specified by of a component must not be greater than any valid more significant unit of time.
 
+// describe("Tests", () => {
+//     it("test", () => {
+//       assert.strictEqual(formatDuration(1), "1 second");
+//       assert.strictEqual(formatDuration(62), "1 minute and 2 seconds");
+//       assert.strictEqual(formatDuration(120), "2 minutes");
+//       assert.strictEqual(formatDuration(3600), "1 hour");
+//       assert.strictEqual(formatDuration(3662), "1 hour, 1 minute and 2 seconds");
+//     });
+//   });
+
 function formatDuration(seconds) {
   // Complete this function
 }
+
+console.log(formatDuration(1));
+console.log(formatDuration(62));
+console.log(formatDuration(120));
+console.log(formatDuration(3600));
+console.log(formatDuration(3662));
