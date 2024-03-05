@@ -876,16 +876,15 @@ function unluckyDays(year) {
 
 function order(words) {
   // ...
+  // split words into an array to enable sorting;
+  return words
+    .split(" ")
+    .sort((a, b) => {
+      return a.match(/\d+/) - b.match(/\d+/);
+    })
+    .join(" ");
 }
 
-// describe("order", () => {
-//   it("should work corectly", () => {
-//     assert.strictEqual(order("is2 Thi1s T4est 3a"), "Thi1s is2 3a T4est")
-//     assert.strictEqual(order("4of Fo1r pe6ople g3ood th5e the2"), "Fo1r the2 g3ood 4of th5e pe6ople")
-//     assert.strictEqual(order(""), "", "empty input should return empty string" )
-//   });
-// });
-
-console.log(order("is2 Thi1s T4est 3a"));
-console.log(order("4of Fo1r pe6ople g3ood th5e the2"));
-console.log(order(""));
+// console.log(order("is2 Thi1s T4est 3a"));
+// console.log(order("4of Fo1r pe6ople g3ood th5e the2"));
+// console.log(order(""));
