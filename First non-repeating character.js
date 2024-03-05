@@ -11,6 +11,19 @@
 
 // † Note: the function is called firstNonRepeatingLetter for historical reasons, but your function should handle any Unicode character.
 
+// Test Cases:
+// describe("Simple Tests", function () {
+//   it("should handle simple tests", function () {
+//     Test.assertEquals(firstNonRepeatingLetter("a"), "a");
+//     Test.assertEquals(firstNonRepeatingLetter("stress"), "t");
+//     Test.assertEquals(firstNonRepeatingLetter("moonmen"), "e");
+//   });
+// });
+
 function firstNonRepeatingLetter(s) {
   // Add your code here
 }
+
+console.log(firstNonRepeatingLetter("a"));
+console.log(firstNonRepeatingLetter("stress"));
+console.log(firstNonRepeatingLetter("moonmen"));
