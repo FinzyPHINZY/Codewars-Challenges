@@ -22,6 +22,40 @@
 
 function toWeirdCase(string) {
   //TODO
+
+  // Split the string into individual words
+  const words = string.split(" ");
+
+  // Function to toggle case of characters in a word
+  function toggleCase(word) {
+    return word
+      .split("")
+      .map((char, index) => {
+        // If index is even, convert to uppercase, otherwise convert to lowercase
+        return index % 2 === 0 ? char.toUpperCase() : char.toLowerCase();
+      })
+      .join("");
+  }
+
+  // Apply toggleCase function to each word
+  const weirdCaseWords = words.map(toggleCase);
+
+  // Join the modified words back into a single string
+  return weirdCaseWords.join(" ");
+}
+
+function toWeirdCase(string) {
+  return string
+    .split(" ")
+    .map(function (word) {
+      return word
+        .split("")
+        .map(function (letter, index) {
+          return index % 2 == 0 ? letter.toUpperCase() : letter.toLowerCase();
+        })
+        .join("");
+    })
+    .join(" ");
 }
 
 console.log(toWeirdCase("This"));
