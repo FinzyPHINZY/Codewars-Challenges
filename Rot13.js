@@ -15,7 +15,21 @@
 //   });
 
 function rot13(message) {
-  //your code here
+  let result = "";
+  for (let i = 0; i < message.length; i++) {
+    let char = message[i];
+    if (char >= "A" && char <= "Z") {
+      // For uppercase letters
+      result += String.fromCharCode(((char.charCodeAt(0) - 65 + 13) % 26) + 65);
+    } else if (char >= "a" && char <= "z") {
+      // For lowercase letters
+      result += String.fromCharCode(((char.charCodeAt(0) - 97 + 13) % 26) + 97);
+    } else {
+      // For non-letter characters
+      result += char;
+    }
+  }
+  return result;
 }
 
 console.log(rot13("test"));
