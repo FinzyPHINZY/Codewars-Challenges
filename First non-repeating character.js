@@ -10,3 +10,7 @@
 // If a string contains all repeating characters, it should return an empty string ("");
 
 // † Note: the function is called firstNonRepeatingLetter for historical reasons, but your function should handle any Unicode character.
+
+function firstNonRepeatingLetter(s) {
+  // Add your code here
+}
