@@ -18,6 +18,25 @@
 // "1"    =>  NULL
 // "1,2"  =>  NULL
 
+// Test Cases:
+// describe("Sample Tests", function () {
+//   test("", null);
+//   test("1", null);
+//   test("A1,B2", null);
+//   test("1,2,3", "2");
+//   test("1,2,3,4", "2 3");
+//   test("A1,B2,C3,D4,E5", "B2 C3 D4");
+//   test("A,1,23,456,78,9,Z", "1 23 456 78 9");
+// });
+
 function array(string) {
   // TODO
 }
+
+console.log(array(""));
+console.log(array("1"));
+console.log(array("A1,B2"));
+console.log(array("1,2,3"));
+console.log(array("1,2,3,4"));
+console.log(array("A1,B2,C3,D4,E5"));
+console.log(array("A,1,23,456,78,9,Z"));
