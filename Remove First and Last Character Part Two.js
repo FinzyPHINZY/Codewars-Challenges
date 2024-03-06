@@ -39,6 +39,10 @@ function array(string) {
     .join(" ");
 }
 
+function array(arr) {
+  return arr.split(",").slice(1, -1).join(" ") || null;
+}
+
 console.log(array(""));
 console.log(array("1"));
 console.log(array("A1,B2"));
