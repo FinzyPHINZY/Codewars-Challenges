@@ -34,16 +34,15 @@ function array(string) {
   string = string.split(",");
 
   if (string.length < 3) return null;
-  return string.filter(
-    (char, i) =>
-      string[i] !== string[0] && string[i] !== string[string.length - 1]
-  );
+  return string
+    .filter((char, i) => i !== 0 && i !== string.length - 1)
+    .join(" ");
 }
 
 console.log(array(""));
 console.log(array("1"));
 console.log(array("A1,B2"));
-console.log(array("1,2,3"));
+console.log(array("1,1,1,1,2,3"));
 console.log(array("1,2,3,4"));
 console.log(array("A1,B2,C3,D4,E5"));
 console.log(array("A,1,23,456,78,9,Z"));
