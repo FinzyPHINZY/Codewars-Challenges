@@ -31,6 +31,13 @@
 
 function array(string) {
   // TODO
+  string = string.split(",");
+
+  if (string.length < 3) return null;
+  return string.filter(
+    (char, i) =>
+      string[i] !== string[0] && string[i] !== string[string.length - 1]
+  );
 }
 
 console.log(array(""));
