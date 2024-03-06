@@ -17,7 +17,28 @@
 //   });
 // });
 
-function well(x) {}
+function well(x) {
+  // check the number of good in the array
+  // we can do this by looping over the array and count
+  const goods = x.reduce((acc, rad) => {
+    if (rad === "good") {
+      return acc + 1;
+    } else {
+      return acc;
+    }
+  }, 0);
+
+  return goods < 1 ? "Fail!" : goods <= 2 ? "Publish!" : "I smell a series!";
+}
+
+const well = (x) => {
+  const good_count = x.filter((x) => x == "good").length;
+  return good_count < 1
+    ? "Fail!"
+    : good_count < 3
+    ? "Publish!"
+    : "I smell a series!";
+};
 
 console.log(well(["bad", "bad", "bad"]));
 console.log(well(["good", "bad", "bad", "bad", "bad"]));
