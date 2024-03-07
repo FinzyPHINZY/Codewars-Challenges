@@ -15,6 +15,25 @@
 //   (6 + 5 + 6 + 6 + 6 + 7)
 // - (6 + 5 + 6 + 6 + 6 + 1)
 // -------------------------
-6;
+
+// Test Cases:
+// describe("Char Code Calculation", () => {
+//   it("Testing for fixed tests", () => {
+//     assert.strictEqual(calc("abcdef"), 6);
+//     assert.strictEqual(calc("ifkhchlhfd"), 6);
+//     assert.strictEqual(calc("aaaaaddddr"), 30);
+//     assert.strictEqual(calc("jfmgklf8hglbe"), 6);
+//     assert.strictEqual(
+//       calc("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"),
+//       96
+//     );
+//   });
+// });
 
 function calc(x) {}
+
+console.log(calc("abcdef"));
+console.log(calc("ifkhchlhfd"));
+console.log(calc("aaaaaddddr"));
+console.log(calc("jfmgklf8hglbe"));
+console.log(calc("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"));
