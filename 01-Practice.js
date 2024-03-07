@@ -916,3 +916,52 @@ function order(words) {
 
 // console.log(order("is2 Thi1s T4est 3a"));
 // console.log(order("4of Fo1r pe6ople g3ood th5e the2"));
+
+// Write a function that accepts a string, and returns the same string with all even indexed characters in each word upper cased, and all odd indexed characters in each word lower cased. The indexing just explained is zero based, so the zero-ith index is even, therefore that character should be upper cased and you need to start over for each word.
+// The passed in string will only consist of alphabetical characters and spaces(' '). Spaces will only be present if there are multiple words. Words will be separated by a single space(' ').
+// Examples:
+// "String" => "StRiNg"
+// "Weird string case" => "WeIrD StRiNg CaSe"
+
+function toWeirdCase(string) {
+  // Code here!
+  // split string into words
+  return string.split(" ").map((word) =>
+    word
+      .split("")
+      .map((char, i) => {
+        if (i % 2 === 0) {
+          return char.toUpperCase();
+        } else {
+          return char.toLowerCase();
+        }
+      })
+      .join("")
+  );
+}
+
+// console.log(toWeirdCase("String"));
+// console.log(toWeirdCase("Weird string case"));
+
+// Your task is to write a function which returns the sum of following series upto nth term(parameter).
+// Series: 1 + 1/4 + 1/7 + 1/10 + 1/13 + 1/16 +...
+// Rules:
+// You need to round the answer to 2 decimal places and return it as String.
+// If the given value is 0 then it should return 0.00
+// You will only be given Natural Numbers as arguments.
+// Examples:(Input --> Output)
+// 1 --> 1 --> "1.00"
+// 2 --> 1 + 1/4 --> "1.25"
+// 5 --> 1 + 1/4 + 1/7 + 1/10 + 1/13 --> "1.57"
+
+function nthTeam(n) {
+  let sum = 0;
+  for (let i = 0; i <= n; i++) {
+    sum += 1 / (1 + i * 3);
+  }
+  return sum.toFixed(2);
+}
+
+// console.log(nthTeam(1));
+// console.log(nthTeam(2));
+// console.log(nthTeam(5));
