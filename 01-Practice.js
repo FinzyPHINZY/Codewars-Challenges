@@ -925,4 +925,20 @@ function order(words) {
 
 function toWeirdCase(string) {
   // Code here!
+  // split string into words
+  return string.split(" ").map((word) =>
+    word
+      .split("")
+      .map((char, i) => {
+        if (i % 2 === 0) {
+          return char.toUpperCase();
+        } else {
+          return char.toLowerCase();
+        }
+      })
+      .join("")
+  );
 }
+
+console.log(toWeirdCase("String"));
+console.log(toWeirdCase("Weird string case"));
