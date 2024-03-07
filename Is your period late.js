@@ -23,7 +23,9 @@
 //   });
 
 function periodIsLate(last, today, cycleLength) {
-  return false;
+  const diff = Math.abs(last.getTime() - today.getTime());
+
+  return diff / (1000 * 60 * 60 * 24) > cycleLength ? true : false;
 }
 
 console.log(periodIsLate(new Date(2016, 6, 13), new Date(2016, 7, 16), 35));
