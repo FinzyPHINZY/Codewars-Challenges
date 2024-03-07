@@ -962,6 +962,6 @@ function nthTeam(n) {
   return sum.toFixed(2);
 }
 
-console.log(nthTeam(1));
-console.log(nthTeam(2));
-console.log(nthTeam(5));
+// console.log(nthTeam(1));
+// console.log(nthTeam(2));
+// console.log(nthTeam(5));
