@@ -30,8 +30,25 @@
 //   });
 // });
 
-function calc(x) {}
+function calc(x) {
+  const total1 = x
+    .split("")
+    .map((char) => char.charCodeAt(0))
+    .join("");
 
+  let total2 = total1.replace(/7/g, "1");
+
+  const sumTotal1 = total1
+    .split("")
+    .reduce((sum, num) => sum + parseInt(num), 0);
+  const sumTotal2 = total2
+    .split("")
+    .reduce((sum, num) => sum + parseInt(num), 0);
+
+  return sumTotal1 - sumTotal2;
+}
+
+console.log(calc("ABC"));
 console.log(calc("abcdef"));
 console.log(calc("ifkhchlhfd"));
 console.log(calc("aaaaaddddr"));
