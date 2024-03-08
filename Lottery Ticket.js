@@ -28,11 +28,12 @@
 //   });
 
 function bingo(ticket, win) {
-  let output = [];
   let count = 0;
   ticket.forEach((arr) => {
-    arr[0] = arr[0].split("").map((e, i) => arr[0].charCodeAt(i));
-    if (arr[0].includes(arr[1])) count++;
+    // arr[0] = arr[0].split("").map((e, i) => arr[0].charCodeAt(i));
+    // if (arr[0].includes(arr[1])) count++;
+
+    if (arr[0].includes(String.fromCharCode(arr[1]))) count++;
   });
   return count >= win ? "Winner!" : "Loser!";
 }
