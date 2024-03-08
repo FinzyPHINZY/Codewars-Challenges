@@ -6,3 +6,5 @@
 // If two words have the same last letter, the returned array should show them in the order they appeared in the given string.
 
 // All inputs will be valid.
+
+function last(x) {}
