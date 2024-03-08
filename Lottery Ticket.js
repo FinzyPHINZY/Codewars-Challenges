@@ -13,3 +13,5 @@
 // Once you have counted all of your mini wins, compare that number to the other input provided (win). If your total is more than or equal to (win), return 'Winner!'. Else return 'Loser!'.
 
 // All inputs will be in the correct format. Strings on tickets are not always the same length.
+
+function bingo(ticket, win) {}
