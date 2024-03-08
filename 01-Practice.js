@@ -1018,8 +1018,11 @@ function partlist(arr) {
 // * Input: [5,3,2,1,4], output = [5,3,2,4]
 // * Input: [2,2,1,2,1], output = [2,2,2,1]
 
-function remove(arr) {}
+function remove(arr) {
+  const min = arr.indexOf(Math.min(...arr));
+  return arr.filter((num, i) => i !== min);
+}
 
-console.log(remove([1, 2, 3, 4, 5]));
-console.log(remove([5, 3, 2, 1, 4]));
-console.log(remove([2, 2, 1, 2, 1]));
+// console.log(remove([1, 2, 3, 4, 5]));
+// console.log(remove([5, 3, 2, 1, 4]));
+// console.log(remove([2, 2, 1, 2, 1]));
