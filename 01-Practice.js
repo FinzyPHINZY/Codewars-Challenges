@@ -989,6 +989,14 @@ function nthTeam(n) {
 
 function partlist(arr) {
   // your code
+  let output = [];
+  for (let i = 1; i < arr.length; i++) {
+    const one = arr.slice(0, i).join(" ");
+    const two = arr.slice(i).join(" ");
+    output.push([one, two]);
+  }
+
+  return output;
 }
 
 console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
