@@ -18,6 +18,15 @@
 
 function tidyNumber(n) {
   //your code here
+  return (
+    n ==
+    n
+      .toString()
+      .split("")
+      .map(Number)
+      .sort((a, b) => a - b)
+      .join("")
+  );
 }
 
 console.log(tidyNumber(12));
