@@ -16,8 +16,18 @@
 //     })
 //   });
 
-function last(x) {}
+function last(x) {
+  return x.split(" ").sort((a, b) => {
+    const lastCharA = a.charAt(a.length - 1);
+    const lastCharB = b.charAt(b.length - 1);
+    if (lastCharA === lastCharB) {
+      return 0;
+    } else {
+      return lastCharA.localeCompare(lastCharB);
+    }
+  });
+}
 
 console.log(last("man i need a taxi up to ubud"));
-console.log(last("what time are we climbing up the volcano"));
-console.log(last("take me to semynak"));
+// console.log(last("what time are we climbing up the volcano"));
+// console.log(last("take me to semynak"));
