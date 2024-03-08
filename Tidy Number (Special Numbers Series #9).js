@@ -6,3 +6,7 @@
 
 // Task
 // Given a number, Find if it is Tidy or not .
+
+function tidyNumber(n) {
+  //your code here
+}
