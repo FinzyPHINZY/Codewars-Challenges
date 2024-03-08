@@ -965,3 +965,64 @@ function nthTeam(n) {
 // console.log(nthTeam(1));
 // console.log(nthTeam(2));
 // console.log(nthTeam(5));
+
+// DESCRIPTION:
+// Write a function partlist that gives all the ways to divide a list (an array) of at least two elements into two non-empty parts.
+// Each two non empty parts will be in a pair (or an array for languages without tuples or a structin C - C: see Examples test Cases - )
+// Each part will be in a string
+// Elements of a pair must be in the same order as in the original array.
+// Examples of returns in different languages:
+// a = ["az", "toto", "picaro", "zone", "kiwi"] -->
+// [["az", "toto picaro zone kiwi"], ["az toto", "picaro zone kiwi"], ["az toto picaro", "zone kiwi"], ["az toto picaro zone", "kiwi"]]
+// or
+//  a = {"az", "toto", "picaro", "zone", "kiwi"} -->
+// {{"az", "toto picaro zone kiwi"}, {"az toto", "picaro zone kiwi"}, {"az toto picaro", "zone kiwi"}, {"az toto picaro zone", "kiwi"}}
+// or
+// a = ["az", "toto", "picaro", "zone", "kiwi"] -->
+// [("az", "toto picaro zone kiwi"), ("az toto", "picaro zone kiwi"), ("az toto picaro", "zone kiwi"), ("az toto picaro zone", "kiwi")]
+// or
+// a = [|"az", "toto", "picaro", "zone", "kiwi"|] -->
+// [("az", "toto picaro zone kiwi"), ("az toto", "picaro zone kiwi"), ("az toto picaro", "zone kiwi"), ("az toto picaro zone", "kiwi")]
+// or
+// a = ["az", "toto", "picaro", "zone", "kiwi"] -->
+// "(az, toto picaro zone kiwi)(az toto, picaro zone kiwi)(az toto picaro, zone kiwi)(az toto picaro zone, kiwi)"
+
+function partlist(arr) {
+  // your code
+  let output = [];
+  for (let i = 1; i < arr.length; i++) {
+    const one = arr.slice(0, i).join(" ");
+    const two = arr.slice(i).join(" ");
+    output.push([one, two]);
+  }
+
+  return output;
+}
+
+// console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
+
+// Description:
+// The museum of incredible dull things
+
+// The museum of incredible dull things wants to get rid of some exhibitions. Miriam, the interior architect, comes up with a plan to remove the most boring exhibitions. She gives them a rating, and then removes the one with the lowest rating.
+
+// However, just as she finished rating all exhibitions, she's off to an important fair, so she asks you to write a program that tells her the ratings of the items after one removed the lowest one. Fair enough.
+// Task
+
+// Given an array of integers, remove the smallest value. Do not mutate the original array/list. If there are multiple elements with the same value, remove the one with a lower index. If you get an empty array/list, return an empty array/list.
+
+// Don't change the order of the elements that are left.
+// Examples
+
+// * Input: [1,2,3,4,5], output = [2,3,4,5]
+// * Input: [5,3,2,1,4], output = [5,3,2,4]
+// * Input: [2,2,1,2,1], output = [2,2,2,1]
+
+function remove(arr) {
+  const min = arr.indexOf(Math.min(...arr));
+  return arr.filter((num, i) => i !== min);
+}
+
+// console.log(remove([1, 2, 3, 4, 5]));
+// console.log(remove([5, 3, 2, 1, 4]));
+// console.log(remove([2, 2, 1, 2, 1]));
