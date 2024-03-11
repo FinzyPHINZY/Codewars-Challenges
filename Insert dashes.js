@@ -16,6 +16,18 @@
 
 function insertDash(num) {
   //code me
+  num = num.toString();
+  let result = "";
+  for (let i = 0; i < num.length; i++) {
+    const char = parseInt(num[i]);
+    const nextChar = parseInt(num[i + 1]);
+
+    result += char;
+    if (char % 2 !== 0 && nextChar % 2 !== 0 && !isNaN(nextChar)) {
+      result += "-";
+    }
+  }
+  return result;
 }
 
 console.log(insertDash(454793));
