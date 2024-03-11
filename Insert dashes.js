@@ -5,6 +5,19 @@
 
 // Note that the number will always be non-negative (>= 0).
 
+// Test Cases:
+// describe("Basic tests", () => {
+//   it("Fixed tests", () => {
+//     assert.strictEqual(insertDash(454793), "4547-9-3");
+//     assert.strictEqual(insertDash(123456), "123456");
+//     assert.strictEqual(insertDash(1003567), "1003-567");
+//   });
+// });
+
 function insertDash(num) {
   //code me
 }
+
+console.log(insertDash(454793));
+console.log(insertDash(123456));
+console.log(insertDash(1003567));
