@@ -9,3 +9,6 @@
 // capMe(['KARLY', 'DANIEL', 'KELSEY']) // returns ['Karly', 'Daniel', 'Kels
 
 function capMe(names) {}
+
+console.log(capMe());
+console.log(capMe(["KARLY", "DANIEL", "KELSEY"]));
