@@ -13,4 +13,20 @@
 // "33333333" -> true
 // "7"        -> false
 
+// Test Cases:
+
+// describe("By 3, or not by 3?  That is the question . . .", () => {
+//     it("Testing for fixed tests", () => {
+//       assert.strictEqual(divisibleByThree('123'), true, "Should return true if the sum of the given digits is divisible by 3.")
+//       assert.strictEqual(divisibleByThree('19254'), true, "Should return true if the sum of the given digits is divisible by 3.")
+//       assert.strictEqual(divisibleByThree('88'), false, "Should return false if the sum of the given digits is not divisible by 3.")
+//       assert.strictEqual(divisibleByThree('1'), false, "Should return false if the sum of the given digits is not divisible by 3.")
+//     });
+//   })
+
 function divisibleByThree(str) {}
+
+console.log(divisibleByThree("123"));
+console.log(divisibleByThree("19254"));
+console.log(divisibleByThree("88"));
+console.log(divisibleByThree("1"));
