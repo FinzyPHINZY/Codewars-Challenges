@@ -24,7 +24,11 @@
 //     });
 //   })
 
-function divisibleByThree(str) {}
+function divisibleByThree(str) {
+  const intSum = str.split("").reduce((sum, num) => sum + parseInt(num), 0);
+
+  return Number.isInteger(intSum / 3);
+}
 
 console.log(divisibleByThree("123"));
 console.log(divisibleByThree("19254"));
