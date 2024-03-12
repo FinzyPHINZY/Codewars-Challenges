@@ -12,3 +12,5 @@
 // "100853"   -> false
 // "33333333" -> true
 // "7"        -> false
+
+function divisibleByThree(str) {}
