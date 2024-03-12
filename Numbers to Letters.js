@@ -14,7 +14,18 @@
 //     })
 //   });
 
-function switcher(x) {}
+function switcher(x) {
+  let output = "";
+  const letters = "zyxwvutsrqponmlkjihgfedcba!?";
+  x.forEach((num) => {
+    if (parseInt(num) <= letters.length) {
+      output += letters[parseInt(num) - 1];
+    } else {
+      output += " ";
+    }
+  });
+  return output;
+}
 
 console.log(switcher(["24", "12", "23", "22", "4", "26", "9", "8"]));
 console.log(
