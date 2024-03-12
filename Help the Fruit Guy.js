@@ -8,6 +8,35 @@
 // The rotten fruit name will be in this camelcase (rottenFruit).
 // The returned array should be in lowercase.
 
+// Test Cases
+// describe("Tests", () => {
+//     it("test", () => {
+//   Test.assertSimilar(removeRotten(["apple","banana","kiwi","melone","orange"]), ["apple","banana","kiwi","melone","orange"])
+//   Test.assertSimilar(removeRotten([]), [])
+
+//     });
+//   });
+
 function removeRotten(bagOfFruits) {
-  // ...
+  if (!bagOfFruits || bagOfFruits.length === 0) {
+    return [];
+  }
+
+  return bagOfFruits.map((fruit) => {
+    return fruit.startsWith("rotten")
+      ? fruit.substring(6).toLowerCase()
+      : fruit.toLowerCase();
+  });
 }
+
+console.log(removeRotten(["apple", "banana", "kiwi", "melone", "orange"]));
+console.log(
+  removeRotten([
+    "rottenapple",
+    "rottenbanana",
+    "rottenapple",
+    "rottenpineapple",
+    "rottenkiwi",
+  ])
+);
+console.log(removeRotten([]));
