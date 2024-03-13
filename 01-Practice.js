@@ -1147,3 +1147,5 @@ function dup(s) {
 // The returned array should be in lowercase.
 
 function isRotten(arr) {}
+
+console.log(isRotten(["apple", "rottenBanana", "apple"]));
