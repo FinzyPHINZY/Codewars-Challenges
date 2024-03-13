@@ -13,3 +13,7 @@
 // "isn't", "'tisn" => 2
 // "Esham", "Esham" => 0
 // "dog", "god" => -1
+
+function shiftedDiff(first, second) {
+  // ...
+}
