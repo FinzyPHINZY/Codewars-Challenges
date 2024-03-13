@@ -1078,36 +1078,36 @@ function bingo(ticket, win) {
   return count >= win ? "Winner!" : "Loser!";
 }
 
-console.log(
-  bingo(
-    [
-      ["ABC", 65],
-      ["HGR", 74],
-      ["BYHT", 74],
-    ],
-    2
-  )
-);
-console.log(
-  bingo(
-    [
-      ["ABC", 65],
-      ["HGR", 74],
-      ["BYHT", 74],
-    ],
-    1
-  )
-);
-console.log(
-  bingo(
-    [
-      ["HGTYRE", 74],
-      ["BE", 66],
-      ["JKTY", 74],
-    ],
-    3
-  )
-);
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     2
+//   )
+// );
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     1
+//   )
+// );
+// console.log(
+//   bingo(
+//     [
+//       ["HGTYRE", 74],
+//       ["BE", 66],
+//       ["JKTY", 74],
+//     ],
+//     3
+//   )
+// );
 
 // describe("Tests",()=>{
 //   it('Fixed tests', ()=>{
@@ -1116,3 +1116,41 @@ console.log(
 //     assert.strictEqual(bingo([['HGTYRE', 74], ['BE', 66], ['JKTY', 74]], 3), 'Loser!');
 //   });
 // });
+
+// DESCRIPTION:
+// In this Kata, you will be given an array of strings and your task is to remove all consecutive duplicate letters from each string in the array.
+// For example:
+// dup(["abracadabra","allottee","assessee"]) = ["abracadabra","alote","asese"].
+// dup(["kelless","keenness"]) = ["keles","kenes"].
+// Strings will be lowercase only, no spaces. See test cases for more examples.
+// Good luck!
+
+function dup(s) {
+  //..
+
+  return s.map((word) => {
+    let new_word = "";
+    for (let i = 0; i < word.length; i++) {
+      if (word[i] !== word[i + 1]) new_word += word[i];
+    }
+    return new_word;
+  });
+}
+
+// console.log(dup(["abracadabra", "allottee", "assessee"]));
+// console.log(dup(["kelless", "keenness"]));
+
+// Our fruit guy has a bag of fruit (represented as an array of strings) where some fruits are rotten. He wants to replace all the rotten pieces of fruit with fresh ones. For example, given ["apple","rottenBanana","apple"] the replaced array should be ["apple","banana","apple"]. Your task is to implement a method that accepts an array of strings containing fruits should returns an array of strings where all the rotten fruits are replaced by good ones.
+// Notes
+// If the array is null/nil/None or empty you should return empty array ([]).
+// The rotten fruit name will be in this camelcase (rottenFruit).
+// The returned array should be in lowercase.
+
+function isRotten(arr) {
+  return arr.map((word) => {
+    if (word.startsWith("rotten")) return word.substring(6).toLowerCase();
+    return word;
+  });
+}
+
+console.log(isRotten(["apple", "rottenBanana", "apple"]));
