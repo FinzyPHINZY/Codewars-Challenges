@@ -1146,6 +1146,11 @@ function dup(s) {
 // The rotten fruit name will be in this camelcase (rottenFruit).
 // The returned array should be in lowercase.
 
-function isRotten(arr) {}
+function isRotten(arr) {
+  return arr.map((word) => {
+    if (word.startsWith("rotten")) return word.substring(6).toLowerCase();
+    return word;
+  });
+}
 
 console.log(isRotten(["apple", "rottenBanana", "apple"]));
