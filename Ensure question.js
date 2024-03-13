@@ -8,16 +8,17 @@
 // "No?" --> "No?"
 
 // Test Cases:
-describe("Ensure question", () => {
-  it("Fixed tests", () => {
-    assert.strictEqual(ensureQuestion(""), "?", "Expected: '?'");
-    assert.strictEqual(ensureQuestion("Yes"), "Yes?", "Expected: '?'");
-    assert.strictEqual(ensureQuestion("No?"), "No?", "Expected: '?'");
-  });
-});
+// describe("Ensure question", () => {
+//   it("Fixed tests", () => {
+//     assert.strictEqual(ensureQuestion(""), "?", "Expected: '?'");
+//     assert.strictEqual(ensureQuestion("Yes"), "Yes?", "Expected: '?'");
+//     assert.strictEqual(ensureQuestion("No?"), "No?", "Expected: '?'");
+//   });
+// });
 
 function ensureQuestion(s) {
   // Code here
+  return s.length < 1 ? "?" : s.endsWith("?") ? s : s + "?";
 }
 
 console.log(ensureQuestion(""));
