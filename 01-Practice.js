@@ -1127,7 +1127,14 @@ function bingo(ticket, win) {
 
 function dup(s) {
   //..
-  let output = "";
+
+  return s.map((word) => {
+    let new_word = "";
+    for (let i = 0; i < word.length; i++) {
+      if (word[i] !== word[i + 1]) new_word += word[i];
+    }
+    return new_word;
+  });
 }
 
 console.log(dup(["abracadabra", "allottee", "assessee"]));
