@@ -13,3 +13,5 @@
 // Examples
 // "John Doe hs seven red pples under his bsket"          =>  0  ; missing: "a"
 // "Bb Smith sent us six neatly arranged range bicycles"  =>  3  ; missing: "o"
+
+function absentVowel(x) {}
