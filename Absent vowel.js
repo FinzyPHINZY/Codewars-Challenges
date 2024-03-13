@@ -22,7 +22,16 @@
 //     });
 //   });
 
-function absentVowel(x) {}
+function absentVowel(x) {
+  const vowels = ["a", "e", "i", "o", "u"];
+
+  let output;
+  vowels.forEach((vowel, i) => {
+    if (!x.includes(vowel)) output = i;
+  });
+
+  return output;
+}
 
 console.log(absentVowel("John Doe hs seven red pples under his bsket"));
 console.log(absentVowel("Bb Smith sent us six neatly arranged range bicycles"));
