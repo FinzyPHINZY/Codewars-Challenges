@@ -17,3 +17,10 @@
 function shiftedDiff(first, second) {
   // ...
 }
+
+console.log(shiftedDiff("coffee", "eecoff"));
+console.log(shiftedDiff("eecoff", "coffee"));
+console.log(shiftedDiff("moose", "Moose"));
+console.log(shiftedDiff("isn't", "'tisn"));
+console.log(shiftedDiff("Esham", "Esham"));
+console.log(shiftedDiff("dog", "god"));
