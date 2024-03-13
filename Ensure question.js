@@ -7,6 +7,19 @@
 // "Yes" --> "Yes?"
 // "No?" --> "No?"
 
+// Test Cases:
+describe("Ensure question", () => {
+  it("Fixed tests", () => {
+    assert.strictEqual(ensureQuestion(""), "?", "Expected: '?'");
+    assert.strictEqual(ensureQuestion("Yes"), "Yes?", "Expected: '?'");
+    assert.strictEqual(ensureQuestion("No?"), "No?", "Expected: '?'");
+  });
+});
+
 function ensureQuestion(s) {
   // Code here
 }
+
+console.log(ensureQuestion(""));
+console.log(ensureQuestion("Yes"));
+console.log(ensureQuestion("No?"));
