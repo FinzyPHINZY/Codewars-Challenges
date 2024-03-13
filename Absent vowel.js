@@ -14,4 +14,15 @@
 // "John Doe hs seven red pples under his bsket"          =>  0  ; missing: "a"
 // "Bb Smith sent us six neatly arranged range bicycles"  =>  3  ; missing: "o"
 
+// Test Cases:
+// describe("Tests", () => {
+//     it("test", () => {
+//   Test.assertEquals(absentVowel("John Doe hs seven red pples under his bsket"), 0);
+//   Test.assertEquals(absentVowel("Bb Smith sent us six neatly arranged range bicycles"), 3);
+//     });
+//   });
+
 function absentVowel(x) {}
+
+console.log(absentVowel("John Doe hs seven red pples under his bsket"));
+console.log(absentVowel("Bb Smith sent us six neatly arranged range bicycles"));
