@@ -10,6 +10,21 @@
 // // Examples
 // // If the string to search for is "me", and the array to search is ["home", "milk", "Mercury", "fish"], the method should return ["home", "Mercury"].
 
+// Test Cases:
+// describe("Tests", () => {
+//     it("test", () => {
+//   Test.assertSimilar(wordSearch("ab", ["za", "ab", "abc", "zab", "zbc"]), ["ab", "abc", "zab"])
+//   Test.assertSimilar(wordSearch("aB", ["za", "ab", "abc", "zab", "zbc"]), ["ab", "abc", "zab"])
+//   Test.assertSimilar(wordSearch("ab", ["za", "aB", "Abc", "zAB", "zbc"]), ["aB", "Abc", "zAB"])
+//   Test.assertSimilar(wordSearch("abcd", ["za", "aB", "Abc", "zAB", "zbc"]), ["Empty"])
+//     });
+//   });
+
 function wordSearch(query, seq) {
   //your code here
 }
+
+console.log(wordSearch("ab", ["za", "ab", "abc", "zab", "zbc"]));
+console.log(wordSearch("aB", ["za", "ab", "abc", "zab", "zbc"]));
+console.log(wordSearch("ab", ["za", "aB", "Abc", "zAB", "zbc"]));
+console.log(wordSearch("abcd", ["za", "aB", "Abc", "zAB", "zbc"]));
