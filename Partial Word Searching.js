@@ -22,7 +22,11 @@
 
 function wordSearch(query, seq) {
   //your code here
-  return seq.filter((word) => word.toLowerCase().includes(query.toLowerCase()));
+  const output = seq.filter((word) =>
+    word.toLowerCase().includes(query.toLowerCase())
+  );
+
+  return output.length > 0 ? output : ["Empty"];
 }
 
 console.log(wordSearch("ab", ["za", "ab", "abc", "zab", "zbc"]));
