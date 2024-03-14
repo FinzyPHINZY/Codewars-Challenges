@@ -22,3 +22,7 @@
 // Go to the store and buy some more, 99 bottles of beer on the wall.
 // For everything else, don't return anything (return null in C#, None in Rust, and "" in Haskell).
 // (+ has no visible effects so we can safely ignore it.)
+
+function HQ9(code) {
+  //finish me
+}
