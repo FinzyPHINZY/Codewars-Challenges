@@ -1164,8 +1164,25 @@ function isRotten(arr) {
 // Good luck!
 
 function dup(s) {
-  //..
+  // s.map((word) => {
+  //   for (let i = 0; i < word.length; i++) {
+  //     let result = "";
+  //     if (word[i] != word[i + 1]) result + word[i];
+  //     return result;
+  //   }
+  // });
+
+  s.forEach((word) => {
+    for (let i = 0; i < word.length; i++) {
+      let result = "";
+      if (word[i] != word[i + 1]) result + word[i];
+      return result;
+    }
+  });
 }
+
+console.log(dup(["abracadabra", "allottee", "assessee"]));
+console.log(dup("kelless", "keenness"));
 
 // describe("Basic tests", function(){
 // Test.assertDeepEquals(dup(["ccooddddddewwwaaaaarrrrsssss","piccaninny","hubbubbubboo"]),['codewars','picaniny','hubububo']);
