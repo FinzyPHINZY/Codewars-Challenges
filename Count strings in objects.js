@@ -11,3 +11,7 @@
 //   fifth:  null
 //   })
 //   //returns 3
+
+function strCount(obj) {
+  // Your code here
+}
