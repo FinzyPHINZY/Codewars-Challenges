@@ -18,7 +18,9 @@
 //     });
 //   });
 
-function fireFight(s) {}
+function fireFight(s) {
+  return s.replaceAll("Fire", "~~");
+}
 
 console.log(
   fireFight(
