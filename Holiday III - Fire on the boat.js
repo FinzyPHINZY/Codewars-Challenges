@@ -31,3 +31,9 @@ console.log(
     "Fire Deck Engine Sail Deck Fire Fire Fire Rudder Fire Boat Fire Fire Captain"
   )
 );
+
+// PREP
+// P: The function takes in a string arguement "s" containing multiple words
+// R: Returns a string - the arguement 's' but after replacing each word that === 'fire' with '~~'
+// E: fireFight("Mast Deck Engine Water Fire"), "Mast Deck Engine Water ~~"
+// P: Itereate through each word in the string, checking for 'fire and replacing it with '~~'
