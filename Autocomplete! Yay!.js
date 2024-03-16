@@ -13,10 +13,24 @@
 // For example, "Apple" and "airport" would both return for an input of 'a'. However, they should return as "Apple" and "airport" in their original cases.
 
 function autocomplete(input, dictionary) {
-  return dictionary.filter((word) => word.startsWith(input));
+  input = input.toLowerCase().replace(/[^a-z]/g, "");
+  return dictionary
+    .filter((word) => word.slice(0, input.length).toLowerCase() == input)
+    .slice(0, 5);
 }
 
-console.log(autocomplete("ai", ["airplane", "airport", "apple", "ball"]));
+console.log(
+  autocomplete("ai", [
+    "airplane",
+    "airport",
+    "airplane",
+    "airport",
+    "airplane",
+    "airport",
+    "apple",
+    "ball",
+  ])
+);
 
 // PREP
 // P: Takes in two arguments, an input(string) and dictionary(array of strings)
