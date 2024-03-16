@@ -12,4 +12,20 @@
 
 // Return the resulting lamps string. See example tests for more clarity.
 
+// Test Caes:
+describe("Drone Fly-By", () => {
+  it("Testing for fixed tests", () => {
+    assert.strictEqual(flyBy("xxxxxx", "====T"), "ooooox");
+    assert.strictEqual(flyBy("xxxxxxxxx", "==T"), "oooxxxxxx");
+    assert.strictEqual(
+      flyBy("xxxxxxxxxxxxxxx", "=========T"),
+      "ooooooooooxxxxx"
+    );
+  });
+});
+
 function flyBy(lamps, drone) {}
+
+console.log(flyBy("xxxxxx", "====T"));
+console.log(flyBy("xxxxxxxxx", "==T"));
+console.log(flyBy("xxxxxxxxxxxxxxx", "=========T"));
