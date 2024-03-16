@@ -13,3 +13,9 @@
 // For example, "Apple" and "airport" would both return for an input of 'a'. However, they should return as "Apple" and "airport" in their original cases.
 
 function autocomplete(input, dictionary) {}
+
+// PREP
+// P: Takes in two arguments, an input(string) and dictionary(array of strings)
+// R: returns an array of strings that startsWith the input. result must not be more than 5
+// E: autocomplete('ai', ['airplane','airport','apple','ball'])
+// P: Loop through the dictionary and filter words that starts with the input. If result.length is more than 5, return just 5 of the elements in the result
