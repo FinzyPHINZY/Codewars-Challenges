@@ -26,3 +26,7 @@
 // The count value should be a valid number.
 // The input array will always be valid and formatted as in the example above.
 // there are 5 possible meal options and the strings representing the selected meal option will always be formatted in the same way, as follows: 'standard', 'vegetarian', 'vegan', 'diabetic', 'gluten-intolerant'.
+
+function orderFood(list) {
+  // thank you for checking out the Coding Meetup kata :)
+}
