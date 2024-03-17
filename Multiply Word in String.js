@@ -24,6 +24,11 @@
 
 function modifyMultiply(str, loc, num) {
   //Code here
+  return str
+    .split(" ")
+    .filter((word, i) => i === loc)
+    .map((word) => Array(num).fill(word).join("-"))
+    .join("");
 }
 
 console.log(modifyMultiply("This is a string", 3, 5));
