@@ -9,3 +9,7 @@
 // Example
 
 // modifyMultiply ("This is a string", 3, 5)
+
+function modifyMultiply(str, loc, num) {
+  //Code here
+}
