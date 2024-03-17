@@ -69,7 +69,23 @@ var list1 = [
 ];
 
 function orderFood(list) {
-  // thank you for checking out the Coding Meetup kata :)
+  const mealCount = {};
+
+  list.forEach((dev) => {
+    const mealOption = dev.meal;
+    if (mealCount[mealOption]) {
+      mealCount[mealOption]++;
+    } else {
+      mealCount[mealOption] = 1;
+    }
+  });
+  return mealCount;
 }
 
 console.log(orderFood(list1));
+
+// PREP
+// P: The function takes in an array of objects containing information about developers attending the event
+// R: The function should return an object containing the variety of meals the developers want as well as the count
+// E: It's above
+// p: Loop through the array and
