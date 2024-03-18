@@ -1248,7 +1248,17 @@ var list1 = [
 // var answer = { vegetarian: 2, standard: 1, vegan: 1 };
 
 function orderFood(list) {
-  return list;
+  let mealCount = {};
+
+  list.forEach((dev) => {
+    const mealOption = dev.meal;
+    if (mealCount[mealOption]) {
+      mealCount[mealOption]++;
+    } else {
+      mealCount[mealOption] = 1;
+    }
+  });
+  return mealCount;
 }
 
 console.log(orderFood(list1));
