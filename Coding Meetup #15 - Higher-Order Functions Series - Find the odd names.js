@@ -79,3 +79,20 @@ function findOddNames(list) {
 
 console.log(findOddNames(list1));
 // console.log(findOddNames(list2));
+
+function sumCharCodes(str) {
+  return str
+    .split("")
+    .map((char) => char.charCodeAt())
+    .reduce((sum, current) => sum + current);
+}
+
+function isOdd(n) {
+  return n % 2 != 0;
+}
+
+function findOddNames(list) {
+  return list.filter((person) => {
+    return isOdd(sumCharCodes(person.firstName));
+  });
+}
