@@ -60,10 +60,24 @@ let list1 = [
   },
 ];
 
-//   let answer1 = [
-//     { firstName: 'Gabriel', lastName: 'X.', country: 'Monaco', continent: 'Europe', age: 49, language: 'PHP' },
-//     { firstName: 'Sou', lastName: 'B.', country: 'Japan', continent: 'Asia', age: 49, language: 'PHP' },
-//   ];
+let answer1 = [
+  {
+    firstName: "Gabriel",
+    lastName: "X.",
+    country: "Monaco",
+    continent: "Europe",
+    age: 49,
+    language: "PHP",
+  },
+  {
+    firstName: "Sou",
+    lastName: "B.",
+    country: "Japan",
+    continent: "Asia",
+    age: 49,
+    language: "PHP",
+  },
+];
 
 let list2 = [
   {
@@ -92,9 +106,16 @@ let list2 = [
   },
 ];
 
-//   let answer2 = [
-//     { firstName: 'Gabriel', lastName: 'X.', country: 'Monaco', continent: 'Europe', age: 49, language: 'PHP' },
-//   ];
+let answer2 = [
+  {
+    firstName: "Gabriel",
+    lastName: "X.",
+    country: "Monaco",
+    continent: "Europe",
+    age: 49,
+    language: "PHP",
+  },
+];
 
 let list3 = [
   {
@@ -163,21 +184,48 @@ let list3 = [
   },
 ];
 
-//   let answer3 = [
-//     { firstName: 'Alexander', lastName: 'F.', country: 'Russia', continent: 'Europe', age: 89, language: 'Java' },
-//     { firstName: 'Kseniya', lastName: 'T.', country: 'Belarus', continent: 'Europe', age: 89, language: 'JavaScript' },
-//     { firstName: 'Mariam', lastName: 'B.', country: 'Egypt', continent: 'Africa', age: 89, language: 'Python' },
-//   ];
+let answer3 = [
+  {
+    firstName: "Alexander",
+    lastName: "F.",
+    country: "Russia",
+    continent: "Europe",
+    age: 89,
+    language: "Java",
+  },
+  {
+    firstName: "Kseniya",
+    lastName: "T.",
+    country: "Belarus",
+    continent: "Europe",
+    age: 89,
+    language: "JavaScript",
+  },
+  {
+    firstName: "Mariam",
+    lastName: "B.",
+    country: "Egypt",
+    continent: "Africa",
+    age: 89,
+    language: "Python",
+  },
+];
 
 function findSenior(list) {
-  // thank you for checking out the Coding Meetup kata :)
+  //   return list.sort((a, b) => b.age - a.age);
+  let ages = [];
+  for (const dev of list) {
+    ages.push(dev.age);
+  }
+
+  return list.filter((dev) => dev.age === Math.max(...ages));
 }
 
 // PREP
 // P: Takes in an array of objects containing information (age most especially) about developers that signed up for an event
 // R: Returns an array of objects of the oldest developers in the function argument. This is determined using the age property in each object
 // E: Find above
-// P: loop through the list of developers, sort using the age property
+// P: loop through the list of developers, find the max value of each dev age
 
 console.log(findSenior(list1));
 console.log(findSenior(list2));
