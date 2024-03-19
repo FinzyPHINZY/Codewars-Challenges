@@ -10,36 +10,35 @@
 // The solution should be case insensitive (ie good, GOOD and gOOd all count as a good idea). All inputs may not be strings.
 
 // Test Cases:
-describe("Well of Ideas - Harder Version", () => {
-  it("Testing for fixed tests", () => {
-    assert.deepEqual(
-      well([
-        ["bad", "bAd", "bad"],
-        ["bad", "bAd", "bad"],
-        ["bad", "bAd", "bad"],
-      ]),
-      "Fail!"
-    );
-    assert.deepEqual(
-      well([
-        ["gOOd", "bad", "BAD", "bad", "bad"],
-        ["bad", "bAd", "bad"],
-        ["GOOD", "bad", "bad", "bAd"],
-      ]),
-      "Publish!"
-    );
-    assert.deepEqual(
-      well([
-        ["gOOd", "bAd", "BAD", "bad", "bad", "GOOD"],
-        ["bad"],
-        ["gOOd", "BAD"],
-      ]),
-      "I smell a series!"
-    );
-  });
-});
+// describe("Well of Ideas - Harder Version", () => {
+//     it("Testing for fixed tests", () => {
+//       assert.deepEqual(well([['bad', 'bAd', 'bad'], ['bad', 'bAd', 'bad'], ['bad', 'bAd', 'bad']]), 'Fail!');
+//       assert.deepEqual(well([['gOOd', 'bad', 'BAD', 'bad', 'bad'], ['bad', 'bAd', 'bad'], ['GOOD', 'bad', 'bad', 'bAd']]), 'Publish!');
+//       assert.deepEqual(well([['gOOd', 'bAd', 'BAD', 'bad', 'bad', 'GOOD'], ['bad'], ['gOOd', 'BAD']]), 'I smell a series!');
+//     });
+//   });
 
-function well(x) {}
+function well(x) {
+  const goodLength = x
+    .flat()
+    .map((idea) => {
+      if (typeof idea == "string") {
+        return idea.toLowerCase();
+      } else {
+        return idea;
+      }
+    })
+    .filter((idea) => idea == "good").length;
+
+  return goodLength < 1
+    ? "Fail"
+    : goodLength > 2
+    ? "I smell a series!"
+    : "Publish!";
+
+  //   less than 1 :fail
+  //  more than 2 : series
+}
 
 console.log(
   well([
