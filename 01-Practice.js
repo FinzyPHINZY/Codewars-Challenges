@@ -1340,7 +1340,15 @@ function toWeirdCase(string) {
 // {"Hindi": 60, "Dutch" : 93, "Greek": 71}  -->  ["Dutch", "Greek", "Hindi"]
 // {"C++": 50, "ASM": 10, "Haskell": 20}     -->  []
 
-function myLanguages(results) {}
+function myLanguages(results) {
+  return Object.entries(results)
+    .filter((res) => res[1] >= 60)
+    .sort((a, b) => b[1] - a[1])
+    .map((res) => res[0]);
+  // for (const result of Object.entries(results)) {
+  //   console.log(result);
+  // }
+}
 
 console.log(myLanguages({ Java: 10, Ruby: 80, Python: 65 }));
 console.log(myLanguages({ Hindi: 60, Greek: 71, Dutch: 93 }));
