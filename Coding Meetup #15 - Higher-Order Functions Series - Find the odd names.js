@@ -24,6 +24,47 @@
 // Return an empty array [] if there is no developer with an "odd" name.
 // The input array and first names will always be valid and formatted as in the example above.
 
+// Test Cases:
+
+var list1 = [
+  {
+    firstName: "Aba",
+    lastName: "N.",
+    country: "Ghana",
+    continent: "Africa",
+    age: 21,
+    language: "Python",
+  },
+  {
+    firstName: "Abb",
+    lastName: "O.",
+    country: "Israel",
+    continent: "Asia",
+    age: 39,
+    language: "Java",
+  },
+];
+//   var answer1 = [
+//     { firstName: 'Abb', lastName: 'O.', country: 'Israel', continent: 'Asia', age: 39, language: 'Java' }
+//   ];
+
+var list2 = [
+  {
+    firstName: "Aba",
+    lastName: "N.",
+    country: "Ghana",
+    continent: "Africa",
+    age: 21,
+    language: "Python",
+  },
+];
+
+//   var answer2 = [];
+
 function findOddNames(list) {
   // thank you for checking out the Coding Meetup kata :)
+  return list;
 }
+
+console.log(findOddNames(list1));
+console.log(findOddNames(list2));
