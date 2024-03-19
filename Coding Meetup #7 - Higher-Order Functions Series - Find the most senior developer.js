@@ -173,6 +173,12 @@ function findSenior(list) {
   // thank you for checking out the Coding Meetup kata :)
 }
 
+// PREP
+// P: Takes in an array of objects containing information (age most especially) about developers that signed up for an event
+// R: Returns an array of objects of the oldest developers in the function argument. This is determined using the age property in each object
+// E: Find above
+// P: loop through the list of developers, sort using the age property
+
 console.log(findSenior(list1));
 console.log(findSenior(list2));
 console.log(findSenior(list3));
