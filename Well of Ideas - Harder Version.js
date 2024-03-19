@@ -9,4 +9,52 @@
 
 // The solution should be case insensitive (ie good, GOOD and gOOd all count as a good idea). All inputs may not be strings.
 
+// Test Cases:
+describe("Well of Ideas - Harder Version", () => {
+  it("Testing for fixed tests", () => {
+    assert.deepEqual(
+      well([
+        ["bad", "bAd", "bad"],
+        ["bad", "bAd", "bad"],
+        ["bad", "bAd", "bad"],
+      ]),
+      "Fail!"
+    );
+    assert.deepEqual(
+      well([
+        ["gOOd", "bad", "BAD", "bad", "bad"],
+        ["bad", "bAd", "bad"],
+        ["GOOD", "bad", "bad", "bAd"],
+      ]),
+      "Publish!"
+    );
+    assert.deepEqual(
+      well([
+        ["gOOd", "bAd", "BAD", "bad", "bad", "GOOD"],
+        ["bad"],
+        ["gOOd", "BAD"],
+      ]),
+      "I smell a series!"
+    );
+  });
+});
+
 function well(x) {}
+
+console.log(
+  well([
+    ["bad", "bAd", "bad"],
+    ["bad", "bAd", "bad"],
+    ["bad", "bAd", "bad"],
+  ])
+);
+console.log(
+  well([
+    ["gOOd", "bad", "BAD", "bad", "bad"],
+    ["bad", "bAd", "bad"],
+    ["GOOD", "bad", "bad", "bAd"],
+  ])
+);
+console.log(
+  well([["gOOd", "bAd", "BAD", "bad", "bad", "GOOD"], ["bad"], ["gOOd", "BAD"]])
+);
