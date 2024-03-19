@@ -62,9 +62,20 @@ var list2 = [
 //   var answer2 = [];
 
 function findOddNames(list) {
-  // thank you for checking out the Coding Meetup kata :)
-  return list;
+  const output = [];
+  for (const dev of list) {
+    const fName = dev.firstName;
+    const fNameCharSum = fName
+      .split("")
+      .map((char, i) => fName.charCodeAt(i))
+      .reduce((sum, num) => sum + num, 0);
+
+    if (fNameCharSum % 2 !== 0) {
+      output.push(dev);
+    }
+  }
+  return output;
 }
 
 console.log(findOddNames(list1));
-console.log(findOddNames(list2));
+// console.log(findOddNames(list2));
