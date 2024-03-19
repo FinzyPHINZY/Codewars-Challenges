@@ -22,3 +22,7 @@
 // Notes:
 
 // The input array will always be valid and formatted as in the example above and will never be empty.
+
+function findSenior(list) {
+  // thank you for checking out the Coding Meetup kata :)
+}
