@@ -212,7 +212,6 @@ let answer3 = [
 ];
 
 function findSenior(list) {
-  //   return list.sort((a, b) => b.age - a.age);
   let ages = [];
   for (const dev of list) {
     ages.push(dev.age);
@@ -220,6 +219,9 @@ function findSenior(list) {
 
   return list.filter((dev) => dev.age === Math.max(...ages));
 }
+
+var maxAge = Math.max(...list.map((person) => person.age));
+return list.filter((person) => person.age === maxAge);
 
 // PREP
 // P: Takes in an array of objects containing information (age most especially) about developers that signed up for an event
