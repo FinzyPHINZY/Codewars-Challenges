@@ -27,7 +27,20 @@
 //   assert.strictEqual(scramble('sammoc',            'commas'     ), true )
 
 function scramble(str1, str2) {
-  return false;
+  const count = {};
+
+  // Count the occurrences of each character in str1
+  for (const char of str1) {
+    count[char] = (count[char] || 0) + 1;
+  }
+
+  // Subtract the occurrences of each character in str2
+  for (const char of str2) {
+    if (!count[char]) return false; // If character not found or count becomes negative, return false
+    count[char]--;
+  }
+
+  return Object.values(count).every((value) => value >= 0);
 }
 
 console.log(scramble("rkqodlw", "world"));
