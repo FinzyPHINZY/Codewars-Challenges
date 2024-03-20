@@ -13,3 +13,17 @@
 // { 1, 1, 11, 2, 3 } => 6
 // Input validation
 // If an empty value ( null, None, Nothing etc. ) is given instead of an array, or the given array is an empty list or a list with only 1 element, return 0.
+
+function sumArray(array) {
+  if (!array || array.length <= 2) {
+    return 0;
+  }
+
+  const maxVal = Math.max(...array);
+  const minVal = Math.min(...array);
+
+  return array.reduce(
+    (sum, num) => sum + (num !== maxVal && num !== minVal ? num : 0),
+    0
+  );
+}
