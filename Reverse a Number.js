@@ -47,3 +47,4 @@ console.log(reverseNumber(4321234));
 console.log(reverseNumber(5));
 console.log(reverseNumber(0));
 console.log(reverseNumber(98989898));
+console.log(reverseNumber(-456));
