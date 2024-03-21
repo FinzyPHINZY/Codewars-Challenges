@@ -9,6 +9,21 @@
 // Allowed characters are uppercase / lowercase latin letters and digits from 0 to 9
 // No whitespaces / underscore
 
+// Test Cases:
+// describe("Tests", () => {
+//   it("test", () => {
+//     assert.strictEqual(alphanumeric("Mazinkaiser"), true);
+//     assert.strictEqual(alphanumeric("hello world_"), false);
+//     assert.strictEqual(alphanumeric("PassW0rd"), true);
+//     assert.strictEqual(alphanumeric("     "), false);
+//   });
+// });
+
 function alphanumeric(string) {
   //your code here
 }
+
+console.log(alphanumeric("Mazinkaiser"));
+console.log(alphanumeric("hello world_"));
+console.log(alphanumeric("PassW0rd"));
+console.log(alphanumeric("     "));
