@@ -12,4 +12,9 @@
 
 // Python: your solution need to work with huge numbers (about a milion digits), converting to int will not work.
 
+// Test Cases:
+// Test.assertEquals(sumStrings("123", "456"), "579");
+
 function sumStrings(a, b) {}
+
+console.log(sumStrings("123", "456"));
