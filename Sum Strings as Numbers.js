@@ -11,3 +11,5 @@
 // I have removed the use of BigInteger and BigDecimal in java
 
 // Python: your solution need to work with huge numbers (about a milion digits), converting to int will not work.
+
+function sumStrings(a, b) {}
