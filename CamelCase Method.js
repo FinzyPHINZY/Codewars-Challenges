@@ -7,3 +7,7 @@
 // "hello case" --> "HelloCase"
 // "camel case word" --> "CamelCaseWord"
 // Don't forget to rate this kata! Thanks :)
+
+String.prototype.camelCase = function () {
+  //your code here
+};
