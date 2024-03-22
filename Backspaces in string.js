@@ -21,6 +21,17 @@
 
 function cleanString(s) {
   // ... your code ...
+  const result = [];
+
+  for (const char of s) {
+    if (char === "#") {
+      result.pop();
+    } else {
+      result.push(char);
+    }
+  }
+
+  return result.join("");
 }
 
 console.log(cleanString("abc#d##c"));
@@ -29,3 +40,8 @@ console.log(cleanString("#######"));
 console.log(cleanString(""));
 console.log(cleanString("abc#d##c"));
 console.log(cleanString("abc####d##c#"));
+
+// PREP
+// P: takes in a string containing letters and hashes
+// R: returns a clean string with all hashes effected by removing a letter before them
+// E: // "abc#d##c"      ==>  "ac" "abc##d######"  ==>  ""
