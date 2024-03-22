@@ -17,3 +17,7 @@
 function formatMoney(amount) {
   // your formatting code here
 }
+
+console.log(formatMoney(39.99));
+console.log(formatMoney(3));
+console.log(formatMoney(3.1));
