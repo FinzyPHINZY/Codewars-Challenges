@@ -17,4 +17,13 @@
 
 // Note: Input will either be a positive integer (or a string for untyped languages).
 
+// assert.strictEqual(apple("50"), "It's hotter than the sun!!");
+// assert.strictEqual(
+//   apple(4),
+//   "Help yourself to a honeycomb Yorkie for the glovebox."
+// );
+
 function apple(x) {}
+
+console.log(apple("50"));
+console.log(apple(4));
