@@ -27,3 +27,9 @@ function apple(x) {}
 
 console.log(apple("50"));
 console.log(apple(4));
+
+// PREP
+// P: Takes in a positive integer (or a string for untyped languages)
+// R: return it's hotter than the sun!! if x squared is more than 1000 else return Help yourself to a honeycomb Yorkie for theglovebox.
+// E: apple("50"), returns "It's hotter than the sun!!"
+// P: using the tenary operator, return it's hotter than the sun!! if x squared is more than 1000 else return Help yourself to a honeycomb Yorkie for theglovebox.
