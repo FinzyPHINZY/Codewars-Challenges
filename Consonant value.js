@@ -13,6 +13,29 @@
 // For the word "strength", solve("strength") = 57
 // -- The consonant substrings are: "str" and "ngth" with values "str" = 19 + 20 + 18 = 57 and "ngth" = 14 + 7 + 20 + 8 = 49. The highest is 57.
 
+// Test Cases:
+// describe("Basic tests", function () {
+//   it("Should pass sample tests", function () {
+//     assert.strictEqual(solve("zodiac"), 26);
+//     assert.strictEqual(solve("chruschtschov"), 80);
+//     assert.strictEqual(solve("khrushchev"), 38);
+//     assert.strictEqual(solve("strength"), 57);
+//     assert.strictEqual(solve("catchphrase"), 73);
+//     assert.strictEqual(solve("twelfthstreet"), 103);
+//     assert.strictEqual(solve("mischtschenkoana"), 80);
+//     assert.strictEqual(solve("az"), 26);
+//   });
+// });
+
 function solve(s) {
   return 0;
 }
+
+console.log(solve("zodiac"));
+console.log(solve("chruschtschov"));
+console.log(solve("khrushchev"));
+console.log(solve("strength"));
+console.log(solve("catchphrase"));
+console.log(solve("twelfthstreet"));
+console.log(solve("mischtschenkoana"));
+console.log(solve("az"));
