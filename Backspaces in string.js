@@ -10,3 +10,7 @@
 // "abc##d######"  ==>  ""
 // "#######"       ==>  ""
 // ""              ==>  ""
+
+function cleanString(s) {
+  // ... your code ...
+}
