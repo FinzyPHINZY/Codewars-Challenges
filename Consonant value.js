@@ -28,14 +28,28 @@
 // });
 
 function solve(s) {
-  return 0;
+  const consonants = "bcdfghjklmnpqrstvwxyz";
+  let max = 0;
+  let current = 0;
+
+  for (const char of s) {
+    if (consonants.includes(char)) {
+      current += char.charCodeAt(0) - 96; // Calculate the value of the consonant
+    } else {
+      max = Math.max(max, current); // Update max if current is higher
+      current = 0; // Reset current for new substring
+    }
+  }
+
+  max = Math.max(max, current); // Update max for the last substring
+  return max;
 }
 
 console.log(solve("zodiac"));
-console.log(solve("chruschtschov"));
-console.log(solve("khrushchev"));
-console.log(solve("strength"));
-console.log(solve("catchphrase"));
-console.log(solve("twelfthstreet"));
-console.log(solve("mischtschenkoana"));
-console.log(solve("az"));
+// console.log(solve("chruschtschov"));
+// console.log(solve("khrushchev"));
+// console.log(solve("strength"));
+// console.log(solve("catchphrase"));
+// console.log(solve("twelfthstreet"));
+// console.log(solve("mischtschenkoana"));
+// console.log(solve("az"));
