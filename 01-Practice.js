@@ -1418,7 +1418,7 @@ function partlist(arr) {
   return result;
 }
 
-console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
+// console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
 
 // PREP:
 // P: Function takes in an array of words
@@ -1435,7 +1435,9 @@ console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
 // Once you have counted all of your mini wins, compare that number to the other input provided (win). If your total is more than or equal to (win), return 'Winner!'. Else return 'Loser!'.
 // All inputs will be in the correct format. Strings on tickets are not always the same length.
 
-function bingo(ticket, win) {}
+function bingo(ticket, win) {
+  ticket.map((arr) => arr[0].split("").map((char) => char.charCodeAt(0)));
+}
 
 console.log(
   bingo(
@@ -1445,28 +1447,27 @@ console.log(
       ["BYHT", 74],
     ],
     2
-  ),
-  "Loser!"
+  )
 );
-console.log(
-  bingo(
-    [
-      ["ABC", 65],
-      ["HGR", 74],
-      ["BYHT", 74],
-    ],
-    1
-  ),
-  "Winner!"
-);
-console.log(
-  bingo(
-    [
-      ["HGTYRE", 74],
-      ["BE", 66],
-      ["JKTY", 74],
-    ],
-    3
-  ),
-  "Loser!"
-);
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     1
+//   ),
+//   "Winner!"
+// );
+// console.log(
+//   bingo(
+//     [
+//       ["HGTYRE", 74],
+//       ["BE", 66],
+//       ["JKTY", 74],
+//     ],
+//     3
+//   ),
+//   "Loser!"
+// );
