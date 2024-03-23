@@ -1413,3 +1413,9 @@ function partlist(arr) {
 }
 
 console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
+
+// PREP:
+// P: Function takes in an array of words
+// R: Return an array of arrays containing the words
+// E: just above
+// P: create a return arr.loop through the array and add a sliced array of the current word index to the loop index
