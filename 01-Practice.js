@@ -1411,3 +1411,5 @@ function array(string) {
 function partlist(arr) {
   // your code
 }
+
+console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
