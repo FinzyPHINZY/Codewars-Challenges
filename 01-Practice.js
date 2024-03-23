@@ -1350,6 +1350,124 @@ function myLanguages(results) {
   // }
 }
 
-console.log(myLanguages({ Java: 10, Ruby: 80, Python: 65 }));
-console.log(myLanguages({ Hindi: 60, Greek: 71, Dutch: 93 }));
-console.log(myLanguages({ "C++": 50, ASM: 10, Haskell: 20 }));
+// console.log(myLanguages({ Java: 10, Ruby: 80, Python: 65 }));
+// console.log(myLanguages({ Hindi: 60, Greek: 71, Dutch: 93 }));
+// console.log(myLanguages({ "C++": 50, ASM: 10, Haskell: 20 }));
+
+// DESCRIPTION:
+// This is a spin off of my first kata.
+// You are given a string containing a sequence of character sequences separated by commas.
+// Write a function which returns a new string containing the same character sequences except the first and the last ones but this time separated by spaces.
+// If the input string is empty or the removal of the first and last items would cause the resulting string to be empty, return an empty value (represented as a generic value NULL in the examples below).
+// Examples
+// "1,2,3"      =>  "2"
+// "1,2,3,4"    =>  "2 3"
+// "1,2,3,4,5"  =>  "2 3 4"
+
+// ""     =>  NULL
+// "1"    =>  NULL
+// "1,2"  =>  NULL
+
+function array(string) {
+  // TODO
+  string = string.split(",");
+
+  if (string.length < 3) return null;
+
+  return string
+    .filter((char, i) => i !== 0 && i !== string.length - 1)
+    .join(" ");
+}
+
+// console.log(array(""));
+// console.log(array("1"));
+// console.log(array("A1,B2"));
+// console.log(array("1,2,3"));
+// console.log(array("1,2,3,4"));
+// console.log(array("A1,B2,C3,D4,E5"));
+// console.log(array("A,1,23,456,78,9,Z"));
+
+// DESCRIPTION:
+// Write a function partlist that gives all the ways to divide a list (an array) of at least two elements into two non-empty parts.
+// Each two non empty parts will be in a pair (or an array for languages without tuples or a structin C - C: see Examples test Cases - )
+// Each part will be in a string
+// Elements of a pair must be in the same order as in the original array.
+// Examples of returns in different languages:
+// a = ["az", "toto", "picaro", "zone", "kiwi"] -->
+// [["az", "toto picaro zone kiwi"], ["az toto", "picaro zone kiwi"], ["az toto picaro", "zone kiwi"], ["az toto picaro zone", "kiwi"]]
+// or
+//  a = {"az", "toto", "picaro", "zone", "kiwi"} -->
+// {{"az", "toto picaro zone kiwi"}, {"az toto", "picaro zone kiwi"}, {"az toto picaro", "zone kiwi"}, {"az toto picaro zone", "kiwi"}}
+// or
+// a = ["az", "toto", "picaro", "zone", "kiwi"] -->
+// [("az", "toto picaro zone kiwi"), ("az toto", "picaro zone kiwi"), ("az toto picaro", "zone kiwi"), ("az toto picaro zone", "kiwi")]
+// or
+// a = [|"az", "toto", "picaro", "zone", "kiwi"|] -->
+// [("az", "toto picaro zone kiwi"), ("az toto", "picaro zone kiwi"), ("az toto picaro", "zone kiwi"), ("az toto picaro zone", "kiwi")]
+// or
+// a = ["az", "toto", "picaro", "zone", "kiwi"] -->
+// "(az, toto picaro zone kiwi)(az toto, picaro zone kiwi)(az toto picaro, zone kiwi)(az toto picaro zone, kiwi)"
+
+function partlist(arr) {
+  // your code
+  const result = [];
+
+  for (let i = 1; i < arr.length; i++) {
+    result.push([arr.slice(0, i).join(" ")], [arr.slice(i).join(" ")]);
+  }
+  return result;
+}
+
+// console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
+
+// PREP:
+// P: Function takes in an array of words
+// R: Return an array of arrays containing the words
+// E: just above
+// P: create a return arr.loop through the array and add a sliced array of the current word index to the loop index
+
+// DESCRIPTION:
+// Time to win the lottery!
+// Given a lottery ticket (ticket), represented by an array of 2-value arrays, you must find out if you've won the jackpot.
+// Example ticket:
+// [ [ 'ABC', 65 ], [ 'HGR', 74 ], [ 'BYHT', 74 ] ]
+// To do this, you must first count the 'mini-wins' on your ticket. Each subarray has both a string and a number within it. If the character code of any of the characters in the string matches the number, you get a mini win. Note you can only have one mini win per sub array.
+// Once you have counted all of your mini wins, compare that number to the other input provided (win). If your total is more than or equal to (win), return 'Winner!'. Else return 'Loser!'.
+// All inputs will be in the correct format. Strings on tickets are not always the same length.
+
+function bingo(ticket, win) {
+  ticket.map((arr) => arr[0].split("").map((char) => char.charCodeAt(0)));
+}
+
+console.log(
+  bingo(
+    [
+      ["ABC", 65],
+      ["HGR", 74],
+      ["BYHT", 74],
+    ],
+    2
+  )
+);
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     1
+//   ),
+//   "Winner!"
+// );
+// console.log(
+//   bingo(
+//     [
+//       ["HGTYRE", 74],
+//       ["BE", 66],
+//       ["JKTY", 74],
+//     ],
+//     3
+//   ),
+//   "Loser!"
+// );
