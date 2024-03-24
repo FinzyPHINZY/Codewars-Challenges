@@ -9,7 +9,22 @@
 // moveZeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]), [1, 2, 1, 1, 3, 1, 0, 0, 0, 0];
 
 function moveZeros(arr) {
-  return;
+  let count = 0;
+  let output = [];
+  arr.forEach((e) => {
+    if (e === 0) {
+      count++;
+    } else {
+      output.push(e);
+    }
+  });
+
+  const zeros = [];
+  for (let i = 0; i < count; i++) {
+    zeros.push(0);
+  }
+
+  return output.concat(zeros);
 }
 
 console.log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]));
