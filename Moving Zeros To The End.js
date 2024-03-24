@@ -9,20 +9,15 @@
 // moveZeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]), [1, 2, 1, 1, 3, 1, 0, 0, 0, 0];
 
 function moveZeros(arr) {
-  let count = 0;
   let output = [];
+  const zeros = [];
   arr.forEach((e) => {
     if (e === 0) {
-      count++;
+      zeros.push(e);
     } else {
       output.push(e);
     }
   });
-
-  const zeros = [];
-  for (let i = 0; i < count; i++) {
-    zeros.push(0);
-  }
 
   return output.concat(zeros);
 }
