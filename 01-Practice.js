@@ -1514,7 +1514,10 @@ function modifyMultiply(str, loc, num) {
 // splitAndMerge("Hello World!", ",")     ==  "H,e,l,l,o W,o,r,l,d,!"
 
 function splitAndMerge(str, sep) {
-  return;
+  return str
+    .split(" ")
+    .map((word) => word.split("").join(sep))
+    .join(" ");
 }
 
 console.log(splitAndMerge("My name is John", " "));
