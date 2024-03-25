@@ -1491,6 +1491,15 @@ function bingo(ticket, win) {
 
 function modifyMultiply(str, loc, num) {
   //Code here
+  return str
+    .split(" ")
+    .filter((word, i) => i === loc)
+    .map((word) => Array(num).fill(word).join("-"))
+    .join("");
 }
 
 console.log(modifyMultiply("This is a string", 3, 5));
+
+// PREP
+// P: takes in three arguments - str, loc , num. 'str is a string, loc and nums are numbers
+// R: returns a string str[loc] times num
