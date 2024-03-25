@@ -1498,8 +1498,19 @@ function modifyMultiply(str, loc, num) {
     .join("");
 }
 
-console.log(modifyMultiply("This is a string", 3, 5));
+// console.log(modifyMultiply("This is a string", 3, 5));
 
 // PREP
 // P: takes in three arguments - str, loc , num. 'str is a string, loc and nums are numbers
 // R: returns a string str[loc] times num
+
+
+Task
+Implement a function which accepts 2 arguments: string and separator.
+The expected algorithm: split the string into words by spaces, split each word into separate characters and join them back with the specified separator, join all the resulting "words" back into a sentence with spaces.
+For example:
+splitAndMerge("My name is John", " ")  ==  "M y n a m e i s J o h n"
+splitAndMerge("My name is John", "-")  ==  "M-y n-a-m-e i-s J-o-h-n"
+splitAndMerge("Hello World!", ".")     ==  "H.e.l.l.o W.o.r.l.d.!"
+splitAndMerge("Hello World!", ",")     ==  "H,e,l,l,o W,o,r,l,d,!"
+
