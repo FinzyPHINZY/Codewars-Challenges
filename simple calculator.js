@@ -23,7 +23,21 @@
 // Test.assertEquals(calculator(6, 2, "$"), "unknown value", "calculate");
 // Test.assertEquals(calculator(6, "h", "*"), "unknown value", "calculate");
 
-function calculator(a, b, sign) {}
+function calculator(a, b, sign) {
+  const signs = ["/", "*", "+", "-"];
+
+  if (!signs.includes(sign) || typeof a !== "number" || typeof b !== "number") {
+    return "unknown value";
+  }
+
+  return sign === "/"
+    ? a / b
+    : sign === "*"
+    ? a * b
+    : sign === "+"
+    ? a + b
+    : a - b;
+}
 
 console.log(calculator(1, 2, "+"));
 console.log(calculator(1, 2, "-"));
