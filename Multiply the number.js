@@ -9,6 +9,22 @@
 //   0 -->     0  (  0 * 5¹)
 //  -3 -->   -15  ( -3 * 5¹)
 
+// Test Cases:
+describe("Basic Tests", () => {
+  Test.assertEquals(multiply(10), 250);
+  Test.assertEquals(multiply(5), 25);
+  Test.assertEquals(multiply(200), 25000);
+  Test.assertEquals(multiply(0), 0);
+  Test.assertEquals(multiply(-2), -10);
+});
+
 function multiply(number) {
   //your code here
+  return number * 5;
 }
+
+console.log(multiply(10));
+console.log(multiply(5));
+console.log(multiply(200));
+console.log(multiply(0));
+console.log(multiply(-2));
