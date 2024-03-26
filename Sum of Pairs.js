@@ -47,6 +47,12 @@ function sumPairs(ints, s) {
   return [0, 0] || undefined;
 }
 
+// PREP
+// P: takes in an arrray of numbers and a single number.
+// R: returns an array containing two numbers whose sum equals the second argument
+// E: [1, 4, 8, 7, 3, 15], 8) --->[1, 7]
+// P: we can try it by finding the first lowest number that is less than the second argument then find a number whose addtion would equal s. we can also loop through the array and group two elements and pick the first one that matched the second argument
+
 console.log(sumPairs([1, 4, 8, 7, 3, 15], 8));
 console.log(sumPairs([1, -2, 3, 0, -6, 1], -6));
 console.log(sumPairs([20, -13, 40], -7));
