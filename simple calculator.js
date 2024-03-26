@@ -14,4 +14,20 @@
 // calculator(1,2,"&"); //=> result will be "unknown value"
 // calculator(1,"k","*"); //=> result will be "unknown value"
 
+// Test Cases:
+
+// Test.assertEquals(calculator(1, 2, "+"), 3, "calculate");
+// Test.assertEquals(calculator(1, 2, "-"), -1, "calculate");
+// Test.assertEquals(calculator(3, 5, "*"), 15, "calculate");
+// Test.assertEquals(calculator(6, 2, "/"), 3, "calculate");
+// Test.assertEquals(calculator(6, 2, "$"), "unknown value", "calculate");
+// Test.assertEquals(calculator(6, "h", "*"), "unknown value", "calculate");
+
 function calculator(a, b, sign) {}
+
+console.log(calculator(1, 2, "+"));
+console.log(calculator(1, 2, "-"));
+console.log(calculator(3, 5, "*"));
+console.log(calculator(6, 2, "/"));
+console.log(calculator(6, 2, "$"));
+console.log(calculator(6, "h", "*"));
