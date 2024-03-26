@@ -1520,7 +1520,23 @@ function splitAndMerge(str, sep) {
     .join(" ");
 }
 
-console.log(splitAndMerge("My name is John", " "));
-console.log(splitAndMerge("My name is John", "-"));
-console.log(splitAndMerge("Hello World!", "."));
-console.log(splitAndMerge("Hello World!", ","));
+// console.log(splitAndMerge("My name is John", " "));
+// console.log(splitAndMerge("My name is John", "-"));
+// console.log(splitAndMerge("Hello World!", "."));
+// console.log(splitAndMerge("Hello World!", ","));
+
+// DESCRIPTION:
+// Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
+// Your task is to process a string with "#" symbols.
+// Examples
+// "abc#d##c"      ==>  "ac"
+// "abc##d######"  ==>  ""
+// "#######"       ==>  ""
+// ""              ==>  ""
+
+function cleanString(s) {
+  // ... your code ...
+}
+
+assert.strictEqual(cleanString("abc#d##c"), "ac");
+assert.strictEqual(cleanString("abc####d##c#"), "");
