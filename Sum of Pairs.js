@@ -44,7 +44,18 @@
 //   });
 
 function sumPairs(ints, s) {
-  return [0, 0] || undefined;
+  let seen = new Set();
+
+  for (let i = 0; i < ints.length; i++) {
+    let complement = s - ints[i];
+    if (seen.has(complement)) {
+      return [complement, ints[i]];
+    }
+    seen.add(ints[i]);
+    console.log(seen);
+  }
+
+  return undefined;
 }
 
 // PREP
@@ -52,6 +63,7 @@ function sumPairs(ints, s) {
 // R: returns an array containing two numbers whose sum equals the second argument
 // E: [1, 4, 8, 7, 3, 15], 8) --->[1, 7]
 // P: we can try it by finding the first lowest number that is less than the second argument then find a number whose addtion would equal s. we can also loop through the array and group two elements and pick the first one that matched the second argument
+// Constraints: need to select the lowest number
 
 console.log(sumPairs([1, 4, 8, 7, 3, 15], 8));
 console.log(sumPairs([1, -2, 3, 0, -6, 1], -6));
