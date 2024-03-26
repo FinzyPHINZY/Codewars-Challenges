@@ -10,17 +10,25 @@
 //  -3 -->   -15  ( -3 * 5¹)
 
 // Test Cases:
-describe("Basic Tests", () => {
-  Test.assertEquals(multiply(10), 250);
-  Test.assertEquals(multiply(5), 25);
-  Test.assertEquals(multiply(200), 25000);
-  Test.assertEquals(multiply(0), 0);
-  Test.assertEquals(multiply(-2), -10);
-});
+// describe("Basic Tests", () => {
+//   Test.assertEquals(multiply(10), 250);
+//   Test.assertEquals(multiply(5), 25);
+//   Test.assertEquals(multiply(200), 25000);
+//   Test.assertEquals(multiply(0), 0);
+//   Test.assertEquals(multiply(-2), -10);
+// });
 
 function multiply(number) {
   //your code here
-  return number * 5;
+
+  let times = Math.abs(number).toString().split("").length;
+
+  while (times !== 0) {
+    number = number * 5;
+    times--;
+  }
+
+  return number;
 }
 
 console.log(multiply(10));
