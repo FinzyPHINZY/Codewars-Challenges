@@ -17,6 +17,14 @@
 
 function solve(arr) {
   //code
+  const letters = "abcdefghijklmnopqrstuvwxyz";
+  return arr.map(
+    (word) =>
+      word
+        .split("")
+        .map((char) => char.toLowerCase())
+        .filter((char, i) => char === letters[i]).length
+  );
 }
 
 console.log(solve(["abode", "ABc", "xyzD"]));
