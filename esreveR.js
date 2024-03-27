@@ -13,9 +13,16 @@
 //   });
 // });
 
-reverse = function (array) {
+const reverse = function (array) {
   // TODO: program me!
+  //   return array.reverse();
+  let output = [];
+  for (let i = array.length - 1; i >= 0; i--) {
+    output.push(array[i]);
+  }
+  return output;
 };
 
 console.log(reverse([1, 2, 3]));
 console.log(reverse([1, null, 14, "two"]));
+console.log(reverse([55, 365, 761]));
