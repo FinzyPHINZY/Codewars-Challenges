@@ -8,3 +8,7 @@
 // See test cases for more examples.
 
 // Input will consist of alphabet characters, both uppercase and lowercase. No spaces.
+
+function solve(arr) {
+  //code
+}
