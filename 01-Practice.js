@@ -1536,6 +1536,16 @@ function splitAndMerge(str, sep) {
 
 function cleanString(s) {
   // ... your code ...
+  let result = [];
+
+  for (const char of s) {
+    if (char === "#") {
+      result.pop();
+    } else {
+      result.push(char);
+    }
+  }
+  return result;
 }
 
 console.log(cleanString("abc#d##c"));
