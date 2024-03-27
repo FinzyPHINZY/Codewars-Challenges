@@ -18,7 +18,21 @@
 // 65, 0 --> -1
 // 24, -8 --> -1
 
-var findDigit = function (num, nth) {};
+var findDigit = function (num, nth) {
+  num = Math.abs(num).toString();
+
+  if (num.length < nth) {
+    return 0;
+  } else if (nth < 1) {
+    return -1;
+  }
+  return num
+    .split("")
+    .reverse()
+    .filter((num, i) => i == nth - 1)
+    .map(Number)
+    .join("");
+};
 
 console.log(findDigit(5673, 4));
 console.log(findDigit(129, 2));
