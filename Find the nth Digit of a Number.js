@@ -26,12 +26,13 @@ var findDigit = function (num, nth) {
   } else if (nth < 1) {
     return -1;
   }
-  return num
+  const output = num
     .split("")
     .reverse()
     .filter((num, i) => i == nth - 1)
-    .map(Number)
     .join("");
+
+  return Number(output);
 };
 
 console.log(findDigit(5673, 4));
