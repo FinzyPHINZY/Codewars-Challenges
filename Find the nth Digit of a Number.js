@@ -15,3 +15,5 @@
 // 0, 20 --> 0
 // 65, 0 --> -1
 // 24, -8 --> -1
+
+var findDigit = function (num, nth) {};
