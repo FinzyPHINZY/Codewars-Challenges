@@ -1548,5 +1548,104 @@ function cleanString(s) {
   return result;
 }
 
-console.log(cleanString("abc#d##c"));
-console.log(cleanString("abc####d##c#"));
+// console.log(cleanString("abc#d##c"));
+// console.log(cleanString("abc####d##c#"));
+
+// Description:
+// You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+// #Examples:
+
+// Kata.getMiddle("test") should return "es"
+
+// Kata.getMiddle("testing") should return "t"
+
+// Kata.getMiddle("middle") should return "dd"
+
+// Kata.getMiddle("A") should return "A"
+
+// #Input
+
+// A word (string) of length 0 < str < 1000 (In javascript you may get slightly more than 1000 in some test cases due to an error in the test cases). You do not need to test for this. This is only here to tell you that you do not need to worry about your solution timing out.
+
+// #Output
+
+// The middle character(s) of the word represented as a string.
+
+function getMiddle(str) {
+  if (str.length % 2 === 1) {
+    return str.charAt(str.length / 2);
+  } else {
+    const char1 = str.charAt(str.length / 2 - 1);
+
+    const char2 = str.charAt(str.length / 2);
+    return char1.concat(char2);
+  }
+}
+
+// console.log(getMiddle("test"));
+// console.log(getMiddle("testing"));
+// console.log(getMiddle("middle"));
+// console.log(getMiddle("A"));
+// console.log(getMiddle("goat"));
+// console.log(getMiddle("yes"));
+
+// You are to write a function that takes a string as its first parameter. This string will be a string of words.
+// You are expected to then use the second parameter, which will be an integer, to find the corresponding word in the given string. The first word would be represented by 0.
+// Once you have the located string you are finally going to multiply by it the third provided parameter, which will also be an integer. You are additionally required to add a hyphen in between each word.
+// Example
+// modifyMultiply ("This is a string", 3, 5)
+
+function modifyMultiply(str, loc, num) {
+  //Code here
+  str = str.split(" ").filter((word, i) => i == loc);
+  return Array(num).fill(str).join("-");
+}
+
+// console.log(modifyMultiply("This is a string", 3, 5));
+// console.log(
+//   modifyMultiply(
+//     "Creativity is the process of having original ideas that have value. It is a process; it's not random.",
+//     8,
+//     10
+//   )
+// );
+// console.log(
+//   modifyMultiply(
+//     "Self-control means wanting to be effective at some random point in the infinite radiations of my spiritual existence",
+//     1,
+//     1
+//   )
+// );
+// console.log(
+//   modifyMultiply(
+//     "Is sloppiness in code caused by ignorance or apathy? I don't know and I don't care."
+//   ),
+//   6,
+//   8
+// );
+// console.log(
+//   modifyMultiply(
+//     "Everything happening around me is very random. I am enjoying the phase, as the journey is far more enjoyabble than the destination."
+//   ),
+//   2,
+//   5
+// );
+
+// DESCRIPTION:
+// Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+// Examples:
+// * 'abc' =>  ['ab', 'c_']
+// * 'abcdef' => ['ab', 'cd', 'ef']
+
+function solution(str) {
+  const output = [];
+  str = str.length % 2 === 0 ? str : (str += "_").split("");
+
+  for (let i = 0; i < str.length; i += 2) {
+    output.push(str[i] + str[i + 1]);
+  }
+  return output;
+}
+
+// console.log(solution("abc"));
+// console.log(solution("abcdef"));
