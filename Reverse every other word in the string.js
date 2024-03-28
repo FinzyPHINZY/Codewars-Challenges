@@ -12,6 +12,13 @@
 
 function reverse(str) {
   //WRITE SOME MAGIC
+  return str.split(" ").map((word, i) => {
+    if (i % 2 !== 0) {
+      return word.split("").reverse().join("");
+    } else {
+      return word;
+    }
+  });
 }
 
 console.log(reverse("Reverse this string, please!"));
