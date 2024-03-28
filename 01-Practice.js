@@ -1548,5 +1548,5 @@ function cleanString(s) {
   return result;
 }
 
-console.log(cleanString("abc#d##c"));
-console.log(cleanString("abc####d##c#"));
+// console.log(cleanString("abc#d##c"));
+// console.log(cleanString("abc####d##c#"));
