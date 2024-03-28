@@ -9,3 +9,10 @@
 //   Test.assertEquals(reverse("I really don't like reversing strings!"),"I yllaer don't ekil reversing !sgnirts")
 //     });
 //   });
+
+function reverse(str) {
+  //WRITE SOME MAGIC
+}
+
+console.log(reverse("Reverse this string, please!"));
+console.log(reverse("I really don't like reversing strings!"));
