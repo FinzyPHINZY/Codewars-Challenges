@@ -30,3 +30,10 @@
 function maxProduct(numbers, size) {
   //your code here
 }
+
+console.log(maxProduct([4, 3, 5], 2)); //20
+console.log(maxProduct([10, 8, 7, 9], 3)); //720
+console.log(maxProduct([-4, -27, -15, -6, -1], 2)); // 4
+console.log(maxProduct([13, 12, -27, -302, 25, 37, 133, 155, -14], 5)); // 247895375
+console.log(maxProduct([-17, -8, -102, -309], 2)); //136
+console.log(maxProduct([1], 1)); // 1
