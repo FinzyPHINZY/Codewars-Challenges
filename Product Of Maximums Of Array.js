@@ -29,6 +29,10 @@
 
 function maxProduct(numbers, size) {
   //your code here
+  return numbers
+    .sort((a, b) => b - a)
+    .filter((num, i) => i < size)
+    .reduce((sum, num) => sum * num, 1);
 }
 
 console.log(maxProduct([4, 3, 5], 2)); //20
