@@ -16,3 +16,5 @@
 // grader(0.8) should be "B"
 // grader(0.7) should be "C"
 // grader(0.6) should be "D"
+
+function grader(score) {}
