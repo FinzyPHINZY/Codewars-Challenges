@@ -18,3 +18,7 @@
 // grader(0.6) should be "D"
 
 function grader(score) {}
+
+console.log(grader(0.7)); // "C"";
+console.log(grader(0.9)); // "A"";
+console.log(grader(0.6)); // "D"";
