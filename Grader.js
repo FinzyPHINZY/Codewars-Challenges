@@ -17,7 +17,17 @@
 // grader(0.7) should be "C"
 // grader(0.6) should be "D"
 
-function grader(score) {}
+function grader(score) {
+  return score > 1 || score < 0.6
+    ? "F"
+    : score >= 0.9
+    ? "A"
+    : score >= 0.8
+    ? "B"
+    : score >= 0.7
+    ? "C"
+    : "D";
+}
 
 console.log(grader(0.7)); // "C"";
 console.log(grader(0.9)); // "A"";
