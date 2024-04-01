@@ -1,7 +1,5 @@
 "use strict";
 
-const { max } = require("moment");
-
 // This file contains the katas i found tough. It will include the solutions i did without any help and improved solutions that arise to the wider scope of my knowledge as time goes on.
 
 // DESCRIPTION:
@@ -1649,3 +1647,91 @@ function solution(str) {
 
 // console.log(solution("abc"));
 // console.log(solution("abcdef"));
+
+// DESCRIPTION:
+// Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
+// Your task is to process a string with "#" symbols.
+// Examples
+// "abc#d##c"      ==>  "ac"
+// "abc##d######"  ==>  ""
+// "#######"       ==>  ""
+// ""              ==>  ""
+
+function cleanString(s) {
+  // ... your code ...
+  let result = [];
+
+  for (const char of s) {
+    if (char === "#") {
+      result.pop();
+    } else {
+      result.push(char);
+    }
+  }
+
+  return result;
+}
+
+// console.log(cleanString("abc#d##c"));
+// console.log(cleanString("abc####d##c#"));
+
+// Write a function that accepts a string, and returns the same string with all even indexed characters in each word upper cased, and all odd indexed characters in each word lower cased. The indexing just explained is zero based, so the zero-ith index is even, therefore that character should be upper cased and you need to start over for each word.
+// The passed in string will only consist of alphabetical characters and spaces(' '). Spaces will only be present if there are multiple words. Words will be separated by a single space(' ').
+// Examples:
+// "String" => "StRiNg"
+// "Weird string case" => "WeIrD StRiNg CaSe"
+
+function toWeirdCase(string) {
+  // Code here!
+  return string
+    .split(" ")
+    .map((word) =>
+      word
+        .split("")
+        .map((char, i) => {
+          if (i % 2 === 0) {
+            return char.toUpperCase();
+          } else {
+            return char.toLowerCase();
+          }
+        })
+        .join("")
+    )
+    .join(" ");
+}
+
+// console.log(toWeirdCase("String"));
+// console.log(toWeirdCase("Weird string case"));
+
+// DESCRIPTION:
+// Build Tower
+// Build a pyramid-shaped tower, as an array/list of strings, given a positive integer number of floors. A tower block is represented with "*" character.
+// For example, a tower with 3 floors looks like this:
+// [
+//   "  *  ",
+//   " *** ",
+//   "*****"
+// ]
+// And a tower with 6 floors looks like this:
+// [
+//   "     *     ",
+//   "    ***    ",
+//   "   *****   ",
+//   "  *******  ",
+//   " ********* ",
+//   "***********"
+// ]
+
+function towerBuilder(nFloors) {
+  // build here
+  let tower = [];
+  for (let i = 0; i < nFloors; i++) {
+    const spaces = " ".repeat(nFloors - i - 1);
+    const stars = "*".repeat(2 * i + 1);
+    tower.push(spaces + stars + spaces);
+  }
+
+  return tower;
+}
+
+console.log(towerBuilder(6));
