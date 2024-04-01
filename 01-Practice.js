@@ -1683,6 +1683,21 @@ function cleanString(s) {
 
 function toWeirdCase(string) {
   // Code here!
+  return string
+    .split(" ")
+    .map((word) =>
+      word
+        .split("")
+        .map((char, i) => {
+          if (i % 2 === 0) {
+            return char.toUpperCase();
+          } else {
+            return char.toLowerCase();
+          }
+        })
+        .join("")
+    )
+    .join(" ");
 }
 
 console.log(toWeirdCase("String"));
