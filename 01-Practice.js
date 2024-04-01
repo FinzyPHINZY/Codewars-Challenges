@@ -1,7 +1,5 @@
 "use strict";
 
-const { max } = require("moment");
-
 // This file contains the katas i found tough. It will include the solutions i did without any help and improved solutions that arise to the wider scope of my knowledge as time goes on.
 
 // DESCRIPTION:
@@ -1649,3 +1647,30 @@ function solution(str) {
 
 // console.log(solution("abc"));
 // console.log(solution("abcdef"));
+
+// DESCRIPTION:
+// Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
+// Your task is to process a string with "#" symbols.
+// Examples
+// "abc#d##c"      ==>  "ac"
+// "abc##d######"  ==>  ""
+// "#######"       ==>  ""
+// ""              ==>  ""
+
+function cleanString(s) {
+  // ... your code ...
+  let result = [];
+
+  for (const char of s) {
+    if (char === "#") {
+      result.pop();
+    } else {
+      result.push(char);
+    }
+  }
+
+  return result;
+}
+
+// console.log(cleanString("abc#d##c"));
+// console.log(cleanString("abc####d##c#"));
