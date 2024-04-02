@@ -1734,4 +1734,56 @@ function towerBuilder(nFloors) {
   return tower;
 }
 
-console.log(towerBuilder(6));
+// console.log(towerBuilder(6));
+
+// Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
+
+// * url = "http://github.com/carbonfive/raygun" -> domain name = "github"
+// * url = "http://www.zombie-bites.com"         -> domain name = "zombie-bites"
+// * url = "https://www.cnet.com"                -> domain name = cnet"
+
+function domainName(url) {
+  //your code here
+
+  url = url.replace("https://", "");
+  url = url.replace("http://", "");
+  url = url.replace("www.", "").split(".")[0];
+  return url;
+}
+
+// console.log(domainName("http://google.com")); //, "google");
+// console.log(domainName("http://google.co.jp")); //, "google");
+// console.log(domainName("www.xakep.ru")); // "xakep");
+// console.log(domainName("https://youtube.com")); //, "youtube");
+// console.log(domainName("http://github.com/carbonfive/raygun"));
+// console.log(domainName("http://www.zombie-bites.com"));
+// console.log(domainName("https://www.cnet.com"));
+
+// DESCRIPTION:
+// In this Kata, you will be given an array of strings and your task is to remove all consecutive duplicate letters from each string in the array.
+// For example:
+// dup(["abracadabra","allottee","assessee"]) = ["abracadabra","alote","asese"].
+// dup(["kelless","keenness"]) = ["keles","kenes"].
+// Strings will be lowercase only, no spaces. See test cases for more examples.
+// Good luck!
+
+function dup(s) {
+  //..
+  return s.map((word) =>
+    word
+      .split("")
+      .filter((char, i) => word[i] !== word[i + 1])
+      .join("")
+  );
+}
+
+// console.log(
+//   dup(["ccooddddddewwwaaaaarrrrsssss", "piccaninny", "hubbubbubboo"])
+// ); //,['codewars','picaniny','hubububo']);
+// console.log(dup(["abracadabra", "allottee", "assessee"])); //,['abracadabra','alote','asese']);
+// console.log(dup(["kelless", "keenness"])); //, ['keles','kenes']);
+// console.log(dup(["Woolloomooloo", "flooddoorroommoonlighters", "chuchchi"])); //, ['Wolomolo','flodoromonlighters','chuchchi']);
+// console.log(dup(["adanac", "soonness", "toolless", "ppellee"])); //, ['adanac','sones','toles','pele']);
+// console.log(dup(["callalloo", "feelless", "heelless"])); //, ['calalo','feles','heles']);
+// console.log(dup(["putteellinen", "keenness"])); //, ['putelinen','kenes']);
+// console.log(dup(["kelless", "voorraaddoosspullen", "achcha"])); //, ['keles','voradospulen','achcha']);
