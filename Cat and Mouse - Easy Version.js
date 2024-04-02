@@ -9,3 +9,7 @@
 // C...m returns 'Caught!' <-- as there are three characters between the two, the cat can jump.
 
 function catMouse(x) {}
+
+console.log(catMouse("C....m")); // "Escaped!");
+console.log(catMouse("C..m")); //, "Caught!");
+console.log(catMouse("C.....m")); //, "Escaped!");
