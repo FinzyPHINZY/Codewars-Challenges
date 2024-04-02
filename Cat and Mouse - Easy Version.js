@@ -8,7 +8,10 @@
 
 // C...m returns 'Caught!' <-- as there are three characters between the two, the cat can jump.
 
-function catMouse(x) {}
+function catMouse(x) {
+  const distance = x.split("").filter((char) => char === ".").length;
+  return distance > 3 ? "Escaped!" : "Caught!";
+}
 
 console.log(catMouse("C....m")); // "Escaped!");
 console.log(catMouse("C..m")); //, "Caught!");
