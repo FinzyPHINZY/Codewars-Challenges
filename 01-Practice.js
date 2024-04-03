@@ -1801,8 +1801,26 @@ function dup(s) {
 // I have also created other katas. Take a look if you enjoyed this kata!
 
 function findMissingLetter(array) {
-  return " ";
+  const letter =
+    array[0] === array[0].toUpperCase()
+      ? "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+      : "abcdefghijklmopqrstuvwxyz";
+
+  const firstIndex = letter.indexOf(array[0]);
+  const lastIndex = firstIndex + array.length + 1;
+
+  return letter
+    .slice(firstIndex, lastIndex)
+    .split("")
+    .filter((char) => !array.includes(char))
+    .join("");
 }
 
-console.log(findMissingLetter(["a", "b", "c", "d", "f"])); // 'e'
+console.log(findMissingLeTter(["a", "b", "c", "d", "f"])); // 'e'
 console.log(findMissingLetter(["O", "Q", "R", "S"])); // 'P'
+
+// PREP
+// P: Takes in an array of characters which  might be in upperCase or lowerCase
+// R: returns a letter thats missing from the correct sequence
+// E: up there
+// P: get the index of array[0] and add the array length to it
