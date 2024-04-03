@@ -1787,3 +1787,40 @@ function dup(s) {
 // console.log(dup(["callalloo", "feelless", "heelless"])); //, ['calalo','feles','heles']);
 // console.log(dup(["putteellinen", "keenness"])); //, ['putelinen','kenes']);
 // console.log(dup(["kelless", "voorraaddoosspullen", "achcha"])); //, ['keles','voradospulen','achcha']);
+
+// DESCRIPTION:
+// Find the missing letter
+// Write a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array.
+// You will always get an valid array. And it will be always exactly one letter be missing. The length of the array will always be at least 2.
+// The array will always contain letters in only one case.
+// Example:
+// ['a','b','c','d','f'] -> 'e'
+// ['O','Q','R','S'] -> 'P'
+// (Use the English alphabet with 26 letters!)
+// Have fun coding it and please don't forget to vote and rank this kata! :-)
+// I have also created other katas. Take a look if you enjoyed this kata!
+
+function findMissingLetter(array) {
+  const letter =
+    array[0] === array[0].toUpperCase()
+      ? "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+      : "abcdefghijklmopqrstuvwxyz";
+
+  const firstIndex = letter.indexOf(array[0]);
+  const lastIndex = firstIndex + array.length + 1;
+
+  return letter
+    .slice(firstIndex, lastIndex)
+    .split("")
+    .filter((char) => !array.includes(char))
+    .join("");
+}
+
+console.log(findMissingLeTter(["a", "b", "c", "d", "f"])); // 'e'
+console.log(findMissingLetter(["O", "Q", "R", "S"])); // 'P'
+
+// PREP
+// P: Takes in an array of characters which  might be in upperCase or lowerCase
+// R: returns a letter thats missing from the correct sequence
+// E: up there
+// P: get the index of array[0] and add the array length to it
