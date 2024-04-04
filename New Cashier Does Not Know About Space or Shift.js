@@ -26,3 +26,7 @@
 // 6. Onionrings
 // 7. Milkshake
 // 8. Coke
+
+function getOrder(input) {
+  return "";
+}
