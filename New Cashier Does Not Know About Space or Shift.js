@@ -30,3 +30,9 @@
 function getOrder(input) {
   return "";
 }
+
+console.log(
+  getOrder("milkshakepizzachickenfriescokeburgerpizzasandwichmilkshakepizza")
+); //Burger Fries Chicken Pizza Pizza Pizza Sandwich Milkshake Milkshake Coke"
+
+console.log(getOrder("pizzachickenfriesburgercokemilkshakefriessandwich"));
