@@ -28,7 +28,24 @@
 // 8. Coke
 
 function getOrder(input) {
-  return "";
+  const orders = [
+    "murger",
+    "fries",
+    "chicken",
+    "pizza",
+    "sandwich",
+    "onionrings",
+    "milkshake",
+    "coke",
+  ];
+
+  let output = "";
+  orders.forEach((order) => {
+    const regex = new RegExp(order.toLowerCase(), "g");
+    const count = (input.match(regex) || []).length;
+    output += (order + " ").repeat(count);
+  });
+  return output;
 }
 
 console.log(
