@@ -27,25 +27,25 @@
 // 7. Milkshake
 // 8. Coke
 
-function getOrder(input) {
-  const orders = [
-    "murger",
-    "fries",
-    "chicken",
-    "pizza",
-    "sandwich",
-    "onionrings",
-    "milkshake",
-    "coke",
-  ];
+const menu = [
+  "Burger",
+  "Fries",
+  "Chicken",
+  "Pizza",
+  "Sandwich",
+  "Onionrings",
+  "Milkshake",
+  "Coke",
+];
+const capitalize = (word) => word.slice(0, 1).toUpperCase() + word.slice(1);
+const comparator = (a, b) => menu.indexOf(a) - menu.indexOf(b);
 
-  let output = "";
-  orders.forEach((order) => {
-    const regex = new RegExp(order.toLowerCase(), "g");
-    const count = (input.match(regex) || []).length;
-    output += (order + " ").repeat(count);
-  });
-  return output;
+function getOrder(input) {
+  return input
+    .match(new RegExp(menu.join("|"), "ig"))
+    .map(capitalize)
+    .sort(comparator)
+    .join(" ");
 }
 
 console.log(
