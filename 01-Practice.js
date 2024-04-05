@@ -1843,3 +1843,19 @@ function domainName(url) {
 // console.log(domainName("http://google.co.jp")); // "google");
 // console.log(domainName("www.xakep.ru")); //, "xakep");
 // console.log(domainName("https://youtube.com")); //"youtube");
+
+// DESCRIPTION:
+// Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
+// Your task is to process a string with "#" symbols.
+// Examples
+// "abc#d##c"      ==>  "ac"
+// "abc##d######"  ==>  ""
+// "#######"       ==>  ""
+// ""              ==>  ""
+
+function cleanString(s) {
+  // ... your code ...
+}
+
+console.log(cleanString("abc#d##c")); //, 'ac');
+console.log(cleanString("abc####d##c#")); //, '');
