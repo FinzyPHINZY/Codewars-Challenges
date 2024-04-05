@@ -1903,3 +1903,5 @@ function cleanString(s) {
 function partlist(arr) {
   // your code
 }
+
+console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
