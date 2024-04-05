@@ -1905,3 +1905,10 @@ function partlist(arr) {
 }
 
 console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
+
+// PREP:
+// P: takes in an array of strings
+// R: returns an array of arrays containing a divided non empty array of strings
+// E: Line 1888
+// P: loop through the input array of strings;
+// divide the array using sequences of positions
