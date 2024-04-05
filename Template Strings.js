@@ -7,3 +7,7 @@
 var templateStrings = function (noun, adjective) {
   return; //complete this
 };
+
+console.log(templateStrings("Animals", "Good")); //, 'Animals are Good', 'templateStrings(\'Animals\', \'Good\')')
+console.log(templateStrings("You", "special")); // 'You are special', 'templateStrings(\'You\', \'special\')')
+console.log(templateStrings("lives", "frozen")); //, 'lives are frozen', 'templateStrings(\'lives\', \'frozen\')')
