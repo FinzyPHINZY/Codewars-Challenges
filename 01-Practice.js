@@ -1855,7 +1855,26 @@ function domainName(url) {
 
 function cleanString(s) {
   // ... your code ...
+  let output = [];
+  for (const char of s) {
+    if (char === "#") {
+      output.pop();
+    } else {
+      output.push(char);
+    }
+    console.log(output);
+  }
+
+  return output.join("");
 }
 
-console.log(cleanString("abc#d##c")); //, 'ac');
-console.log(cleanString("abc####d##c#")); //, '');
+// console.log(cleanString("abc#d##c")); //, 'ac');
+// console.log(cleanString("abc####d##c#")); //, '');
+// console.log(cleanString("###abc#abc#d##c"));
+
+// PREP:
+// P: Function takes in a string containing different alphabetic and  multiple octothorpe character
+// R: returns a string containing the remainder of the string after each octothorpe character has been used as a backspace
+// E: Lime 1851
+// P: Loop through the string argument,
+// if the char is an octothorpe character, remove the last character in the output array. else add the char to the output array
