@@ -1926,7 +1926,13 @@ function partlist(arr) {
 // [17, 17, 3, 17, 17, 17, 17] ==> 3
 
 function oddNum(arr) {
-  return;
+  arr = arr.sort((a, b) => a - b);
+
+  if (arr[0] === arr[1]) {
+    return arr[arr.length - 1];
+  } else {
+    return arr[0];
+  }
 }
 
 console.log(oddNum([1, 1, 2])); // 2
