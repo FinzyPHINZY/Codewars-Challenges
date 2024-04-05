@@ -5,7 +5,7 @@
 // You must output a string containing the two strings with the word ```' are '```
 
 var templateStrings = function (noun, adjective) {
-  return; //complete this
+  return `${noun} are ${adjective}`;
 };
 
 console.log(templateStrings("Animals", "Good")); //, 'Animals are Good', 'templateStrings(\'Animals\', \'Good\')')
