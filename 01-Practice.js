@@ -1902,9 +1902,14 @@ function cleanString(s) {
 
 function partlist(arr) {
   // your code
+  let result = [];
+  for (let i = 1; i < arr.length; i++) {
+    result.push([arr.slice(0, i).join(" "), arr.slice(i).join(" ")]);
+  }
+  return result;
 }
 
-console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
+// console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
 
 // PREP:
 // P: takes in an array of strings
@@ -1912,3 +1917,17 @@ console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
 // E: Line 1888
 // P: loop through the input array of strings;
 // divide the array using sequences of positions
+
+// You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+// Complete the method which accepts such an array, and returns that single different number.
+// The input array will always be valid! (odd-length >= 3)
+// Examples
+// [1, 1, 2] ==> 2
+// [17, 17, 3, 17, 17, 17, 17] ==> 3
+
+function oddNum(arr) {
+  return;
+}
+
+console.log(oddNum([1, 1, 2])); // 2
+console.log(oddNum([17, 17, 3, 17, 17, 17, 17])); // 3
