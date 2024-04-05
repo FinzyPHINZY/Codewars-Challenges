@@ -1843,3 +1843,97 @@ function domainName(url) {
 // console.log(domainName("http://google.co.jp")); // "google");
 // console.log(domainName("www.xakep.ru")); //, "xakep");
 // console.log(domainName("https://youtube.com")); //"youtube");
+
+// DESCRIPTION:
+// Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
+// Your task is to process a string with "#" symbols.
+// Examples
+// "abc#d##c"      ==>  "ac"
+// "abc##d######"  ==>  ""
+// "#######"       ==>  ""
+// ""              ==>  ""
+
+function cleanString(s) {
+  // ... your code ...
+  let output = [];
+  for (const char of s) {
+    if (char === "#") {
+      output.pop();
+    } else {
+      output.push(char);
+    }
+    console.log(output);
+  }
+
+  return output.join("");
+}
+
+// console.log(cleanString("abc#d##c")); //, 'ac');
+// console.log(cleanString("abc####d##c#")); //, '');
+// console.log(cleanString("###abc#abc#d##c"));
+
+// PREP:
+// P: Function takes in a string containing different alphabetic and  multiple octothorpe character
+// R: returns a string containing the remainder of the string after each octothorpe character has been used as a backspace
+// E: Lime 1851
+// P: Loop through the string argument,
+// if the char is an octothorpe character, remove the last character in the output array. else add the char to the output array
+
+// DESCRIPTION:
+// Write a function partlist that gives all the ways to divide a list (an array) of at least two elements into two non-empty parts.
+// Each two non empty parts will be in a pair (or an array for languages without tuples or a structin C - C: see Examples test Cases - )
+// Each part will be in a string
+// Elements of a pair must be in the same order as in the original array.
+// Examples of returns in different languages:
+// a = ["az", "toto", "picaro", "zone", "kiwi"] -->
+// [["az", "toto picaro zone kiwi"], ["az toto", "picaro zone kiwi"], ["az toto picaro", "zone kiwi"], ["az toto picaro zone", "kiwi"]]
+// or
+//  a = {"az", "toto", "picaro", "zone", "kiwi"} -->
+// {{"az", "toto picaro zone kiwi"}, {"az toto", "picaro zone kiwi"}, {"az toto picaro", "zone kiwi"}, {"az toto picaro zone", "kiwi"}}
+// or
+// a = ["az", "toto", "picaro", "zone", "kiwi"] -->
+// [("az", "toto picaro zone kiwi"), ("az toto", "picaro zone kiwi"), ("az toto picaro", "zone kiwi"), ("az toto picaro zone", "kiwi")]
+// or
+// a = [|"az", "toto", "picaro", "zone", "kiwi"|] -->
+// [("az", "toto picaro zone kiwi"), ("az toto", "picaro zone kiwi"), ("az toto picaro", "zone kiwi"), ("az toto picaro zone", "kiwi")]
+// or
+// a = ["az", "toto", "picaro", "zone", "kiwi"] -->
+// "(az, toto picaro zone kiwi)(az toto, picaro zone kiwi)(az toto picaro, zone kiwi)(az toto picaro zone, kiwi)"
+
+function partlist(arr) {
+  // your code
+  let result = [];
+  for (let i = 1; i < arr.length; i++) {
+    result.push([arr.slice(0, i).join(" "), arr.slice(i).join(" ")]);
+  }
+  return result;
+}
+
+// console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
+
+// PREP:
+// P: takes in an array of strings
+// R: returns an array of arrays containing a divided non empty array of strings
+// E: Line 1888
+// P: loop through the input array of strings;
+// divide the array using sequences of positions
+
+// You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+// Complete the method which accepts such an array, and returns that single different number.
+// The input array will always be valid! (odd-length >= 3)
+// Examples
+// [1, 1, 2] ==> 2
+// [17, 17, 3, 17, 17, 17, 17] ==> 3
+
+function oddNum(arr) {
+  arr = arr.sort((a, b) => a - b);
+
+  if (arr[0] === arr[1]) {
+    return arr[arr.length - 1];
+  } else {
+    return arr[0];
+  }
+}
+
+console.log(oddNum([1, 1, 2])); // 2
+console.log(oddNum([17, 17, 3, 17, 17, 17, 17])); // 3
