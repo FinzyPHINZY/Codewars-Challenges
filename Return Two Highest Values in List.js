@@ -21,6 +21,7 @@ function twoHighest(arr) {
   }
 
   return output.filter((num, i) => i < 2);
+  return [...new Set(arr)].sort((a, b) => b - a).slice(0, 2);
 }
 
 console.log(twoHighest([])); //, [])
