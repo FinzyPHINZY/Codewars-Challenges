@@ -16,3 +16,5 @@
 // The length of the array is always one less than the length of the string.
 // All numbers are valid.
 // There can be duplicate letters and numbers.
+
+function lastSurvivor(letters, coords) {}
