@@ -2063,4 +2063,19 @@ function orderFood(list) {
   return result;
 }
 
+function orderFood(list) {
+  const result = {};
+
+  list.forEach((dev) => {
+    const meal = dev.meal;
+
+    if (result[meal] == undefined) {
+      result[meal] = 1;
+    } else {
+      result[meal] += 1;
+    }
+  });
+  return result;
+}
+
 console.log(orderFood(list1)); //, answer);
