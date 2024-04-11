@@ -2050,7 +2050,17 @@ var list1 = [
 var answer = { vegetarian: 2, standard: 1, vegan: 1 };
 
 function orderFood(list) {
-  // thank you for checking out the Coding Meetup kata :)
+  // your code here
+  let result = {};
+  for (let i = 0; i < list.length; i++) {
+    // console.log(list[i].meal);
+    if (result[list[i].meal] === undefined) {
+      result[list[i].meal] = 1;
+    } else {
+      result[list[i].meal] += 1;
+    }
+  }
+  return result;
 }
 
 console.log(orderFood(list1)); //, answer);
