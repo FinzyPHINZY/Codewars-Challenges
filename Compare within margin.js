@@ -30,6 +30,8 @@
 
 function closeCompare(a, b, margin) {
   // ...
+
+  return margin >= Math.abs(a - b) ? 0 : a == b ? 0 : a < b ? -1 : 1;
 }
 
 console.log(closeCompare(4, 5)); // -1)
