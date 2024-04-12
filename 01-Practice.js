@@ -2035,3 +2035,21 @@ function sortArray(arr) {
 // Return the number (count) of vowels in the given string.
 // We will consider a, e, i, o, u as vowels for this Kata (but not y).
 // The input string will only consist of lower case letters and/or spaces.
+
+function countVowel(str) {
+  const vowels = "aeiou";
+  str = str.toLowerCase();
+
+  // return str.split("").filter((char) => vowels.includes(char)).length;
+
+  return str.split("").reduce((a, b) => {
+    if (vowels.includes(b)) {
+      return (a += 1);
+    } else {
+      return a;
+    }
+  }, 0);
+}
+
+console.log(countVowel("return"));
+console.log(countVowel("lowercase"));
