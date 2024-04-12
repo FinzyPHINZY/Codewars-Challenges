@@ -1964,11 +1964,8 @@ function bingo(ticket, win) {
 //     ],
 //     2
 //   )
-<<<<<<< HEAD
 //); //, 'Loser!');
-=======
 // ); //, 'Loser!');
->>>>>>> origin/main
 // console.log(
 //   bingo(
 //     [
@@ -1991,7 +1988,6 @@ function bingo(ticket, win) {
 // ); //, 'Loser!');
 
 // DESCRIPTION:
-<<<<<<< HEAD
 // Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
 // For example (Input --> Output):
 // 39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit)
@@ -2058,7 +2054,6 @@ function countVowel(str) {
 
 // console.log(countVowel("return"));
 // console.log(countVowel("lowercase"));
-=======
 // You will be given an array of objects representing data about developers who have signed up to attend the next coding meetup that you are organising.
 // Your task is to return an object which includes the count of food options selected by the developers on the meetup sign-up form..
 // For example, given the following input array:
@@ -2192,4 +2187,3 @@ function sumOfIntegersInString(s) {
 //     "The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog"
 //   )
 // ); //, 3635
->>>>>>> origin/main
