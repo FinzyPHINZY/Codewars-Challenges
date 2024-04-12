@@ -1964,7 +1964,11 @@ function bingo(ticket, win) {
 //     ],
 //     2
 //   )
+<<<<<<< HEAD
+//); //, 'Loser!');
+=======
 // ); //, 'Loser!');
+>>>>>>> origin/main
 // console.log(
 //   bingo(
 //     [
@@ -1987,6 +1991,74 @@ function bingo(ticket, win) {
 // ); //, 'Loser!');
 
 // DESCRIPTION:
+<<<<<<< HEAD
+// Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
+// For example (Input --> Output):
+// 39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit)
+// 999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2)
+// 4 --> 0 (because 4 is already a one-digit number)
+
+function persistence(num) {
+  //code me
+  let count = 0;
+
+  while (num > 10) {
+    count++;
+    num = num
+      .toString()
+      .split("")
+      .reduce((a, b) => a * b, 1);
+  }
+
+  return count;
+}
+
+// console.log(persistence(39));
+// console.log(persistence(999));
+// console.log(persistence(4));
+
+// DESCRIPTION:
+// Task
+// You will be given an array of numbers. You have to sort the odd numbers in ascending order while leaving the even numbers at their original positions.
+
+function sortArray(arr) {
+  const oddNumbers = arr.filter((num) => num % 2 !== 0).sort((a, b) => a - b);
+  const evenNumbers = arr.filter((num) => num % 2 === 0);
+
+  return arr.map((num) => (num % 2 == 0 ? num : oddNumbers.shift()));
+}
+
+// console.log(sortArray([7, 1])); // [1, 7]
+// console.log(sortArray([5, 8, 6, 3, 4])); //  [3, 8, 6, 5, 4]
+// console.log(sortArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0])); // [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
+
+// console.log(sortArray([5, 3, 2, 8, 1, 4])); //, [1, 3, 2, 8, 5, 4]);
+// console.log(sortArray([5, 3, 1, 8, 0])); //, [1, 3, 5, 8, 0]);
+// console.log(sortArray([])); // , []);
+
+// DESCRIPTION:
+// Return the number (count) of vowels in the given string.
+// We will consider a, e, i, o, u as vowels for this Kata (but not y).
+// The input string will only consist of lower case letters and/or spaces.
+
+function countVowel(str) {
+  const vowels = "aeiou";
+  str = str.toLowerCase();
+
+  // return str.split("").filter((char) => vowels.includes(char)).length;
+
+  return str.split("").reduce((a, b) => {
+    if (vowels.includes(b)) {
+      return (a += 1);
+    } else {
+      return a;
+    }
+  }, 0);
+}
+
+// console.log(countVowel("return"));
+// console.log(countVowel("lowercase"));
+=======
 // You will be given an array of objects representing data about developers who have signed up to attend the next coding meetup that you are organising.
 // Your task is to return an object which includes the count of food options selected by the developers on the meetup sign-up form..
 // For example, given the following input array:
@@ -2120,3 +2192,4 @@ function sumOfIntegersInString(s) {
 //     "The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog"
 //   )
 // ); //, 3635
+>>>>>>> origin/main
