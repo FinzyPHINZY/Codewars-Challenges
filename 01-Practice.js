@@ -2051,5 +2051,5 @@ function countVowel(str) {
   }, 0);
 }
 
-console.log(countVowel("return"));
-console.log(countVowel("lowercase"));
+// console.log(countVowel("return"));
+// console.log(countVowel("lowercase"));
