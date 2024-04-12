@@ -1964,7 +1964,11 @@ function bingo(ticket, win) {
 //     ],
 //     2
 //   )
+<<<<<<< HEAD
 //); //, 'Loser!');
+=======
+// ); //, 'Loser!');
+>>>>>>> origin/main
 // console.log(
 //   bingo(
 //     [
@@ -1987,6 +1991,7 @@ function bingo(ticket, win) {
 // ); //, 'Loser!');
 
 // DESCRIPTION:
+<<<<<<< HEAD
 // Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
 // For example (Input --> Output):
 // 39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit)
@@ -2053,3 +2058,138 @@ function countVowel(str) {
 
 // console.log(countVowel("return"));
 // console.log(countVowel("lowercase"));
+=======
+// You will be given an array of objects representing data about developers who have signed up to attend the next coding meetup that you are organising.
+// Your task is to return an object which includes the count of food options selected by the developers on the meetup sign-up form..
+// For example, given the following input array:
+// var list1 = [
+//   { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'C',
+//     meal: 'vegetarian' },
+//   { firstName: 'Anna', lastName: 'R.', country: 'Liechtenstein', continent: 'Europe', age: 52, language: 'JavaScript',
+//     meal: 'standard' },
+//   { firstName: 'Ramona', lastName: 'R.', country: 'Paraguay', continent: 'Americas', age: 29, language: 'Ruby',
+//     meal: 'vegan' },
+//   { firstName: 'George', lastName: 'B.', country: 'England', continent: 'Europe', age: 81, language: 'C',
+//     meal: 'vegetarian' },
+// ];
+// your function should return the following object (the order of properties does not matter):
+// { vegetarian: 2, standard: 1, vegan: 1 }
+// Notes:
+// The order of the meals count in the object does not matter.
+// The count value should be a valid number.
+// The input array will always be valid and formatted as in the example above.
+// there are 5 possible meal options and the strings representing the selected meal option will always be formatted in the same way, as follows: 'standard', 'vegetarian', 'vegan', 'diabetic', 'gluten-intolerant'.
+
+var list1 = [
+  {
+    firstName: "Noah",
+    lastName: "M.",
+    country: "Switzerland",
+    continent: "Europe",
+    age: 19,
+    language: "C",
+    meal: "vegetarian",
+  },
+  {
+    firstName: "Anna",
+    lastName: "R.",
+    country: "Liechtenstein",
+    continent: "Europe",
+    age: 52,
+    language: "JavaScript",
+    meal: "standard",
+  },
+  {
+    firstName: "Ramona",
+    lastName: "R.",
+    country: "Paraguay",
+    continent: "Americas",
+    age: 29,
+    language: "Ruby",
+    meal: "vegan",
+  },
+  {
+    firstName: "George",
+    lastName: "B.",
+    country: "England",
+    continent: "Europe",
+    age: 81,
+    language: "C",
+    meal: "vegetarian",
+  },
+];
+
+var answer = { vegetarian: 2, standard: 1, vegan: 1 };
+
+function orderFood(list) {
+  // your code here
+  let result = {};
+  for (let i = 0; i < list.length; i++) {
+    // console.log(list[i].meal);
+    if (result[list[i].meal] === undefined) {
+      result[list[i].meal] = 1;
+    } else {
+      result[list[i].meal] += 1;
+    }
+  }
+  return result;
+}
+
+function orderFood(list) {
+  const result = {};
+
+  list.forEach((dev) => {
+    const meal = dev.meal;
+
+    if (result[meal] == undefined) {
+      result[meal] = 1;
+    } else {
+      result[meal] += 1;
+    }
+  });
+  return result;
+}
+
+// console.log(orderFood(list1)); //, answer);
+
+// Your task in this kata is to implement a function that calculates the sum of the integers inside a string. For example, in the string "The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog", the sum of the integers is 3635.
+
+// Note: only positive integers will be tested.
+
+function sumOfIntegersInString(s) {
+  const numbers = "1234567890";
+  let res = "";
+  let sum = 0;
+
+  for (let i = 0; i <= s.length; i += 1) {
+    if (numbers.includes(s[i])) {
+      res += s[i];
+    } else {
+      if (res !== "") {
+        sum = sum + parseInt(res);
+        res = "";
+      }
+    }
+  }
+  return sum;
+}
+
+// console.log(sumOfIntegersInString("12.4")); //, 16
+// console.log(sumOfIntegersInString("h3ll0w0rld")); //, 3
+// console.log(sumOfIntegersInString("2 + 3 = ")); //, 5
+// console.log(
+//   sumOfIntegersInString(
+//     "Our company made approximately 1 million in gross revenue last quarter."
+//   )
+// ); //, 1
+// console.log(
+//   sumOfIntegersInString("The Great Depression lasted from 1929 to 1939.")
+// ); //, 3868
+// console.log(sumOfIntegersInString("Dogs are our best friends.")); //, 0
+// console.log(sumOfIntegersInString("C4t5 are 4m4z1ng.")); //, 18
+// console.log(
+//   sumOfIntegersInString(
+//     "The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog"
+//   )
+// ); //, 3635
+>>>>>>> origin/main
