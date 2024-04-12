@@ -1955,36 +1955,36 @@ function bingo(ticket, win) {
   return count >= win ? "Winner!" : "Loser!";
 }
 
-console.log(
-  bingo(
-    [
-      ["ABC", 65],
-      ["HGR", 74],
-      ["BYHT", 74],
-    ],
-    2
-  )
-); //, 'Loser!');
-console.log(
-  bingo(
-    [
-      ["ABC", 65],
-      ["HGR", 74],
-      ["BYHT", 74],
-    ],
-    1
-  )
-); // 'Winner!');
-console.log(
-  bingo(
-    [
-      ["HGTYRE", 74],
-      ["BE", 66],
-      ["JKTY", 74],
-    ],
-    3
-  )
-); //, 'Loser!');
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     2
+//   )
+//); //, 'Loser!');
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     1
+//   )
+// ); // 'Winner!');
+// console.log(
+//   bingo(
+//     [
+//       ["HGTYRE", 74],
+//       ["BE", 66],
+//       ["JKTY", 74],
+//     ],
+//     3
+//   )
+// ); //, 'Loser!');
 
 // DESCRIPTION:
 // Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
@@ -1995,8 +1995,31 @@ console.log(
 
 function persistence(num) {
   //code me
+  let count = 0;
+
+  while (num > 10) {
+    count++;
+    num = num
+      .toString()
+      .split("")
+      .reduce((a, b) => a * b, 1);
+  }
+
+  return count;
 }
 
-console.log(persistence(39));
-console.log(persistence(999));
-console.log(persistence(4));
+// console.log(persistence(39));
+// console.log(persistence(999));
+// console.log(persistence(4));
+
+// DESCRIPTION:
+// Task
+// You will be given an array of numbers. You have to sort the odd numbers in ascending order while leaving the even numbers at their original positions.
+
+console.log(sortArray([7, 1])); // [1, 7]
+console.log(sortArray([5, 8, 6, 3, 4])); //  [3, 8, 6, 5, 4]
+console.log(sortArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0])); // [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
+
+console.log(sortArray([5, 3, 2, 8, 1, 4])); //, [1, 3, 2, 8, 5, 4]);
+console.log(sortArray([5, 3, 1, 8, 0])); //, [1, 3, 5, 8, 0]);
+console.log(sortArray([])); // , []);
