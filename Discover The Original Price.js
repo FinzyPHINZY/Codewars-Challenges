@@ -12,3 +12,7 @@
 function discoverOriginalPrice(discountedPrice, salePercentage) {
   // ...
 }
+
+console.log(discoverOriginalPrice(75, 25)); //,100);
+console.log(discoverOriginalPrice(25, 75)); //,100);
+console.log(discoverOriginalPrice(75.75, 25)); //,101);
