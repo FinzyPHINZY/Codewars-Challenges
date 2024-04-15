@@ -2350,6 +2350,10 @@ function orderFood(list) {
 
 function order(words) {
   // ...
+  return words
+    .split(" ")
+    .sort((a, b) => a.match(/\d/) - b.match(/\d/)) // match(/\d+/) and match(/\d/) aren't the same. the first matches one more consecutive digis while the latter matches just one
+    .join(" ");
 }
 
 console.log(order("is2 Thi1s T4est 3a")); //, "Thi1s is2 3a T4est")
