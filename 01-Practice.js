@@ -2246,3 +2246,276 @@ function sumOfIntegersInString(s) {
 //     "The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog",
 //   ])
 // ); //, 3635]))
+
+// DESCRIPTION:
+// You will be given an array of objects representing data about developers who have signed up to attend the next coding meetup that you are organising.
+// Your task is to return an object which includes the count of food options selected by the developers on the meetup sign-up form..
+// For example, given the following input array:
+// var list1 = [
+//   { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'C',
+//     meal: 'vegetarian' },
+//   { firstName: 'Anna', lastName: 'R.', country: 'Liechtenstein', continent: 'Europe', age: 52, language: 'JavaScript',
+//     meal: 'standard' },
+//   { firstName: 'Ramona', lastName: 'R.', country: 'Paraguay', continent: 'Americas', age: 29, language: 'Ruby',
+//     meal: 'vegan' },
+//   { firstName: 'George', lastName: 'B.', country: 'England', continent: 'Europe', age: 81, language: 'C',
+//     meal: 'vegetarian' },
+// ];
+// your function should return the following object (the order of properties does not matter):
+// { vegetarian: 2, standard: 1, vegan: 1 }
+// Notes:
+// The order of the meals count in the object does not matter.
+// The count value should be a valid number.
+// The input array will always be valid and formatted as in the example above.
+// there are 5 possible meal options and the strings representing the selected meal option will always be formatted in the same way, as follows: 'standard', 'vegetarian', 'vegan', 'diabetic', 'gluten-intolerant'.
+
+// describe("Tests", () => {
+//   it("test", () => {
+var list1 = [
+  {
+    firstName: "Noah",
+    lastName: "M.",
+    country: "Switzerland",
+    continent: "Europe",
+    age: 19,
+    language: "C",
+    meal: "vegetarian",
+  },
+  {
+    firstName: "Anna",
+    lastName: "R.",
+    country: "Liechtenstein",
+    continent: "Europe",
+    age: 52,
+    language: "JavaScript",
+    meal: "standard",
+  },
+  {
+    firstName: "Ramona",
+    lastName: "R.",
+    country: "Paraguay",
+    continent: "Americas",
+    age: 29,
+    language: "Ruby",
+    meal: "vegan",
+  },
+  {
+    firstName: "George",
+    lastName: "B.",
+    country: "England",
+    continent: "Europe",
+    age: 81,
+    language: "C",
+    meal: "vegetarian",
+  },
+];
+
+//   });
+// });
+
+function orderFood(list) {
+  let answer = {};
+  list.forEach((dev) => {
+    console.log(dev.meal);
+
+    if (answer[dev.meal]) {
+      answer[dev.meal] += 1;
+    } else {
+      answer[dev.meal] = 1;
+    }
+  });
+
+  return answer;
+}
+
+// console.log(orderFood(list1)); // answer = { vegetarian: 2, standard: 1, vegan: 1 };
+
+// PREP:
+// P: Takes in an array of objects containing information about developers attending the event and their meal preferences
+// R: Returns an object containing count of each food options
+// E: Above
+// P: Loop through each array
+// For each object, check if dev.meal already exists in the answer object.
+// If yes, increment dev.meal in the answer object by 1
+// Else, create a new dev.meal in the answer object and store it's value as 1
+
+// DESCRIPTION:
+// Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+// Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+// If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.
+// Examples
+// "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+// "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+// ""  -->  ""
+
+function order(words) {
+  // ...
+  return words
+    .split(" ")
+    .sort((a, b) => a.match(/\d/) - b.match(/\d/)) // match(/\d+/) and match(/\d/) aren't the same. the first matches one more consecutive digis while the latter matches just one
+    .join(" ");
+}
+
+// console.log(order("is2 Thi1s T4est 3a")); //, "Thi1s is2 3a T4est")
+// console.log(order("4of Fo1r pe6ople g3ood th5e the2")); //, "Fo1r the2 g3ood 4of th5e pe6ople")
+// console.log(order("")); //, "", "empty input should return empty string" )
+
+// Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
+
+// * url = "http://github.com/carbonfive/raygun" -> domain name = "github"
+// * url = "http://www.zombie-bites.com"         -> domain name = "zombie-bites"
+// * url = "https://www.cnet.com"                -> domain name = cnet"
+
+function domainName(url) {
+  //your code here
+  url = url.replace("https://", "");
+  url = url.replace("http://", "");
+  url = url.replace("www.", "").split(".")[0];
+
+  return url;
+}
+
+// console.log(domainName("http://google.com")); //, "google");
+// console.log(domainName("http://google.co.jp")); //, "google");
+// console.log(domainName("www.xakep.ru")); //, "xakep") //;
+// console.log(domainName("https://youtube.com")); //,  "youtube");
+
+// DESCRIPTION:
+// In this Kata, you will be given an array of strings and your task is to remove all consecutive duplicate letters from each string in the array.
+// For example:
+// dup(["abracadabra","allottee","assessee"]) = ["abracadabra","alote","asese"].
+// dup(["kelless","keenness"]) = ["keles","kenes"].
+// Strings will be lowercase only, no spaces. See test cases for more examples.
+// Good luck!
+
+// function dup(s) {
+//   //..
+//   return s.map((str) => {
+//     let output = "";
+//     for (let i = 0; i < str.length; i++) {
+//       if (str[i] === str[i + 1]) {
+//         output += "";
+//       } else {
+//         output += str[i];
+//       }
+//     }
+
+//     return output;
+//   });
+// }
+
+function dup(s) {
+  return s.map((str) => {
+    return str
+      .split("")
+      .filter((char, i) => char !== str[i + 1])
+      .join("");
+  });
+}
+
+// console.log(dup(["ccooddddddewwwaaaaarrrrsssss", "piccaninny", "hubbubbubboo"])); //,['codewars','picaniny','hubububo']);
+// console.log(dup(["abracadabra", "allottee", "assessee"])); //,['abracadabra','alote','asese']);
+// console.log(dup(["kelless", "keenness"])); //, ['keles','kenes']);
+// console.log(dup(["Woolloomooloo", "flooddoorroommoonlighters", "chuchchi"])); //, ['Wolomolo','flodoromonlighters','chuchchi']);
+// console.log(dup(["adanac", "soonness", "toolless", "ppellee"])); //, ['adanac','sones','toles','pele']);
+// console.log(dup(["callalloo", "feelless", "heelless"])); //, ['calalo','feles','heles']);
+// console.log(dup(["putteellinen", "keenness"])); //, ['putelinen','kenes']);
+// console.log(dup(["kelless", "voorraaddoosspullen", "achcha"])); //, ['keles','voradospulen','achcha']);
+
+// PREP:
+// P: Takes in an array of strings.
+// R: Returns input array containing same strings but with repeated values removed
+// E: Provided above
+// P: Use a map function to manipulate each element in the array
+// P: Loop through each string
+// P: Check if each letter is the same as the next.
+// P: If yes, return '' else return the char
+
+// DESCRIPTION:
+// Build Tower
+// Build a pyramid-shaped tower, as an array/list of strings, given a positive integer number of floors. A tower block is represented with "*" character.
+// For example, a tower with 3 floors looks like this:
+// [
+//   "  *  ",
+//   " *** ",
+//   "*****"
+// ]
+// And a tower with 6 floors looks like this:
+// [
+//   "     *     ",
+//   "    ***    ",
+//   "   *****   ",
+//   "  *******  ",
+//   " ********* ",
+//   "***********"
+// ]
+
+function towerBuilder(nFloors) {
+  // build here
+  let tower = [];
+  for (let i = 0; i < nFloors.length; i++) {
+    const spaces = " ".repeat(nFloors - i + 1);
+    const stars = "*".repeat(2 * (i + 1));
+    const floor = spaces + stars + spaces;
+
+    tower.push(floor);
+  }
+  return tower;
+}
+
+// console.log(towerBuilder(6));
+
+// Description:
+// The museum of incredible dull things
+
+// The museum of incredible dull things wants to get rid of some exhibitions. Miriam, the interior architect, comes up with a plan to remove the most boring exhibitions. She gives them a rating, and then removes the one with the lowest rating.
+
+// However, just as she finished rating all exhibitions, she's off to an important fair, so she asks you to write a program that tells her the ratings of the items after one removed the lowest one. Fair enough.
+// Task
+
+// Given an array of integers, remove the smallest value. Do not mutate the original array/list. If there are multiple elements with the same value, remove the one with a lower index. If you get an empty array/list, return an empty array/list.
+
+// Don't change the order of the elements that are left.
+// Examples
+
+// * Input: [1,2,3,4,5], output = [2,3,4,5]
+// * Input: [5,3,2,1,4], output = [5,3,2,4]
+// * Input: [2,2,1,2,1], output = [2,2,2,1]
+
+function removeSmallest(arr) {
+  // your code here
+  const min = arr.indexOf(Math.min(...arr));
+  return arr.filter((num, i) => i !== min);
+}
+
+// console.log(removeSmallest([1, 2, 3, 4, 5]));
+// console.log(removeSmallest([5, 3, 2, 1, 4]));
+// console.log(removeSmallest([2, 2, 1, 2, 1]));
+
+// In this kata, your job is to return the two distinct highest values in a list. If there're less than 2 unique values, return as many of them, as possible.
+
+// The result should also be ordered from highest to lowest.
+
+// Examples:
+
+// [4, 10, 10, 9]  =>  [10, 9]
+// [1, 1, 1]  =>  [1]
+// []  =>  []
+
+function twoHighest(arr) {
+  //code here
+  arr = arr.sort((a, b) => b - a);
+  arr = new Set(arr);
+
+  return [...arr].slice(0, 2);
+}
+
+// console.log(twoHighest([])); //, [])
+// console.log(twoHighest([15])); //, [15])
+// console.log(twoHighest([15, 20, 20, 17])); //, [20, 17])
+// console.log(
+//   twoHighest([
+//     67512, 3074, 12811, 12239, 25921, 21664, 19780, 95875, 71359, 85466, 36894,
+//     11177, 13197, 95875, 75104, 71915, 7095, 25945, 8608, 88147, 60532, 29569,
+//   ])
+// ); //: expected [ 95875, 95875 ] to deeply equal [ 95875, 88147 ]
