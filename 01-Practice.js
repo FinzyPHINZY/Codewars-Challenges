@@ -2390,15 +2390,34 @@ function domainName(url) {
 
 function dup(s) {
   //..
+  return s.map((str) => {
+    let output = "";
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] === str[i + 1]) {
+        output += "";
+      } else {
+        output += str[i];
+      }
+    }
+
+    return output;
+  });
 }
 
-console.log(
-  dup(["ccooddddddewwwaaaaarrrrsssss", "piccaninny", "hubbubbubboo"])
-); //,['codewars','picaniny','hubububo']);
-console.log(dup(["abracadabra", "allottee", "assessee"])); //,['abracadabra','alote','asese']);
-console.log(dup(["kelless", "keenness"])); //, ['keles','kenes']);
-console.log(dup(["Woolloomooloo", "flooddoorroommoonlighters", "chuchchi"])); //, ['Wolomolo','flodoromonlighters','chuchchi']);
-console.log(dup(["adanac", "soonness", "toolless", "ppellee"])); //, ['adanac','sones','toles','pele']);
-console.log(dup(["callalloo", "feelless", "heelless"])); //, ['calalo','feles','heles']);
-console.log(dup(["putteellinen", "keenness"])); //, ['putelinen','kenes']);
-console.log(dup(["kelless", "voorraaddoosspullen", "achcha"])); //, ['keles','voradospulen','achcha']);
+// console.log(dup(["ccooddddddewwwaaaaarrrrsssss", "piccaninny", "hubbubbubboo"])); //,['codewars','picaniny','hubububo']);
+// console.log(dup(["abracadabra", "allottee", "assessee"])); //,['abracadabra','alote','asese']);
+// console.log(dup(["kelless", "keenness"])); //, ['keles','kenes']);
+// console.log(dup(["Woolloomooloo", "flooddoorroommoonlighters", "chuchchi"])); //, ['Wolomolo','flodoromonlighters','chuchchi']);
+// console.log(dup(["adanac", "soonness", "toolless", "ppellee"])); //, ['adanac','sones','toles','pele']);
+// console.log(dup(["callalloo", "feelless", "heelless"])); //, ['calalo','feles','heles']);
+// console.log(dup(["putteellinen", "keenness"])); //, ['putelinen','kenes']);
+// console.log(dup(["kelless", "voorraaddoosspullen", "achcha"])); //, ['keles','voradospulen','achcha']);
+
+// PREP:
+// P: Takes in an array of strings.
+// R: Returns input array containing same strings but with repeated values removed
+// E: Provided above
+// P: Use a map function to manipulate each element in the array
+// P: Loop through each string
+// P: Check if each letter is the same as the next.
+// P: If yes, return '' else return the char
