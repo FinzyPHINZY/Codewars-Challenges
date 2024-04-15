@@ -2388,23 +2388,34 @@ function domainName(url) {
 // Strings will be lowercase only, no spaces. See test cases for more examples.
 // Good luck!
 
-function dup(s) {
-  //..
-  return s.map((str) => {
-    let output = "";
-    for (let i = 0; i < str.length; i++) {
-      if (str[i] === str[i + 1]) {
-        output += "";
-      } else {
-        output += str[i];
-      }
-    }
+// function dup(s) {
+//   //..
+//   return s.map((str) => {
+//     let output = "";
+//     for (let i = 0; i < str.length; i++) {
+//       if (str[i] === str[i + 1]) {
+//         output += "";
+//       } else {
+//         output += str[i];
+//       }
+//     }
 
-    return output;
+//     return output;
+//   });
+// }
+
+function dup(s) {
+  return s.map((str) => {
+    return str
+      .split("")
+      .filter((char, i) => char !== str[i + 1])
+      .join("");
   });
 }
 
-// console.log(dup(["ccooddddddewwwaaaaarrrrsssss", "piccaninny", "hubbubbubboo"])); //,['codewars','picaniny','hubububo']);
+console.log(
+  dup(["ccooddddddewwwaaaaarrrrsssss", "piccaninny", "hubbubbubboo"])
+); //,['codewars','picaniny','hubububo']);
 // console.log(dup(["abracadabra", "allottee", "assessee"])); //,['abracadabra','alote','asese']);
 // console.log(dup(["kelless", "keenness"])); //, ['keles','kenes']);
 // console.log(dup(["Woolloomooloo", "flooddoorroommoonlighters", "chuchchi"])); //, ['Wolomolo','flodoromonlighters','chuchchi']);
