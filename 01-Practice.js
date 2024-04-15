@@ -2356,6 +2356,21 @@ function order(words) {
     .join(" ");
 }
 
-console.log(order("is2 Thi1s T4est 3a")); //, "Thi1s is2 3a T4est")
-console.log(order("4of Fo1r pe6ople g3ood th5e the2")); //, "Fo1r the2 g3ood 4of th5e pe6ople")
-console.log(order("")); //, "", "empty input should return empty string" )
+// console.log(order("is2 Thi1s T4est 3a")); //, "Thi1s is2 3a T4est")
+// console.log(order("4of Fo1r pe6ople g3ood th5e the2")); //, "Fo1r the2 g3ood 4of th5e pe6ople")
+// console.log(order("")); //, "", "empty input should return empty string" )
+
+// Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
+
+// * url = "http://github.com/carbonfive/raygun" -> domain name = "github"
+// * url = "http://www.zombie-bites.com"         -> domain name = "zombie-bites"
+// * url = "https://www.cnet.com"                -> domain name = cnet"
+
+function domainName(url) {
+  //your code here
+}
+
+console.log(domainName("http://google.com")); //, "google");
+console.log(domainName("http://google.co.jp")); //, "google");
+console.log(domainName("www.xakep.ru")); //, "xakep") //;
+console.log(domainName("https://youtube.com")); //,  "youtube");
