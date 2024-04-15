@@ -2271,23 +2271,70 @@ function sumOfIntegersInString(s) {
 
 // describe("Tests", () => {
 //   it("test", () => {
-// var list1 = [
-//   { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'C',
-//     meal: 'vegetarian' },
-//   { firstName: 'Anna', lastName: 'R.', country: 'Liechtenstein', continent: 'Europe', age: 52, language: 'JavaScript',
-//     meal: 'standard' },
-//   { firstName: 'Ramona', lastName: 'R.', country: 'Paraguay', continent: 'Americas', age: 29, language: 'Ruby',
-//     meal: 'vegan' },
-//   { firstName: 'George', lastName: 'B.', country: 'England', continent: 'Europe', age: 81, language: 'C',
-//     meal: 'vegetarian' },
-// ];
+var list1 = [
+  {
+    firstName: "Noah",
+    lastName: "M.",
+    country: "Switzerland",
+    continent: "Europe",
+    age: 19,
+    language: "C",
+    meal: "vegetarian",
+  },
+  {
+    firstName: "Anna",
+    lastName: "R.",
+    country: "Liechtenstein",
+    continent: "Europe",
+    age: 52,
+    language: "JavaScript",
+    meal: "standard",
+  },
+  {
+    firstName: "Ramona",
+    lastName: "R.",
+    country: "Paraguay",
+    continent: "Americas",
+    age: 29,
+    language: "Ruby",
+    meal: "vegan",
+  },
+  {
+    firstName: "George",
+    lastName: "B.",
+    country: "England",
+    continent: "Europe",
+    age: 81,
+    language: "C",
+    meal: "vegetarian",
+  },
+];
 
-// var answer = { vegetarian: 2, standard: 1, vegan: 1 };
-
-// Test.assertDeepEquals(orderFood(list1), answer);
 //   });
 // });
 
 function orderFood(list) {
-  // thank you for checking out the Coding Meetup kata :)
+  let answer = {};
+  list.forEach((dev) => {
+    console.log(dev.meal);
+
+    if (answer[dev.meal]) {
+      answer[dev.meal] += 1;
+    } else {
+      answer[dev.meal] = 1;
+    }
+  });
+
+  return answer;
 }
+
+console.log(orderFood(list1)); // answer = { vegetarian: 2, standard: 1, vegan: 1 };
+
+// PREP:
+// P: Takes in an array of objects containing information about developers attending the event and their meal preferences
+// R: Returns an object containing count of each food options
+// E: Above
+// P: Loop through each array
+// For each object, check if dev.meal already exists in the answer object.
+// If yes, increment dev.meal in the answer object by 1
+// Else, create a new dev.meal in the answer object and store it's value as 1
