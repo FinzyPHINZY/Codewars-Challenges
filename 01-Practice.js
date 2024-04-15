@@ -2328,7 +2328,7 @@ function orderFood(list) {
   return answer;
 }
 
-console.log(orderFood(list1)); // answer = { vegetarian: 2, standard: 1, vegan: 1 };
+// console.log(orderFood(list1)); // answer = { vegetarian: 2, standard: 1, vegan: 1 };
 
 // PREP:
 // P: Takes in an array of objects containing information about developers attending the event and their meal preferences
@@ -2338,3 +2338,20 @@ console.log(orderFood(list1)); // answer = { vegetarian: 2, standard: 1, vegan: 
 // For each object, check if dev.meal already exists in the answer object.
 // If yes, increment dev.meal in the answer object by 1
 // Else, create a new dev.meal in the answer object and store it's value as 1
+
+// DESCRIPTION:
+// Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+// Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+// If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.
+// Examples
+// "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+// "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+// ""  -->  ""
+
+function order(words) {
+  // ...
+}
+
+console.log(order("is2 Thi1s T4est 3a")); //, "Thi1s is2 3a T4est")
+console.log(order("4of Fo1r pe6ople g3ood th5e the2")); //, "Fo1r the2 g3ood 4of th5e pe6ople")
+console.log(order("")); //, "", "empty input should return empty string" )
