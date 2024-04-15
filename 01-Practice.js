@@ -2413,9 +2413,7 @@ function dup(s) {
   });
 }
 
-console.log(
-  dup(["ccooddddddewwwaaaaarrrrsssss", "piccaninny", "hubbubbubboo"])
-); //,['codewars','picaniny','hubububo']);
+// console.log(dup(["ccooddddddewwwaaaaarrrrsssss", "piccaninny", "hubbubbubboo"])); //,['codewars','picaniny','hubububo']);
 // console.log(dup(["abracadabra", "allottee", "assessee"])); //,['abracadabra','alote','asese']);
 // console.log(dup(["kelless", "keenness"])); //, ['keles','kenes']);
 // console.log(dup(["Woolloomooloo", "flooddoorroommoonlighters", "chuchchi"])); //, ['Wolomolo','flodoromonlighters','chuchchi']);
@@ -2432,3 +2430,28 @@ console.log(
 // P: Loop through each string
 // P: Check if each letter is the same as the next.
 // P: If yes, return '' else return the char
+
+// DESCRIPTION:
+// Build Tower
+// Build a pyramid-shaped tower, as an array/list of strings, given a positive integer number of floors. A tower block is represented with "*" character.
+// For example, a tower with 3 floors looks like this:
+// [
+//   "  *  ",
+//   " *** ",
+//   "*****"
+// ]
+// And a tower with 6 floors looks like this:
+// [
+//   "     *     ",
+//   "    ***    ",
+//   "   *****   ",
+//   "  *******  ",
+//   " ********* ",
+//   "***********"
+// ]
+
+function towerBuilder(nFloors) {
+  // build here
+}
+
+console.log(towerBuilder(6));
