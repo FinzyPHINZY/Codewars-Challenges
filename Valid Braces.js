@@ -20,3 +20,20 @@
 function validBraces(braces) {
   //TODO
 }
+
+console.log(validBraces("()))")); //, false);
+console.log(validBraces("()")); //, true);
+console.log(validBraces("[]")); //, true);
+console.log(validBraces("{}")); //, true);
+console.log(validBraces("(){}[]")); //, true);
+console.log(validBraces("([{}])")); //, true);
+console.log(validBraces("(}")); //, false);
+console.log(validBraces("[(])")); //, false);
+console.log(validBraces("({})[({})]")); //, true);
+console.log(validBraces("(})")); //, false);
+console.log(validBraces("(({{[[]]}}))")); //, true);
+console.log(validBraces("{}({})[]")); //, true);
+console.log(validBraces(")(}{][")); //, false);
+console.log(validBraces("())({}}{()][][")); //, false);
+console.log(validBraces("(((({{")); //, false);
+console.log(validBraces("}}]]))}])")); //, false);
