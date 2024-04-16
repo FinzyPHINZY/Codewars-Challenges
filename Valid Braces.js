@@ -16,3 +16,7 @@
 // "(}"       =>  False
 // "[(])"     =>  False
 // "[({})](]" =>  False
+
+function validBraces(braces) {
+  //TODO
+}
