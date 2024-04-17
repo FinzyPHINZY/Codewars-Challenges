@@ -9,8 +9,20 @@
 // 'O' --> empty
 // If all rooms are busy, return "None available!"
 
-function meeting(x) {}
+function meeting(x) {
+  const result = x
+    .map((office, i) => {
+      if (office == "O") {
+        return x.indexOf(office);
+      }
+    })
+    .filter((office) => typeof office === "number");
+
+  return result.length > 0 ? result[0] : "None available!";
+}
 
 console.log(meeting(["X", "O", "X"])); //, 1);
 console.log(meeting(["O", "X", "X", "X", "X"])); //, 0);
 console.log(meeting(["X", "X", "X", "X", "X"])); //, 'None available!');
+
+//
