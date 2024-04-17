@@ -8,3 +8,5 @@
 // 'X' --> busy
 // 'O' --> empty
 // If all rooms are busy, return "None available!"
+
+function meeting(x) {}
