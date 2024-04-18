@@ -11,3 +11,7 @@
 // Input will only contain lowercase characters and spaces.
 
 // Good luck!
+
+function wordValue(a) {
+  return;
+}
