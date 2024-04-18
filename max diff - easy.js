@@ -9,7 +9,7 @@
 // [1, 2, 3, -4]  //  returns 7 because 3 - (-4) == 7
 
 function maxDiff(list) {
-  return 0;
+  return list.length < 2 ? 0 : Math.max(...list) - Math.min(...list);
 }
 
 console.log(maxDiff([0, 1, 2, 3, 4, 5, 6])); //, 6);
