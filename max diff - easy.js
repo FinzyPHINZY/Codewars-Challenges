@@ -7,3 +7,7 @@
 // lst is not sorted
 // [1, 2, 3, 4]   //  returns 3 because 4 -   1  == 3
 // [1, 2, 3, -4]  //  returns 7 because 3 - (-4) == 7
+
+function maxDiff(list) {
+  return 0;
+}
