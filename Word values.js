@@ -13,8 +13,24 @@
 // Good luck!
 
 function wordValue(a) {
-  return;
+  const letters = "abcdefghijklmnopqrstuvwxyz";
+  return a
+    .map((word) => {
+      return word
+        .split(" ")
+        .join("")
+        .split("")
+        .map((char, i) => {
+          return letters.indexOf(char) + 1;
+        })
+        .reduce((acc, num) => acc + num, 0);
+    })
+    .map((num, i) => num * (i + 1));
 }
 
 console.log(wordValue(["codewars", "abc", "xyz"])); //, [88, 12, 225]);
 console.log(wordValue(["abc abc", "abc abc", "abc", "abc"])); //, [12, 24, 18, 24]);
+
+// iterate a by each string.
+// remove spaces
+//
