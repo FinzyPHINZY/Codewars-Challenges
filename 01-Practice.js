@@ -2529,8 +2529,18 @@ function twoHighest(arr) {
 // 'O' --> empty
 // If all rooms are busy, return "None available!"
 
-function meeting(x) {}
+function meeting(x) {
+  // your code here
+  const emptyRoom = x.find((room) => room === "O");
+  return emptyRoom == undefined ? "None available!" : x.indexOf(emptyRoom);
+}
 
 console.log(meeting(["X", "O", "X"])); //, 1);
 console.log(meeting(["O", "X", "X", "X", "X"])); //, 0);
 console.log(meeting(["X", "X", "X", "X", "X"])); //, 'None available!');
+
+// PREP
+// P: Takes in an array of rooms
+// R: Returns the index of the first empty room. If none, return "None available!"
+// E: 2537 - 2539
+// P: Loop through the array.
