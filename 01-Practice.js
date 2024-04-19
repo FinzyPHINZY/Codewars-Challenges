@@ -2519,3 +2519,65 @@ function twoHighest(arr) {
 //     11177, 13197, 95875, 75104, 71915, 7095, 25945, 8608, 88147, 60532, 29569,
 //   ])
 // ); //: expected [ 95875, 95875 ] to deeply equal [ 95875, 88147 ]
+
+// DESCRIPTION:
+// Your job at E-Corp is both boring and difficult. It isn't made any easier by the fact that everyone constantly wants to have a meeting with you, and that the meeting rooms are always taken!
+
+// In this kata, you will be given an array. Each value represents a meeting room. Your job? Find the first empty one and return its index (N.B. There may be more than one empty room in some test cases).
+
+// 'X' --> busy
+// 'O' --> empty
+// If all rooms are busy, return "None available!"
+
+function meeting(x) {
+  // your code here
+  const emptyRoom = x.find((room) => room === "O");
+  return emptyRoom == undefined ? "None available!" : x.indexOf(emptyRoom);
+}
+
+// console.log(meeting(["X", "O", "X"])); //, 1);
+// console.log(meeting(["O", "X", "X", "X", "X"])); //, 0);
+// console.log(meeting(["X", "X", "X", "X", "X"])); //, 'None available!');
+
+// PREP
+// P: Takes in an array of rooms
+// R: Returns the index of the first empty room. If none, return "None available!"
+// E: 2537 - 2539
+// P: Loop through the array.
+
+// DESCRIPTION:
+// Create a function that returns the CSV representation of a two-dimensional numeric array.
+// Example:
+// input:
+//  [[ 0, 1, 2, 3, 4 ],
+//   [ 10,11,12,13,14 ],
+//   [ 20,21,22,23,24 ],
+//   [ 30,31,32,33,34 ]]
+
+// output:
+//      '0,1,2,3,4\n'
+//     +'10,11,12,13,14\n'
+//     +'20,21,22,23,24\n'
+//     +'30,31,32,33,34'
+// Array's length > 2.
+
+function toCsvText(array) {
+  // good luck
+  // return array.map((arr) => arr.join(",")).join("\n");
+  return array.join("\n");
+}
+
+console.log(
+  toCsvText([
+    [0, 1, 2, 3, 4],
+    [10, 11, 12, 13, 14],
+    [20, 21, 22, 23, 24],
+    [30, 31, 32, 33, 34],
+  ])
+);
+
+// PREP:
+// P: Takes in a multi-dimensional array containing numbers
+// R: returrns the arrays with the brackets removed
+// E: available above
+// P: Remove the brackets
