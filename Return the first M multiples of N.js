@@ -11,6 +11,11 @@
 
 function multiples(m, n) {
   // code here
+  const output = [];
+  for (let i = 1; i <= m; i++) {
+    output.push(n * i);
+  }
+  return output;
 }
 
 console.log(multiples(3, 5)); //, [5, 10, 15]);
