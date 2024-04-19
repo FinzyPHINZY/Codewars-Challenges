@@ -8,3 +8,7 @@
 // should return
 
 // [5.0, 10.0, 15.0]
+
+function multiples(m, n) {
+  // code here
+}
