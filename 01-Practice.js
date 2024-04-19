@@ -2535,12 +2535,32 @@ function meeting(x) {
   return emptyRoom == undefined ? "None available!" : x.indexOf(emptyRoom);
 }
 
-console.log(meeting(["X", "O", "X"])); //, 1);
-console.log(meeting(["O", "X", "X", "X", "X"])); //, 0);
-console.log(meeting(["X", "X", "X", "X", "X"])); //, 'None available!');
+// console.log(meeting(["X", "O", "X"])); //, 1);
+// console.log(meeting(["O", "X", "X", "X", "X"])); //, 0);
+// console.log(meeting(["X", "X", "X", "X", "X"])); //, 'None available!');
 
 // PREP
 // P: Takes in an array of rooms
 // R: Returns the index of the first empty room. If none, return "None available!"
 // E: 2537 - 2539
 // P: Loop through the array.
+
+// DESCRIPTION:
+// Create a function that returns the CSV representation of a two-dimensional numeric array.
+// Example:
+// input:
+//    [[ 0, 1, 2, 3, 4 ],
+//     [ 10,11,12,13,14 ],
+//     [ 20,21,22,23,24 ],
+//     [ 30,31,32,33,34 ]]
+
+// output:
+//      '0,1,2,3,4\n'
+//     +'10,11,12,13,14\n'
+//     +'20,21,22,23,24\n'
+//     +'30,31,32,33,34'
+// Array's length > 2.
+
+function toCsvText(array) {
+  // good luck
+}
