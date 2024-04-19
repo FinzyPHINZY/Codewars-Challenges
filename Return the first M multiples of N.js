@@ -12,3 +12,5 @@
 function multiples(m, n) {
   // code here
 }
+
+console.log(multiples(3, 5)); //, [5, 10, 15]);
