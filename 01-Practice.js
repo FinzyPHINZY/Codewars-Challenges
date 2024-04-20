@@ -2591,8 +2591,32 @@ function toCsvText(array) {
 
 function firstNonRepeatingLetter(s) {
   // Add your code here
+  const lowerCaseStr = s.toLowerCase();
+  const charCount = {};
+
+  for (const char of lowerCaseStr) {
+    if (charCount[char]) {
+      charCount[char] += 1;
+    } else {
+      charCount[char] = 1;
+    }
+  }
+
+  for (let i = 0; i < s.length; i++) {
+    if (charCount[lowerCaseStr[i]] === 1) {
+      return s[i];
+    }
+  }
+  return "";
 }
 
 console.log(firstNonRepeatingLetter("a")); //, 'a');
 console.log(firstNonRepeatingLetter("stress")); //, 't');
 console.log(firstNonRepeatingLetter("moonmen")); //, 'e');
+console.log(firstNonRepeatingLetter("aaddee"));
+
+// PREP:
+// P: Takes in a string
+// R: Returns the first letter of the string that isnt repeated anywhere
+// E: available above
+// P: Loop through the string and seperate the letters that returns more than once in the string
