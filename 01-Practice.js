@@ -2610,13 +2610,38 @@ function firstNonRepeatingLetter(s) {
   return "";
 }
 
-console.log(firstNonRepeatingLetter("a")); //, 'a');
-console.log(firstNonRepeatingLetter("stress")); //, 't');
-console.log(firstNonRepeatingLetter("moonmen")); //, 'e');
-console.log(firstNonRepeatingLetter("aaddee"));
+// console.log(firstNonRepeatingLetter("a")); //, 'a');
+// console.log(firstNonRepeatingLetter("stress")); //, 't');
+// console.log(firstNonRepeatingLetter("moonmen")); //, 'e');
+// console.log(firstNonRepeatingLetter("aaddee"));
 
 // PREP:
 // P: Takes in a string
 // R: Returns the first letter of the string that isnt repeated anywhere
 // E: available above
 // P: Loop through the string and seperate the letters that returns more than once in the string
+
+// DESCRIPTION:
+// This is a spin off of my first kata.
+// You are given a string containing a sequence of character sequences separated by commas.
+// Write a function which returns a new string containing the same character sequences except the first and the last ones but this time separated by spaces.
+// If the input string is empty or the removal of the first and last items would cause the resulting string to be empty, return an empty value (represented as a generic value NULL in the examples below).
+// Examples
+// "1,2,3"      =>  "2"
+// "1,2,3,4"    =>  "2 3"
+// "1,2,3,4,5"  =>  "2 3 4"
+
+// ""     =>  NULL
+// "1"    =>  NULL
+// "1,2"  =>  NULL
+
+function array(string) {
+  // TODO
+}
+
+console.log(array("1,2,3"));
+console.log(array("1,2,3,4"));
+console.log(array("1,2,3,4,5"));
+console.log(array(""));
+console.log(array("1"));
+console.log(array("1,2"));
