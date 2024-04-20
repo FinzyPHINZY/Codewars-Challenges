@@ -2567,17 +2567,32 @@ function toCsvText(array) {
   return array.join("\n");
 }
 
-console.log(
-  toCsvText([
-    [0, 1, 2, 3, 4],
-    [10, 11, 12, 13, 14],
-    [20, 21, 22, 23, 24],
-    [30, 31, 32, 33, 34],
-  ])
-);
+// console.log(
+//   toCsvText([
+//     [0, 1, 2, 3, 4],
+//     [10, 11, 12, 13, 14],
+//     [20, 21, 22, 23, 24],
+//     [30, 31, 32, 33, 34],
+//   ])
+// );
 
 // PREP:
 // P: Takes in a multi-dimensional array containing numbers
 // R: returrns the arrays with the brackets removed
 // E: available above
 // P: Remove the brackets
+
+// DESCRIPTION:
+// Write a function named first_non_repeating_letter† that takes a string input, and returns the first character that is not repeated anywhere in the string.
+// For example, if given the input 'stress', the function should return 't', since the letter t only occurs once in the string, and occurs first in the string.
+// As an added challenge, upper- and lowercase letters are considered the same character, but the function should return the correct case for the initial letter. For example, the input 'sTreSS' should return 'T'.
+// If a string contains all repeating characters, it should return an empty string ("");
+// † Note: the function is called firstNonRepeatingLetter for historical reasons, but your function should handle any Unicode character.
+
+function firstNonRepeatingLetter(s) {
+  // Add your code here
+}
+
+console.log(firstNonRepeatingLetter("a")); //, 'a');
+console.log(firstNonRepeatingLetter("stress")); //, 't');
+console.log(firstNonRepeatingLetter("moonmen")); //, 'e');
