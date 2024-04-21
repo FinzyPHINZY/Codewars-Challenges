@@ -2567,17 +2567,151 @@ function toCsvText(array) {
   return array.join("\n");
 }
 
-console.log(
-  toCsvText([
-    [0, 1, 2, 3, 4],
-    [10, 11, 12, 13, 14],
-    [20, 21, 22, 23, 24],
-    [30, 31, 32, 33, 34],
-  ])
-);
+// console.log(
+//   toCsvText([
+//     [0, 1, 2, 3, 4],
+//     [10, 11, 12, 13, 14],
+//     [20, 21, 22, 23, 24],
+//     [30, 31, 32, 33, 34],
+//   ])
+// );
 
 // PREP:
 // P: Takes in a multi-dimensional array containing numbers
 // R: returrns the arrays with the brackets removed
 // E: available above
 // P: Remove the brackets
+
+// DESCRIPTION:
+// Write a function named first_non_repeating_letter† that takes a string input, and returns the first character that is not repeated anywhere in the string.
+// For example, if given the input 'stress', the function should return 't', since the letter t only occurs once in the string, and occurs first in the string.
+// As an added challenge, upper- and lowercase letters are considered the same character, but the function should return the correct case for the initial letter. For example, the input 'sTreSS' should return 'T'.
+// If a string contains all repeating characters, it should return an empty string ("");
+// † Note: the function is called firstNonRepeatingLetter for historical reasons, but your function should handle any Unicode character.
+
+function firstNonRepeatingLetter(s) {
+  // Add your code here
+  const lowerCaseStr = s.toLowerCase();
+  const charCount = {};
+
+  for (const char of lowerCaseStr) {
+    if (charCount[char]) {
+      charCount[char] += 1;
+    } else {
+      charCount[char] = 1;
+    }
+  }
+
+  for (let i = 0; i < s.length; i++) {
+    if (charCount[lowerCaseStr[i]] === 1) {
+      return s[i];
+    }
+  }
+  return "";
+}
+
+// console.log(firstNonRepeatingLetter("a")); //, 'a');
+// console.log(firstNonRepeatingLetter("stress")); //, 't');
+// console.log(firstNonRepeatingLetter("moonmen")); //, 'e');
+// console.log(firstNonRepeatingLetter("aaddee"));
+
+// PREP:
+// P: Takes in a string
+// R: Returns the first letter of the string that isnt repeated anywhere
+// E: available above
+// P: Loop through the string and seperate the letters that returns more than once in the string
+
+// DESCRIPTION:
+// This is a spin off of my first kata.
+// You are given a string containing a sequence of character sequences separated by commas.
+// Write a function which returns a new string containing the same character sequences except the first and the last ones but this time separated by spaces.
+// If the input string is empty or the removal of the first and last items would cause the resulting string to be empty, return an empty value (represented as a generic value NULL in the examples below).
+// Examples
+// "1,2,3"      =>  "2"
+// "1,2,3,4"    =>  "2 3"
+// "1,2,3,4,5"  =>  "2 3 4"
+
+// ""     =>  NULL
+// "1"    =>  NULL
+// "1,2"  =>  NULL
+
+function array(string) {
+  string = string.split(",");
+
+  return string.length < 3 ? null : string.slice(1, -1);
+}
+
+// console.log(array("1,2,3"));
+// console.log(array("1,2,3,4"));
+// console.log(array("1,2,3,4,5"));
+// console.log(array(""));
+// console.log(array("1"));
+// console.log(array("1,2"));
+
+// DESCRIPTION:
+// Digital root is the recursive sum of all the digits in a number.
+// Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.
+// Examples
+//     16  -->  1 + 6 = 7
+//    942  -->  9 + 4 + 2 = 15  -->  1 + 5 = 6
+// 132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
+// 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
+
+function digitalRoot(n) {
+  // ...
+
+  if (n < 10) return n;
+
+  let sum = n
+    .toString()
+    .split("")
+    .map(Number)
+    .reduce((sum, num) => sum + num, 0);
+
+  return digitalRoot(sum);
+}
+
+// console.log(digitalRoot(16));
+// console.log(digitalRoot(942));
+// console.log(digitalRoot(132189));
+// console.log(digitalRoot(493193));
+
+// DESCRIPTION:
+// Friday 13th or Black Friday is considered as unlucky day. Calculate how many unlucky days are in the given year.
+// Find the number of Friday 13th in the given year.
+// Input: Year in Gregorian calendar as integer.
+// Output: Number of Black Fridays in the year as an integer.
+// Examples:
+// unluckyDays(2015) == 3
+// unluckyDays(1986) == 1
+
+function unluckyDays(year) {
+  //your code here
+
+  let count = 0;
+  for (let month = 0; month < 12; month++) {
+    const date = new Date(year, month, 13);
+    if (date.getDay() === 5) count++;
+  }
+  return count;
+}
+
+// console.log(unluckyDays(2015));
+// console.log(unluckyDays(1986));
+
+// DESCRIPTION:
+// Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+// Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+// If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.
+// Examples
+// "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+// "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+// ""  -->  ""
+
+function order(words) {
+  // ...
+}
+
+console.log(order("is2 Thi1s T4est 3a")); //, "Thi1s is2 3a T4est")
+console.log(order("4of Fo1r pe6ople g3ood th5e the2")); //, "Fo1r the2 g3ood 4of th5e pe6ople")
+console.log(order("")); //, "", "empty input should return empty string" )
