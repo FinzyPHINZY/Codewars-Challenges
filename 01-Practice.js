@@ -2710,8 +2710,123 @@ function unluckyDays(year) {
 
 function order(words) {
   // ...
+  return words
+    .split(" ")
+    .sort((a, b) => a.match(/\d+/) - b.match(/\d+/))
+    .join(" ");
 }
 
-console.log(order("is2 Thi1s T4est 3a")); //, "Thi1s is2 3a T4est")
-console.log(order("4of Fo1r pe6ople g3ood th5e the2")); //, "Fo1r the2 g3ood 4of th5e pe6ople")
-console.log(order("")); //, "", "empty input should return empty string" )
+// console.log(order("is2 Thi1s T4est 3a")); //, "Thi1s is2 3a T4est")
+// console.log(order("4of Fo1r pe6ople g3ood th5e the2")); //, "Fo1r the2 g3ood 4of th5e pe6ople")
+// console.log(order("")); //, "", "empty input should return empty string" )
+
+// DESCRIPTION:
+// You will be given an array of objects representing data about developers who have signed up to attend the next coding meetup that you are organising.
+// Your task is to return an object which includes the count of food options selected by the developers on the meetup sign-up form..
+// For example, given the following input array:
+// var list1 = [
+//   { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'C',
+//     meal: 'vegetarian' },
+//   { firstName: 'Anna', lastName: 'R.', country: 'Liechtenstein', continent: 'Europe', age: 52, language: 'JavaScript',
+//     meal: 'standard' },
+//   { firstName: 'Ramona', lastName: 'R.', country: 'Paraguay', continent: 'Americas', age: 29, language: 'Ruby',
+//     meal: 'vegan' },
+//   { firstName: 'George', lastName: 'B.', country: 'England', continent: 'Europe', age: 81, language: 'C',
+//     meal: 'vegetarian' },
+// ];
+// your function should return the following object (the order of properties does not matter):
+// { vegetarian: 2, standard: 1, vegan: 1 }
+// Notes:
+// The order of the meals count in the object does not matter.
+// The count value should be a valid number.
+// The input array will always be valid and formatted as in the example above.
+// there are 5 possible meal options and the strings representing the selected meal option will always be formatted in the same way, as follows: 'standard', 'vegetarian', 'vegan', 'diabetic', 'gluten-intolerant'.
+
+// describe("Tests", () => {
+//   it("test", () => {
+var list1 = [
+  {
+    firstName: "Noah",
+    lastName: "M.",
+    country: "Switzerland",
+    continent: "Europe",
+    age: 19,
+    language: "C",
+    meal: "vegetarian",
+  },
+  {
+    firstName: "Anna",
+    lastName: "R.",
+    country: "Liechtenstein",
+    continent: "Europe",
+    age: 52,
+    language: "JavaScript",
+    meal: "standard",
+  },
+  {
+    firstName: "Ramona",
+    lastName: "R.",
+    country: "Paraguay",
+    continent: "Americas",
+    age: 29,
+    language: "Ruby",
+    meal: "vegan",
+  },
+  {
+    firstName: "George",
+    lastName: "B.",
+    country: "England",
+    continent: "Europe",
+    age: 81,
+    language: "C",
+    meal: "vegetarian",
+  },
+];
+
+// Test.assertDeepEquals(orderFood(list1), answer);
+//   });
+// });
+
+function orderFood(list) {
+  const devMeal = {};
+
+  for (const dev of list) {
+    const meal = dev.meal;
+
+    if (devMeal[meal]) {
+      devMeal[meal] += 1;
+    } else {
+      devMeal[meal] = 1;
+    }
+  }
+  return devMeal;
+}
+
+// console.log(orderFood(list1)); // var answer = { vegetarian: 2, standard: 1, vegan: 1 };
+
+// DESCRIPTION:
+// Digital root is the recursive sum of all the digits in a number.
+// Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.
+// Examples
+//     16  -->  1 + 6 = 7
+//    942  -->  9 + 4 + 2 = 15  -->  1 + 5 = 6
+// 132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
+// 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
+
+function digitalRoot(n) {
+  // ...
+  if (n < 10) return n;
+
+  let sum = n
+    .toString()
+    .split("")
+    .map(Number)
+    .reduce((sum, num) => sum + num, 0);
+
+  return digitalRoot(sum);
+}
+
+// console.log(digitalRoot(16));
+// console.log(digitalRoot(942));
+// console.log(digitalRoot(132189));
+// console.log(digitalRoot(493193));
