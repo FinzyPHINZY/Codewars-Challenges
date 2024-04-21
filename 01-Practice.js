@@ -2788,7 +2788,18 @@ var list1 = [
 // });
 
 function orderFood(list) {
-  // thank you for checking out the Coding Meetup kata :)
+  const devMeal = {};
+
+  for (const dev of list) {
+    const meal = dev.meal;
+
+    if(devMeal[meal]) {
+      devMeal[meal] += 1;
+    }
+    else{
+      devMeal[meal] = 1;
+    }
+  }return devMeal
 }
 
 console.log(orderFood(list1)); // var answer = { vegetarian: 2, standard: 1, vegan: 1 };
