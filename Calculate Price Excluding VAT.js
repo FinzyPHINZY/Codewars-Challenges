@@ -16,7 +16,9 @@
 //return price without vat
 function excludingVatPrice(price) {
   // your code
-  return 0;
+  let originalPrice = price / 1.15;
+
+  return Math.round(originalPrice * 100) / 100;
 }
 
 console.log(excludingVatPrice(230)); //, 200.00);
