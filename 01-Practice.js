@@ -2959,10 +2959,20 @@ function digitalRoot(n) {
 
 function findMissingLetter(array) {
   const letter =
-    array[0] == array[0].toUpperCase()
+    array[0] == array[0].toLowerCase()
       ? "abcdefghijklmnopqrstuvwxyz"
       : "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  return letter;
+
+  const firstIndex = letter.indexOf(array[0]);
+  const lastIndex = letter.indexOf(array[array.length - 1]);
+  // return [letter[firstIndex], letter[lastIndex]];
+
+  const newStr = letter.slice(firstIndex, lastIndex + 1);
+
+  return newStr
+    .split("")
+    .filter((char) => !array.includes(char))
+    .join("");
 }
 
 console.log(findMissingLetter(["a", "b", "c", "d", "f"]));
