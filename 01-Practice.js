@@ -2830,3 +2830,173 @@ function digitalRoot(n) {
 // console.log(digitalRoot(942));
 // console.log(digitalRoot(132189));
 // console.log(digitalRoot(493193));
+
+// Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
+
+// * url = "http://github.com/carbonfive/raygun" -> domain name = "github"
+// * url = "http://www.zombie-bites.com"         -> domain name = "zombie-bites"
+// * url = "https://www.cnet.com"                -> domain name = cnet"
+
+function domainName(url) {
+  //your code here
+  url = url.replace("https://", "");
+  url = url.replace("http://", "");
+  url = url.replace("www.", "").split(".")[0];
+
+  return url;
+}
+
+// console.log(domainName("http://google.com")); //, "google");
+// console.log(domainName("http://google.co.jp")); //, "google");
+// console.log(domainName("www.xakep.ru")); //, "xakep");
+// console.log(domainName("https://youtube.com")); //, "youtube");
+
+// const pairs = {
+//   "(": ")",
+//   "[": "]",
+//   "{": "}",
+// };
+
+// console.log("{" in pairs);
+
+// DESCRIPTION:
+// Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+// Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+// If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.
+// Examples
+// "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+// "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+// ""  -->  ""
+
+function order(words) {
+  // ...
+  return words
+    .split(" ")
+    .sort((a, b) => a.match(/\d/) - b.match(/\d/))
+    .join(" ");
+}
+
+// console.log(order("is2 Thi1s T4est 3a")); //, "Thi1s is2 3a T4est")
+// console.log(order("4of Fo1r pe6ople g3ood th5e the2")); //, "Fo1r the2 g3ood 4of th5e pe6ople")
+// console.log(order(""), ""); //, "empty input should return empty string" )
+
+// DESCRIPTION:
+// Write a function named first_non_repeating_letter† that takes a string input, and returns the first character that is not repeated anywhere in the string.
+// For example, if given the input 'stress', the function should return 't', since the letter t only occurs once in the string, and occurs first in the string.
+// As an added challenge, upper- and lowercase letters are considered the same character, but the function should return the correct case for the initial letter. For example, the input 'sTreSS' should return 'T'.
+// If a string contains all repeating characters, it should return an empty string ("");
+// † Note: the function is called firstNonRepeatingLetter for historical reasons, but your function should handle any Unicode character.
+
+function firstNonRepeatingLetter(s) {
+  // Add your code here
+
+  let result = "";
+  const lowercaseS = s.toLowerCase();
+
+  const charCount = {};
+
+  for (const char of lowercaseS) {
+    if (char in charCount) {
+      charCount[char] += 1;
+    } else {
+      charCount[char] = 1;
+    }
+  }
+
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
+
+    if (charCount[char] === 1) {
+      result += char;
+    }
+  }
+
+  return result[0];
+}
+
+// console.log(firstNonRepeatingLetter("a")); //, 'a');
+// console.log(firstNonRepeatingLetter("stress")); //, 't');
+// console.log(firstNonRepeatingLetter("moonmen")); //, 'e');
+
+// DESCRIPTION:
+// Digital root is the recursive sum of all the digits in a number.
+// Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.
+// Examples
+//     16  -->  1 + 6 = 7
+//    942  -->  9 + 4 + 2 = 15  -->  1 + 5 = 6
+// 132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
+// 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
+
+function digitalRoot(n) {
+  // ...
+  if (n < 10) return n;
+
+  let sum = n
+    .toString()
+    .split("")
+    .map(Number)
+    .reduce((sum, num) => sum + num, 0);
+
+  return digitalRoot(sum);
+}
+
+// console.log(digitalRoot(16));
+// console.log(digitalRoot(942));
+// console.log(digitalRoot(132189));
+// console.log(digitalRoot(493193));
+
+// DESCRIPTION:
+// Find the missing letter
+// Write a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array.
+// You will always get an valid array. And it will be always exactly one letter be missing. The length of the array will always be at least 2.
+// The array will always contain letters in only one case.
+// Example:
+// ['a','b','c','d','f'] -> 'e'
+// ['O','Q','R','S'] -> 'P'
+// (Use the English alphabet with 26 letters!)
+// Have fun coding it and please don't forget to vote and rank this kata! :-)
+// I have also created other katas. Take a look if you enjoyed this kata!
+
+function findMissingLetter(array) {
+  const letter =
+    array[0] == array[0].toLowerCase()
+      ? "abcdefghijklmnopqrstuvwxyz"
+      : "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  const firstIndex = letter.indexOf(array[0]);
+  const lastIndex = letter.indexOf(array[array.length - 1]);
+  // return [letter[firstIndex], letter[lastIndex]];
+
+  const newStr = letter.slice(firstIndex, lastIndex + 1);
+
+  return newStr
+    .split("")
+    .filter((char) => !array.includes(char))
+    .join("");
+}
+
+// console.log(findMissingLetter(["a", "b", "c", "d", "f"]));
+// console.log(findMissingLetter(["O", "Q", "R", "S"]));
+
+// DESCRIPTION:
+// I will give you an integer. Give me back a shape that is as long and wide as the integer. The integer will be a whole number between 1 and 50.
+// Example
+// n = 3, so I expect a 3x3 square back just like below as a string:
+// +++
+// +++
+// +++
+
+function generateShape(integer) {
+  return ("+".repeat(integer) + "\n").repeat(integer);
+  let output = "";
+  for (let i = 0; i < integer; i++) {
+    let row = "";
+    for (let j = 0; j < integer; j++) {
+      row += "+";
+    }
+    output += row;
+  }
+  return output;
+}
+
+console.log(generateShape(3));
