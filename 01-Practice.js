@@ -2889,8 +2889,31 @@ function order(words) {
 
 function firstNonRepeatingLetter(s) {
   // Add your code here
+
+  let result = "";
+  const lowercaseS = s.toLowerCase();
+
+  const charCount = {};
+
+  for (const char of lowercaseS) {
+    if (char in charCount) {
+      charCount[char] += 1;
+    } else {
+      charCount[char] = 1;
+    }
+  }
+
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
+
+    if (charCount[char] === 1) {
+      result += char;
+    }
+  }
+
+  return result[0];
 }
 
-console.log(firstNonRepeatingLetter("a")); //, 'a');
-console.log(firstNonRepeatingLetter("stress")); //, 't');
-console.log(firstNonRepeatingLetter("moonmen")); //, 'e');
+// console.log(firstNonRepeatingLetter("a")); //, 'a');
+// console.log(firstNonRepeatingLetter("stress")); //, 't');
+// console.log(firstNonRepeatingLetter("moonmen")); //, 'e');
