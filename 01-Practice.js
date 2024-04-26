@@ -2879,3 +2879,18 @@ function order(words) {
 // console.log(order("is2 Thi1s T4est 3a")); //, "Thi1s is2 3a T4est")
 // console.log(order("4of Fo1r pe6ople g3ood th5e the2")); //, "Fo1r the2 g3ood 4of th5e pe6ople")
 // console.log(order(""), ""); //, "empty input should return empty string" )
+
+// DESCRIPTION:
+// Write a function named first_non_repeating_letter† that takes a string input, and returns the first character that is not repeated anywhere in the string.
+// For example, if given the input 'stress', the function should return 't', since the letter t only occurs once in the string, and occurs first in the string.
+// As an added challenge, upper- and lowercase letters are considered the same character, but the function should return the correct case for the initial letter. For example, the input 'sTreSS' should return 'T'.
+// If a string contains all repeating characters, it should return an empty string ("");
+// † Note: the function is called firstNonRepeatingLetter for historical reasons, but your function should handle any Unicode character.
+
+function firstNonRepeatingLetter(s) {
+  // Add your code here
+}
+
+console.log(firstNonRepeatingLetter("a")); //, 'a');
+console.log(firstNonRepeatingLetter("stress")); //, 't');
+console.log(firstNonRepeatingLetter("moonmen")); //, 'e');
