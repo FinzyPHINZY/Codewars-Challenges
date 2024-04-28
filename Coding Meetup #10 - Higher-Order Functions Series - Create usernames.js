@@ -25,3 +25,7 @@
 // Age is represented by a number which can be any positive integer.
 // Lastname will always be one upper-cased letter followed by dot, e.g. 'N.'
 // Order of the objects in the array should be maintained but order of the properties in the individual objects does not matter.
+
+function addUsername(list) {
+  // thank you for checking out the Coding Meetup kata :)
+}
