@@ -42,6 +42,14 @@ var list1 = [
 
 function addUsername(list) {
   // thank you for checking out the Coding Meetup kata :)
+  const year = new Date();
+  list.forEach((user) => {
+    user.username =
+      user.firstName.toLowerCase() +
+      user.lastName.toLowerCase()[0] +
+      (year.getFullYear() - user.age);
+  });
+  return list;
 }
 
 console.log(addUsername(list1));
