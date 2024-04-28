@@ -2999,4 +2999,58 @@ function generateShape(integer) {
   return output;
 }
 
-console.log(generateShape(3));
+// console.log(generateShape(3));
+
+// Your task in this kata is to implement a function that calculates the sum of the integers inside a string. For example, in the string "The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog", the sum of the integers is 3635.
+
+// Note: only positive integers will be tested.
+
+function sumOfIntegersInString(s) {
+  // const numbers = s.match(/\d+/g);
+  // if (!numbers) return 0;
+  // return numbers.map(Number).reduce((sum, num) => sum + num, 0);
+  const numbers = "0123456789";
+  let sum = 0;
+  let num = "";
+  for (const char of s) {
+    if (numbers.includes(char)) {
+      num += char;
+      console.log(num);
+    } else {
+      if (num !== "") {
+        sum += parseInt(num);
+        num = "";
+      }
+    }
+  }
+  return sum;
+}
+
+// PREP
+// P: Takes in a stirng
+// R: Returns the sum of all integers in the string.
+// E: Available above
+// P: Create a sum variable.
+// P: Create a num variable
+// P: Loop through input string
+// P: If  parseInt num isnt equal to NAN, add number to num variable
+// P: Else num variable to to sum
+
+// console.log(sumOfIntegersInString("12.4")); //, 16],
+// console.log(sumOfIntegersInString("h3ll0w0rld")); //, 3],
+// console.log(sumOfIntegersInString("2 + 3 = ")); //, 5],
+// console.log(
+//   sumOfIntegersInString(
+//     "Our company made approximately 1 million in gross revenue last quarter."
+//   )
+// ); //, 1],
+// console.log(
+//   sumOfIntegersInString("The Great Depression lasted from 1929 to 1939.")
+// ); //, 3868],
+// console.log(sumOfIntegersInString("Dogs are our best friends.")); //, 0],
+// console.log(sumOfIntegersInString("C4t5 are 4m4z1ng.")); //, 18],
+// console.log(
+//   sumOfIntegersInString(
+//     "The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog"
+//   )
+// ); //, 3635]
