@@ -3006,8 +3006,19 @@ function generateShape(integer) {
 // Note: only positive integers will be tested.
 
 function sumOfIntegersInString(s) {
-  return; // what the function name says
+  const sum = 0;
+  return sum;
 }
+
+// PREP
+// P: Takes in a stirng
+// R: Returns the sum of all integers in the string.
+// E: Available above
+// P: Create a sum variable.
+// P: Create a num variable
+// P: Loop through input string
+// P: If  parseInt num isnt equal to NAN, add number to num variable
+// P: Else num variable to to sum
 
 console.log(sumOfIntegersInString("12.4")); //, 16],
 console.log(sumOfIntegersInString("h3ll0w0rld")); //, 3],
