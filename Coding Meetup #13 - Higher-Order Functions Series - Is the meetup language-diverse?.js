@@ -22,3 +22,7 @@
 // The strings representing all three programming languages will always be formatted in the same way (e.g. 'JavaScript' will always be formatted with upper-case 'J' and 'S'.
 // The input array will always be valid and formatted as in the example above.
 // Each of the 3 programming languages will always be represented.
+
+function isLanguageDiverse(list) {
+  // thank you for checking out the Coding Meetup kata :)
+}
