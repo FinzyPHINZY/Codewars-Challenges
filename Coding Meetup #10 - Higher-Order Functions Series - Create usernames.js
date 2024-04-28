@@ -2,10 +2,24 @@
 
 // Given the following input array:
 
-// var list1 = [
-//   { firstName: 'Emily', lastName: 'N.', country: 'Ireland', continent: 'Europe', age: 30, language: 'Ruby' },
-//   { firstName: 'Nor', lastName: 'E.', country: 'Malaysia', continent: 'Asia', age: 20, language: 'Clojure' }
-// ];
+var list1 = [
+  {
+    firstName: "Emily",
+    lastName: "N.",
+    country: "Ireland",
+    continent: "Europe",
+    age: 30,
+    language: "Ruby",
+  },
+  {
+    firstName: "Nor",
+    lastName: "E.",
+    country: "Malaysia",
+    continent: "Asia",
+    age: 20,
+    language: "Clojure",
+  },
+];
 // write a function that adds the username property to each object in the input array:
 
 // [
@@ -29,3 +43,5 @@
 function addUsername(list) {
   // thank you for checking out the Coding Meetup kata :)
 }
+
+console.log(addUsername(list1));
