@@ -24,8 +24,18 @@
 // Each of the 3 programming languages will always be represented.
 
 function isLanguageDiverse(list) {
-  // thank you for checking out the Coding Meetup kata :)
+  const js = list.filter((e) => e.language === "JavaScript").length;
+  const ruby = list.filter((e) => e.language === "Ruby").length;
+  const python = list.filter((e) => e.language === "Python").length;
+
+  return Math.max(js, ruby, python) <= Math.min(js, ruby, python) * 2
+    ? true
+    : false;
 }
+// PREP
+// P: takes in an array of objects containiing information about developers
+// R: returns the language count
+// P:n
 
 var list1 = [
   {
