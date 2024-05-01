@@ -8,7 +8,11 @@
 // 6815 -> '68-1-5'
 
 function dashatize(num) {
-  return "";
+  return num
+    .toString()
+    .replace(/([13579])/g, "-$1-")
+    .replace(/--/g, "-")
+    .replace(/^-|-$/g, "");
 }
 
 console.log(dashatize(274)); // "2-7-4");
