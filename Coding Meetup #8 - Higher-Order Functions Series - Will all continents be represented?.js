@@ -22,8 +22,22 @@
 // The input array and continent names will always be valid and formatted as in the list above for example 'Africa' will always start with upper-case 'A'.
 
 function allContinents(list) {
-  // thank you for checking out the Coding Meetup kata :)
+  const continents = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
+
+  const continentData = [];
+  list.forEach((developer) => {
+    const continent = developer.continent;
+    if (!continentData.includes(continent)) continentData.push(continent);
+  });
+  return continents.every((continent) => continentData.includes(continent));
 }
+
+// PREP:
+// P: takes in an array of objects containing information on developers attending a coding meetup
+// R: returns a boolean indicating whether all continents  specified above are represented by any developer
+// E: Line 87
+// P: create an object containing each continent and number of participants.
+// P: loop through continent object and check for each continent using the in method.
 
 var list1 = [
   {
