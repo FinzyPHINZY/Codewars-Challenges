@@ -20,3 +20,7 @@
 // Notes:
 
 // The input array and continent names will always be valid and formatted as in the list above for example 'Africa' will always start with upper-case 'A'.
+
+function allContinents(list) {
+  // thank you for checking out the Coding Meetup kata :)
+}
