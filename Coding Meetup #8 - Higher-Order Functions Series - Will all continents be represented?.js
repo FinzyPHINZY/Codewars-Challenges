@@ -23,6 +23,22 @@
 
 function allContinents(list) {
   const continents = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
+  const continentData = {};
+  list.forEach((developer) => {
+    const continent = developer.continent;
+    if (continentData[continent]) {
+      continentData[continent] += 1;
+    } else {
+      continentData[continent] = 1;
+    }
+  });
+
+  return continents.every((continent) => continent in continentData);
+}
+
+function allContinents(list) {
+  // thank you for checking out the Coding Meetup kata :)
+  const continents = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
   const continentData = [];
   list.forEach((developer) => {
