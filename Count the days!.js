@@ -13,3 +13,6 @@
 function countDays(d) {
   //have fun with coding! :)
 }
+
+console.log(countDays(new Date("February 28, 2016"))); //, "The day is in the past!");
+console.log(countDays(new Date())); //, "Today is the day!");
