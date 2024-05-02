@@ -13,3 +13,10 @@
 function whatCentury(year) {
   // code must go here
 }
+
+console.log(whatCentury("1999")); // "20th"
+console.log(whatCentury("2011")); // "21st"
+console.log(whatCentury("2154")); // "22nd"
+console.log(whatCentury("2259")); // "23rd"
+console.log(whatCentury("1124")); // "12th"
+console.log(whatCentury("2000")); // "20th"
