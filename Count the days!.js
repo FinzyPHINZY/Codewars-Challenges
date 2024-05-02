@@ -11,7 +11,32 @@
 // Else, return "x days"
 
 function countDays(d) {
-  //have fun with coding! :)
+  //have fun with coding! :
+  // Get today's date
+  const today = new Date();
+
+  // Round the time portion of the dates to compare only the dates
+  const roundedToday = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate()
+  );
+  const roundedEventDate = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+
+  // Calculate the difference in milliseconds between the two dates
+  const difference = roundedEventDate.getTime() - roundedToday.getTime();
+
+  // Convert milliseconds to days and round it
+  const daysDifference = Math.round(difference / (1000 * 60 * 60 * 24));
+
+  // Check conditions and return appropriate message
+  if (daysDifference < 0) {
+    return "The day is in the past!";
+  } else if (daysDifference === 0) {
+    return "Today is the day!";
+  } else {
+    return `${daysDifference} days`;
+  }
 }
 
 console.log(countDays(new Date("February 28, 2016"))); //, "The day is in the past!");
