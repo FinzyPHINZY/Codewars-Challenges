@@ -20,3 +20,19 @@ console.log(whatCentury("2154")); // "22nd"
 console.log(whatCentury("2259")); // "23rd"
 console.log(whatCentury("1124")); // "12th"
 console.log(whatCentury("2000")); // "20th"
+const number = Math.ceil(parseInt(year) / 100);
+
+if (number % 100 >= 11 && number % 100 <= 13) {
+  return number + "th";
+}
+
+switch (number % 10) {
+  case 1:
+    return number + "st";
+  case 2:
+    return number + "nd";
+  case 3:
+    return number + "rd";
+  default:
+    return number + "th";
+}
