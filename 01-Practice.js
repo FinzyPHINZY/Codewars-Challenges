@@ -3071,6 +3071,37 @@ function sumOfIntegersInString(s) {
 // The input array will always be valid and formatted as in the example above.
 // Each of the 3 programming languages will always be represented.
 
+// function isLanguageDiverse(list) {
+//   const languageCount = {};
+//   list.forEach((dev) => {
+//     const language = dev.language;
+
+//     if (languageCount[language]) {
+//       languageCount[language] += 1;
+//     } else {
+//       languageCount[language] = 1;
+//     }
+//   });
+
+//   const max = Math.max(...Object.values(languageCount));
+//   const min = Math.min(...Object.values(languageCount));
+
+//   // two times more than lowest. return true
+//   //
+//   return max <= 2 * min;
+// }
+
+function isLanguageDiverse(list) {
+  const js = list.filter((dev) => dev.language === "JavaScript").length;
+  const ruby = list.filter((dev) => dev.language === "Ruby").length;
+  const python = list.filter((dev) => dev.language === "Python").length;
+
+  const max = Math.max(js, ruby, python);
+  const min = Math.min(js, python, ruby);
+
+  return max <= min * 2;
+}
+
 var list1 = [
   {
     firstName: "Daniel",
@@ -3227,7 +3258,7 @@ var list4 = [
   },
 ];
 
-console.log(isLanguageDiverse(list1)); //, false);
+// console.log(isLanguageDiverse(list1)); //, false);
 // console.log(isLanguageDiverse(list2)); //, false);
 // console.log(isLanguageDiverse(list3)); //, true)
 // console.log(isLanguageDiverse(list4)); //, true);
