@@ -9,3 +9,7 @@
 // "2259" --> "23rd"
 // "1124" --> "12th"
 // "2000" --> "20th"
+
+function whatCentury(year) {
+  // code must go here
+}
