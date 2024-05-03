@@ -10,7 +10,9 @@
 
 // 8675309 => [8,6,7,5,3,0,9]
 
-function digitize(n) {}
+function digitize(n) {
+  return n.toString().split("").map(Number);
+}
 
 console.log(digitize(123)); //, [1,2,3])
 console.log(digitize(1)); //, [1])
