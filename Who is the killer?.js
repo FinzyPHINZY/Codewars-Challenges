@@ -17,7 +17,17 @@
 
 function killer(suspectInfo, dead) {
   //your code here...
+  for (const name in suspectInfo) {
+    if (dead.every((deadPerson) => suspectInfo[name].includes(deadPerson))) {
+      return name;
+    }
+  }
 }
+
+// Prep:
+// P: This function takes in an object containing name and an array of people seen
+// R: It returns the name of the person that has every dead person in his list
+// P: Loop through the suspectinfo log the names of the people in the lit
 
 console.log(
   killer(
