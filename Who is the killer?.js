@@ -14,3 +14,7 @@
 
 // ['Lucas', 'Bill']
 // return the name of the one killer, in our case 'James' because he is the only person that saw both 'Lucas' and 'Bill'
+
+function killer(suspectInfo, dead) {
+  //your code here...
+}
