@@ -3304,8 +3304,11 @@ function toCsvText(array) {
 // * Input: [5,3,2,1,4], output = [5,3,2,4]
 // * Input: [2,2,1,2,1], output = [2,2,2,1]
 
-function dullMuseum(arr) {}
+function dullMuseum(arr) {
+  const min = arr.indexOf(Math.min(...arr));
+  return arr.filter((num, i) => i !== min);
+}
 
-console.log(dullMuseum([1, 2, 3, 4, 5]));
-console.log(dullMuseum([5, 3, 2, 1, 4]));
-console.log(dullMuseum([2, 2, 1, 2, 1]));
+// console.log(dullMuseum([1, 2, 3, 4, 5]));
+// console.log(dullMuseum([5, 3, 2, 1, 4]));
+// console.log(dullMuseum([2, 2, 1, 2, 1]));
