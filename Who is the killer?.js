@@ -24,11 +24,6 @@ function killer(suspectInfo, dead) {
   }
 }
 
-// Prep:
-// P: This function takes in an object containing name and an array of people seen
-// R: It returns the name of the person that has every dead person in his list
-// P: Loop through the suspectinfo log the names of the people in the lit
-
 console.log(
   killer(
     {
