@@ -3330,17 +3330,21 @@ function dullMuseum(arr) {
 
 function killer(suspectInfo, dead) {
   //your code here...
+  for (const name in suspectInfo) {
+    if (dead.every((deadPerson) => suspectInfo[name].includes(deadPerson)))
+      return name;
+  }
 }
 
-console.log(
-  killer(
-    {
-      James: ["Jacob", "Bill", "Lucas"],
-      Johnny: ["David", "Kyle", "Lucas"],
-      Peter: ["Lucy", "Kyle"],
-    },
-    ["Lucas", "Bill"]
-  )
-); // "James"
+// console.log(
+//   killer(
+//     {
+//       James: ["Jacob", "Bill", "Lucas"],
+//       Johnny: ["David", "Kyle", "Lucas"],
+//       Peter: ["Lucy", "Kyle"],
+//     },
+//     ["Lucas", "Bill"]
+//   )
+// ); // "James"
 
-console.log(killer({ Brad: [], Megan: ["Ben", "Kevin"], Finn: [] }, ["Ben"])); //"Megan"
+// console.log(killer({ Brad: [], Megan: ["Ben", "Kevin"], Finn: [] }, ["Ben"])); //"Megan"
