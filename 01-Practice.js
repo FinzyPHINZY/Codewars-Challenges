@@ -3354,7 +3354,20 @@ function killer(suspectInfo, dead) {
 // Note: only positive integers will be tested.
 
 function sumOfIntegersInString(s) {
-  return; // what the function name says
+  const numbers = "1234567890";
+  let sum = 0;
+
+  let res = "";
+  for (const char of s) {
+    if (numbers.includes(char)) {
+      res += char;
+      console.log(res);
+    } else {
+      sum = sum + parseInt(res);
+      res = "";
+    }
+  }
+  return sum;
 }
 
 console.log(sumOfIntegersInString("12.4")); // 16
