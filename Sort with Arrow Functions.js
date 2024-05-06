@@ -8,3 +8,7 @@
 // Input will be a valid array with People objects containing an Age and Name
 // Output
 // Output will be a valid sorted array with People objects sorted by Age in ascending order
+
+var OrderPeople = function (people) {
+  // return people.sort( => ); //complete this function
+};
