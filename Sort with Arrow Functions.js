@@ -10,7 +10,7 @@
 // Output will be a valid sorted array with People objects sorted by Age in ascending order
 
 var OrderPeople = function (people) {
-  // return people.sort( => ); //complete this function
+  return people.sort((a, b) => a.age - b.age);
 };
 
 console.log(
