@@ -22,11 +22,11 @@
 // The values will always be numbers, and the properties will always exist.
 
 function sortList(sortBy, list) {
-  return; //sorted list
+  return list.sort((a, b) => b[sortBy] - a[sortBy]);
 }
 
 console.log(
-  sortList([
+  sortList("a", [
     { a: 1, b: 3 },
     { a: 3, b: 2 },
     { a: 2, b: 40 },
