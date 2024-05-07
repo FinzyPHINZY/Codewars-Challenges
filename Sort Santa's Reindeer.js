@@ -36,7 +36,17 @@
 // ]
 
 function sortReindeer(reindeerNames) {
-  return;
+  return reindeerNames.sort((a, b) => {
+    const lastNameA = a.split(" ")[1];
+    const lastNameB = b.split(" ")[1];
+    if (lastNameA < lastNameB) {
+      return -1;
+    } else if (lastNameA > lastNameB) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
 }
 
 let input = [
@@ -59,4 +69,4 @@ let output = [
   "Dancer Moore",
   "Dasher Tonoyan",
 ];
-console.log(sortReindeer(input), output);
+console.log(sortReindeer(input)); //, output);
