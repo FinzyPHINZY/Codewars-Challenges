@@ -3412,7 +3412,27 @@ const sortme = function (names) {
   return names.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 };
 
-console.log(sortme(["Hello", "there", "I'm", "fine"])); //, ["fine","Hello","I'm","there",]);
-console.log(sortme(["C", "d", "a", "B"])); //, ["a", "B", "C", "d"]);
-console.log(sortme(["CodeWars"])); //, ["CodeWars"]);
-console.log(sortme([])); //, []);
+// console.log(sortme(["Hello", "there", "I'm", "fine"])); //, ["fine","Hello","I'm","there",]);
+// console.log(sortme(["C", "d", "a", "B"])); //, ["a", "B", "C", "d"]);
+// console.log(sortme(["CodeWars"])); //, ["CodeWars"]);
+// console.log(sortme([])); //, []);
+
+// Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
+
+// * url = "http://github.com/carbonfive/raygun" -> domain name = "github"
+// * url = "http://www.zombie-bites.com"         -> domain name = "zombie-bites"
+// * url = "https://www.cnet.com"                -> domain name = cnet"
+
+function domainName(url) {
+  //your code here
+  return url
+    .replace("https://", "")
+    .replace("http://", "")
+    .replace("www.", "")
+    .split(".")[0];
+}
+
+console.log(domainName("http://google.com")); //, "google");
+console.log(domainName("http://google.co.jp")); // , "google");
+console.log(domainName("www.xakep.ru")); //, "xakep");
+console.log(domainName("https://youtube.com")); //, "youtube");
