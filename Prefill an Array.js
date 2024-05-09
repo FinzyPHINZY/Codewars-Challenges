@@ -25,3 +25,9 @@
 //       --> throws TypeError with message "xyz is invalid"
 
 function prefill(n, v) {}
+
+console.log(prefill(3, 1)); //, [1,1,1]);
+console.log(prefill(2, "abc")); //, ['abc','abc']);
+console.log(prefill("1", 1)); //, [1]);
+console.log(prefill(3, prefill(2, "2d"))); //, [['2d','2d'],['2d','2d'],['2d','2d']]);
+console.log(prefill("xyz")); //, 1)
