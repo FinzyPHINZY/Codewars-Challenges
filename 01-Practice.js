@@ -3452,7 +3452,8 @@ function domainName(url) {
 // "1,2"  =>  NULL
 
 function array(string) {
-  // TODO
+  string = string.split(",");
+  return string.length < 3 ? null : string.slice(1, string.length - 1);
 }
 
 console.log(array("")); //, null);
