@@ -15,7 +15,32 @@
 // There will always be a missing element and its length will be always between the given arrays.
 
 function getLengthOfMissingArray(arrayOfArrays) {
-  return arrayOfArrays;
+  if (!arrayOfArrays || arrayOfArrays.length === 0) {
+    return 0;
+  }
+  for (let i = 0; i < arrayOfArrays.length; i++) {
+    if (!arrayOfArrays[i] || arrayOfArrays[i].length === 0) {
+      return 0;
+    }
+  }
+  arrayOfArrays.forEach((arr) => {
+    if (!arr) {
+      return null;
+    }
+  });
+
+  arrayOfArrays = arrayOfArrays.sort((a, b) => a.length - b.length);
+
+  let arraysLength = arrayOfArrays.map((arr) => arr.length);
+  //   return arraysLength;
+
+  const nums = [];
+
+  for (let i = arraysLength[0]; i <= Math.max(...arraysLength); i++) {
+    nums.push(i);
+  }
+
+  return Number(nums.filter((num) => !arraysLength.includes(num)).join(""));
 }
 
 console.log(
@@ -35,3 +60,10 @@ console.log(
   ])
 ); //, 5);
 console.log(getLengthOfMissingArray([])); //, 0);
+console.log(
+  getLengthOfMissingArray([[], [4], [0, 3], [4, 3, 0, 0], [3, 3, 0, 2, 2]])
+);
+
+//Prep
+
+// P: I NEED TO LOOP THROUGH THE ARGUEMENT AND RETURN NULL IF ANY ARRAY IN THE ARGUEMENT  IS EMPTY OR [] IS NULL.
