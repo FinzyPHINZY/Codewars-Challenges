@@ -13,3 +13,7 @@
 
 // When an array in the array is null or empty, the method should return 0 too!
 // There will always be a missing element and its length will be always between the given arrays.
+
+function getLengthOfMissingArray(arrayOfArrays) {
+  return 0;
+}
