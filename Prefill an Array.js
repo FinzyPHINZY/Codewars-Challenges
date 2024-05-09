@@ -23,3 +23,5 @@
 
 //     prefill("xyz", 1)
 //       --> throws TypeError with message "xyz is invalid"
+
+function prefill(n, v) {}
