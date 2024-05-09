@@ -3408,7 +3408,7 @@ function sumOfIntegersInString(s) {
 // ["Hello", "there", "I'm", "fine"]  -->  ["fine", "Hello", "I'm", "there"]
 // ["C", "d", "a", "B"])              -->  ["a", "B", "C", "d"]
 
-const sortme = function (names) {
+const sortmea = function (names) {
   return names.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 };
 
@@ -3432,7 +3432,128 @@ function domainName(url) {
     .split(".")[0];
 }
 
-console.log(domainName("http://google.com")); //, "google");
-console.log(domainName("http://google.co.jp")); // , "google");
-console.log(domainName("www.xakep.ru")); //, "xakep");
-console.log(domainName("https://youtube.com")); //, "youtube");
+// console.log(domainName("http://google.com")); //, "google");
+// console.log(domainName("http://google.co.jp")); // , "google");
+// console.log(domainName("www.xakep.ru")); //, "xakep");
+// console.log(domainName("https://youtube.com")); //, "youtube");
+
+// DESCRIPTION:
+// This is a spin off of my first kata.
+// You are given a string containing a sequence of character sequences separated by commas.
+// Write a function which returns a new string containing the same character sequences except the first and the last ones but this time separated by spaces.
+// If the input string is empty or the removal of the first and last items would cause the resulting string to be empty, return an empty value (represented as a generic value NULL in the examples below).
+// Examples
+// "1,2,3"      =>  "2"
+// "1,2,3,4"    =>  "2 3"
+// "1,2,3,4,5"  =>  "2 3 4"
+
+// ""     =>  NULL
+// "1"    =>  NULL
+// "1,2"  =>  NULL
+
+function array(string) {
+  string = string.split(",");
+  return string.length < 3 ? null : string.slice(1, string.length - 1);
+}
+
+// console.log(array("")); //, null);
+// console.log(array("1")); //, null);
+// console.log(array("A1,B2")); //, null);
+// console.log(array("1,2,3")); //, "2");
+// console.log(array("1,2,3,4")); //, "2 3");
+// console.log(array("A1,B2,C3,D4,E5")); //, "B2 C3 D4");
+// console.log(array("A,1,23,456,78,9,Z")); //, "1 23 456 78 9");
+
+("use strict");
+
+// Happy Holidays fellow Code Warriors!
+// Now, Dasher! Now, Dancer! Now, Prancer, and Vixen! On, Comet! On, Cupid! On, Donder and Blitzen! That's the order Santa wanted his reindeer...right? What do you mean he wants them in order by their last names!? Looks like we need your help Code Warrior!
+
+// Sort Santa's Reindeer
+// Write a function that accepts a sequence of Reindeer names, and returns a sequence with the Reindeer names sorted by their last names.
+
+// Notes:
+// It's guaranteed that each string is composed of two words
+// In case of two identical last names, keep the original order
+// Examples
+// For this input:
+
+// [
+//   "Dasher Tonoyan",
+//   "Dancer Moore",
+//   "Prancer Chua",
+//   "Vixen Hall",
+//   "Comet Karavani",
+//   "Cupid Foroutan",
+//   "Donder Jonker",
+//   "Blitzen Claus"
+// ]
+// You should return this output:
+
+// [
+//   "Prancer Chua",
+//   "Blitzen Claus",
+//   "Cupid Foroutan",
+//   "Vixen Hall",
+//   "Donder Jonker",
+//   "Comet Karavani",
+//   "Dancer Moore",
+//   "Dasher Tonoyan",
+// ]
+
+function sortReindeer(reindeerNames) {
+  return reindeerNames.sort((a, b) => {
+    const lastNameA = a.split(" ")[1];
+    const lastNameB = b.split(" ")[1];
+
+    if (lastNameA < lastNameB) {
+      return -1;
+    } else if (lastNameA > lastNameB) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+}
+
+let reindeer = [
+  "Dasher Tonoyan",
+  "Dancer Moore",
+  "Prancer Chua",
+  "Vixen Hall",
+  "Comet Karavani",
+  "Cupid Foroutan",
+  "Donder Jonker",
+  "Blitzen Claus",
+];
+// let output = [
+//   "Prancer Chua",
+//   "Blitzen Claus",
+//   "Cupid Foroutan",
+//   "Vixen Hall",
+//   "Donder Jonker",
+//   "Comet Karavani",
+//   "Dancer Moore",
+//   "Dasher Tonoyan",
+// ];
+// console.log(sortReindeer(reindeer)); //, output);
+
+// Sort the given array of strings in alphabetical order, case insensitive. For example:
+
+// ["Hello", "there", "I'm", "fine"]  -->  ["fine", "Hello", "I'm", "there"]
+// ["C", "d", "a", "B"])              -->  ["a", "B", "C", "d"]
+
+const sortme = function (names) {
+  return names.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  return names.sort((a, b) => a.toLowerCase() - b.toLowerCase());
+};
+
+// console.log(sortme(["Hello", "there", "I'm", "fine"]), [
+//   "fine",
+//   "Hello",
+//   "I'm",
+//   "there",
+// ]);
+// console.log(sortme(["C", "d", "a", "B"]), ["a", "B", "C", "d"]);
+// console.log(sortme(["CodeWars"]), ["CodeWars"]);
+// console.log(sortme([]), []);
