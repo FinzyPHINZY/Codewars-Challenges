@@ -19,3 +19,7 @@
 
 // [1,1,7,7,3] # should return [2,14,3]
 // [-5,-5,7,7,12,0] # should return [-10,14,12,0]
+
+function sumConsecutives(s) {
+  // your code
+}
