@@ -15,3 +15,9 @@
 function numberOfPairs(gloves) {
   //My hands are freezing
 }
+
+console.log(numberOfPairs(["red", "red"]));
+console.log(numberOfPairs(["red", "green", "blue"]));
+console.log(
+  numberOfPairs(["gray", "black", "purple", "purple", "gray", "black"])
+);
