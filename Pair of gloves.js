@@ -14,6 +14,26 @@
 
 function numberOfPairs(gloves) {
   //My hands are freezing
+  const gloveCount = {};
+  let pairs = 0;
+
+  gloves.forEach((glove) => {
+    if (gloveCount[glove]) {
+      gloveCount[glove] += 1;
+    } else {
+      gloveCount[glove] = 1;
+    }
+  });
+
+  for (const glove in gloveCount) {
+    const GLOVE = gloveCount[glove];
+
+    if (GLOVE > 1) {
+      pairs += Math.floor(GLOVE / 2);
+    }
+  }
+
+  return pairs;
 }
 
 console.log(numberOfPairs(["red", "red"]));
