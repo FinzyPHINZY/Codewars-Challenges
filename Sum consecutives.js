@@ -21,10 +21,31 @@
 // [-5,-5,7,7,12,0] # should return [-10,14,12,0]
 
 function sumConsecutives(s) {
-  // your code
+  const sumArr = [];
+  let sum = 0;
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === s[i - 1]) {
+      sum += s[i];
+    } else {
+      sumArr.push(sum);
+      sum = s[i];
+    }
+  }
+
+  sumArr.push(sum);
+
+  return sumArr.slice(1);
 }
 
-console.log(sumConsecutives([1, 4, 4, 4, 0, 4, 3, 3, 1])); //,[1,12,0,4,6,1], "on list [1,4,4,0,4,3,3,1] you get ")
-console.log(sumConsecutives([1, 1, 7, 7, 3])); //,[2,14,3], "on list [1,1,7,7,3] you get ")
-console.log(sumConsecutives([-5, -5, 7, 7, 12, 0])); //,[-10,14,12,0], "on list [-5,-5,7,7,12,0] you get ")
-console.log(sumConsecutives([3, 3, 3, 3, 1])); //,[12, 1], "on list [3,3,3,3,1] you get " )
+("use strict");
+
+console.log(sumConsecutives([1, 4, 4, 4, 0, 4, 3, 3, 1])); // [1,12,0,4,6,1]
+console.log(sumConsecutives([1, 1, 7, 7, 3])); // [2,14,3]
+console.log(sumConsecutives([-5, -5, 7, 7, 12, 0])); // [-10,14,12,0]
+console.log(sumConsecutives([3, 3, 3, 3, 1])); // [12, 1]
+
+// Uses reduce() to iterate over the array s.
+// Checks if the current number is the same as the previous one.
+// If it is, it adds the current number to the last element of the accumulated array.
+// If not, it simply concatenates the current number to the accumulated array.
+// Returns the resulting array.
