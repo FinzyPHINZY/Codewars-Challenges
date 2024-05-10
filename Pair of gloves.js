@@ -11,3 +11,7 @@
 
 // input = ["red", "red", "red", "red", "red", "red"]
 // result = 3 (3 red pairs)
+
+function numberOfPairs(gloves) {
+  //My hands are freezing
+}
