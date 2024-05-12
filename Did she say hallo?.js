@@ -5,14 +5,23 @@
 // function should be case insensitive to pass the tests
 
 function validateHello(greetings) {
-  // res =  //regex here/.test(greetings)
-  // return res
+  greetings = greetings.toLowerCase();
+  const helloWords = [
+    "hello",
+    "ciao",
+    "salut",
+    "hallo",
+    "hola",
+    "ahoj",
+    "czesc",
+  ];
+  return helloWords.some((word) => greetings.includes(word));
 }
 
-// describe("Tests", () => {
-//     it("test", () => {
-//   Test.assertEquals(validateHello('ahoj'), true);
-
-//   Test.assertEquals(validateHello('meh'), false);
-//     });
-//   });
+console.log(validateHello("ahoj")); //, true);
+console.log(validateHello("meh")); // false);
+console.log(
+  validateHello(
+    "yoU? la HeLLo CZEsc, PAsa ARe Hello tSchUSs HastA ciaO haStA sAlut! tReS? hoW. tres, TscHUsS. dOING. trES wie Ciao: tsCHuSS."
+  )
+);
