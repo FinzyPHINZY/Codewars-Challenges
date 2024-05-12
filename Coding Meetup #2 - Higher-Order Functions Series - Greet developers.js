@@ -30,3 +30,7 @@
 
 // The order of the properties in the objects does not matter (except in COBOL).
 // The input array will always be valid and formatted as in the example above.
+
+function greetDevelopers(list) {
+  // thank you for checking out my kata :)
+}
