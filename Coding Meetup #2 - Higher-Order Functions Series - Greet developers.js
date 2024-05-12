@@ -32,7 +32,13 @@
 // The input array will always be valid and formatted as in the example above.
 
 function greetDevelopers(list) {
-  // thank you for checking out my kata :)
+  list.forEach((developer) => {
+    return (developer[
+      greeting
+    ] = `Hi ${developer.firstName}, what do you like the most about ${developer.language}`);
+  });
+
+  return list;
 }
 
 const list1 = [
