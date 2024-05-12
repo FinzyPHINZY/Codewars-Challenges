@@ -33,9 +33,7 @@
 
 function greetDevelopers(list) {
   list.forEach((developer) => {
-    return (developer[
-      greeting
-    ] = `Hi ${developer.firstName}, what do you like the most about ${developer.language}`);
+    return (developer.greeting = `Hi ${developer.firstName}, what do you like the most about ${developer.language}`);
   });
 
   return list;
