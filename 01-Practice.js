@@ -3593,14 +3593,50 @@ function test(num) {
 // Once you have counted all of your mini wins, compare that number to the other input provided (win). If your total is more than or equal to (win), return 'Winner!'. Else return 'Loser!'.
 // All inputs will be in the correct format. Strings on tickets are not always the same length.
 
-// function bingo(ticket, win){
+function bingo(ticket, win) {
+  let count = 0;
+  return ticket.forEach((arr) => {
+    arr[0] = arr[0].split(" ").charCodeAt();
+    if (arr[0].includes(arr[1]));
+  });
+}
 
-// }
+console.log(
+  bingo(
+    [
+      ["ABC", 65],
+      ["HGR", 74],
+      ["BYHT", 74],
+    ],
+    2
+  )
+); //'Loser!');
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     1
+//   )
+// ); //'Winner!');
+// console.log(
+//   bingo(
+//     [
+//       ["HGTYRE", 74],
+//       ["BE", 66],
+//       ["JKTY", 74],
+//     ],
+//     3
+//   )
+// ); //, 'Loser!');
 
-// describe("Tests",()=>{
-//   it('Fixed tests', ()=>{
-//     assert.strictEqual(bingo([['ABC', 65], ['HGR', 74], ['BYHT', 74]], 2), 'Loser!');
-//     assert.strictEqual(bingo([['ABC', 65], ['HGR', 74], ['BYHT', 74]], 1), 'Winner!');
-//     assert.strictEqual(bingo([['HGTYRE', 74], ['BE', 66], ['JKTY', 74]], 3), 'Loser!');
-//   });
-// });
+// Task
+// Implement a function which accepts 2 arguments: string and separator.
+// The expected algorithm: split the string into words by spaces, split each word into separate characters and join them back with the specified separator, join all the resulting "words" back into a sentence with spaces.
+// For example:
+// splitAndMerge("My name is John", " ")  ==  "M y n a m e i s J o h n"
+// splitAndMerge("My name is John", "-")  ==  "M-y n-a-m-e i-s J-o-h-n"
+// splitAndMerge("Hello World!", ".")     ==  "H.e.l.l.o W.o.r.l.d.!"
+// splitAndMerge("Hello World!", ",")     ==  "H,e,l,l,o W,o,r,l,d,!"
