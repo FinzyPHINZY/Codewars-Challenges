@@ -3583,3 +3583,88 @@ function test(num) {
 }
 
 // console.log(test(10)); //, 23));
+
+// DESCRIPTION:
+// Time to win the lottery!
+// Given a lottery ticket (ticket), represented by an array of 2-value arrays, you must find out if you've won the jackpot.
+// Example ticket:
+// [ [ 'ABC', 65 ], [ 'HGR', 74 ], [ 'BYHT', 74 ] ]
+// To do this, you must first count the 'mini-wins' on your ticket. Each subarray has both a string and a number within it. If the character code of any of the characters in the string matches the number, you get a mini win. Note you can only have one mini win per sub array.
+// // Once you have counted all of your mini wins, compare that number to the other input provided (win). If your total is more than or equal to (win), return 'Winner!'. Else return 'Loser!'.
+// // All inputs will be in the correct format. Strings on tickets are not always the same length.
+
+// function bingo(ticket, win) {
+//   let count = 0;
+//   return ticket.forEach((arr) => {
+//     arr[0] = arr[0].split(" ").charCodeAt();
+//     if (arr[0].includes(arr[1]));
+//   });
+// }
+
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     2
+//   )
+// ); //'Loser!');
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     1
+//   )
+// ); //'Winner!');
+// console.log(
+//   bingo(
+//     [
+//       ["HGTYRE", 74],
+//       ["BE", 66],
+//       ["JKTY", 74],
+//     ],
+//     3
+//   )
+// ); //, 'Loser!');
+
+// Task
+// Implement a function which accepts 2 arguments: string and separator.
+// The expected algorithm: split the string into words by spaces, split each word into separate characters and join them back with the specified separator, join all the resulting "words" back into a sentence with spaces.
+function splitAndMerge(greet, sep) {
+  return greet.split(" ").join(sep);
+}
+// For example:
+// console.log(splitAndMerge("My name is John", " ")); // ==  "M y n a m e i s J o h n"
+// console.log(splitAndMerge("My name is John", "-")); // ==  "M-y n-a-m-e i-s J-o-h-n"
+// console.log(splitAndMerge("Hello World!", ".")); // ==  "H.e.l.l.o W.o.r.l.d.!"
+// console.log(splitAndMerge("Hello World!", ",")); // ==  "H,e,l,l,o W,o,r,l,d,!"
+
+// DESCRIPTION:
+// Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
+// For example (Input --> Output):
+// 39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit)
+// 999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2)
+// 4 --> 0 (because 4 is already a one-digit number)
+
+function persistence(num) {
+  //code me
+  let count = 0;
+  while (num > 10) {
+    count++;
+    num = num
+      .toString()
+      .split("")
+      .map(Number)
+      .reduce((sum, num) => sum * num, 1);
+  }
+
+  return count;
+}
+
+// console.log(persistence(39));
+// console.log(persistence(999));
