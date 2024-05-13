@@ -3590,16 +3590,16 @@ function test(num) {
 // Example ticket:
 // [ [ 'ABC', 65 ], [ 'HGR', 74 ], [ 'BYHT', 74 ] ]
 // To do this, you must first count the 'mini-wins' on your ticket. Each subarray has both a string and a number within it. If the character code of any of the characters in the string matches the number, you get a mini win. Note you can only have one mini win per sub array.
-// Once you have counted all of your mini wins, compare that number to the other input provided (win). If your total is more than or equal to (win), return 'Winner!'. Else return 'Loser!'.
-// All inputs will be in the correct format. Strings on tickets are not always the same length.
+// // Once you have counted all of your mini wins, compare that number to the other input provided (win). If your total is more than or equal to (win), return 'Winner!'. Else return 'Loser!'.
+// // All inputs will be in the correct format. Strings on tickets are not always the same length.
 
-function bingo(ticket, win) {
-  let count = 0;
-  return ticket.forEach((arr) => {
-    arr[0] = arr[0].split(" ").charCodeAt();
-    if (arr[0].includes(arr[1]));
-  });
-}
+// function bingo(ticket, win) {
+//   let count = 0;
+//   return ticket.forEach((arr) => {
+//     arr[0] = arr[0].split(" ").charCodeAt();
+//     if (arr[0].includes(arr[1]));
+//   });
+// }
 
 console.log(
   bingo(
@@ -3635,8 +3635,11 @@ console.log(
 // Task
 // Implement a function which accepts 2 arguments: string and separator.
 // The expected algorithm: split the string into words by spaces, split each word into separate characters and join them back with the specified separator, join all the resulting "words" back into a sentence with spaces.
+function splitAndMerge(greet, sep) {
+  return greet.split(" ").join(sep);
+}
 // For example:
-// splitAndMerge("My name is John", " ")  ==  "M y n a m e i s J o h n"
-// splitAndMerge("My name is John", "-")  ==  "M-y n-a-m-e i-s J-o-h-n"
-// splitAndMerge("Hello World!", ".")     ==  "H.e.l.l.o W.o.r.l.d.!"
-// splitAndMerge("Hello World!", ",")     ==  "H,e,l,l,o W,o,r,l,d,!"
+console.log(splitAndMerge("My name is John", " ")); // ==  "M y n a m e i s J o h n"
+console.log(splitAndMerge("My name is John", "-")); // ==  "M-y n-a-m-e i-s J-o-h-n"
+console.log(splitAndMerge("Hello World!", ".")); // ==  "H.e.l.l.o W.o.r.l.d.!"
+console.log(splitAndMerge("Hello World!", ",")); // ==  "H,e,l,l,o W,o,r,l,d,!"
