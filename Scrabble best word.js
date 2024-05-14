@@ -12,14 +12,39 @@
 // You must return the index of the shortest word which realize the highest score.
 // If the length and the score are the same for two elements, return the index of the first one.
 
-function getBestWord(points, words) {
-  //Return the shortest word realizing the best score
-}
-
 var points = [
   1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 10, 1, 2, 1, 1, 3, 8, 1, 1, 1, 1, 4, 10, 10, 10,
   10,
 ];
+
+function calculateScore(word) {
+  return word.split("").reduce((acc, char) => {
+    return acc + points[char.charCodeAt(0) - "A".charCodeAt(0)];
+  }, 0);
+}
+
+function getBestWord(points, words) {
+  let bestIndex = 0;
+  let highestScore = 0;
+  let shortestLength = Infinity;
+
+  for (let i = 0; i < words.length; i++) {
+    const word = words[i];
+    const score = calculateScore(word);
+
+    if (
+      score > highestScore ||
+      (score === highestScore && word.length < shortestLength)
+    ) {
+      bestIndex = i;
+      highestScore = score;
+      shortestLength = word.length;
+    }
+  }
+
+  return bestIndex;
+}
+
 var simpleWords = ["WHO", "IS", "THE", "BEST", "OF", "US"];
 var rndmWords = [
   "NOQ",
