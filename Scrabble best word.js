@@ -11,3 +11,7 @@
 
 // You must return the index of the shortest word which realize the highest score.
 // If the length and the score are the same for two elements, return the index of the first one.
+
+function getBestWord(points, words) {
+  //Return the shortest word realizing the best score
+}
