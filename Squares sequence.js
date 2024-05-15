@@ -6,7 +6,18 @@
 // 2, 5  -->  [2, 4, 16, 256, 65536]
 // 3, 3  -->  [3, 9, 81]
 
-function squares(x, n) {}
+function squares(x, n) {
+  if (n < 1) return [];
+  const result = [x];
+
+  let current = x;
+  for (let i = 1; i < n; i++) {
+    current *= current;
+    result.push(current);
+  }
+
+  return result;
+}
 
 console.log(squares(2, 5)); // [2, 4, 16, 256, 65536]);
 console.log(squares(3, 3)); // [3, 9, 81]);
