@@ -3709,19 +3709,13 @@ function persistence(num) {
 
 // Test Cases:
 
-// describe("Check less than thousand", function () {
-//   it("Check balanced number", function () {
-//     Test.assertEquals(balancedNum(7), "Balanced");
-//     Test.assertEquals(balancedNum(959), "Balanced");
-//     Test.assertEquals(balancedNum(13), "Balanced");
-//     Test.assertEquals(balancedNum(432), "Not Balanced");
-//     Test.assertEquals(balancedNum(424), "Balanced");
-//   });
-//   it("Check Larger number", function () {
-//     Test.assertEquals(balancedNum(1024), "Not Balanced");
-//     Test.assertEquals(balancedNum(66545), "Not Balanced");
-//     Test.assertEquals(balancedNum(295591), "Not Balanced");
-//     Test.assertEquals(balancedNum(1230987), "Not Balanced");
-//     Test.assertEquals(balancedNum(56239814), "Balanced");
-//   });
-// });
+console.log(balancedNum(7)); //, "Balanced");
+console.log(balancedNum(959)); //, "Balanced");
+console.log(balancedNum(13)); //, "Balanced");
+console.log(balancedNum(432)); //, "Balanced");
+console.log(balancedNum(424)); //, "Balanced");
+console.log(balancedNum(1024)); //, "Balanced");
+console.log(balancedNum(66545)); //, "Balanced");
+console.log(balancedNum(295591)); //, "Balanced");
+console.log(balancedNum(1230987)); //, "Balanced");
+console.log(balancedNum(56239814)); //, "Balanced");
