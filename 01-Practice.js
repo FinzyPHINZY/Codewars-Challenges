@@ -3791,7 +3791,17 @@ function digitalRoot(n) {
 
 function cleanString(s) {
   // ... your code ...
+  const output = [];
+
+  for (const char of s) {
+    if (char === "#") {
+      output.pop();
+    } else {
+      output.push(char);
+    }
+  }
+  return output.join("");
 }
 
-console.log(cleanString("abc#d##c")); //'ac');
-console.log(cleanString("abc####d##c#")); //, '');
+// console.log(cleanString("abc#d##c")); //'ac');
+// console.log(cleanString("abc####d##c#")); //, '');
