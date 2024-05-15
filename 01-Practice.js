@@ -3709,6 +3709,39 @@ function persistence(num) {
 
 function balancedNum(num) {
   // code here
+  num = num.toString();
+  const length = num.length;
+  if (num.length < 3) return "Balanced";
+
+  if (num.length % 2 !== 0) {
+    const left = num
+      .slice(0, length / 2)
+      .split("")
+      .map(Number)
+      .reduce((sum, num) => sum + num, 0);
+    const right = num
+      .slice(-length / 2, length)
+      .slice(0, length / 2)
+      .split("")
+      .map(Number)
+      .reduce((sum, num) => sum + num, 0);
+
+    return left === right ? "Balanced" : "Not Balanced";
+  } else {
+    const left = num
+      .slice(0, length / 2 - 1)
+      .slice(0, length / 2)
+      .split("")
+      .map(Number)
+      .reduce((sum, num) => sum + num, 0);
+    const right = num
+      .slice(-length / 2 + 1)
+      .slice(0, length / 2)
+      .split("")
+      .map(Number)
+      .reduce((sum, num) => sum + num, 0);
+    return left === right ? "Balanced" : "Not Balanaced";
+  }
 }
 
 console.log(balancedNum(7)); //, "Balanced");
