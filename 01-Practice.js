@@ -3707,7 +3707,9 @@ function persistence(num) {
 // sum of all digits to the right of the middle digit(s) -> 20
 // 10 and 20 are not equal, so it's not balanced.
 
-// Test Cases:
+function balancedNum(num) {
+  // code here
+}
 
 console.log(balancedNum(7)); //, "Balanced");
 console.log(balancedNum(959)); //, "Balanced");
