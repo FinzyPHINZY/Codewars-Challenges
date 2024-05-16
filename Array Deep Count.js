@@ -8,3 +8,7 @@
 // ["x", "y", ["z"]]    -->  4
 // [1, 2, [3, 4, [5]]]  -->  7
 // The input will always be an array.
+
+function deepCount(a) {
+  //...
+}
