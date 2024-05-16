@@ -14,3 +14,13 @@
 function arraysSimilar(arr1, arr2) {
   // TODO: Implement your arraysSimilar
 }
+
+const arr1 = [1, 2, 2, 3, 4],
+  arr2 = [2, 1, 2, 4, 3],
+  arr3 = [1, 2, 3, 4],
+  arr4 = [1, 2, 3, "4"];
+
+console.log(arraysSimilar(arr1, arr2));
+
+console.log(arraysSimilar(arr2, arr3));
+console.log(arraysSimilar(arr3, arr4));
