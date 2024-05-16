@@ -18,3 +18,10 @@
 // // should return false
 // [ [ [ ], [ ] ] ].sameStructureAs( [ [ 1, 1 ] ] );
 // For your convenience, there is already a function 'isArray(o)' declared and defined that returns true if its argument is an array, false otherwise.
+
+Array.prototype.sameStructureAs = function (other) {
+  // Return 'true' if and only if 'other' has the same
+  // nesting structure as 'this'.
+  // Note: You are given a function isArray(o) that returns
+  // whether its argument is an array.
+};
