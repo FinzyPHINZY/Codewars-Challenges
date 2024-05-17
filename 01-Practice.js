@@ -3820,7 +3820,20 @@ function cleanString(s) {
 // Examples
 // For this input:
 
-function sortReindeer(reindeerNames) {}
+function sortReindeer(reindeerNames) {
+  return reindeerNames.sort((a, b) => {
+    const init = a.split(" ")[1];
+    const later = b.split(" ")[1];
+    console.log(init, later);
+    if (init < later) {
+      return -1;
+    } else if (init > later) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+}
 
 let inputArr = [
   "Dasher Tonoyan",
