@@ -3805,3 +3805,76 @@ function cleanString(s) {
 
 // console.log(cleanString("abc#d##c")); //'ac');
 // console.log(cleanString("abc####d##c#")); //, '');
+
+("use strict");
+
+// Happy Holidays fellow Code Warriors!
+// Now, Dasher! Now, Dancer! Now, Prancer, and Vixen! On, Comet! On, Cupid! On, Donder and Blitzen! That's the order Santa wanted his reindeer...right? What do you mean he wants them in order by their last names!? Looks like we need your help Code Warrior!
+
+// Sort Santa's Reindeer
+// Write a function that accepts a sequence of Reindeer names, and returns a sequence with the Reindeer names sorted by their last names.
+
+// Notes:
+// It's guaranteed that each string is composed of two words
+// In case of two identical last names, keep the original order
+// Examples
+// For this input:
+
+function sortReindeer(reindeerNames) {
+  return reindeerNames.sort((a, b) => {
+    const init = a.split(" ")[1];
+    const later = b.split(" ")[1];
+    console.log(init, later);
+    if (init < later) {
+      return -1;
+    } else if (init > later) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+}
+
+let inputArr = [
+  "Dasher Tonoyan",
+  "Dancer Moore",
+  "Prancer Chua",
+  "Vixen Hall",
+  "Comet Karavani",
+  "Cupid Foroutan",
+  "Donder Jonker",
+  "Blitzen Claus",
+];
+// let output = [
+//   "Prancer Chua","Blitzen Claus","Cupid Foroutan","Vixen Hall","Donder Jonker","Comet Karavani","Dancer Moore","Dasher Tonoyan",
+// ];
+// console.log(sortReindeer(inputArr)); //, output);
+
+// You are given an array. Complete the function that returns the number of ALL elements within an array, including any nested arrays.
+
+// Examples
+// []                   -->  0
+// [1, 2, 3]            -->  3
+// ["x", "y", ["z"]]    -->  4
+// [1, 2, [3, 4, [5]]]  -->  7
+// The input will always be an array.
+
+function deepCount(a) {
+  //...
+  let count = 0;
+  if (a == []) return 0;
+
+  a.forEach((e) => {
+    count++;
+    if (Array.isArray(e)) {
+      count += deepCount(e);
+    }
+  });
+  return count;
+}
+
+// console.log(deepCount([])); //, 0, "Expected 0");
+// console.log(deepCount([1, 2, 3])); //, 3, "Expected 3");
+// console.log(deepCount(["x", "y", ["z"]])); //, 4, "Expected 4");
+// console.log(deepCount([1, 2, [3, 4, [5]]])); //, 7, "Expected 7");
+// console.log(deepCount([[[[[[[[[]]]]]]]]])); //, 8, "Expected 8");
