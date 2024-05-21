@@ -3979,6 +3979,8 @@ function sortList(sortBy, list) {
 //   ])
 // );
 
+//
+
 // DESCRIPTION:
 // Count the number of Duplicates
 // Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
@@ -3993,6 +3995,21 @@ function sortList(sortBy, list) {
 
 function duplicateCount(text) {
   //...
+
+  text = text.toLowerCase();
+  const charCount = {};
+
+  for (const char of text) {
+    if (charCount[char]) {
+      charCount[char] += 1;
+    } else {
+      charCount[char] = 1;
+    }
+  }
+  const multiples = Object.entries(charCount).filter(
+    ([key, value]) => value > 1
+  ).length;
+  return multiples;
 }
 
 console.log(duplicateCount("abcde"));
