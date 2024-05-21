@@ -3878,3 +3878,163 @@ function deepCount(a) {
 // console.log(deepCount(["x", "y", ["z"]])); //, 4, "Expected 4");
 // console.log(deepCount([1, 2, [3, 4, [5]]])); //, 7, "Expected 7");
 // console.log(deepCount([[[[[[[[[]]]]]]]]])); //, 8, "Expected 8");
+
+// DESCRIPTION:
+// You will be given an array of objects representing data about developers who have signed up to attend the next coding meetup that you are organising.
+// Your task is to return an object which includes the count of food options selected by the developers on the meetup sign-up form..
+// For example, given the following input array:
+
+// your function should return the following object (the order of properties does not matter):
+// { vegetarian: 2, standard: 1, vegan: 1 }
+// Notes:
+// The order of the meals count in the object does not matter.
+// The count value should be a valid number.
+// The input array will always be valid and formatted as in the example above.
+// there are 5 possible meal options and the strings representing the selected meal option will always be formatted in the same way, as follows: 'standard', 'vegetarian', 'vegan', 'diabetic', 'gluten-intolerant'.
+
+var list1 = [
+  {
+    firstName: "Noah",
+    lastName: "M.",
+    country: "Switzerland",
+    continent: "Europe",
+    age: 19,
+    language: "C",
+    meal: "vegetarian",
+  },
+  {
+    firstName: "Anna",
+    lastName: "R.",
+    country: "Liechtenstein",
+    continent: "Europe",
+    age: 52,
+    language: "JavaScript",
+    meal: "standard",
+  },
+  {
+    firstName: "Ramona",
+    lastName: "R.",
+    country: "Paraguay",
+    continent: "Americas",
+    age: 29,
+    language: "Ruby",
+    meal: "vegan",
+  },
+  {
+    firstName: "George",
+    lastName: "B.",
+    country: "England",
+    continent: "Europe",
+    age: 81,
+    language: "C",
+    meal: "vegetarian",
+  },
+];
+
+// var answer = { vegetarian: 2, standard: 1, vegan: 1 };
+
+function orderFood(list) {
+  const mealCount = {};
+  list.forEach((dev) => {
+    const meal = dev.meal;
+
+    if (mealCount[meal]) {
+      mealCount[meal] += 1;
+    } else {
+      mealCount[meal] = 1;
+    }
+  });
+  return mealCount;
+}
+
+// console.log(orderFood(list1));
+
+// You'll be passed an array of objects (list) - you must sort them in descending order based on the value of the specified property (sortBy).
+
+// Example
+// When sorted by "a", this:
+
+// [
+//   { a: 1, b: 3 },
+//   { a: 3, b: 2 },
+//   { a: 2, b: 40 },
+//   { a: 4, b: 12 },
+// ][
+//   // should return:
+
+//   ({ a: 4, b: 12 }, { a: 3, b: 2 }, { a: 2, b: 40 }, { a: 1, b: 3 })
+// ];
+// The values will always be numbers, and the properties will always exist.
+
+function sortList(sortBy, list) {
+  return list.sort((first, second) => second[sortBy] - first[sortBy]);
+}
+
+// console.log(
+//   sortList("b", [
+//     { a: 1, b: 3 },
+//     { a: 3, b: 2 },
+//     { a: 2, b: 40 },
+//     { a: 4, b: 12 },
+//   ])
+// );
+
+//
+
+// DESCRIPTION:
+// Count the number of Duplicates
+// Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+// Example
+// "abcde" -> 0 # no characters repeats more than once
+// "aabbcde" -> 2 # 'a' and 'b'
+// "aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+// "indivisibility" -> 1 # 'i' occurs six times
+// "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+// "aA11" -> 2 # 'a' and '1'
+// "ABBA" -> 2 # 'A' and 'B' each occur twice
+
+function duplicateCount(text) {
+  //...
+
+  text = text.toLowerCase();
+  const charCount = {};
+
+  for (const char of text) {
+    if (charCount[char]) {
+      charCount[char] += 1;
+    } else {
+      charCount[char] = 1;
+    }
+  }
+  const multiples = Object.entries(charCount).filter(
+    ([key, value]) => value > 1
+  ).length;
+  return multiples;
+}
+
+// console.log(duplicateCount("abcde"));
+// console.log(duplicateCount("aabbcde"));
+// console.log(duplicateCount("aabBcde"));
+// console.log(duplicateCount("indivisibility"));
+// console.log(duplicateCount("Indivisibilities"));
+// console.log(duplicateCount("aA11"));
+// console.log(duplicateCount("ABBA"));
+
+// DESCRIPTION:
+// Your job at E-Corp is both boring and difficult. It isn't made any easier by the fact that everyone constantly wants to have a meeting with you, and that the meeting rooms are always taken!
+
+// In this kata, you will be given an array. Each value represents a meeting room. Your job? Find the first empty one and return its index (N.B. There may be more than one empty room in some test cases).
+
+// 'X' --> busy
+// 'O' --> empty
+// If all rooms are busy, return "None available!"
+
+function meeting(x) {
+  if (!x.includes("O")) return "None available!";
+
+  return x.indexOf("O");
+}
+
+console.log(meeting(["X", "O", "X"])); //, 1);
+console.log(meeting(["O", "X", "X", "X", "X"])); //, 0);
+console.log(meeting(["X", "X", "X", "X", "X"])); //, 'None available!');
