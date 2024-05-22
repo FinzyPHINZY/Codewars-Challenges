@@ -4044,9 +4044,11 @@ function meeting(x) {
 // ["Hello", "there", "I'm", "fine"]  -->  ["fine", "Hello", "I'm", "there"]
 // ["C", "d", "a", "B"])              -->  ["a", "B", "C", "d"]
 
-const sortMe = function (names) {};
+const sortMe = function (names) {
+  return names.sort((a, b) => a[0].localeCompare(b[0]));
+};
 
-console.log(sortme(["Hello", "there", "I'm", "fine"])); //, ["fine", "Hello", "I'm", "there"])
-console.log(sortme(["C", "d", "a", "B"])); //, ["a", "B", "C", "d"])
-console.log(sortme(["CodeWars"])); //, ["CodeWars"])
-console.log(sortme([])); //, [])
+// console.log(sortMe(["Hello", "there", "I'm", "fine"])); //, ["fine", "Hello", "I'm", "there"])
+// console.log(sortMe(["C", "d", "a", "B"])); //, ["a", "B", "C", "d"])
+// console.log(sortMe(["CodeWars"])); //, ["CodeWars"])
+// console.log(sortMe([])); //, [])
