@@ -4035,6 +4035,57 @@ function meeting(x) {
   return x.indexOf("O");
 }
 
-console.log(meeting(["X", "O", "X"])); //, 1);
-console.log(meeting(["O", "X", "X", "X", "X"])); //, 0);
-console.log(meeting(["X", "X", "X", "X", "X"])); //, 'None available!');
+// console.log(meeting(["X", "O", "X"])); //, 1);
+// console.log(meeting(["O", "X", "X", "X", "X"])); //, 0);
+// console.log(meeting(["X", "X", "X", "X", "X"])); //, 'None available!');
+
+// ort the given array of strings in alphabetical order, case insensitive. For example:
+
+// ["Hello", "there", "I'm", "fine"]  -->  ["fine", "Hello", "I'm", "there"]
+// ["C", "d", "a", "B"])              -->  ["a", "B", "C", "d"]
+
+const sortMe = function (names) {
+  return names.sort((a, b) => a[0].localeCompare(b[0]));
+};
+
+// console.log(sortMe(["Hello", "there", "I'm", "fine"])); //, ["fine", "Hello", "I'm", "there"])
+// console.log(sortMe(["C", "d", "a", "B"])); //, ["a", "B", "C", "d"])
+// console.log(sortMe(["CodeWars"])); //, ["CodeWars"])
+// console.log(sortMe([])); //, [])
+
+// Who is the killer?
+// Some people have been killed!
+// You have managed to narrow the suspects down to just a few. Luckily, you know every person who those suspects have seen on the day of the murders.
+
+// Task.
+// Given a dictionary with all the names of the suspects and everyone that they have seen on that day which may look like this:
+
+// {'James': ['Jacob', 'Bill', 'Lucas'],
+//  'Johnny': ['David', 'Kyle', 'Lucas'],
+//  'Peter': ['Lucy', 'Kyle']}
+// and also a list of the names of the dead people:
+
+// ['Lucas', 'Bill']
+// return the name of the one killer, in our case 'James' because he is the only person that saw both 'Lucas' and 'Bill'
+
+function killer(suspectInfo, dead) {
+  //your code here...
+  for (const person in suspectInfo) {
+    if (dead.every((name) => suspectInfo[person].includes(name))) return person;
+  }
+}
+
+// suspectiINFO[I].includes (dead)
+
+console.log(
+  killer(
+    {
+      James: ["Jacob", "Bill", "Lucas"],
+      Johnny: ["David", "Kyle", "Lucas"],
+      Peter: ["Lucy", "Kyle"],
+    },
+    ["Lucas", "Bill"]
+  )
+); // "James"
+
+console.log(killer({ Brad: [], Megan: ["Ben", "Kevin"], Finn: [] }, ["Ben"])); //"Megan"
