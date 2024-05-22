@@ -4070,7 +4070,12 @@ const sortMe = function (names) {
 
 function killer(suspectInfo, dead) {
   //your code here...
+  for (const person in suspectInfo) {
+    if (dead.every((name) => suspectInfo[person].includes(name))) return person;
+  }
 }
+
+// suspectiINFO[I].includes (dead)
 
 console.log(
   killer(
