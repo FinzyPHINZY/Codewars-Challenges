@@ -4035,6 +4035,18 @@ function meeting(x) {
   return x.indexOf("O");
 }
 
-console.log(meeting(["X", "O", "X"])); //, 1);
-console.log(meeting(["O", "X", "X", "X", "X"])); //, 0);
-console.log(meeting(["X", "X", "X", "X", "X"])); //, 'None available!');
+// console.log(meeting(["X", "O", "X"])); //, 1);
+// console.log(meeting(["O", "X", "X", "X", "X"])); //, 0);
+// console.log(meeting(["X", "X", "X", "X", "X"])); //, 'None available!');
+
+// ort the given array of strings in alphabetical order, case insensitive. For example:
+
+// ["Hello", "there", "I'm", "fine"]  -->  ["fine", "Hello", "I'm", "there"]
+// ["C", "d", "a", "B"])              -->  ["a", "B", "C", "d"]
+
+const sortMe = function (names) {};
+
+console.log(sortme(["Hello", "there", "I'm", "fine"])); //, ["fine", "Hello", "I'm", "there"])
+console.log(sortme(["C", "d", "a", "B"])); //, ["a", "B", "C", "d"])
+console.log(sortme(["CodeWars"])); //, ["CodeWars"])
+console.log(sortme([])); //, [])
