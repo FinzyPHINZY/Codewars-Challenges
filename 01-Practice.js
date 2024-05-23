@@ -4103,5 +4103,18 @@ function killer(suspectInfo, dead) {
 // I have also created other katas. Take a look if you enjoyed this kata!
 
 function findMissingLetter(array) {
-  return " ";
+  const letters =
+    array[0] === array[0].toLowerCase()
+      ? "abcdefghijklmopqrstuvwxyz"
+      : "ABCDEFGHIJKLMOPQRSTUVWXYZ";
+
+  const firstLetter = letters.indexOf(array[0]);
+  const lastLetter = letters.indexOf(array[array.length - 1]);
+
+  const str = letters.substring(firstLetter, lastLetter + 1);
+
+  return str.split("").find((char) => !array.includes(char));
 }
+
+console.log(findMissingLetter(["a", "b", "c", "d", "f"]));
+console.log(findMissingLetter(["O", "Q", "R", "S"]));
