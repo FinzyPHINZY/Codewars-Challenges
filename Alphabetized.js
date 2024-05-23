@@ -9,6 +9,19 @@
 
 // alphabetized("The Holy Bible") // "BbeehHilloTy"
 
-function alphabetized(s) {}
+function alphabetized(s) {
+  const letters = "abcdefghijklmopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  return s
+    .split(" ")
+    .join("")
+    .split("")
+    .filter((char) => letters.includes(char))
+    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
+    .join("");
+}
 
 console.log(alphabetized("The Holy Bible")); //, 'BbeehHilloTy')
+console.log(alphabetized("4466beIiLlnPpppqQqrWwZz")); // beIiLlnPpppqQqrWwZz
+
+("aAbBcCdDeEfFgGhHiIjJkKlLmMNoOpPqQrRsStTuUvVwWxXyYzZ");
+("aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ");
