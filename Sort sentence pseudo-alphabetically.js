@@ -10,6 +10,31 @@
 
 function sort(sentence) {
   //...
+  // Remove punctuation using a regex that matches non-alphabetic characters (except spaces)
+  const cleanedSentence = sentence.replace(/[^\w\s]/g, "");
+
+  // Split the cleaned sentence into words
+  const words = cleanedSentence.split(/\s+/);
+
+  // Separate words into lowercase and uppercase arrays
+  const lowercaseWords = words.filter(
+    (word) => word[0] && word[0] === word[0].toLowerCase()
+  );
+  const uppercaseWords = words.filter(
+    (word) => word[0] && word[0] === word[0].toUpperCase()
+  );
+
+  // Sort the lowercase words in ascending order
+  lowercaseWords.sort((a, b) => a.localeCompare(b));
+
+  // Sort the uppercase words in descending order
+  uppercaseWords.sort((a, b) => b.localeCompare(a));
+
+  // Combine the sorted arrays
+  const sortedWords = [...lowercaseWords, ...uppercaseWords];
+
+  // Join the sorted words into a sentence and return
+  return sortedWords.join(" ");
 }
 
 console.log(
