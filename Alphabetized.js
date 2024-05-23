@@ -8,3 +8,5 @@
 // Example:
 
 // alphabetized("The Holy Bible") // "BbeehHilloTy"
+
+function alphabetized(s) {}
