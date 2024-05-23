@@ -10,3 +10,5 @@
 // alphabetized("The Holy Bible") // "BbeehHilloTy"
 
 function alphabetized(s) {}
+
+console.log(alphabetized("The Holy Bible")); //, 'BbeehHilloTy')
