@@ -4151,6 +4151,16 @@ function domainName(url) {
 
 function deepCount(a) {
   //...
+  let count = 0;
+
+  a.forEach((element) => {
+    count++;
+    if (Array.isArray(element)) {
+      count += deepCount(element);
+    }
+  });
+
+  return count;
 }
 
 console.log(deepCount([])); //, 0, "Expected 0");
