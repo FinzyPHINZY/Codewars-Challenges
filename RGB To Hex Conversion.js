@@ -14,11 +14,11 @@ function rgb(r, g, b) {
   return "FFFFFF";
 }
 
-function doTest(r, g, b, expected) {
-  const actual = rgb(r, g, b);
-  const message = `for r = ${r} g = ${g} b = ${b}`;
-  strictEqual(actual, expected, message);
-}
+// function doTest(r, g, b, expected) {
+//   const actual = rgb(r, g, b);
+//   const message = `for r = ${r} g = ${g} b = ${b}`;
+//   strictEqual(actual, expected, message);
+// }
 
 console.log(0, 0, 0); // '000000')
 console.log(0, 0, -20); // '000000')
