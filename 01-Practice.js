@@ -4187,7 +4187,8 @@ function deepCount(a) {
 // * Input: [2,2,1,2,1], output = [2,2,2,1]
 
 function smallie(arr) {
-  const smallestIndex = arr.indexOf(Math.min(arr));
+  const smallestIndex = arr.indexOf(Math.min(...arr));
+  console.log(smallestIndex);
   return arr.filter((num, i) => i !== smallestIndex);
 }
 
