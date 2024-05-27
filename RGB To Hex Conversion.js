@@ -11,7 +11,24 @@
 // 148, 0, 211   --> "9400D3"
 
 function rgb(r, g, b) {
-  return "FFFFFF";
+  // Helper function to clamp a value between 0 and 255
+  function clamp(value) {
+    return Math.max(0, Math.min(255, value));
+  }
+
+  // Helper function to convert a number to a two-character hex string
+  function toHex(value) {
+    let hex = value.toString(16).toUpperCase();
+    return hex.length === 1 ? "0" + hex : hex;
+  }
+
+  // Clamping the values
+  r = clamp(r);
+  g = clamp(g);
+  b = clamp(b);
+
+  // Converting to hex and concatenating the results
+  return toHex(r) + toHex(g) + toHex(b);
 }
 
 // function doTest(r, g, b, expected) {
