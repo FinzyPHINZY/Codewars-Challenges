@@ -4077,15 +4077,121 @@ function killer(suspectInfo, dead) {
 
 // suspectiINFO[I].includes (dead)
 
-console.log(
-  killer(
-    {
-      James: ["Jacob", "Bill", "Lucas"],
-      Johnny: ["David", "Kyle", "Lucas"],
-      Peter: ["Lucy", "Kyle"],
-    },
-    ["Lucas", "Bill"]
-  )
-); // "James"
+// console.log(
+//   killer(
+//     {
+//       James: ["Jacob", "Bill", "Lucas"],
+//       Johnny: ["David", "Kyle", "Lucas"],
+//       Peter: ["Lucy", "Kyle"],
+//     },
+//     ["Lucas", "Bill"]
+//   )
+// ); // "James"
 
-console.log(killer({ Brad: [], Megan: ["Ben", "Kevin"], Finn: [] }, ["Ben"])); //"Megan"
+// console.log(killer({ Brad: [], Megan: ["Ben", "Kevin"], Finn: [] }, ["Ben"])); //"Megan"
+
+// DESCRIPTION:
+// Find the missing letter
+// Write a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array.
+// You will always get an valid array. And it will be always exactly one letter be missing. The length of the array will always be at least 2.
+// The array will always contain letters in only one case.
+// Example:
+// ['a','b','c','d','f'] -> 'e'
+// ['O','Q','R','S'] -> 'P'
+// (Use the English alphabet with 26 letters!)
+// Have fun coding it and please don't forget to vote and rank this kata! :-)
+// I have also created other katas. Take a look if you enjoyed this kata!
+
+function findMissingLetter(array) {
+  const letters =
+    array[0] === array[0].toLowerCase()
+      ? "abcdefghijklmopqrstuvwxyz"
+      : "ABCDEFGHIJKLMOPQRSTUVWXYZ";
+
+  const firstLetter = letters.indexOf(array[0]);
+  const lastLetter = letters.indexOf(array[array.length - 1]);
+
+  const str = letters.substring(firstLetter, lastLetter + 1);
+
+  return str.split("").find((char) => !array.includes(char));
+}
+
+// console.log(findMissingLetter(["a", "b", "c", "d", "f"])
+
+// console.log(findMissingLetter(["O", "Q", "R", "S"]));
+
+// Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
+
+// * url = "http://github.com/carbonfive/raygun" -> domain name = "github"
+// * url = "http://www.zombie-bites.com"         -> domain name = "zombie-bites"
+// * url = "https://www.cnet.com"                -> domain name = cnet"
+
+function domainName(url) {
+  //your code here
+  url = url.replace("https://", "");
+  url = url.replace("http://", "");
+  url = url.replace("www.", "");
+
+  return url.split(".")[0];
+}
+
+// console.log(domainName("http://google.com")); //  "google");
+// console.log(domainName("http://google.co.jp")); //  "google");
+// console.log(domainName("www.xakep.ru")); //, "xakep");
+// console.log(domainName("https://youtube.com")); // "youtube");
+
+// You are given an array. Complete the function that returns the number of ALL elements within an array, including any nested arrays.
+
+// Examples
+// []                   -->  0
+// [1, 2, 3]            -->  3
+// ["x", "y", ["z"]]    -->  4
+// [1, 2, [3, 4, [5]]]  -->  7
+// The input will always be an array.
+
+function deepCount(a) {
+  //...
+  let count = 0;
+
+  a.forEach((element) => {
+    count++;
+    if (Array.isArray(element)) {
+      count += deepCount(element);
+    }
+  });
+
+  return count;
+}
+
+// console.log(deepCount([])); //, 0, "Expected 0");
+// console.log(deepCount([1, 2, 3])); //, 3, "Expected 3");
+// console.log(deepCount(["x", "y", ["z"]])); //, 4, "Expected 4");
+// console.log(deepCount([1, 2, [3, 4, [5]]])); //, 7, "Expected 7");
+// console.log(deepCount([[[[[[[[[]]]]]]]]])); //, 8, "Expected 8");
+
+// Description:
+// The museum of incredible dull things
+
+// The museum of incredible dull things wants to get rid of some exhibitions. Miriam, the interior architect, comes up with a plan to remove the most boring exhibitions. She gives them a rating, and then removes the one with the lowest rating.
+
+// However, just as she finished rating all exhibitions, she's off to an important fair, so she asks you to write a program that tells her the ratings of the items after one removed the lowest one. Fair enough.
+// Task
+
+// Given an array of integers, remove the smallest value. Do not mutate the original array/list. If there are multiple elements with the same value, remove the one with a lower index. If you get an empty array/list, return an empty array/list.
+
+// Don't change the order of the elements that are left.
+// Examples
+
+// * Input: [1,2,3,4,5], output = [2,3,4,5]
+// * Input: [5,3,2,1,4], output = [5,3,2,4]
+// * Input: [2,2,1,2,1], output = [2,2,2,1]
+
+function smallie(arr) {
+  const smallestIndex = arr.indexOf(Math.min(...arr));
+  console.log(smallestIndex);
+  return arr.filter((num, i) => i !== smallestIndex);
+}
+
+console.log(smallie([1, 2, 3, 4, 5]));
+console.log(smallie([5, 3, 2, 1, 4]));
+console.log(smallie([2, 2, 1, 2, 1]));
