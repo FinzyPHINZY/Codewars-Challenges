@@ -18,3 +18,7 @@
 //  5 =>  5 * 5 = 25  -> Output-Pos 5
 
 // Output: 2, 3, 4, 23, 5
+
+function sortByValueAndIndex(array) {
+  return array;
+}
