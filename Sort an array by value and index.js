@@ -20,7 +20,13 @@
 // Output: 2, 3, 4, 23, 5
 
 function sortByValueAndIndex(array) {
-  return array;
+  return array
+    .map((num, i) => ({
+      num: num,
+      product: num * (i + 1),
+    }))
+    .sort((a, b) => a.product - b.product)
+    .map((arr) => arr.num);
 }
 
 console.log(sortByValueAndIndex([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
