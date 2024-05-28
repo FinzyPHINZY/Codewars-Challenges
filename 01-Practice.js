@@ -4192,6 +4192,81 @@ function smallie(arr) {
   return arr.filter((num, i) => i !== smallestIndex);
 }
 
-console.log(smallie([1, 2, 3, 4, 5]));
-console.log(smallie([5, 3, 2, 1, 4]));
-console.log(smallie([2, 2, 1, 2, 1]));
+// console.log(smallie([1, 2, 3, 4, 5]));
+// console.log(smallie([5, 3, 2, 1, 4]));
+// console.log(smallie([2, 2, 1, 2, 1]));
+
+// Your task in this kata is to implement a function that calculates the sum of the integers inside a string. For example, in the string "The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog", the sum of the integers is 3635.
+
+// Note: only positive integers will be tested.
+
+function sumOfIntegersInString(s) {
+  let num = 0;
+  let res = "";
+
+  for (let i = 0; i <= s.length; i++) {
+    if (Number(s[i])) {
+      res += s[i];
+    } else {
+      num += Number(res);
+      res = 0;
+    }
+  }
+
+  return num;
+}
+
+// console.log(sumOfIntegersInString("12.4")); //, 16
+// console.log(sumOfIntegersInString("h3ll0w0rld")); //, 3
+// console.log(sumOfIntegersInString("2 + 3 = ")); //, 5
+// console.log(
+//   sumOfIntegersInString(
+//     "Our company made approximately 1 million in gross revenue last quarter."
+//   )
+// ); //, 1
+// console.log(
+//   sumOfIntegersInString("The Great Depression lasted from 1929 to 1939.")
+// ); //, 3868
+// console.log(sumOfIntegersInString("Dogs are our best friends.")); //, 0
+// console.log(sumOfIntegersInString("C4t5 are 4m4z1ng.")); //, 18
+// console.log(
+//   sumOfIntegersInString(
+//     "The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog"
+//   )
+// ); //, 3635
+
+("use strict");
+
+// Sort an array by value and index
+// Your task is to sort an array of integer numbers by the product of the value and the index of the positions.
+
+// For sorting the index starts at 1, NOT at 0!
+// The sorting has to be ascending.
+// The array will never be null and will always contain numbers.
+
+// Example:
+
+// Input: 23, 2, 3, 4, 5
+// Product of value and index:
+// 23 => 23 * 1 = 23  -> Output-Pos 4
+//  2 =>  2 * 2 = 4   -> Output-Pos 1
+//  3 =>  3 * 3 = 9   -> Output-Pos 2
+//  4 =>  4 * 4 = 16  -> Output-Pos 3
+//  5 =>  5 * 5 = 25  -> Output-Pos 5
+
+// Output: 2, 3, 4, 23, 5
+
+function sortByValueAndIndex(array) {
+  return array
+    .map((value, i) => ({
+      value: value,
+      product: value * (i + 1),
+    }))
+    .sort((a, b) => a.product - b.product)
+    .map((value) => value.value);
+}
+
+console.log(sortByValueAndIndex([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
+console.log(sortByValueAndIndex([23, 2, 3, 4, 5])); // [ 2, 3, 4, 23, 5 ];
+console.log(sortByValueAndIndex([26, 2, 3, 4, 5])); // [ 2, 3, 4, 5, 26 ];
+console.log(sortByValueAndIndex([9, 5, 1, 4, 3])); // [ 1, 9, 5, 3, 4 ];
