@@ -4200,7 +4200,21 @@ function smallie(arr) {
 
 // Note: only positive integers will be tested.
 
-function sumOfIntegersInString(s) {}
+function sumOfIntegersInString(s) {
+  let num = 0;
+  let res = "";
+
+  for (let i = 0; i <= s.length; i++) {
+    if (Number(s[i])) {
+      res += s[i];
+    } else {
+      num += Number(res);
+      res = 0;
+    }
+  }
+
+  return num;
+}
 
 console.log(sumOfIntegersInString("12.4")); //, 16
 console.log(sumOfIntegersInString("h3ll0w0rld")); //, 3
