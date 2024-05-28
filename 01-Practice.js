@@ -4256,7 +4256,15 @@ function sumOfIntegersInString(s) {
 
 // Output: 2, 3, 4, 23, 5
 
-function sortByValueAndIndex(array) {}
+function sortByValueAndIndex(array) {
+  return array
+    .map((value, i) => ({
+      value: value,
+      product: value * (i + 1),
+    }))
+    .sort((a, b) => a.product - b.product)
+    .map((value) => value.value);
+}
 
 console.log(sortByValueAndIndex([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
 console.log(sortByValueAndIndex([23, 2, 3, 4, 5])); // [ 2, 3, 4, 23, 5 ];
