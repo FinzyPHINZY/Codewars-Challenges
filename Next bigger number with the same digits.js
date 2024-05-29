@@ -10,3 +10,7 @@
 //   9 ==> -1
 // 111 ==> -1
 // 531 ==> -1
+
+function nextBigger(n) {
+  //your code here
+}
