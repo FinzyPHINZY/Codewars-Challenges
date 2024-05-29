@@ -10,10 +10,14 @@
 // You can find some examples in the test fixtures.
 
 function humanReadable(seconds) {
-  return "";
-}
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const remainingSeconds = seconds % 60;
 
-function doTest(seconds, expected) {}
+  const pad = (num) => String(num).padStart(2, "0");
+
+  return `${pad(hours)}:${pad(minutes)}:${pad(remainingSeconds)}`;
+}
 
 console.log(humanReadable(0)); //, '00:00:00');
 console.log(humanReadable(59)); //, '00:00:59');
