@@ -4282,6 +4282,14 @@ function sortByValueAndIndex(array) {
 
 function deepCount(a) {
   //...
+  let count = 0;
+  for (const char of a) {
+    count += 1;
+    if (Array.isArray(char)) {
+      count += deepCount(char);
+    }
+  }
+  return count;
 }
 
 console.log(deepCount([])); //, 0, "Expected 0");
