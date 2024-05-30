@@ -4266,7 +4266,68 @@ function sortByValueAndIndex(array) {
     .map((value) => value.value);
 }
 
-console.log(sortByValueAndIndex([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
-console.log(sortByValueAndIndex([23, 2, 3, 4, 5])); // [ 2, 3, 4, 23, 5 ];
-console.log(sortByValueAndIndex([26, 2, 3, 4, 5])); // [ 2, 3, 4, 5, 26 ];
-console.log(sortByValueAndIndex([9, 5, 1, 4, 3])); // [ 1, 9, 5, 3, 4 ];
+// console.log(sortByValueAndIndex([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
+// console.log(sortByValueAndIndex([23, 2, 3, 4, 5])); // [ 2, 3, 4, 23, 5 ];
+// console.log(sortByValueAndIndex([26, 2, 3, 4, 5])); // [ 2, 3, 4, 5, 26 ];
+// console.log(sortByValueAndIndex([9, 5, 1, 4, 3])); // [ 1, 9, 5, 3, 4 ];
+
+// You are given an array. Complete the function that returns the number of ALL elements within an array, including any nested arrays.
+
+// Examples
+// []                   -->  0
+// [1, 2, 3]            -->  3
+// ["x", "y", ["z"]]    -->  4
+// [1, 2, [3, 4, [5]]]  -->  7
+// The input will always be an array.
+
+function deepCount(a) {
+  //...
+  let count = 0;
+  for (const char of a) {
+    count += 1;
+    if (Array.isArray(char)) {
+      count += deepCount(char);
+    }
+  }
+  return count;
+}
+
+// console.log(deepCount([])); //, 0, "Expected 0");
+// console.log(deepCount([1, 2, 3])); //, 3, "Expected 3");
+// console.log(deepCount(["x", "y", ["z"]])); //, 4, "Expected 4");
+// console.log(deepCount([1, 2, [3, 4, [5]]])); //, 7, "Expected 7");
+// console.log(deepCount([[[[[[[[[]]]]]]]]])); //, 8, "Expected 8");
+
+// You'll be passed an array of objects (list) - you must sort them in descending order based on the value of the specified property (sortBy).
+
+// Example
+// When sorted by "a", this:
+
+// [
+//   {"a": 1, "b": 3},
+//   {"a": 3, "b": 2},
+//   {"a": 2, "b": 40},
+//   {"a": 4, "b": 12}
+// ]
+// should return:
+
+// [
+//   {"a": 4, "b": 12},
+//   {"a": 3, "b": 2},
+//   {"a": 2, "b": 40},
+//   {"a": 1, "b": 3}
+// ]
+// The values will always be numbers, and the properties will always exist.
+
+function sortList(sortBy, list) {
+  return list.sort((a, b) => b[sortBy] - a[sortBy]);
+}
+
+console.log(
+  sortList("b", [
+    { a: 1, b: 3 },
+    { a: 3, b: 2 },
+    { a: 2, b: 40 },
+    { a: 4, b: 12 },
+  ])
+);
