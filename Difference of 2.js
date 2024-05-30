@@ -17,6 +17,21 @@
 
 function twosDifference(input) {
   //Enter your solution here
+  // Sort the input array in ascending order
+  input.sort((a, b) => a - b);
+
+  const result = [];
+
+  // Iterate through the sorted array
+  for (let i = 0; i < input.length; i++) {
+    for (let j = i + 1; j < input.length; j++) {
+      if (input[j] - input[i] === 2) {
+        result.push([input[i], input[j]]);
+      }
+    }
+  }
+
+  return result;
 }
 
 console.log(twosDifference([1, 2, 3, 4])); //, [[1,3],[2,4]], `twosDifference([1,2,3,4])` );
