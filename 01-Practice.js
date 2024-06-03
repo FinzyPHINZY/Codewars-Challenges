@@ -4373,7 +4373,9 @@ function killer(suspectInfo, dead) {
 // ["Hello", "there", "I'm", "fine"]  -->  ["fine", "Hello", "I'm", "there"]
 // ["C", "d", "a", "B"])              -->  ["a", "B", "C", "d"]
 
-const sortmeArr = function (names) {};
+const sortmeArr = function (names) {
+  return names.sort((a, b) => a - b);
+};
 
 console.log(sortme(["Hello", "there", "I'm", "fine"])); //, ["fine", "Hello", "I'm", "there"])
 console.log(sortme(["C", "d", "a", "B"])); //, ["a", "B", "C", "d"])
