@@ -4349,6 +4349,10 @@ function sortList(sortBy, list) {
 
 function killer(suspectInfo, dead) {
   //your code here...
+
+  for (const person in suspectInfo) {
+    if (dead.every((u) => suspectInfo[person].includes(u))) return person;
+  }
 }
 
 console.log(
