@@ -4355,15 +4355,27 @@ function killer(suspectInfo, dead) {
   }
 }
 
-console.log(
-  killer(
-    {
-      James: ["Jacob", "Bill", "Lucas"],
-      Johnny: ["David", "Kyle", "Lucas"],
-      Peter: ["Lucy", "Kyle"],
-    },
-    ["Lucas", "Bill"]
-  )
-); // "James"
+// console.log(
+//   killer(
+//     {
+//       James: ["Jacob", "Bill", "Lucas"],
+//       Johnny: ["David", "Kyle", "Lucas"],
+//       Peter: ["Lucy", "Kyle"],
+//     },
+//     ["Lucas", "Bill"]
+//   )
+// ); // "James"
 
-console.log(killer({ Brad: [], Megan: ["Ben", "Kevin"], Finn: [] }, ["Ben"])); //"Megan"
+// console.log(killer({ Brad: [], Megan: ["Ben", "Kevin"], Finn: [] }, ["Ben"])); //"Megan"
+
+// Sort the given array of strings in alphabetical order, case insensitive. For example:
+
+// ["Hello", "there", "I'm", "fine"]  -->  ["fine", "Hello", "I'm", "there"]
+// ["C", "d", "a", "B"])              -->  ["a", "B", "C", "d"]
+
+const sortmeArr = function (names) {};
+
+console.log(sortme(["Hello", "there", "I'm", "fine"])); //, ["fine", "Hello", "I'm", "there"])
+console.log(sortme(["C", "d", "a", "B"])); //, ["a", "B", "C", "d"])
+console.log(sortme(["CodeWars"])); //, ["CodeWars"])
+console.log(sortme([])); //, [])
