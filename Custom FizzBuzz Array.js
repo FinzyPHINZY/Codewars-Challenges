@@ -14,8 +14,13 @@
 // ('Hey', 'There')      -->  [ 1, 2, "Hey", 4, "There", "Hey", ... ]
 // ('Foo', 'Bar', 2, 3)  -->  [ 1, "Foo", "Bar", "Foo", 5, "FooBar", 7, ... ]
 // Examples
-fizzBuzzCustom()[15]; // returns 16
-fizzBuzzCustom()[44]; // returns "FizzBuzz" (45 is divisible by 3 and 5)
-fizzBuzzCustom("Hey", "There")[25]; // returns 26
-fizzBuzzCustom("Hey", "There")[11]; // returns "Hey" (12 is divisible by 3)
-fizzBuzzCustom("What's ", "up?", 3, 7)[80]; // returns "What's " (81 is divisible by 3)
+
+const fizzBuzzCustom = function (stringOne, stringTwo, numOne, numTwo) {
+  console.log(stringOne, stringTwo, numOne, numTwo);
+};
+
+console.log(fizzBuzzCustom()); //[15]); //; // returns 16
+console.log(fizzBuzzCustom()); //[44]); //; // returns "FizzBuzz" (45 is divisible by 3 and 5)
+console.log(fizzBuzzCustom("Hey", "There")); //[25]); //; // returns 26
+console.log(fizzBuzzCustom("Hey", "There")); //[11]); //; // returns "Hey" (12 is divisible by 3)
+console.log(fizzBuzzCustom("What's ", "up?", 3, 7)); //[80]); //; // returns "What's " (81 is divisible by 3)
