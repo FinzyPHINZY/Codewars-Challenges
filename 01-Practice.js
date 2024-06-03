@@ -4323,11 +4323,61 @@ function sortList(sortBy, list) {
   return list.sort((a, b) => b[sortBy] - a[sortBy]);
 }
 
-console.log(
-  sortList("b", [
-    { a: 1, b: 3 },
-    { a: 3, b: 2 },
-    { a: 2, b: 40 },
-    { a: 4, b: 12 },
-  ])
-);
+// console.log(
+//   sortList("b", [
+//     { a: 1, b: 3 },
+//     { a: 3, b: 2 },
+//     { a: 2, b: 40 },
+//     { a: 4, b: 12 },
+//   ])
+// );
+
+// Who is the killer?
+// Some people have been killed!
+// You have managed to narrow the suspects down to just a few. Luckily, you know every person who those suspects have seen on the day of the murders.
+
+// Task.
+// Given a dictionary with all the names of the suspects and everyone that they have seen on that day which may look like this:
+
+// {'James': ['Jacob', 'Bill', 'Lucas'],
+//  'Johnny': ['David', 'Kyle', 'Lucas'],
+//  'Peter': ['Lucy', 'Kyle']}
+// and also a list of the names of the dead people:
+
+// ['Lucas', 'Bill']
+// return the name of the one killer, in our case 'James' because he is the only person that saw both 'Lucas' and 'Bill'
+
+function killer(suspectInfo, dead) {
+  //your code here...
+
+  for (const person in suspectInfo) {
+    if (dead.every((u) => suspectInfo[person].includes(u))) return person;
+  }
+}
+
+// console.log(
+//   killer(
+//     {
+//       James: ["Jacob", "Bill", "Lucas"],
+//       Johnny: ["David", "Kyle", "Lucas"],
+//       Peter: ["Lucy", "Kyle"],
+//     },
+//     ["Lucas", "Bill"]
+//   )
+// ); // "James"
+
+// console.log(killer({ Brad: [], Megan: ["Ben", "Kevin"], Finn: [] }, ["Ben"])); //"Megan"
+
+// Sort the given array of strings in alphabetical order, case insensitive. For example:
+
+// ["Hello", "there", "I'm", "fine"]  -->  ["fine", "Hello", "I'm", "there"]
+// ["C", "d", "a", "B"])              -->  ["a", "B", "C", "d"]
+
+const sortmeArr = function (names) {
+  return names.sort((a, b) => a - b);
+};
+
+console.log(sortme(["Hello", "there", "I'm", "fine"])); //, ["fine", "Hello", "I'm", "there"])
+console.log(sortme(["C", "d", "a", "B"])); //, ["a", "B", "C", "d"])
+console.log(sortme(["CodeWars"])); //, ["CodeWars"])
+console.log(sortme([])); //, [])
