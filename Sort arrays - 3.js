@@ -4,3 +4,7 @@
 
 // name-yymm
 // The return of the function shall first be sorted by yymm, then by the name (which varies in length).
+
+// input: courses - array of course-names "name-yymm"
+// output: sorted by "yymm", then "name"
+sortme = function (courses) {};
