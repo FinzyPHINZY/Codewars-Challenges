@@ -55,7 +55,23 @@
 // }
 
 const removeDuplicateIds = (obj) => {
-  //
+  const keys = Object.keys(obj).sort((a, b) => b - a);
+  const seen = new Set();
+
+  const result = {};
+
+  for (const key of keys) {
+    const uniqueChars = [];
+    for (const char of obj[key]) {
+      if (!seen.has(char)) {
+        uniqueChars.push(char);
+        seen.add(char);
+      }
+    }
+    result[key] = uniqueChars;
+  }
+
+  return result;
 };
 
 const obj = {
