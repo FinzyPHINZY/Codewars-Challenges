@@ -57,3 +57,47 @@
 const removeDuplicateIds = (obj) => {
   //
 };
+
+const obj = {
+  1: ["A", "B", "C"],
+  2: ["A", "B", "D", "A"],
+};
+const result = removeDuplicateIds(obj);
+
+const obj1 = {
+  1: ["C", "F", "G"],
+  2: ["A", "B", "C"],
+  3: ["A", "B", "D"],
+};
+const result1 = removeDuplicateIds(obj1);
+
+const obj2 = {
+  1: ["A"],
+  2: ["A"],
+  3: ["A"],
+};
+const result2 = removeDuplicateIds(obj2);
+
+const obj3 = {
+  432: ["A", "A", "B", "D"],
+  53: ["L", "G", "B", "C"],
+  236: ["L", "A", "X", "G", "H", "X"],
+  11: ["P", "R", "S", "D"],
+};
+
+const result3 = removeDuplicateIds(obj3);
+
+console.log(removeDuplicateIds(result));
+console.log(removeDuplicateIds(result1));
+console.log(removeDuplicateIds(result2));
+console.log(removeDuplicateIds(result3));
+
+// Test.assertDeepEquals(result, { 1: ["C"], 2: ["A", "B", "D"] });
+// Test.assertDeepEquals(result1, { 1: ["F", "G"], 2: ["C"], 3: ["A", "B", "D"] });
+// Test.assertDeepEquals(result2, { 1: [], 2: [], 3: ["A"] });
+// Test.assertDeepEquals(result3, {
+//   11: ["P", "R", "S"],
+//   53: ["C"],
+//   236: ["L", "X", "G", "H"],
+//   432: ["A", "B", "D"],
+// });
