@@ -10,3 +10,7 @@
 // Any character in the first string that does not appear in the second string should be sorted to the end of the result in original order.
 
 // STRINGSSORTINGALGORITHMS
+
+function sortString(string, ordering) {
+  return string;
+}
