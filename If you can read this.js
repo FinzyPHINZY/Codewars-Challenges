@@ -23,3 +23,9 @@
 // Xray should not have a dash within.
 // Every word and punctuation mark should be seperated by a space ' '.
 // There should be no trailing whitespace
+
+function toNato(words) {
+  // you can access the preloaded NATO dictionary
+  // NATO['A'] === 'Alfa', etc.
+  return "";
+}
