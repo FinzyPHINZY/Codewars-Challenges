@@ -23,9 +23,74 @@
 // Xray should not have a dash within.
 // Every word and punctuation mark should be seperated by a space ' '.
 // There should be no trailing whitespace
+const natoPhoneticAlphabet = [
+  "Alfa",
+  "Bravo",
+  "Charlie",
+  "Delta",
+  "Echo",
+  "Foxtrot",
+  "Golf",
+  "Hotel",
+  "India",
+  "Juliett",
+  "Kilo",
+  "Lima",
+  "Mike",
+  "November",
+  "Oscar",
+  "Papa",
+  "Quebec",
+  "Romeo",
+  "Sierra",
+  "Tango",
+  "Uniform",
+  "Victor",
+  "Whiskey",
+  "X-ray",
+  "Yankee",
+  "Zulu",
+];
 
 function toNato(words) {
   // you can access the preloaded NATO dictionary
   // NATO['A'] === 'Alfa', etc.
-  return "";
+  let table = {
+    A: "Alfa",
+    B: "Bravo",
+    C: "Charlie",
+    D: "Delta",
+    E: "Echo",
+    F: "Foxtrot",
+    G: "Golf",
+    H: "Hotel",
+    I: "India",
+    J: "Juliett",
+    K: "Kilo",
+    L: "Lima",
+    M: "Mike",
+    N: "November",
+    O: "Oscar",
+    P: "Papa",
+    Q: "Quebec",
+    R: "Romeo",
+    S: "Sierra",
+    T: "Tango",
+    U: "Uniform",
+    V: "Victor",
+    W: "Whiskey",
+    X: "Xray",
+    Y: "Yankee",
+    Z: "Zulu",
+  };
+
+  return words
+    .split("")
+    .filter((c) => c !== " ")
+    .map((c) => table[c.toUpperCase()] || c)
+    .join(" ");
 }
+
+console.log(toNato("If you can read"));
+console.log(toNato("Did not see that coming"));
+console.log(toNato("go for it!"));
