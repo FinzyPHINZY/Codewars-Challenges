@@ -4402,11 +4402,21 @@ const sortmeArr = function (names) {
 // Output: 2, 3, 4, 23, 5
 
 function sortByValueAndIndex(array) {
-  const group = [];
-  array.forEach((num, i) => {
-    group[i] = [num, num * (i + 1)];
-  });
-  return group.sort((a, b) => a[1] - b[1]).map((arr) => arr[0]);
+  // const group = [];
+  // array.forEach((num, i) => {
+  //   group[i] = [num, num * (i + 1)];
+  // });
+  // return group.sort((a, b) => a[1] - b[1]).map((arr) => arr[0]);
+
+  return array
+    .map((num, i) => {
+      return {
+        num: num,
+        product: num * (i + 1),
+      };
+    })
+    .sort((a, b) => a.product - b.product)
+    .map((x) => x.num);
 }
 
 console.log(sortByValueAndIndex([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
