@@ -23,6 +23,30 @@
 
 function score(dice) {
   // Fill me in!
+  const counts = [0, 0, 0, 0, 0, 0, 0];
+
+  // Count the occurrences of each dice value
+  dice.forEach((value) => counts[value]++);
+
+  // Initialize score
+  let score = 0;
+
+  // Score for three of a kind
+  const triplesScores = [0, 1000, 200, 300, 400, 500, 600];
+
+  // Add score for three of a kind
+  for (let i = 1; i <= 6; i++) {
+    if (counts[i] >= 3) {
+      score += triplesScores[i];
+      counts[i] -= 3; // Remove the three dice used for the triple
+    }
+  }
+
+  // Add score for single 1s and 5s
+  score += counts[1] * 100;
+  score += counts[5] * 50;
+
+  return score;
 }
 
 console.log(score([2, 3, 4, 6, 2])); //, 0); // "Incorrect answer for dice = [2, 3, 4, 6, 2]" );
