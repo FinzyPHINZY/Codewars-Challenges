@@ -4540,20 +4540,49 @@ function bingo(ticket, win) {
 // 10 and 20 are not equal, so it's not balanced.
 
 // Test Cases:
+function balancedNum(num) {
+  let numStr = num.toString();
+  let leftSum, rightSum;
+  if (numStr.length < 3) {
+    return "Balanced!";
+  }
 
-// describe("Check less than thousand", function () {
-//   it("Check balanced number", function () {
-//     Test.assertEquals(balancedNum(7), "Balanced");
-//     Test.assertEquals(balancedNum(959), "Balanced");
-//     Test.assertEquals(balancedNum(13), "Balanced");
-//     Test.assertEquals(balancedNum(432), "Not Balanced");
-//     Test.assertEquals(balancedNum(424), "Balanced");
-//   });
-//   it("Check Larger number", function () {
-//     Test.assertEquals(balancedNum(1024), "Not Balanced");
-//     Test.assertEquals(balancedNum(66545), "Not Balanced");
-//     Test.assertEquals(balancedNum(295591), "Not Balanced");
-//     Test.assertEquals(balancedNum(1230987), "Not Balanced");
-//     Test.assertEquals(balancedNum(56239814), "Balanced");
-//   });
-// });
+  if (numStr.length % 2 !== 0) {
+    leftSum = numStr
+      .slice(0, numStr.length / 2)
+      .split("")
+      .map(Number)
+      .reduce((sum, num) => sum + num, 0);
+
+    rightSum = numStr
+      .slice(numStr.length / 2 + 1)
+      .split("")
+      .map(Number)
+      .reduce((sum, num) => sum + num, 0);
+  } else {
+    leftSum = numStr
+      .slice(0, numStr.length / 2 - 1)
+      .split("")
+      .map(Number)
+      .reduce((sum, num) => sum + num, 0);
+    rightSum = numStr
+      .slice(numStr.length / 2)
+      .split("")
+      .map(Number)
+      .reduce((sum, num) => sum + num, 0);
+  }
+
+  console.log(leftSum, rightSum);
+  return leftSum === rightSum ? "Balanced!" : "Not Balanced!";
+}
+
+console.log(balancedNum(7)); //"Balanced");
+console.log(balancedNum(959)); // "Balanced");
+console.log(balancedNum(13)); //("Balanced");
+console.log(balancedNum(432)); // "Not Balanced");
+console.log(balancedNum(424)); //, "Balanced");
+console.log(balancedNum(1024)); //Not Balanced");
+console.log(balancedNum(66545)); //"Not Balanced");
+console.log(balancedNum(295591)); // "Not Balanced");
+console.log(balancedNum(1230987)); //, "Not Balanced");
+console.log(balancedNum(56239814)); //), "Balanced");
