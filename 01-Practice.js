@@ -4377,7 +4377,212 @@ const sortmeArr = function (names) {
   return names.sort((a, b) => a - b);
 };
 
-console.log(sortme(["Hello", "there", "I'm", "fine"])); //, ["fine", "Hello", "I'm", "there"])
-console.log(sortme(["C", "d", "a", "B"])); //, ["a", "B", "C", "d"])
-console.log(sortme(["CodeWars"])); //, ["CodeWars"])
-console.log(sortme([])); //, [])
+// console.log(sortme(["Hello", "there", "I'm", "fine"])); //, ["fine", "Hello", "I'm", "there"])
+// console.log(sortme(["C", "d", "a", "B"])); //, ["a", "B", "C", "d"])
+// console.log(sortme(["CodeWars"])); //, ["CodeWars"])
+// console.log(sortme([])); //, [])
+
+// Sort an array by value and index
+// Your task is to sort an array of integer numbers by the product of the value and the index of the positions.
+
+// For sorting the index starts at 1, NOT at 0!
+// The sorting has to be ascending.
+// The array will never be null and will always contain numbers.
+
+// Example:
+
+// Input: 23, 2, 3, 4, 5
+// Product of value and index:
+// 23 => 23 * 1 = 23  -> Output-Pos 4
+//  2 =>  2 * 2 = 4   -> Output-Pos 1
+//  3 =>  3 * 3 = 9   -> Output-Pos 2
+//  4 =>  4 * 4 = 16  -> Output-Pos 3
+//  5 =>  5 * 5 = 25  -> Output-Pos 5
+
+// Output: 2, 3, 4, 23, 5
+
+function sortByValueAndIndex(array) {
+  // const group = [];
+  // array.forEach((num, i) => {
+  //   group[i] = [num, num * (i + 1)];
+  // });
+  // return group.sort((a, b) => a[1] - b[1]).map((arr) => arr[0]);
+
+  return array
+    .map((num, i) => {
+      return {
+        num: num,
+        product: num * (i + 1),
+      };
+    })
+    .sort((a, b) => a.product - b.product)
+    .map((x) => x.num);
+}
+
+// console.log(sortByValueAndIndex([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
+// console.log(sortByValueAndIndex([23, 2, 3, 4, 5])); // [ 2, 3, 4, 23, 5 ];
+// console.log(sortByValueAndIndex([26, 2, 3, 4, 5])); // [ 2, 3, 4, 5, 26 ];
+// console.log(sortByValueAndIndex([9, 5, 1, 4, 3])); // [ 1, 9, 5, 3, 4 ];
+
+// DESCRIPTION:
+// Create a function that returns the CSV representation of a two-dimensional numeric array.
+// Example:
+// input:
+//  [[ 0, 1, 2, 3, 4 ],
+//   [ 10,11,12,13,14 ],
+//   [ 20,21,22,23,24 ],
+//   [ 30,31,32,33,34 ]]
+
+// output:
+//      '0,1,2,3,4\n'
+//     +'10,11,12,13,14\n'
+//     +'20,21,22,23,24\n'
+//     +'30,31,32,33,34'
+// Array's length > 2.
+
+function toCsvText(array) {
+  // good luck
+  return array.join("\n");
+}
+
+// console.log(
+//   toCsvText([
+//     [0, 1, 2, 3, 4],
+//     [10, 11, 12, 13, 14],
+//     [20, 21, 22, 23, 24],
+//     [30, 31, 32, 33, 34],
+//   ])
+// );
+
+// DESCRIPTION:
+// Time to win the lottery!
+// Given a lottery ticket (ticket), represented by an array of 2-value arrays, you must find out if you've won the jackpot.
+// Example ticket:
+// [ [ 'ABC', 65 ], [ 'HGR', 74 ], [ 'BYHT', 74 ] ]
+// To do this, you must first count the 'mini-wins' on your ticket. Each subarray has both a string and a number within it. If the character code of any of the characters in the string matches the number, you get a mini win. Note you can only have one mini win per sub array.
+// Once you have counted all of your mini wins, compare that number to the other input provided (win). If your total is more than or equal to (win), return 'Winner!'. Else return 'Loser!'.
+// All inputs will be in the correct format. Strings on tickets are not always the same length.
+
+function bingo(ticket, win) {
+  let count = 0;
+  ticket.forEach((arr) => {
+    if (arr[0].includes(String.fromCharCode(arr[1]))) count++;
+  });
+
+  return count >= win ? "Winner!" : "Loser!";
+}
+
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     2
+//   )
+// ); //, 'Loser!');
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     1
+//   )
+// ); // 'Winner!');
+// console.log(
+//   bingo(
+//     [
+//       ["HGTYRE", 74],
+//       ["BE", 66],
+//       ["JKTY", 74],
+//     ],
+//     3
+//   )
+// ); //, 'Loser!');
+
+// DESCRIPTION:
+// A balanced number is a number where the sum of digits to the left of the middle digit(s) and the sum of digits to the right of the middle digit(s) are equal.
+
+// If the number has an odd number of digits, then there is only one middle digit. (For example, 92645 has one middle digit, 6.) Otherwise, there are two middle digits. (For example, the middle digits of 1301 are 3 and 0.)
+
+// The middle digit(s) should not be considered when determining whether a number is balanced or not, e.g. 413023 is a balanced number because the left sum and right sum are both 5.
+
+// The task
+// Given a number, find if it is balanced, and return the string "Balanced" or "Not Balanced" accordingly. The passed number will always be positive.
+
+// Examples
+// 7 ==> return "Balanced"
+// Explanation:
+// middle digit(s): 7
+// sum of all digits to the left of the middle digit(s) -> 0
+// sum of all digits to the right of the middle digit(s) -> 0
+// 0 and 0 are equal, so it's balanced.
+// 295591 ==> return "Not Balanced"
+// Explanation:
+// middle digit(s): 55
+// sum of all digits to the left of the middle digit(s) -> 11
+// sum of all digits to the right of the middle digit(s) -> 10
+// 11 and 10 are not equal, so it's not balanced.
+// 959 ==> return "Balanced"
+// Explanation:
+// middle digit(s): 5
+// sum of all digits to the left of the middle digit(s) -> 9
+// sum of all digits to the right of the middle digit(s) -> 9
+// 9 and 9 are equal, so it's balanced.
+// 27102983 ==> return "Not Balanced"
+// Explanation:
+// middle digit(s): 02
+// sum of all digits to the left of the middle digit(s) -> 10
+// sum of all digits to the right of the middle digit(s) -> 20
+// 10 and 20 are not equal, so it's not balanced.
+
+// Test Cases:
+function balancedNum(num) {
+  let numStr = num.toString();
+  let leftSum, rightSum;
+  if (numStr.length < 3) {
+    return "Balanced!";
+  }
+
+  if (numStr.length % 2 !== 0) {
+    leftSum = numStr
+      .slice(0, numStr.length / 2)
+      .split("")
+      .map(Number)
+      .reduce((sum, num) => sum + num, 0);
+
+    rightSum = numStr
+      .slice(numStr.length / 2 + 1)
+      .split("")
+      .map(Number)
+      .reduce((sum, num) => sum + num, 0);
+  } else {
+    leftSum = numStr
+      .slice(0, numStr.length / 2 - 1)
+      .split("")
+      .map(Number)
+      .reduce((sum, num) => sum + num, 0);
+    rightSum = numStr
+      .slice(numStr.length / 2)
+      .split("")
+      .map(Number)
+      .reduce((sum, num) => sum + num, 0);
+  }
+
+  console.log(leftSum, rightSum);
+  return leftSum === rightSum ? "Balanced!" : "Not Balanced!";
+}
+
+console.log(balancedNum(7)); //"Balanced");
+console.log(balancedNum(959)); // "Balanced");
+console.log(balancedNum(13)); //("Balanced");
+console.log(balancedNum(432)); // "Not Balanced");
+console.log(balancedNum(424)); //, "Balanced");
+console.log(balancedNum(1024)); //Not Balanced");
+console.log(balancedNum(66545)); //"Not Balanced");
+console.log(balancedNum(295591)); // "Not Balanced");
+console.log(balancedNum(1230987)); //, "Not Balanced");
+console.log(balancedNum(56239814)); //), "Balanced");
