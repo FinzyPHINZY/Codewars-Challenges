@@ -4,16 +4,16 @@
 // For example, a tower with 3 floors looks like this:
 // [
 //   "  *  ",
-//   " *** ", 
+//   " *** ",
 //   "*****"
 // ]
 // And a tower with 6 floors looks like this:
 // [
-//   "     *     ", 
-//   "    ***    ", 
-//   "   *****   ", 
-//   "  *******  ", 
-//   " ********* ", 
+//   "     *     ",
+//   "    ***    ",
+//   "   *****   ",
+//   "  *******  ",
+//   " ********* ",
 //   "***********"
 // ]
 
@@ -22,16 +22,14 @@ function towerBuilder(nFloors) {
   let tower = [];
 
   for (let i = 0; i < nFloors; i++) {
-    const spaces = " ".repeat(nFloors - (i - 1)); 
-    const stars = "*".repeat(2 *(1 + i));
-    tower.push(spaces+ stars+ spaces);
+    const spaces = " ".repeat(nFloors - (i - 1));
+    const stars = "*".repeat(2 * (1 + i));
+    tower.push(spaces + stars + spaces);
   }
   return tower;
 }
 
 // console.log(towerBuilder(6))
-
-
 
 // Description:
 // The museum of incredible dull things
@@ -50,9 +48,8 @@ function towerBuilder(nFloors) {
 // * Input: [5,3,2,1,4], output = [5,3,2,4]
 // * Input: [2,2,1,2,1], output = [2,2,2,1]
 
+function dullThings(arr) {}
 
-function dullThings (arr) {
-
-}
-
-
+console.log(dullThings());
+console.log(dullThings());
+console.log(dullThings());
