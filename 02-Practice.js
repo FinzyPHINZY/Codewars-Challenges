@@ -50,6 +50,6 @@ function towerBuilder(nFloors) {
 
 function dullThings(arr) {}
 
-console.log(dullThings());
-console.log(dullThings());
-console.log(dullThings());
+console.log(dullThings([1, 2, 3, 4, 5]));
+console.log(dullThings([5, 3, 2, 1, 4]));
+console.log(dullThings([2, 2, 1, 2, 1]));
