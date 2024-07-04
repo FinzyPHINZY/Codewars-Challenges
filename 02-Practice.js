@@ -51,4 +51,8 @@ function towerBuilder(nFloors) {
 // * Input: [2,2,1,2,1], output = [2,2,2,1]
 
 
+function dullThings (arr) {
+
+}
+
 
