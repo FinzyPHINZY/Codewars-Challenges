@@ -48,7 +48,10 @@ function towerBuilder(nFloors) {
 // * Input: [5,3,2,1,4], output = [5,3,2,4]
 // * Input: [2,2,1,2,1], output = [2,2,2,1]
 
-function dullThings(arr) {}
+function dullThings(arr) {
+  const min = arr.indexOf(Math.min(...arr));
+  return arr.filter((_, i) => i !== min);
+}
 
 console.log(dullThings([1, 2, 3, 4, 5]));
 console.log(dullThings([5, 3, 2, 1, 4]));
