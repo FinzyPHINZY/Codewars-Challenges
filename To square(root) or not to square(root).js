@@ -12,7 +12,13 @@
 // The input array will always contain only positive numbers, and will never be empty or null.
 
 function squareOrSquareRoot(array) {
-  return array;
+  return array.map((num) => {
+    const iSqrt = Number.isInteger(Math.sqrt(num));
+
+    if (iSqrt) return Math.sqrt(num);
+
+    return num ** 2;
+  });
 }
 
 var expected = [2, 9, 3, 49, 4, 1];
