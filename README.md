@@ -32,7 +32,7 @@ Example: `7 - guess_the_nth_number.js`
 
 ## How to Use
 
-Feel free to explore the solutions based on your interest or use them for learning purposes. To run the code, make sure you have the necessary environment set up for the respective programming language. Each file is self-contained and includes comments for better understanding.
+Feel free to explore the solutions based on your interest or use them for learning purposes. To run the code, make sure you have the necessary environment set up for the javascript programming language. Each file is self-contained and includes comments for better understanding.
 
 ## Contributing
 
