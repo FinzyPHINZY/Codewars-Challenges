@@ -5,3 +5,7 @@
 // Example:
 
 // solution(5) // should return "Value is 00005"
+
+function solution(value) {
+  //...
+}
