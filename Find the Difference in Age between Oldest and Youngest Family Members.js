@@ -5,7 +5,9 @@
 // You will be given an array of all the family members' ages, in any order. The ages will be given in whole numbers, so a baby of 5 months, will have an ascribed ‘age’ of 0. Return a new array (a tuple in Python) with [youngest age, oldest age, difference between the youngest and oldest age].
 
 function differenceInAges(ages) {
-  return [0, 0, 0];
+  const youngest = Math.min(...ages);
+  const oldest = Math.max(...ages);
+  return [youngest, oldest, oldest - youngest];
 }
 
 console.log(differenceInAges([82, 15, 6, 38, 35])); //), [6, 82, 76]);
