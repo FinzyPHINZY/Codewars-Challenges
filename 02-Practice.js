@@ -94,7 +94,23 @@ function dullThings(arr) {
 //   "Dasher Tonoyan",
 // ]
 
-function sortReindeer(reindeerNames) {}
+function sortReindeer(reindeerNames) {
+  return reindeerNames.sort(
+    (a, b) => a.split(" ")[1] - b.split(" ")[1]
+    //   {
+    //   const nameA = a.split(" ")[1];
+    //   const nameB = b.split(" ")[1];
+
+    //   if (nameA > nameB) {
+    //     return 1;
+    //   } else if (nameA < nameB) {
+    //     return -1;
+    //   } else {
+    //     return 0;
+    //   }
+    // }
+  );
+}
 
 let input = [
   "Dasher Tonoyan",
@@ -106,14 +122,14 @@ let input = [
   "Donder Jonker",
   "Blitzen Claus",
 ];
-let output = [
-  "Prancer Chua",
-  "Blitzen Claus",
-  "Cupid Foroutan",
-  "Vixen Hall",
-  "Donder Jonker",
-  "Comet Karavani",
-  "Dancer Moore",
-  "Dasher Tonoyan",
-];
+// let output = [
+//   "Prancer Chua",
+//   "Blitzen Claus",
+//   "Cupid Foroutan",
+//   "Vixen Hall",
+//   "Donder Jonker",
+//   "Comet Karavani",
+//   "Dancer Moore",
+//   "Dasher Tonoyan",
+// ];
 console.log(sortReindeer(input)); //, output);
