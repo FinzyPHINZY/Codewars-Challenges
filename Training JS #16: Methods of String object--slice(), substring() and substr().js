@@ -100,6 +100,8 @@
 
 function cutIt(arr) {
   //coding here...
+  const shortestWordLength = Math.min(...arr.map((val) => val.length));
+  return arr.map((word) => word.slice(0, shortestWordLength));
 }
 
 console.log(cutIt(["ab", "cde", "fgh"])); //, ["ab","cd","fg"]);
