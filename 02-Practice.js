@@ -196,3 +196,37 @@ let input = [
 //   "Dasher Tonoyan",
 // ];
 // console.log(sortReindeer(input)); //, output);
+
+// Color Ghost
+
+// Create a class Ghost
+
+// Ghost objects are instantiated without any arguments.
+
+// Ghost objects are given a random color attribute of 'white' or 'yellow'
+
+// or 'purple' or 'red when instantiated.
+
+// ghost = new Ghost();
+
+// ghost.color //=> "white" or "yellow" or "purple" or "red"
+
+var Ghost = function () {
+  // your code goes here
+  this.color = ["white", "yellow", "purple", "red"][
+    Math.floor(Math.random() * 4)
+  ];
+  this.fruit = ["orange", "pineapple"];
+  return this;
+};
+
+// describe("Ghost", () => {
+//   it("should be one of the specified colors", () => {
+let colors = ["white", "yellow", "purple", "red"];
+//     Test.expect(colors.includes(new Ghost().color));
+//   });
+// });
+
+const ghostColor = new Ghost().color;
+
+console.log(colors.includes(ghostColor));
