@@ -304,4 +304,26 @@ function sumMultiples(limit) {
   return multiples.reduce((sum, num) => sum + num, 0);
 }
 
-console.log(sumMultiples(10));
+// console.log(sumMultiples(10));
+
+// Task
+// Implement a function which accepts 2 arguments: string and separator.
+// The expected algorithm: split the string into words by spaces, split each word into separate characters and join them back with the specified separator, join all the resulting "words" back into a sentence with spaces.
+// For example:
+
+function splitAndMerge(string, separator) {
+  // split the string by spaces
+  // map the result and split each word to individual letters
+  // join by the seperator
+  // join on the outer level by space
+
+  return string
+    .split(" ")
+    .map((word) => word.split("").join(separator))
+    .join(" ");
+}
+
+console.log(splitAndMerge("My name is John", " ")); // == "M y n a m e i s J o h n";
+console.log(splitAndMerge("My name is John", "-")); // == "M-y n-a-m-e i-s J-o-h-n";
+console.log(splitAndMerge("Hello World!", ".")); // == "H.e.l.l.o W.o.r.l.d.!";
+console.log(splitAndMerge("Hello World!", ",")); // == "H,e,l,l,o W,o,r,l,d,!";
