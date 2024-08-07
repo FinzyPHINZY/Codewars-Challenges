@@ -352,5 +352,36 @@ function unluckyDays(year) {
   return count;
 }
 
-console.log(unluckyDays(2015));
-console.log(unluckyDays(1986));
+// console.log(unluckyDays(2015));
+// console.log(unluckyDays(1986));
+
+// Create a function that returns the CSV representation of a two-dimensional numeric array.
+// Example:
+
+// let  input =
+//  [[ 0, 1, 2, 3, 4 ],
+//   [ 10,11,12,13,14 ],
+//   [ 20,21,22,23,24 ],
+//   [ 30,31,32,33,34 ]]
+
+// output:
+//      '0,1,2,3,4\n'
+//     +'10,11,12,13,14\n'
+//     +'20,21,22,23,24\n'
+//     +'30,31,32,33,34'
+
+// Array's length > 2.
+
+function toCsvText(array) {
+  // good luck
+  console.log(array.join("\n"));
+}
+
+const inputArray = [
+  [0, 1, 2, 3, 4],
+  [10, 11, 12, 13, 14],
+  [20, 21, 22, 23, 24],
+  [30, 31, 32, 33, 34],
+];
+
+console.log(toCsvText(inputArray));
