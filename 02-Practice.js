@@ -53,6 +53,335 @@ function dullThings(arr) {
   return arr.filter((_, i) => i !== min);
 }
 
-console.log(dullThings([1, 2, 3, 4, 5]));
-console.log(dullThings([5, 3, 2, 1, 4]));
-console.log(dullThings([2, 2, 1, 2, 1]));
+// console.log(dullThings([1, 2, 3, 4, 5]));
+// console.log(dullThings([5, 3, 2, 1, 4]));
+// console.log(dullThings([2, 2, 1, 2, 1]));
+
+("use strict");
+
+// Happy Holidays fellow Code Warriors!
+// Now, Dasher! Now, Dancer! Now, Prancer, and Vixen! On, Comet! On, Cupid! On, Donder and Blitzen! That's the order Santa wanted his reindeer...right? What do you mean he wants them in order by their last names!? Looks like we need your help Code Warrior!
+
+// Sort Santa's Reindeer
+// Write a function that accepts a sequence of Reindeer names, and returns a sequence with the Reindeer names sorted by their last names.
+
+// Notes:
+// It's guaranteed that each string is composed of two words
+// In case of two identical last names, keep the original order
+// Examples
+// For this input:
+
+// [
+//   "Dasher Tonoyan",
+//   "Dancer Moore",
+//   "Prancer Chua",
+//   "Vixen Hall",
+//   "Comet Karavani",
+//   "Cupid Foroutan",
+//   "Donder Jonker",
+//   "Blitzen Claus"
+// ]
+// You should return this output:
+
+// [
+//   "Prancer Chua",
+//   "Blitzen Claus",
+//   "Cupid Foroutan",
+//   "Vixen Hall",
+//   "Donder Jonker",
+//   "Comet Karavani",
+//   "Dancer Moore",
+//   "Dasher Tonoyan",
+// ]
+
+function sortReindeer(reindeerNames) {
+  return reindeerNames.sort(
+    (a, b) => a.split(" ")[1] - b.split(" ")[1]
+    //   {
+    //   const nameA = a.split(" ")[1];
+    //   const nameB = b.split(" ")[1];
+
+    //   if (nameA > nameB) {
+    //     return 1;
+    //   } else if (nameA < nameB) {
+    //     return -1;
+    //   } else {
+    //     return 0;
+    //   }
+    // }
+  );
+}
+
+// let input = [
+//   "Dasher Tonoyan",
+//   "Dancer Moore",
+//   "Prancer Chua",
+//   "Vixen Hall",
+//   "Comet Karavani",
+//   "Cupid Foroutan",
+//   "Donder Jonker",
+//   "Blitzen Claus",
+// ];
+// let output = [
+//   "Prancer Chua",
+//   "Blitzen Claus",
+//   "Cupid Foroutan",
+//   "Vixen Hall",
+//   "Donder Jonker",
+//   "Comet Karavani",
+//   "Dancer Moore",
+//   "Dasher Tonoyan",
+// ];
+// console.log(sortReindeer(input)); //, output);
+
+// Happy Holidays fellow Code Warriors!
+// Now, Dasher! Now, Dancer! Now, Prancer, and Vixen! On, Comet! On, Cupid! On, Donder and Blitzen! That's the order Santa wanted his reindeer...right? What do you mean he wants them in order by their last names!? Looks like we need your help Code Warrior!
+
+// Sort Santa's Reindeer
+// Write a function that accepts a sequence of Reindeer names, and returns a sequence with the Reindeer names sorted by their last names.
+
+// Notes:
+// It's guaranteed that each string is composed of two words
+// In case of two identical last names, keep the original order
+// Examples
+// For this input:
+
+// [
+//   "Dasher Tonoyan",
+//   "Dancer Moore",
+//   "Prancer Chua",
+//   "Vixen Hall",
+//   "Comet Karavani",
+//   "Cupid Foroutan",
+//   "Donder Jonker",
+//   "Blitzen Claus"
+// ]
+// You should return this output:
+
+// [
+//   "Prancer Chua",
+//   "Blitzen Claus",
+//   "Cupid Foroutan",
+//   "Vixen Hall",
+//   "Donder Jonker",
+//   "Comet Karavani",
+//   "Dancer Moore",
+//   "Dasher Tonoyan",
+// ]
+
+function sortReindeer(reindeerNames) {
+  return reindeerNames.sort((a, b) =>
+    a.split(" ")[1].localeCompare(b.split(" ")[1])
+  );
+}
+
+let input = [
+  "Dasher Tonoyan",
+  "Dancer Moore",
+  "Prancer Chua",
+  "Vixen Hall",
+  "Comet Karavani",
+  "Cupid Foroutan",
+  "Donder Jonker",
+  "Blitzen Claus",
+];
+// let output = [
+//   "Prancer Chua",
+//   "Blitzen Claus",
+//   "Cupid Foroutan",
+//   "Vixen Hall",
+//   "Donder Jonker",
+//   "Comet Karavani",
+//   "Dancer Moore",
+//   "Dasher Tonoyan",
+// ];
+// console.log(sortReindeer(input)); //, output);
+
+// Color Ghost
+
+// Create a class Ghost
+
+// Ghost objects are instantiated without any arguments.
+
+// Ghost objects are given a random color attribute of 'white' or 'yellow'
+
+// or 'purple' or 'red when instantiated.
+
+// ghost = new Ghost();
+
+// ghost.color //=> "white" or "yellow" or "purple" or "red"
+
+var Ghost = function () {
+  // your code goes here
+  this.color = ["white", "yellow", "purple", "red"][
+    Math.floor(Math.random() * 4)
+  ];
+  this.fruit = ["orange", "pineapple"];
+  return this;
+};
+
+// describe("Ghost", () => {
+//   it("should be one of the specified colors", () => {
+// let colors = ["white", "yellow", "purple", "red"];
+//     Test.expect(colors.includes(new Ghost().color));
+//   });
+// });
+
+// const ghostColor = new Ghost().color;
+
+// console.log(colors.includes(ghostColor));
+
+// DESCRIPTION:
+// This is a spin off of my first kata.
+// You are given a string containing a sequence of character sequences separated by commas.
+// Write a function which returns a new string containing the same character sequences except the first and the last ones but this time separated by spaces.
+// If the input string is empty or the removal of the first and last items would cause the resulting string to be empty, return an empty value (represented as a generic value NULL in the examples below).
+// Examples
+
+// "1,2,3"      =>  "2"
+// "1,2,3,4"    =>  "2 3"
+// "1,2,3,4,5"  =>  "2 3 4"
+
+// ""     =>  NULL
+// "1"    =>  NULL
+// "1,2"  =>  NULL
+
+function array(string) {
+  // TODO
+  string = string.split(",");
+  if (string.length < 3) return null;
+
+  const result = string
+    .filter((char, i) => i !== 0 && i !== string.length - 1)
+    .join(" ");
+
+  return result;
+}
+
+// describe('Sample Tests', function() {
+//   function test(string, expected) {
+//     it(`string='${string}'`, function() {
+//       assert.strictEqual(array(string), expected);
+//     });
+//   }
+
+// console.log(array("")); //, null);
+// console.log(array("1")); //, null);
+// console.log(array("A1,B2")); //, null);
+// console.log(array("1,2,3")); //, '2');
+// console.log(array("1,2,3,4")); //, '2 3');
+// console.log(array("A1,B2,C3,D4,E5")); //, 'B2 C3 D4');
+// console.log(array("A,1,23,456,78,9,Z")); //, '1 23 456 78 9');
+
+// DESCRIPTION:
+// If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+// Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
+
+// Additionally, if the number is negative, return 0.
+
+// Note: If the number is a multiple of both 3 and 5, only count it once.
+
+// Courtesy of projecteuler.net (Problem 1)
+
+// Test Cases:
+
+// describe("basic tests", function () {
+//   test(10, 23);
+// });
+
+function sumMultiples(limit) {
+  // find the numbers that are multiples of 3 or 5 below 'limit';
+  let multiples = [];
+  for (let i = 0; i < limit; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      multiples.push(i);
+    }
+  }
+
+  console.log(multiples);
+  // return the total
+  return multiples.reduce((sum, num) => sum + num, 0);
+}
+
+// console.log(sumMultiples(10));
+
+// Task
+// Implement a function which accepts 2 arguments: string and separator.
+// The expected algorithm: split the string into words by spaces, split each word into separate characters and join them back with the specified separator, join all the resulting "words" back into a sentence with spaces.
+// For example:
+
+function splitAndMerge(string, separator) {
+  // split the string by spaces
+  // map the result and split each word to individual letters
+  // join by the seperator
+  // join on the outer level by space
+
+  return string
+    .split(" ")
+    .map((word) => word.split("").join(separator))
+    .join(" ");
+}
+
+// console.log(splitAndMerge("My name is John", " ")); // == "M y n a m e i s J o h n";
+// console.log(splitAndMerge("My name is John", "-")); // == "M-y n-a-m-e i-s J-o-h-n";
+// console.log(splitAndMerge("Hello World!", ".")); // == "H.e.l.l.o W.o.r.l.d.!";
+// console.log(splitAndMerge("Hello World!", ",")); // == "H,e,l,l,o W,o,r,l,d,!";
+
+// DESCRIPTION:
+// Friday 13th or Black Friday is considered as unlucky day. Calculate how many unlucky days are in the given year.
+// Find the number of Friday 13th in the given year.
+// Input: Year in Gregorian calendar as integer.
+// Output: Number of Black Fridays in the year as an integer.
+// Examples:
+
+// unluckyDays(2015) == 3;
+// unluckyDays(1986) == 1;
+
+function unluckyDays(year) {
+  //your code here
+  let count = 0;
+  for (let i = 0; i < 12; i++) {
+    let date = new Date(year, i, 13);
+
+    if (date.getDay() === 5) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+// console.log(unluckyDays(2015));
+// console.log(unluckyDays(1986));
+
+// Create a function that returns the CSV representation of a two-dimensional numeric array.
+// Example:
+
+// let  input =
+//  [[ 0, 1, 2, 3, 4 ],
+//   [ 10,11,12,13,14 ],
+//   [ 20,21,22,23,24 ],
+//   [ 30,31,32,33,34 ]]
+
+// output:
+//      '0,1,2,3,4\n'
+//     +'10,11,12,13,14\n'
+//     +'20,21,22,23,24\n'
+//     +'30,31,32,33,34'
+
+// Array's length > 2.
+
+function toCsvText(array) {
+  // good luck
+  console.log(array.join("\n"));
+}
+
+const inputArray = [
+  [0, 1, 2, 3, 4],
+  [10, 11, 12, 13, 14],
+  [20, 21, 22, 23, 24],
+  [30, 31, 32, 33, 34],
+];
+
+console.log(toCsvText(inputArray));
