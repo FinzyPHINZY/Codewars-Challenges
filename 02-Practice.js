@@ -384,4 +384,30 @@ const inputArray = [
   [30, 31, 32, 33, 34],
 ];
 
-console.log(toCsvText(inputArray));
+// console.log(toCsvText(inputArray));
+
+// DESCRIPTION:
+// Friday 13th or Black Friday is considered as unlucky day. Calculate how many unlucky days are in the given year.
+// Find the number of Friday 13th in the given year.
+// Input: Year in Gregorian calendar as integer.
+// Output: Number of Black Fridays in the year as an integer.
+// Examples:
+
+// unluckyDays(2015) == 3
+// unluckyDays(1986) == 1
+
+function unluckyDays(year) {
+  //your code here
+  let count = 0;
+  // loop through the year and get the dates that match 13
+  for (let i = 0; i < 12; i++) {
+    let date = new Date(year, i, 13);
+    const day = date.getDay();
+
+    day === 5 && count++;
+  }
+  return count;
+}
+
+console.log(unluckyDays(2015));
+console.log(unluckyDays(1986));
