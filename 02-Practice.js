@@ -409,5 +409,74 @@ function unluckyDays(year) {
   return count;
 }
 
-console.log(unluckyDays(2015));
-console.log(unluckyDays(1986));
+// console.log(unluckyDays(2015));
+// console.log(unluckyDays(1986));
+
+// DESCRIPTION:
+// Time to win the lottery!
+// Given a lottery ticket (ticket), represented by an array of 2-value arrays, you must find out if you've won the jackpot.
+// Example ticket:
+
+// [ [ 'ABC', 65 ], [ 'HGR', 74 ], [ 'BYHT', 74 ] ]
+
+// To do this, you must first count the 'mini-wins' on your ticket. Each subarray has both a string and a number within it. If the character code of any of the characters in the string matches the number, you get a mini win. Note you can only have one mini win per sub array.
+// Once you have counted all of your mini wins, compare that number to the other input provided (win). If your total is more than or equal to (win), return 'Winner!'. Else return 'Loser!'.
+// All inputs will be in the correct format. Strings on tickets are not always the same length.
+
+function bingo(ticket, win) {
+  // count mini-wins
+  // for each subarray, {
+  // split the string into individual characters and convert them to it's respective character code
+  // if any of the character code matches the number, increate the mini win counter.
+  //  return winner or loser depending on the mini win count and the win value.
+  // }
+
+  const miniWins = ticket
+    .map((subArray) => {
+      const charCodes = subArray[0]
+        .split("")
+        .map((_, i) => subArray[0].charCodeAt(i));
+
+      return charCodes.reduce((a, b) => {
+        if (b === subArray[1]) {
+          return a + 1;
+        } else {
+          return a;
+        }
+      }, 0);
+    })
+    .reduce((a, b) => a + b, 0);
+
+  return miniWins >= win ? "Winner!" : "Loser!";
+}
+
+console.log(
+  bingo(
+    [
+      ["ABC", 65],
+      ["HGR", 74],
+      ["BYHT", 74],
+    ],
+    2
+  )
+); //, 'Loser!');
+console.log(
+  bingo(
+    [
+      ["ABC", 65],
+      ["HGR", 74],
+      ["BYHT", 74],
+    ],
+    1
+  )
+); // 'Winner!');
+console.log(
+  bingo(
+    [
+      ["HGTYRE", 74],
+      ["BE", 66],
+      ["JKTY", 74],
+    ],
+    3
+  )
+); //, 'Loser!');
