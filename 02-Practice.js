@@ -450,33 +450,63 @@ function bingo(ticket, win) {
   return miniWins >= win ? "Winner!" : "Loser!";
 }
 
-console.log(
-  bingo(
-    [
-      ["ABC", 65],
-      ["HGR", 74],
-      ["BYHT", 74],
-    ],
-    2
-  )
-); //, 'Loser!');
-console.log(
-  bingo(
-    [
-      ["ABC", 65],
-      ["HGR", 74],
-      ["BYHT", 74],
-    ],
-    1
-  )
-); // 'Winner!');
-console.log(
-  bingo(
-    [
-      ["HGTYRE", 74],
-      ["BE", 66],
-      ["JKTY", 74],
-    ],
-    3
-  )
-); //, 'Loser!');
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     2
+//   )
+// ); //, 'Loser!');
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     1
+//   )
+// ); // 'Winner!');
+// console.log(
+//   bingo(
+//     [
+//       ["HGTYRE", 74],
+//       ["BE", 66],
+//       ["JKTY", 74],
+//     ],
+//     3
+//   )
+// ); //, 'Loser!');
+
+// DESCRIPTION:
+// Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
+// Your task is to process a string with "#" symbols.
+// Examples
+
+// "abc#d##c"      ==>  "ac"
+// "abc##d######"  ==>  ""
+// "#######"       ==>  ""
+// ""              ==>  ""
+
+function cleanString(s) {
+  // ... your code ...
+  let result = [];
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === "#") {
+      result.pop();
+    } else {
+      result.push(s[i]);
+    }
+  }
+
+  return result.join("");
+}
+
+console.log(cleanString("abc#d##c")); //'ac');
+console.log(cleanString("abc####d##c#")); //, '');
+console.log(cleanString("#######")); // ""
+console.log(cleanString("")); // ""
