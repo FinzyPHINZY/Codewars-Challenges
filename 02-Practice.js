@@ -384,4 +384,207 @@ const inputArray = [
   [30, 31, 32, 33, 34],
 ];
 
-console.log(toCsvText(inputArray));
+// console.log(toCsvText(inputArray));
+
+// DESCRIPTION:
+// Friday 13th or Black Friday is considered as unlucky day. Calculate how many unlucky days are in the given year.
+// Find the number of Friday 13th in the given year.
+// Input: Year in Gregorian calendar as integer.
+// Output: Number of Black Fridays in the year as an integer.
+// Examples:
+
+// unluckyDays(2015) == 3
+// unluckyDays(1986) == 1
+
+function unluckyDays(year) {
+  //your code here
+  let count = 0;
+  // loop through the year and get the dates that match 13
+  for (let i = 0; i < 12; i++) {
+    let date = new Date(year, i, 13);
+    const day = date.getDay();
+
+    day === 5 && count++;
+  }
+  return count;
+}
+
+// console.log(unluckyDays(2015));
+// console.log(unluckyDays(1986));
+
+// DESCRIPTION:
+// Time to win the lottery!
+// Given a lottery ticket (ticket), represented by an array of 2-value arrays, you must find out if you've won the jackpot.
+// Example ticket:
+
+// [ [ 'ABC', 65 ], [ 'HGR', 74 ], [ 'BYHT', 74 ] ]
+
+// To do this, you must first count the 'mini-wins' on your ticket. Each subarray has both a string and a number within it. If the character code of any of the characters in the string matches the number, you get a mini win. Note you can only have one mini win per sub array.
+// Once you have counted all of your mini wins, compare that number to the other input provided (win). If your total is more than or equal to (win), return 'Winner!'. Else return 'Loser!'.
+// All inputs will be in the correct format. Strings on tickets are not always the same length.
+
+function bingo(ticket, win) {
+  // count mini-wins
+  // for each subarray, {
+  // split the string into individual characters and convert them to it's respective character code
+  // if any of the character code matches the number, increate the mini win counter.
+  //  return winner or loser depending on the mini win count and the win value.
+  // }
+
+  const miniWins = ticket
+    .map((subArray) => {
+      const charCodes = subArray[0]
+        .split("")
+        .map((_, i) => subArray[0].charCodeAt(i));
+
+      return charCodes.reduce((a, b) => {
+        if (b === subArray[1]) {
+          return a + 1;
+        } else {
+          return a;
+        }
+      }, 0);
+    })
+    .reduce((a, b) => a + b, 0);
+
+  return miniWins >= win ? "Winner!" : "Loser!";
+}
+
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     2
+//   )
+// ); //, 'Loser!');
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     1
+//   )
+// ); // 'Winner!');
+// console.log(
+//   bingo(
+//     [
+//       ["HGTYRE", 74],
+//       ["BE", 66],
+//       ["JKTY", 74],
+//     ],
+//     3
+//   )
+// ); //, 'Loser!');
+
+// DESCRIPTION:
+// Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
+// Your task is to process a string with "#" symbols.
+// Examples
+
+// "abc#d##c"      ==>  "ac"
+// "abc##d######"  ==>  ""
+// "#######"       ==>  ""
+// ""              ==>  ""
+
+function cleanString(s) {
+  // ... your code ...
+  let result = [];
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === "#") {
+      result.pop();
+    } else {
+      result.push(s[i]);
+    }
+  }
+
+  return result.join("");
+}
+
+// console.log(cleanString("abc#d##c")); //'ac');
+// console.log(cleanString("abc####d##c#")); //, '');
+// console.log(cleanString("#######")); // ""
+// console.log(cleanString("")); // ""
+
+// DESCRIPTION:
+// Time to win the lottery!
+// Given a lottery ticket (ticket), represented by an array of 2-value arrays, you must find out if you've won the jackpot.
+// Example ticket:
+
+// [ [ 'ABC', 65 ], [ 'HGR', 74 ], [ 'BYHT', 74 ] ]
+
+// To do this, you must first count the 'mini-wins' on your ticket. Each subarray has both a string and a number within it. If the character code of any of the characters in the string matches the number, you get a mini win. Note you can only have one mini win per sub array.
+// Once you have counted all of your mini wins, compare that number to the other input provided (win). If your total is more than or equal to (win), return 'Winner!'. Else return 'Loser!'.
+// All inputs will be in the correct format. Strings on tickets are not always the same length.
+
+function bingo(ticket, win) {
+  let count = 0;
+  // ticket.map((subArray) =>
+  //   subArray[0].split("").map((char, i) => subArray[0].charCodeAt(i))
+  // );
+
+  ticket.forEach((arr) => {
+    // arr[0] = arr[0].split("").map((strs, i) => strs.charCodeAt(i));
+    // return arr[0];
+
+    if (arr[0].includes(String.fromCharCode(arr[1]))) {
+      count++;
+    }
+  });
+
+  return count >= win ? "winna" : "loser";
+}
+
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     2
+//   )
+// ); //, 'Loser!');
+// console.log(bingo([['ABC', 65], ['HGR', 74], ['BYHT', 74]], 1),) // 'Winner!');
+// console.log(bingo([['HGTYRE', 74], ['BE', 66], ['JKTY', 74]], 3)) //, 'Loser!');
+
+("use strict");
+
+// Sort an array by value and index
+// Your task is to sort an array of integer numbers by the product of the value and the index of the positions.
+
+// For sorting the index starts at 1, NOT at 0!
+// The sorting has to be ascending.
+// The array will never be null and will always contain numbers.
+
+// Example:
+
+// Input: 23, 2, 3, 4, 5
+// Product of value and index:
+// 23 => 23 * 1 = 23  -> Output-Pos 4
+//  2 =>  2 * 2 = 4   -> Output-Pos 1
+//  3 =>  3 * 3 = 9   -> Output-Pos 2
+//  4 =>  4 * 4 = 16  -> Output-Pos 3
+//  5 =>  5 * 5 = 25  -> Output-Pos 5
+
+// Output: 2, 3, 4, 23, 5
+
+function sortByValueAndIndex(array) {
+  return array
+    .map((value, i) => ({
+      value: value,
+      product: value * (i + 1),
+    }))
+    .sort((a, b) => a.product - b.product)
+    .map((arr) => arr.value);
+}
+
+// console.log(sortByValueAndIndex([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
+// console.log(sortByValueAndIndex([23, 2, 3, 4, 5])); // [ 2, 3, 4, 23, 5 ];
+// console.log(sortByValueAndIndex([26, 2, 3, 4, 5])); // [ 2, 3, 4, 5, 26 ];
+// console.log(sortByValueAndIndex([9, 5, 1, 4, 3])); // [ 1, 9, 5, 3, 4 ];
