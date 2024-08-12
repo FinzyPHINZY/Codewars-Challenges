@@ -506,7 +506,77 @@ function cleanString(s) {
   return result.join("");
 }
 
-console.log(cleanString("abc#d##c")); //'ac');
-console.log(cleanString("abc####d##c#")); //, '');
-console.log(cleanString("#######")); // ""
-console.log(cleanString("")); // ""
+// console.log(cleanString("abc#d##c")); //'ac');
+// console.log(cleanString("abc####d##c#")); //, '');
+// console.log(cleanString("#######")); // ""
+// console.log(cleanString("")); // ""
+
+// DESCRIPTION:
+// Time to win the lottery!
+// Given a lottery ticket (ticket), represented by an array of 2-value arrays, you must find out if you've won the jackpot.
+// Example ticket:
+
+// [ [ 'ABC', 65 ], [ 'HGR', 74 ], [ 'BYHT', 74 ] ]
+
+// To do this, you must first count the 'mini-wins' on your ticket. Each subarray has both a string and a number within it. If the character code of any of the characters in the string matches the number, you get a mini win. Note you can only have one mini win per sub array.
+// Once you have counted all of your mini wins, compare that number to the other input provided (win). If your total is more than or equal to (win), return 'Winner!'. Else return 'Loser!'.
+// All inputs will be in the correct format. Strings on tickets are not always the same length.
+
+function bingo(ticket, win) {
+  let count = 0;
+  // ticket.map((subArray) =>
+  //   subArray[0].split("").map((char, i) => subArray[0].charCodeAt(i))
+  // );
+
+  ticket.forEach((arr) => {
+    // arr[0] = arr[0].split("").map((strs, i) => strs.charCodeAt(i));
+    // return arr[0];
+
+    if (arr[0].includes(String.fromCharCode(arr[1]))) {
+      count++;
+    }
+  });
+
+  return count >= win ? "winna" : "loser";
+}
+
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     2
+//   )
+// ); //, 'Loser!');
+// console.log(bingo([['ABC', 65], ['HGR', 74], ['BYHT', 74]], 1),) // 'Winner!');
+// console.log(bingo([['HGTYRE', 74], ['BE', 66], ['JKTY', 74]], 3)) //, 'Loser!');
+
+("use strict");
+
+// Sort an array by value and index
+// Your task is to sort an array of integer numbers by the product of the value and the index of the positions.
+
+// For sorting the index starts at 1, NOT at 0!
+// The sorting has to be ascending.
+// The array will never be null and will always contain numbers.
+
+// Example:
+
+// Input: 23, 2, 3, 4, 5
+// Product of value and index:
+// 23 => 23 * 1 = 23  -> Output-Pos 4
+//  2 =>  2 * 2 = 4   -> Output-Pos 1
+//  3 =>  3 * 3 = 9   -> Output-Pos 2
+//  4 =>  4 * 4 = 16  -> Output-Pos 3
+//  5 =>  5 * 5 = 25  -> Output-Pos 5
+
+// Output: 2, 3, 4, 23, 5
+
+function sortByValueAndIndex(array) {}
+
+console.log(sortByValueAndIndex([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
+console.log(sortByValueAndIndex([23, 2, 3, 4, 5])); // [ 2, 3, 4, 23, 5 ];
+console.log(sortByValueAndIndex([26, 2, 3, 4, 5])); // [ 2, 3, 4, 5, 26 ];
+console.log(sortByValueAndIndex([9, 5, 1, 4, 3])); // [ 1, 9, 5, 3, 4 ];
