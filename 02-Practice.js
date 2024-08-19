@@ -610,33 +610,60 @@ function bingo(ticket, win) {
   return count >= win ? "winna" : "loser";
 }
 
-console.log(
-  bingo(
-    [
-      ["ABC", 65],
-      ["HGR", 74],
-      ["BYHT", 74],
-    ],
-    2
-  )
-); //, 'Loser!');
-console.log(
-  bingo(
-    [
-      ["ABC", 65],
-      ["HGR", 74],
-      ["BYHT", 74],
-    ],
-    1
-  )
-); // 'Winner!');
-console.log(
-  bingo(
-    [
-      ["HGTYRE", 74],
-      ["BE", 66],
-      ["JKTY", 74],
-    ],
-    3
-  )
-); //, 'Loser!');
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     2
+//   )
+// ); //, 'Loser!');
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     1
+//   )
+// ); // 'Winner!');
+// console.log(
+//   bingo(
+//     [
+//       ["HGTYRE", 74],
+//       ["BE", 66],
+//       ["JKTY", 74],
+//     ],
+//     3
+//   )
+// ); //, 'Loser!');
+
+// Color Ghost
+
+// Create a class Ghost
+
+// Ghost objects are instantiated without any arguments.
+
+// Ghost objects are given a random color attribute of 'white' or 'yellow'
+
+// or 'purple' or 'red when instantiated.
+
+// ghost = new Ghost();
+
+// ghost.color //=> "white" or "yellow" or "purple" or "red"
+
+let colors = ["white", "yellow", "purple", "red"];
+
+var Ghost = function () {
+  // your code goes here
+  this.color = colors[Math.floor(Math.random() * colors.length)];
+  return this;
+};
+
+// Test.expect(colors.includes(new Ghost().color));
+
+const ghost = new Ghost();
+console.log(ghost.color);
