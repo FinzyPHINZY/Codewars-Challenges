@@ -610,33 +610,123 @@ function bingo(ticket, win) {
   return count >= win ? "winna" : "loser";
 }
 
-console.log(
-  bingo(
-    [
-      ["ABC", 65],
-      ["HGR", 74],
-      ["BYHT", 74],
-    ],
-    2
-  )
-); //, 'Loser!');
-console.log(
-  bingo(
-    [
-      ["ABC", 65],
-      ["HGR", 74],
-      ["BYHT", 74],
-    ],
-    1
-  )
-); // 'Winner!');
-console.log(
-  bingo(
-    [
-      ["HGTYRE", 74],
-      ["BE", 66],
-      ["JKTY", 74],
-    ],
-    3
-  )
-); //, 'Loser!');
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     2
+//   )
+// ); //, 'Loser!');
+// console.log(
+//   bingo(
+//     [
+//       ["ABC", 65],
+//       ["HGR", 74],
+//       ["BYHT", 74],
+//     ],
+//     1
+//   )
+// ); // 'Winner!');
+// console.log(
+//   bingo(
+//     [
+//       ["HGTYRE", 74],
+//       ["BE", 66],
+//       ["JKTY", 74],
+//     ],
+//     3
+//   )
+// ); //, 'Loser!');
+
+// Color Ghost
+
+// Create a class Ghost
+
+// Ghost objects are instantiated without any arguments.
+
+// Ghost objects are given a random color attribute of 'white' or 'yellow'
+
+// or 'purple' or 'red when instantiated.
+
+// ghost = new Ghost();
+
+// ghost.color //=> "white" or "yellow" or "purple" or "red"
+
+let colors = ["white", "yellow", "purple", "red"];
+
+var Ghost = function () {
+  // your code goes here
+  this.color = colors[Math.floor(Math.random() * colors.length)];
+  return this;
+};
+
+// Test.expect(colors.includes(new Ghost().color));
+
+// const ghost = new Ghost();
+// console.log(ghost.color);
+
+// Happy Holidays fellow Code Warriors!
+// Now, Dasher! Now, Dancer! Now, Prancer, and Vixen! On, Comet! On, Cupid! On, Donder and Blitzen! That's the order Santa wanted his reindeer...right? What do you mean he wants them in order by their last names!? Looks like we need your help Code Warrior!
+
+// Sort Santa's Reindeer
+// Write a function that accepts a sequence of Reindeer names, and returns a sequence with the Reindeer names sorted by their last names.
+
+// Notes:
+// It's guaranteed that each string is composed of two words
+// In case of two identical last names, keep the original order
+// Examples
+// For this input:
+
+// [
+//   "Dasher Tonoyan",
+//   "Dancer Moore",
+//   "Prancer Chua",
+//   "Vixen Hall",
+//   "Comet Karavani",
+//   "Cupid Foroutan",
+//   "Donder Jonker",
+//   "Blitzen Claus"
+// ]
+// You should return this output:
+
+// [
+//   "Prancer Chua",
+//   "Blitzen Claus",
+//   "Cupid Foroutan",
+//   "Vixen Hall",
+//   "Donder Jonker",
+//   "Comet Karavani",
+//   "Dancer Moore",
+//   "Dasher Tonoyan",
+// ]
+
+function sortReindeer(reindeerNames) {
+  return reindeerNames.sort((a, b) => {
+    return a.split(" ")[1].localeCompare(b.split(" ")[1]);
+  });
+}
+
+let inputNames = [
+  "Dasher Tonoyan",
+  "Dancer Moore",
+  "Prancer Chua",
+  "Vixen Hall",
+  "Comet Karavani",
+  "Cupid Foroutan",
+  "Donder Jonker",
+  "Blitzen Claus",
+];
+// let output = [
+//   "Prancer Chua",
+//   "Blitzen Claus",
+//   "Cupid Foroutan",
+//   "Vixen Hall",
+//   "Donder Jonker",
+//   "Comet Karavani",
+//   "Dancer Moore",
+//   "Dasher Tonoyan",
+// ];
+console.log(sortReindeer(inputNames)); //, output);
