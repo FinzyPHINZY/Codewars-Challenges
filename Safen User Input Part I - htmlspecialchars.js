@@ -16,23 +16,29 @@
 
 function htmlspecialchars(formData) {
   // Insert your code here
-  const specialChars = {
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "&": "&amp;",
-  };
+  //   const specialChars = {
+  //     "<": "&lt;",
+  //     ">": "&gt;",
+  //     '"': "&quot;",
+  //     "&": "&amp;",
+  //   };
 
-  let result = "";
-  for (const char of formData) {
-    if (char in specialChars) {
-      result += specialChars[char];
-    } else {
-      result += char;
-    }
-  }
+  //   let result = "";
+  //   for (const char of formData) {
+  //     if (char in specialChars) {
+  //       result += specialChars[char];
+  //     } else {
+  //       result += char;
+  //     }
+  //   }
 
-  return result;
+  //   return result;
+
+  return formData
+    .replace("<", "&lt;")
+    .replace(">", "&gt;")
+    .replace('"', "&quot;")
+    .replace("&", "&amp;");
 }
 
 console.log(htmlspecialchars("<h2>Hello World</h2>"));
