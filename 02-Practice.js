@@ -19,14 +19,14 @@
 
 function towerBuilder(nFloors) {
   // build here
-  let tower = [];
+  let tower = []
 
   for (let i = 0; i < nFloors; i++) {
-    const spaces = " ".repeat(nFloors - (i - 1));
-    const stars = "*".repeat(2 * (1 + i));
-    tower.push(spaces + stars + spaces);
+    const spaces = ' '.repeat(nFloors - (i - 1))
+    const stars = '*'.repeat(2 * (1 + i))
+    tower.push(spaces + stars + spaces)
   }
-  return tower;
+  return tower
 }
 
 // console.log(towerBuilder(6))
@@ -49,15 +49,15 @@ function towerBuilder(nFloors) {
 // * Input: [2,2,1,2,1], output = [2,2,2,1]
 
 function dullThings(arr) {
-  const min = arr.indexOf(Math.min(...arr));
-  return arr.filter((_, i) => i !== min);
+  const min = arr.indexOf(Math.min(...arr))
+  return arr.filter((_, i) => i !== min)
 }
 
 // console.log(dullThings([1, 2, 3, 4, 5]));
 // console.log(dullThings([5, 3, 2, 1, 4]));
 // console.log(dullThings([2, 2, 1, 2, 1]));
 
-("use strict");
+;('use strict')
 
 // Happy Holidays fellow Code Warriors!
 // Now, Dasher! Now, Dancer! Now, Prancer, and Vixen! On, Comet! On, Cupid! On, Donder and Blitzen! That's the order Santa wanted his reindeer...right? What do you mean he wants them in order by their last names!? Looks like we need your help Code Warrior!
@@ -96,7 +96,7 @@ function dullThings(arr) {
 
 function sortReindeer(reindeerNames) {
   return reindeerNames.sort(
-    (a, b) => a.split(" ")[1] - b.split(" ")[1]
+    (a, b) => a.split(' ')[1] - b.split(' ')[1]
     //   {
     //   const nameA = a.split(" ")[1];
     //   const nameB = b.split(" ")[1];
@@ -109,7 +109,7 @@ function sortReindeer(reindeerNames) {
     //     return 0;
     //   }
     // }
-  );
+  )
 }
 
 // let input = [
@@ -171,20 +171,20 @@ function sortReindeer(reindeerNames) {
 
 function sortReindeer(reindeerNames) {
   return reindeerNames.sort((a, b) =>
-    a.split(" ")[1].localeCompare(b.split(" ")[1])
-  );
+    a.split(' ')[1].localeCompare(b.split(' ')[1])
+  )
 }
 
 let input = [
-  "Dasher Tonoyan",
-  "Dancer Moore",
-  "Prancer Chua",
-  "Vixen Hall",
-  "Comet Karavani",
-  "Cupid Foroutan",
-  "Donder Jonker",
-  "Blitzen Claus",
-];
+  'Dasher Tonoyan',
+  'Dancer Moore',
+  'Prancer Chua',
+  'Vixen Hall',
+  'Comet Karavani',
+  'Cupid Foroutan',
+  'Donder Jonker',
+  'Blitzen Claus',
+]
 // let output = [
 //   "Prancer Chua",
 //   "Blitzen Claus",
@@ -213,12 +213,12 @@ let input = [
 
 var Ghost = function () {
   // your code goes here
-  this.color = ["white", "yellow", "purple", "red"][
+  this.color = ['white', 'yellow', 'purple', 'red'][
     Math.floor(Math.random() * 4)
-  ];
-  this.fruit = ["orange", "pineapple"];
-  return this;
-};
+  ]
+  this.fruit = ['orange', 'pineapple']
+  return this
+}
 
 // describe("Ghost", () => {
 //   it("should be one of the specified colors", () => {
@@ -248,14 +248,14 @@ var Ghost = function () {
 
 function array(string) {
   // TODO
-  string = string.split(",");
-  if (string.length < 3) return null;
+  string = string.split(',')
+  if (string.length < 3) return null
 
   const result = string
     .filter((char, i) => i !== 0 && i !== string.length - 1)
-    .join(" ");
+    .join(' ')
 
-  return result;
+  return result
 }
 
 // describe('Sample Tests', function() {
@@ -292,16 +292,16 @@ function array(string) {
 
 function sumMultiples(limit) {
   // find the numbers that are multiples of 3 or 5 below 'limit';
-  let multiples = [];
+  let multiples = []
   for (let i = 0; i < limit; i++) {
     if (i % 3 === 0 || i % 5 === 0) {
-      multiples.push(i);
+      multiples.push(i)
     }
   }
 
-  console.log(multiples);
+  console.log(multiples)
   // return the total
-  return multiples.reduce((sum, num) => sum + num, 0);
+  return multiples.reduce((sum, num) => sum + num, 0)
 }
 
 // console.log(sumMultiples(10));
@@ -318,9 +318,9 @@ function splitAndMerge(string, separator) {
   // join on the outer level by space
 
   return string
-    .split(" ")
-    .map((word) => word.split("").join(separator))
-    .join(" ");
+    .split(' ')
+    .map((word) => word.split('').join(separator))
+    .join(' ')
 }
 
 // console.log(splitAndMerge("My name is John", " ")); // == "M y n a m e i s J o h n";
@@ -340,16 +340,16 @@ function splitAndMerge(string, separator) {
 
 function unluckyDays(year) {
   //your code here
-  let count = 0;
+  let count = 0
   for (let i = 0; i < 12; i++) {
-    let date = new Date(year, i, 13);
+    let date = new Date(year, i, 13)
 
     if (date.getDay() === 5) {
-      count++;
+      count++
     }
   }
 
-  return count;
+  return count
 }
 
 // console.log(unluckyDays(2015));
@@ -374,7 +374,7 @@ function unluckyDays(year) {
 
 function toCsvText(array) {
   // good luck
-  console.log(array.join("\n"));
+  console.log(array.join('\n'))
 }
 
 const inputArray = [
@@ -382,7 +382,7 @@ const inputArray = [
   [10, 11, 12, 13, 14],
   [20, 21, 22, 23, 24],
   [30, 31, 32, 33, 34],
-];
+]
 
 // console.log(toCsvText(inputArray));
 
@@ -398,15 +398,15 @@ const inputArray = [
 
 function unluckyDays(year) {
   //your code here
-  let count = 0;
+  let count = 0
   // loop through the year and get the dates that match 13
   for (let i = 0; i < 12; i++) {
-    let date = new Date(year, i, 13);
-    const day = date.getDay();
+    let date = new Date(year, i, 13)
+    const day = date.getDay()
 
-    day === 5 && count++;
+    day === 5 && count++
   }
-  return count;
+  return count
 }
 
 // console.log(unluckyDays(2015));
@@ -434,20 +434,20 @@ function bingo(ticket, win) {
   const miniWins = ticket
     .map((subArray) => {
       const charCodes = subArray[0]
-        .split("")
-        .map((_, i) => subArray[0].charCodeAt(i));
+        .split('')
+        .map((_, i) => subArray[0].charCodeAt(i))
 
       return charCodes.reduce((a, b) => {
         if (b === subArray[1]) {
-          return a + 1;
+          return a + 1
         } else {
-          return a;
+          return a
         }
-      }, 0);
+      }, 0)
     })
-    .reduce((a, b) => a + b, 0);
+    .reduce((a, b) => a + b, 0)
 
-  return miniWins >= win ? "Winner!" : "Loser!";
+  return miniWins >= win ? 'Winner!' : 'Loser!'
 }
 
 // console.log(
@@ -493,17 +493,17 @@ function bingo(ticket, win) {
 
 function cleanString(s) {
   // ... your code ...
-  let result = [];
+  let result = []
 
   for (let i = 0; i < s.length; i++) {
-    if (s[i] === "#") {
-      result.pop();
+    if (s[i] === '#') {
+      result.pop()
     } else {
-      result.push(s[i]);
+      result.push(s[i])
     }
   }
 
-  return result.join("");
+  return result.join('')
 }
 
 // console.log(cleanString("abc#d##c")); //'ac');
@@ -523,7 +523,7 @@ function cleanString(s) {
 // All inputs will be in the correct format. Strings on tickets are not always the same length.
 
 function bingo(ticket, win) {
-  let count = 0;
+  let count = 0
   // ticket.map((subArray) =>
   //   subArray[0].split("").map((char, i) => subArray[0].charCodeAt(i))
   // );
@@ -533,11 +533,11 @@ function bingo(ticket, win) {
     // return arr[0];
 
     if (arr[0].includes(String.fromCharCode(arr[1]))) {
-      count++;
+      count++
     }
-  });
+  })
 
-  return count >= win ? "winna" : "loser";
+  return count >= win ? 'winna' : 'loser'
 }
 
 // console.log(
@@ -553,7 +553,7 @@ function bingo(ticket, win) {
 // console.log(bingo([['ABC', 65], ['HGR', 74], ['BYHT', 74]], 1),) // 'Winner!');
 // console.log(bingo([['HGTYRE', 74], ['BE', 66], ['JKTY', 74]], 3)) //, 'Loser!');
 
-("use strict");
+;('use strict')
 
 // Sort an array by value and index
 // Your task is to sort an array of integer numbers by the product of the value and the index of the positions.
@@ -581,7 +581,7 @@ function sortByValueAndIndex(array) {
       product: value * (i + 1),
     }))
     .sort((a, b) => a.product - b.product)
-    .map((arr) => arr.value);
+    .map((arr) => arr.value)
 }
 
 // console.log(sortByValueAndIndex([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
@@ -601,13 +601,13 @@ function sortByValueAndIndex(array) {
 // All inputs will be in the correct format. Strings on tickets are not always the same length.
 
 function bingo(ticket, win) {
-  let count = 0;
+  let count = 0
   ticket.forEach((arr) => {
-    arr[0] = arr[0].split("");
-    console.log(arr[0]);
-    if (arr[0].includes(String.fromCharCode(arr[1]))) count++;
-  });
-  return count >= win ? "winna" : "loser";
+    arr[0] = arr[0].split('')
+    console.log(arr[0])
+    if (arr[0].includes(String.fromCharCode(arr[1]))) count++
+  })
+  return count >= win ? 'winna' : 'loser'
 }
 
 // console.log(
@@ -655,13 +655,13 @@ function bingo(ticket, win) {
 
 // ghost.color //=> "white" or "yellow" or "purple" or "red"
 
-let colors = ["white", "yellow", "purple", "red"];
+let colors = ['white', 'yellow', 'purple', 'red']
 
 var Ghost = function () {
   // your code goes here
-  this.color = colors[Math.floor(Math.random() * colors.length)];
-  return this;
-};
+  this.color = colors[Math.floor(Math.random() * colors.length)]
+  return this
+}
 
 // Test.expect(colors.includes(new Ghost().color));
 
@@ -705,20 +705,20 @@ var Ghost = function () {
 
 function sortReindeer(reindeerNames) {
   return reindeerNames.sort((a, b) => {
-    return a.split(" ")[1].localeCompare(b.split(" ")[1]);
-  });
+    return a.split(' ')[1].localeCompare(b.split(' ')[1])
+  })
 }
 
 let inputNames = [
-  "Dasher Tonoyan",
-  "Dancer Moore",
-  "Prancer Chua",
-  "Vixen Hall",
-  "Comet Karavani",
-  "Cupid Foroutan",
-  "Donder Jonker",
-  "Blitzen Claus",
-];
+  'Dasher Tonoyan',
+  'Dancer Moore',
+  'Prancer Chua',
+  'Vixen Hall',
+  'Comet Karavani',
+  'Cupid Foroutan',
+  'Donder Jonker',
+  'Blitzen Claus',
+]
 // let output = [
 //   "Prancer Chua",
 //   "Blitzen Claus",
@@ -749,25 +749,94 @@ let inputNames = [
 function killer(suspectInfo, dead) {
   //your code here...
   for (const key in suspectInfo) {
-    if (dead.every((person) => suspectInfo[key].includes(person))) return key;
+    if (dead.every((person) => suspectInfo[key].includes(person))) return key
   }
 }
 
-console.log(
-  killer(
-    {
-      James: ["Jacob", "Bill", "Lucas"],
-      Johnny: ["David", "Kyle", "Lucas"],
-      Peter: ["Lucy", "Kyle"],
-    },
-    ["Lucas", "Bill"]
-  )
-); // "James"
+// console.log(
+//   killer(
+//     {
+//       James: ["Jacob", "Bill", "Lucas"],
+//       Johnny: ["David", "Kyle", "Lucas"],
+//       Peter: ["Lucy", "Kyle"],
+//     },
+//     ["Lucas", "Bill"]
+//   )
+// ); // "James"
 
-console.log(killer({ Brad: [], Megan: ["Ben", "Kevin"], Finn: [] }, ["Ben"])); //"Megan"
+// console.log(killer({ Brad: [], Megan: ["Ben", "Kevin"], Finn: [] }, ["Ben"])); //"Megan"
 
 // we have a list of the people the suspect met that day
 // we have a list of the people that was killed
 // i need to iterate over the list of people that the suspect met that day.
 // if it includes the everyone in the dead people array, then we have the killer.
 // for in loop
+
+// If we write out the digits of "60" as English words we get "sixzero"; the number of letters in "sixzero" is seven. The number of letters in "seven" is five. The number of letters in "five" is four. The number of letters in "four" is fou we have reached a stable equilibrium.
+
+// Note: for integers larger than 9, write out the names of each digit in a single word (instead of the proper name of the number in English). For example, write 12 as "onetwo" (instead of twelve), and 999 as "nineninenine" (instead of nine hundred and ninety-nine).
+
+// For any integer between 0 and 999, return an array showing the path from that integer to a stable equilibrium:
+// Examples
+
+// numbersOfLetters(60) --> ["sixzero", "seven", "five", "four"]
+// numbersOfLetters(1) --> ["one", "three", "five", "four"]
+
+// integer between 0 and 999.
+// return an array of the integer in english words. for integers greater than 9, we return each digit in a single word concatenated together. this process will go on till we reacth the equilibrium which is four
+
+// numbersOfLetters(4) --->>> ['four];
+// numbersOfLetters(1) --->> ['one', 'three', 'five', 'four]
+
+function numbersOfLetters(num) {
+  const result = []
+
+  const numbers = [
+    'zero',
+    'one',
+    'two',
+    'three',
+    'four',
+    'five',
+    'six',
+    'seven',
+    'eight',
+    'nine',
+  ]
+
+  // conver numbers to word.
+  const numToWord = (num) =>
+    num
+      .toString()
+      .split('')
+      .map((number) => numbers[number])
+      .join('')
+
+  let currentWord = numToWord(num)
+
+  if (currentWord === 'four') {
+    result.push(currentWord)
+
+    return result
+  }
+
+  result.push(currentWord)
+  while (true) {
+    const nextNum = numToWord(currentWord.length)
+
+    result.push(nextNum)
+
+    if (nextNum === 'four') {
+      return result
+    } else {
+      currentWord = nextNum
+    }
+  }
+}
+
+console.log(numbersOfLetters(4))
+console.log(numbersOfLetters(1)) //["one", "three", "five", "four"]);
+console.log(numbersOfLetters(12)) // ["onetwo", "six", "three", "five", "four"]);
+console.log(numbersOfLetters(37)) // ["threeseven", "onezero", "seven", "five", "four"]);
+console.log(numbersOfLetters(311)) //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
+console.log(numbersOfLetters(999)) //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
