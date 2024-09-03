@@ -899,10 +899,32 @@ function numbersOfLetters(integer) {
   }
 }
 
-console.log(numbersOfLetters(4))
+// console.log(numbersOfLetters(4))
 
-console.log(numbersOfLetters(1)) //["one", "three", "five", "four"]);
-console.log(numbersOfLetters(12)) // ["onetwo", "six", "three", "five", "four"]);
-console.log(numbersOfLetters(37)) // ["threeseven", "onezero", "seven", "five", "four"]);
-console.log(numbersOfLetters(311)) //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
-console.log(numbersOfLetters(999)) //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(1)) //["one", "three", "five", "four"]);
+// console.log(numbersOfLetters(12)) // ["onetwo", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(37)) // ["threeseven", "onezero", "seven", "five", "four"]);
+// console.log(numbersOfLetters(311)) //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(999)) //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
+
+// Given 2 strings, a and b, return a string of the form: shorter+reverse(longer)+shorter.
+
+// In other words, the shortest string has to be put as prefix and as suffix of the reverse of the longest.
+
+// Strings a and b may be empty, but not null (In C# strings may also be null. Treat them as if they are empty.).
+// If a and b have the same length treat a as the longer producing b+reverse(a)+b
+
+function shorterReverseLonger(first, second) {
+  const reverseText = (str) => str.split('').reverse().join('')
+
+  return first.length >= second.length
+    ? second + reverseText(first) + second
+    : first + reverseText(second) + first
+}
+
+console.log(shorterReverseLonger('first', 'abcde'), 'abcdetsrifabcde')
+console.log(shorterReverseLonger('hello', 'bau'), 'bauollehbau')
+console.log(shorterReverseLonger('fghi', 'abcde'), 'fghiedcbafghi')
+console.log(shorterReverseLonger('hello', ''), 'olleh')
+console.log(shorterReverseLonger('', 'bau'), 'uab')
+console.log(shorterReverseLonger('', ''), '')
