@@ -922,9 +922,89 @@ function shorterReverseLonger(first, second) {
     : first + reverseText(second) + first
 }
 
-console.log(shorterReverseLonger('first', 'abcde'), 'abcdetsrifabcde')
-console.log(shorterReverseLonger('hello', 'bau'), 'bauollehbau')
-console.log(shorterReverseLonger('fghi', 'abcde'), 'fghiedcbafghi')
-console.log(shorterReverseLonger('hello', ''), 'olleh')
-console.log(shorterReverseLonger('', 'bau'), 'uab')
-console.log(shorterReverseLonger('', ''), '')
+// console.log(shorterReverseLonger('first', 'abcde'), 'abcdetsrifabcde')
+// console.log(shorterReverseLonger('hello', 'bau'), 'bauollehbau')
+// console.log(shorterReverseLonger('fghi', 'abcde'), 'fghiedcbafghi')
+// console.log(shorterReverseLonger('hello', ''), 'olleh')
+// console.log(shorterReverseLonger('', 'bau'), 'uab')
+// console.log(shorterReverseLonger('', ''), '')
+
+// Given 2 strings, a and b, return a string of the form: shorter+reverse(longer)+shorter.
+
+// In other words, the shortest string has to be put as prefix and as suffix of the reverse of the longest.
+
+// Strings a and b may be empty, but not null (In C# strings may also be null. Treat them as if they are empty.).
+// If a and b have the same length treat a as the longer producing b+reverse(a)+b
+
+// recieve two strings. could be empty.
+// return a new string with the shortest string as the prefix and the suffix while the middle string is the longer string reversed. in cases where a and b have the same length, a is the longer string and b will be the prefix and suffix.
+// shorterReverseLonger('hey', 'hello') ---->> heyollehhey
+// shorterReverseLonger('cat', 'jar') ---->> jartacjar
+
+function shorterReverseLonger(str1, str2) {
+  const reverseStr = (str) => str.split('').reverse().join('')
+  return str1 >= str2
+    ? str2 + reverseStr(str1) + str2
+    : str1 + reverseStr(str2) + str1
+}
+
+// console.log(shorterReverseLonger('first', 'abcde')) //, "abcdetsrifabcde", 'Incorrect answer for a="first", b="abcde"');
+// console.log(shorterReverseLonger('hello', 'bau')) //, "bauollehbau"    , 'Incorrect answer for a="hello", b="bau"'  );
+// console.log(shorterReverseLonger('fghi', 'abcde')) //, "fghiedcbafghi"  , 'Incorrect answer for a="fghi", b="abcde"' );
+// console.log(shorterReverseLonger('hello', '')) //, "olleh"          , 'Incorrect answer for a="hello", b=""'     );
+// console.log(shorterReverseLonger('', 'bau')) //, "uab"            , 'Incorrect answer for a="", b="bau"'       );
+// console.log(shorterReverseLonger('', '')) //, ""               , 'Incorrect answer for a="", b=""'          );
+
+// In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+// Example
+
+// filter_list([1,2,'a','b']) == [1,2]
+// filter_list([1,'a','b',0,15]) == [1,0,15]
+// filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
+
+// create a function that accepts an array of numbers greater than or equal to zero and strings.
+// return a new array with all the strings removed
+// filter_list([1,2,4,5,6.'ai]) // [1,2,3,4,5,6]
+
+function filter_list(array) {
+  return array.filter((value) => typeof value !== 'string')
+}
+
+// console.log(filter_list([1, 2, 'a', 'b']), [1, 2])
+// console.log(filter_list([1, 'a', 'b', 0, 15]), [1, 0, 15])
+// console.log(filter_list([1, 2, 'aasf', '1', '123', 123]), [1, 2, 123])
+
+// Task
+// You will be given an array of numbers. You have to sort the odd numbers in ascending order while leaving the even numbers at their original positions.
+
+// Examples
+// [7, 1]  =>  [1, 7]
+// [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
+// [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
+
+// sortArray function takes in an array of numbers
+// return the array sorted with the odd numbers in ascending order and the even numbers at their original positions
+
+function sortArray(arr) {
+  // create an output array
+  const result = []
+
+  const oddNumbers = arr.filter((num) => num % 2 !== 0).sort((a, b) => a - b)
+
+  // iterate over the input array.
+  // if the value is odd, push into result the first value in the oddNumbers array
+  //  else push the original value into result array
+
+  for (const num of arr) {
+    if (num % 2 === 0) {
+      result.push(num)
+    } else {
+      result.push(oddNumbers.shift())
+    }
+  }
+  return result
+}
+
+console.log(sortArray([5, 3, 2, 8, 1, 4]), [1, 3, 2, 8, 5, 4])
+console.log(sortArray([5, 3, 1, 8, 0]), [1, 3, 5, 8, 0])
+console.log(sortArray([]), [])
