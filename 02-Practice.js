@@ -1162,12 +1162,31 @@ function incrementString(str) {
   }
 }
 
-console.log(incrementString('foobar000'), 'foobar001')
-console.log(incrementString('foobar999'), 'foobar1000')
-console.log(incrementString('foobar00999'), 'foobar01000')
-console.log(incrementString('foo'), 'foo1')
-console.log(incrementString('foobar001'), 'foobar002')
-console.log(incrementString('foobar1'), 'foobar2')
-console.log(incrementString('1'), '2')
-console.log(incrementString('009'), '010')
-console.log(incrementString('fo99obar99'), 'fo99obar100')
+// console.log(incrementString('foobar000'), 'foobar001')
+// console.log(incrementString('foobar999'), 'foobar1000')
+// console.log(incrementString('foobar00999'), 'foobar01000')
+// console.log(incrementString('foo'), 'foo1')
+// console.log(incrementString('foobar001'), 'foobar002')
+// console.log(incrementString('foobar1'), 'foobar2')
+// console.log(incrementString('1'), '2')
+// console.log(incrementString('009'), '010')
+// console.log(incrementString('fo99obar99'), 'fo99obar100')
+
+// Sort the given array of strings in alphabetical order, case insensitive. For example:
+
+// ["Hello", "there", "I'm", "fine"]  -->  ["fine", "Hello", "I'm", "there"]
+// ["C", "d", "a", "B"])              -->  ["a", "B", "C", "d"]
+
+const sortme = function (names) {
+  return names.sort((a, b) => a.localeCompare(b))
+}
+
+console.log(sortme(['Hello', 'there', "I'm", 'fine']), [
+  'fine',
+  'Hello',
+  "I'm",
+  'there',
+])
+console.log(sortme(['C', 'd', 'a', 'B']), ['a', 'B', 'C', 'd'])
+console.log(sortme(['CodeWars']), ['CodeWars'])
+console.log(sortme([]), [])
