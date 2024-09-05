@@ -834,9 +834,243 @@ function numbersOfLetters(num) {
   }
 }
 
-console.log(numbersOfLetters(4))
-console.log(numbersOfLetters(1)) //["one", "three", "five", "four"]);
-console.log(numbersOfLetters(12)) // ["onetwo", "six", "three", "five", "four"]);
-console.log(numbersOfLetters(37)) // ["threeseven", "onezero", "seven", "five", "four"]);
-console.log(numbersOfLetters(311)) //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
-console.log(numbersOfLetters(999)) //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(4))
+// console.log(numbersOfLetters(1)) //["one", "three", "five", "four"]);
+// console.log(numbersOfLetters(12)) // ["onetwo", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(37)) // ["threeseven", "onezero", "seven", "five", "four"]);
+// console.log(numbersOfLetters(311)) //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(999)) //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
+
+// If we write out the digits of "60" as English words we get "sixzero"; the number of letters in "sixzero" is seven. The number of letters in "seven" is five. The number of letters in "five" is four. The number of letters in "four" is fou we have reached a stable equilibrium.
+
+// Note: for integers larger than 9, write out the names of each digit in a single word (instead of the proper name of the number in English). For example, write 12 as "onetwo" (instead of twelve), and 999 as "nineninenine" (instead of nine hundred and ninety-nine).
+
+// For any integer between 0 and 999, return an array showing the path from that integer to a stable equilibrium:
+// Examples
+
+// numbersOfLetters(60) --> ["sixzero", "seven", "five", "four"]
+// numbersOfLetters(1) --> ["one", "three", "five", "four"]
+
+// takes in an integer.
+// returns an array of strings. the first being the parameter and the rest being the strings of numbers from the integer parameter to a stable equilibrium.
+// numbersOfLetters(1) ---> ['one', 'three', 'five', 'four]
+
+function numbersOfLetters(integer) {
+  // code here...
+  // bind numbers in a array
+  const numbers = [
+    'zero',
+    'one',
+    'two',
+    'three',
+    'four',
+    'five',
+    'six',
+    'seven',
+    'eight',
+    'nine',
+  ]
+  const result = []
+
+  const numToWord = (integer) =>
+    integer
+      .toString()
+      .split('')
+      .map((num) => numbers[num])
+      .join('')
+
+  let currentWord = numToWord(integer)
+
+  result.push(currentWord)
+
+  if (currentWord === 'four') {
+    return result
+  }
+
+  while (true) {
+    const nextNum = numToWord(currentWord.length)
+    result.push(nextNum)
+
+    if (nextNum === 'four') {
+      return result
+    }
+
+    currentWord = nextNum
+  }
+}
+
+// console.log(numbersOfLetters(4))
+
+// console.log(numbersOfLetters(1)) //["one", "three", "five", "four"]);
+// console.log(numbersOfLetters(12)) // ["onetwo", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(37)) // ["threeseven", "onezero", "seven", "five", "four"]);
+// console.log(numbersOfLetters(311)) //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(999)) //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
+
+// Given 2 strings, a and b, return a string of the form: shorter+reverse(longer)+shorter.
+
+// In other words, the shortest string has to be put as prefix and as suffix of the reverse of the longest.
+
+// Strings a and b may be empty, but not null (In C# strings may also be null. Treat them as if they are empty.).
+// If a and b have the same length treat a as the longer producing b+reverse(a)+b
+
+function shorterReverseLonger(first, second) {
+  const reverseText = (str) => str.split('').reverse().join('')
+
+  return first.length >= second.length
+    ? second + reverseText(first) + second
+    : first + reverseText(second) + first
+}
+
+// console.log(shorterReverseLonger('first', 'abcde'), 'abcdetsrifabcde')
+// console.log(shorterReverseLonger('hello', 'bau'), 'bauollehbau')
+// console.log(shorterReverseLonger('fghi', 'abcde'), 'fghiedcbafghi')
+// console.log(shorterReverseLonger('hello', ''), 'olleh')
+// console.log(shorterReverseLonger('', 'bau'), 'uab')
+// console.log(shorterReverseLonger('', ''), '')
+
+// Given 2 strings, a and b, return a string of the form: shorter+reverse(longer)+shorter.
+
+// In other words, the shortest string has to be put as prefix and as suffix of the reverse of the longest.
+
+// Strings a and b may be empty, but not null (In C# strings may also be null. Treat them as if they are empty.).
+// If a and b have the same length treat a as the longer producing b+reverse(a)+b
+
+// recieve two strings. could be empty.
+// return a new string with the shortest string as the prefix and the suffix while the middle string is the longer string reversed. in cases where a and b have the same length, a is the longer string and b will be the prefix and suffix.
+// shorterReverseLonger('hey', 'hello') ---->> heyollehhey
+// shorterReverseLonger('cat', 'jar') ---->> jartacjar
+
+function shorterReverseLonger(str1, str2) {
+  const reverseStr = (str) => str.split('').reverse().join('')
+  return str1 >= str2
+    ? str2 + reverseStr(str1) + str2
+    : str1 + reverseStr(str2) + str1
+}
+
+// console.log(shorterReverseLonger('first', 'abcde')) //, "abcdetsrifabcde", 'Incorrect answer for a="first", b="abcde"');
+// console.log(shorterReverseLonger('hello', 'bau')) //, "bauollehbau"    , 'Incorrect answer for a="hello", b="bau"'  );
+// console.log(shorterReverseLonger('fghi', 'abcde')) //, "fghiedcbafghi"  , 'Incorrect answer for a="fghi", b="abcde"' );
+// console.log(shorterReverseLonger('hello', '')) //, "olleh"          , 'Incorrect answer for a="hello", b=""'     );
+// console.log(shorterReverseLonger('', 'bau')) //, "uab"            , 'Incorrect answer for a="", b="bau"'       );
+// console.log(shorterReverseLonger('', '')) //, ""               , 'Incorrect answer for a="", b=""'          );
+
+// In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+// Example
+
+// filter_list([1,2,'a','b']) == [1,2]
+// filter_list([1,'a','b',0,15]) == [1,0,15]
+// filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
+
+// create a function that accepts an array of numbers greater than or equal to zero and strings.
+// return a new array with all the strings removed
+// filter_list([1,2,4,5,6.'ai]) // [1,2,3,4,5,6]
+
+function filter_list(array) {
+  return array.filter((value) => typeof value !== 'string')
+}
+
+// console.log(filter_list([1, 2, 'a', 'b']), [1, 2])
+// console.log(filter_list([1, 'a', 'b', 0, 15]), [1, 0, 15])
+// console.log(filter_list([1, 2, 'aasf', '1', '123', 123]), [1, 2, 123])
+
+// Task
+// You will be given an array of numbers. You have to sort the odd numbers in ascending order while leaving the even numbers at their original positions.
+
+// Examples
+// [7, 1]  =>  [1, 7]
+// [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
+// [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
+
+// sortArray function takes in an array of numbers
+// return the array sorted with the odd numbers in ascending order and the even numbers at their original positions
+
+function sortArray(arr) {
+  // create an output array
+  const result = []
+
+  const oddNumbers = arr.filter((num) => num % 2 !== 0).sort((a, b) => a - b)
+
+  // iterate over the input array.
+  // if the value is odd, push into result the first value in the oddNumbers array
+  //  else push the original value into result array
+
+  for (const num of arr) {
+    if (num % 2 === 0) {
+      result.push(num)
+    } else {
+      result.push(oddNumbers.shift())
+    }
+  }
+  return result
+}
+
+// console.log(sortArray([5, 3, 2, 8, 1, 4]), [1, 3, 2, 8, 5, 4])
+// console.log(sortArray([5, 3, 1, 8, 0]), [1, 3, 5, 8, 0])
+// console.log(sortArray([]), [])
+
+// DESCRIPTION:
+// Time to win the lottery!
+// Given a lottery ticket (ticket), represented by an array of 2-value arrays, you must find out if you've won the jackpot.
+// Example ticket:
+
+// [ [ 'ABC', 65 ], [ 'HGR', 74 ], [ 'BYHT', 74 ] ]
+
+// To do this, you must first count the 'mini-wins' on your ticket. Each subarray has both a string and a number within it. If the character code of any of the characters in the string matches the number, you get a mini win. Note you can only have one mini win per sub array.
+// Once you have counted all of your mini wins, compare that number to the other input provided (win). If your total is more than or equal to (win), return 'Winner!'. Else return 'Loser!'.
+// All inputs will be in the correct format. Strings on tickets are not always the same length.
+
+// the bingo function takes in two parameters. an array of arrays containing a string and an integer,  and a string
+// returns Winner! or Loser! depending on the highest of the mini-wins and the win argument
+// line 1029
+
+function bingo(ticket, win) {
+  // count mini-wins
+  let miniWins = 0
+  // min-wins is the number of times the char code in the string matches the integer in the array
+  ticket.forEach((subArray) => {
+    const [str, num] = subArray
+
+    const charCodes = str.split('').map((char, i) => str.charCodeAt(i))
+
+    if (charCodes.includes(num)) {
+      miniWins++
+    }
+  })
+
+  return miniWins >= win ? 'Winner!' : 'Loser!'
+}
+
+console.log(
+  bingo(
+    [
+      ['ABC', 65],
+      ['HGR', 74],
+      ['BYHT', 74],
+    ],
+    2
+  ),
+  'Loser!'
+)
+console.log(
+  bingo(
+    [
+      ['ABC', 65],
+      ['HGR', 74],
+      ['BYHT', 74],
+    ],
+    1
+  ),
+  'Winner!'
+)
+console.log(
+  bingo(
+    [
+      ['HGTYRE', 74],
+      ['BE', 66],
+      ['JKTY', 74],
+    ],
+    3
+  ),
+  'Loser!'
+)
