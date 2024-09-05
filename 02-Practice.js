@@ -1005,6 +1005,72 @@ function sortArray(arr) {
   return result
 }
 
-console.log(sortArray([5, 3, 2, 8, 1, 4]), [1, 3, 2, 8, 5, 4])
-console.log(sortArray([5, 3, 1, 8, 0]), [1, 3, 5, 8, 0])
-console.log(sortArray([]), [])
+// console.log(sortArray([5, 3, 2, 8, 1, 4]), [1, 3, 2, 8, 5, 4])
+// console.log(sortArray([5, 3, 1, 8, 0]), [1, 3, 5, 8, 0])
+// console.log(sortArray([]), [])
+
+// DESCRIPTION:
+// Time to win the lottery!
+// Given a lottery ticket (ticket), represented by an array of 2-value arrays, you must find out if you've won the jackpot.
+// Example ticket:
+
+// [ [ 'ABC', 65 ], [ 'HGR', 74 ], [ 'BYHT', 74 ] ]
+
+// To do this, you must first count the 'mini-wins' on your ticket. Each subarray has both a string and a number within it. If the character code of any of the characters in the string matches the number, you get a mini win. Note you can only have one mini win per sub array.
+// Once you have counted all of your mini wins, compare that number to the other input provided (win). If your total is more than or equal to (win), return 'Winner!'. Else return 'Loser!'.
+// All inputs will be in the correct format. Strings on tickets are not always the same length.
+
+// the bingo function takes in two parameters. an array of arrays containing a string and an integer,  and a string
+// returns Winner! or Loser! depending on the highest of the mini-wins and the win argument
+// line 1029
+
+function bingo(ticket, win) {
+  // count mini-wins
+  let miniWins = 0
+  // min-wins is the number of times the char code in the string matches the integer in the array
+  ticket.forEach((subArray) => {
+    const [str, num] = subArray
+
+    const charCodes = str.split('').map((char, i) => str.charCodeAt(i))
+
+    if (charCodes.includes(num)) {
+      miniWins++
+    }
+  })
+
+  return miniWins >= win ? 'Winner!' : 'Loser!'
+}
+
+console.log(
+  bingo(
+    [
+      ['ABC', 65],
+      ['HGR', 74],
+      ['BYHT', 74],
+    ],
+    2
+  ),
+  'Loser!'
+)
+console.log(
+  bingo(
+    [
+      ['ABC', 65],
+      ['HGR', 74],
+      ['BYHT', 74],
+    ],
+    1
+  ),
+  'Winner!'
+)
+console.log(
+  bingo(
+    [
+      ['HGTYRE', 74],
+      ['BE', 66],
+      ['JKTY', 74],
+    ],
+    3
+  ),
+  'Loser!'
+)
