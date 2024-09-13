@@ -1332,5 +1332,24 @@ function unluckyDays(year) {
   return count
 }
 
-console.log(unluckyDays(2015))
-console.log(unluckyDays(1986))
+// console.log(unluckyDays(2015))
+// console.log(unluckyDays(1986))
+
+// sortList
+// takes in a list of object and a sortby(value)
+// return the list of objects sorted in descending order by the sortvalue
+
+function sortList(list, sortBy) {
+  // iterate through the input using the map method
+  return list.sort((item1, item2) => item2[sortBy] - item1[sortBy])
+}
+
+const inputSort = [
+  { a: 1, b: 3 },
+  { a: 3, b: 2 },
+  { a: 2, b: 40 },
+  { a: 4, b: 12 },
+]
+
+console.log(sortList(inputSort, 'a'))
+console.log(sortList(inputSort, 'b'))
