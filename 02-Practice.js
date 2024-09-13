@@ -1041,36 +1041,346 @@ function bingo(ticket, win) {
   return miniWins >= win ? 'Winner!' : 'Loser!'
 }
 
-console.log(
-  bingo(
-    [
-      ['ABC', 65],
-      ['HGR', 74],
-      ['BYHT', 74],
-    ],
-    2
-  ),
-  'Loser!'
-)
-console.log(
-  bingo(
-    [
-      ['ABC', 65],
-      ['HGR', 74],
-      ['BYHT', 74],
-    ],
-    1
-  ),
-  'Winner!'
-)
-console.log(
-  bingo(
-    [
-      ['HGTYRE', 74],
-      ['BE', 66],
-      ['JKTY', 74],
-    ],
-    3
-  ),
-  'Loser!'
-)
+// console.log(
+//   bingo(
+//     [
+//       ['ABC', 65],
+//       ['HGR', 74],
+//       ['BYHT', 74],
+//     ],
+//     2
+//   ),
+//   'Loser!'
+// )
+// console.log(
+//   bingo(
+//     [
+//       ['ABC', 65],
+//       ['HGR', 74],
+//       ['BYHT', 74],
+//     ],
+//     1
+//   ),
+//   'Winner!'
+// )
+// console.log(
+//   bingo(
+//     [
+//       ['HGTYRE', 74],
+//       ['BE', 66],
+//       ['JKTY', 74],
+//     ],
+//     3
+//   ),
+//   'Loser!'
+// )
+
+// DESCRIPTION:
+// In a small town the population is p0 = 1000 at the beginning of a year. The population regularly increases by 2 percent per year and moreover 50 new inhabitants per year come to live in the town. How many years does the town need to see its population greater or equal to p = 1200 inhabitants?
+
+// At the end of the first year there will be:
+// 1000 + 1000 * 0.02 + 50 => 1070 inhabitants
+
+// At the end of the 2nd year there will be:
+// 1070 + 1070 * 0.02 + 50 => 1141 inhabitants (** number of inhabitants is an integer **)
+
+// At the end of the 3rd year there will be:
+// 1141 + 1141 * 0.02 + 50 => 1213
+
+// It will need 3 entire years.
+
+// More generally given parameters:
+// p0, percent, aug (inhabitants coming or leaving each year), p (population to equal or surpass)
+// the function nb_year should return n number of entire years needed to get a population greater or equal to p.
+// aug is an integer, percent a positive or null floating number, p0 and p are positive integers (> 0)
+
+// Examples:
+// nb_year(1500, 5, 100, 5000) -> 15
+// nb_year(1500000, 2.5, 10000, 2000000) -> 10
+
+// Note:
+// Don't forget to convert the percent parameter as a percentage in the body of your function: if the parameter percent is 2 you have to convert it to 0.02.
+
+// function nb_year accepts in 4 arguments. p0-population, percent, aug,p-population to equal or surpass
+// return the number of years it takes p0 to surpass p
+// nb_year(1000, 2, 50, 1200) => 3;
+
+function nb_year(p0, percent, aug, p) {
+  // run a while loop
+  // while total is less than p, multiply p0 * percent + aug
+
+  let total = p0
+
+  let count = 0
+  while (total < p) {
+    total += total * (percent / 100) + aug
+    count++
+  }
+
+  return count
+}
+
+// console.log(nb_year(1000, 2, 50, 1200), 3)
+// console.log(nb_year(1500, 5, 100, 5000), 15)
+// console.log(nb_year(1500000, 2.5, 10000, 2000000), 10)
+
+// Your job is to write a function which increments a string, to create a new string.
+
+//     If the string already ends with a number, the number should be incremented by 1.
+//     If the string does not end with a number. the number 1 should be appended to the new string.
+
+// Examples:
+
+// foo -> foo1
+
+// foobar23 -> foobar24
+
+// foo0042 -> foo0043
+
+// foo9 -> foo10
+
+// foo099 -> foo100
+
+// Attention: If the number has leading zeros the amount of digits should be considered.
+
+function incrementString(str) {
+  const match = str.match(/(\d+)$/)
+
+  if (match) {
+    const numStr = match[0]
+    const prefix = str.slice(0, match.index)
+
+    const num = (parseInt(numStr, 10) + 1).toString()
+    const preceedingZeros = numStr.length - num.length
+
+    const newNumStr =
+      preceedingZeros > 0 ? '0'.repeat(preceedingZeros) + num : num
+
+    return prefix + newNumStr
+  } else {
+    return str + 1
+  }
+}
+
+// console.log(incrementString('foobar000'), 'foobar001')
+// console.log(incrementString('foobar999'), 'foobar1000')
+// console.log(incrementString('foobar00999'), 'foobar01000')
+// console.log(incrementString('foo'), 'foo1')
+// console.log(incrementString('foobar001'), 'foobar002')
+// console.log(incrementString('foobar1'), 'foobar2')
+// console.log(incrementString('1'), '2')
+// console.log(incrementString('009'), '010')
+// console.log(incrementString('fo99obar99'), 'fo99obar100')
+
+// Sort the given array of strings in alphabetical order, case insensitive. For example:
+
+// ["Hello", "there", "I'm", "fine"]  -->  ["fine", "Hello", "I'm", "there"]
+// ["C", "d", "a", "B"])              -->  ["a", "B", "C", "d"]
+
+const sortme = function (names) {
+  return names.sort((a, b) => a.localeCompare(b))
+}
+
+// console.log(sortme(['Hello', 'there', "I'm", 'fine']), [
+//   'fine',
+//   'Hello',
+//   "I'm",
+//   'there',
+// ])
+// console.log(sortme(['C', 'd', 'a', 'B']), ['a', 'B', 'C', 'd'])
+// console.log(sortme(['CodeWars']), ['CodeWars'])
+// console.log(sortme([]), [])
+
+// If we write out the digits of "60" as English words we get "sixzero"; the number of letters in "sixzero" is seven. The number of letters in "seven" is five. The number of letters in "five" is four. The number of letters in "four" is fou we have reached a stable equilibrium.
+
+// Note: for integers larger than 9, write out the names of each digit in a single word (instead of the proper name of the number in English). For example, write 12 as "onetwo" (instead of twelve), and 999 as "nineninenine" (instead of nine hundred and ninety-nine).
+
+// For any integer between 0 and 999, return an array showing the path from that integer to a stable equilibrium:
+// Examples
+
+// numbersOfLetters(60) --> ["sixzero", "seven", "five", "four"]
+// numbersOfLetters(1) --> ["one", "three", "five", "four"]
+
+function numbersOfLetters(integer) {
+  // code here...
+  const numberWords = [
+    'zero',
+    'one',
+    'two',
+    'three',
+    'four',
+    'five',
+    'six',
+    'seven',
+    'eight',
+    'nine',
+  ]
+
+  let result = []
+
+  const numToWords = (num) =>
+    num
+      .toString()
+      .split('')
+      .map((val) => numberWords[val])
+      .join('')
+
+  let currentWord = numToWords(integer)
+
+  if (currentWord === 'four') {
+    result.push(currentWord)
+    return result
+  } else {
+    result.push(currentWord)
+
+    while (true) {
+      let nextWord = numToWords(currentWord.length)
+      result.push(nextWord)
+
+      if (nextWord === 'four') {
+        break
+      }
+      currentWord = nextWord
+    }
+    return result
+  }
+}
+
+// console.log(numbersOfLetters(4))
+
+// console.log(numbersOfLetters(1)) //["one", "three", "five", "four"]);
+// console.log(numbersOfLetters(12)) // ["onetwo", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(37)) // ["threeseven", "onezero", "seven", "five", "four"]);
+// console.log(numbersOfLetters(311)) //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(999)) //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
+
+// Your job is to write a function which increments a string, to create a new string.
+
+//     If the string already ends with a number, the number should be incremented by 1.
+//     If the string does not end with a number. the number 1 should be appended to the new string.
+
+// Examples:
+
+// foo -> foo1
+
+// foobar23 -> foobar24
+
+// foo0042 -> foo0043
+
+// foo9 -> foo10
+
+// foo099 -> foo100
+
+// Attention: If the number has leading zeros the amount of digits should be considered.
+
+function incrementString(str) {
+  if (str.length === 1) return String(parseInt(str) + 1)
+  const match = str.match(/\d+$/)
+
+  //
+
+  if (match) {
+    const prefix = str.slice(0, match.index)
+    const numStr = match[0]
+    const number = String(parseInt(match[0], 10) + 1)
+
+    const preceedingZeros = numStr.length - number.length
+
+    const newNumStr =
+      preceedingZeros > 0 ? '0'.repeat(preceedingZeros) + number : number
+
+    return prefix + newNumStr
+  }
+  return str + '1'
+}
+
+// console.log(incrementString('foobar000'), 'foobar001')
+// console.log(incrementString('foobar999'), 'foobar1000')
+// console.log(incrementString('foobar00999'), 'foobar01000')
+// console.log(incrementString('foo'), 'foo1')
+// console.log(incrementString('foobar001'), 'foobar002')
+// console.log(incrementString('foobar1'), 'foobar2')
+// console.log(incrementString('1'), '2')
+// console.log(incrementString('009'), '010')
+// console.log(incrementString('fo99obar99'), 'fo99obar100')
+
+// DESCRIPTION:
+// Friday 13th or Black Friday is considered as unlucky day. Calculate how many unlucky days are in the given year.
+// Find the number of Friday 13th in the given year.
+// Input: Year in Gregorian calendar as integer.
+// Output: Number of Black Fridays in the year as an integer.
+// Examples:
+
+// unluckyDays(2015) == 3
+// unluckyDays(1986) == 1
+
+// unluckyDays takes in an integer value as a year. is there any chance we get anything other than an integer or an invalid value? it will always be years? okay.
+// return the number of days in the given year that is 13th and friday as well.
+
+function unluckyDays(year) {
+  //your code here
+  let count = 0
+
+  // find the number of days in a year that are 13
+  for (let month = 0; month < 12; month++) {
+    const date = new Date(year, month, 13)
+    console.log(date)
+    if (date.getDay() === 5) {
+      count++
+    }
+  }
+  return count
+}
+
+// console.log(unluckyDays(2015))
+// console.log(unluckyDays(1986))
+
+// sortList
+// takes in a list of object and a sortby(value)
+// return the list of objects sorted in descending order by the sortvalue
+
+function sortList(list, sortBy) {
+  // iterate through the input using the map method
+  return list.sort((item1, item2) => item2[sortBy] - item1[sortBy])
+}
+
+const inputSort = [
+  { a: 1, b: 3 },
+  { a: 3, b: 2 },
+  { a: 2, b: 40 },
+  { a: 4, b: 12 },
+]
+
+// console.log(sortList(inputSort, 'a'))
+// console.log(sortList(inputSort, 'b'))
+
+// modifyMultiply
+// takes in a string, an integer => index string, an integer => the number of times the string at the index is to be multiplied
+// returns a string of the word at the first integer argument multiplied by the second integer argument joined together with an hyphen
+
+function modifyMultiply(str, loc, num) {
+  str = str.split(' ')
+
+  return Array(num).fill(str[loc]).join('-')
+}
+
+// console.log(modifyMultiply('This is a string', 3, 5))
+// console.log(modifyMultiply("Creativity is the process of having original ideas that have value. It is a process; it's not random.",8 ,10));
+// console.log(modifyMultiply("Self-control means wanting to be effective at some random point in the infinite radiations of my spiritual existence",1 ,1), "means");
+// console.log(modifyMultiply("Is sloppiness in code caused by ignorance or apathy? I don't know and I don't care.",6 ,8), "ignorance-ignorance-ignorance-ignorance-ignorance-ignorance-ignorance-ignorance");
+// console.log(modifyMultiply("Everything happening around me is very random. I am enjoying the phase, as the journey is far more enjoyable than the destination.",2 ,5), "around-around-around-around-around");
+
+function shorterReverseLonger(str1, str2) {
+  const reverseStr = (str) => str.split('').reverse().join('')
+
+  return str1.length >= str2.length
+    ? str2 + reverseStr(str1) + str2
+    : str1 + reverseStr(str2) + str1
+}
+
+console.log(shorterReverseLonger('first', 'abcde') === 'abcdetsrifabcde')
+console.log(shorterReverseLonger('hello', 'bau') === 'bauollehbau')
+console.log(shorterReverseLonger('fghi', 'abcde') === 'fghiedcbafghi')
+console.log(shorterReverseLonger('hello', '') === 'olleh')
+console.log(shorterReverseLonger('', 'bau') === 'uab')
+console.log(shorterReverseLonger('', '') === '')
