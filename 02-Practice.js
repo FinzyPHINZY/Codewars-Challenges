@@ -1294,12 +1294,43 @@ function incrementString(str) {
   return str + '1'
 }
 
-console.log(incrementString('foobar000'), 'foobar001')
-console.log(incrementString('foobar999'), 'foobar1000')
-console.log(incrementString('foobar00999'), 'foobar01000')
-console.log(incrementString('foo'), 'foo1')
-console.log(incrementString('foobar001'), 'foobar002')
-console.log(incrementString('foobar1'), 'foobar2')
-console.log(incrementString('1'), '2')
-console.log(incrementString('009'), '010')
-console.log(incrementString('fo99obar99'), 'fo99obar100')
+// console.log(incrementString('foobar000'), 'foobar001')
+// console.log(incrementString('foobar999'), 'foobar1000')
+// console.log(incrementString('foobar00999'), 'foobar01000')
+// console.log(incrementString('foo'), 'foo1')
+// console.log(incrementString('foobar001'), 'foobar002')
+// console.log(incrementString('foobar1'), 'foobar2')
+// console.log(incrementString('1'), '2')
+// console.log(incrementString('009'), '010')
+// console.log(incrementString('fo99obar99'), 'fo99obar100')
+
+// DESCRIPTION:
+// Friday 13th or Black Friday is considered as unlucky day. Calculate how many unlucky days are in the given year.
+// Find the number of Friday 13th in the given year.
+// Input: Year in Gregorian calendar as integer.
+// Output: Number of Black Fridays in the year as an integer.
+// Examples:
+
+// unluckyDays(2015) == 3
+// unluckyDays(1986) == 1
+
+// unluckyDays takes in an integer value as a year. is there any chance we get anything other than an integer or an invalid value? it will always be years? okay.
+// return the number of days in the given year that is 13th and friday as well.
+
+function unluckyDays(year) {
+  //your code here
+  let count = 0
+
+  // find the number of days in a year that are 13
+  for (let month = 0; month < 12; month++) {
+    const date = new Date(year, month, 13)
+    console.log(date)
+    if (date.getDay() === 5) {
+      count++
+    }
+  }
+  return count
+}
+
+console.log(unluckyDays(2015))
+console.log(unluckyDays(1986))
