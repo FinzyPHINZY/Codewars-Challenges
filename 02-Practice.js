@@ -1378,9 +1378,25 @@ function shorterReverseLonger(str1, str2) {
     : str1 + reverseStr(str2) + str1
 }
 
-console.log(shorterReverseLonger('first', 'abcde') === 'abcdetsrifabcde')
-console.log(shorterReverseLonger('hello', 'bau') === 'bauollehbau')
-console.log(shorterReverseLonger('fghi', 'abcde') === 'fghiedcbafghi')
-console.log(shorterReverseLonger('hello', '') === 'olleh')
-console.log(shorterReverseLonger('', 'bau') === 'uab')
-console.log(shorterReverseLonger('', '') === '')
+// console.log(shorterReverseLonger('first', 'abcde') === 'abcdetsrifabcde')
+// console.log(shorterReverseLonger('hello', 'bau') === 'bauollehbau')
+// console.log(shorterReverseLonger('fghi', 'abcde') === 'fghiedcbafghi')
+// console.log(shorterReverseLonger('hello', '') === 'olleh')
+// console.log(shorterReverseLonger('', 'bau') === 'uab')
+// console.log(shorterReverseLonger('', '') === '')
+
+function test(str) {
+  str = str.split(',')
+
+  if (str.length < 3) return null
+
+  return str.filter((char, i) => i !== 0 && char !== str.at(-1)).join(' ')
+}
+
+console.log(test(''), null)
+console.log(test('1'), null)
+console.log(test('A1,B2'), null)
+console.log(test('1,2,3'), '2')
+console.log(test('1,2,3,4'), '2 3')
+console.log(test('A1,B2,C3,D4,E5'), 'B2 C3 D4')
+console.log(test('A,1,23,456,78,9,Z'), '1 23 456 78 9')
