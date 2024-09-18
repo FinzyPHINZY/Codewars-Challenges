@@ -1412,7 +1412,37 @@ function domainName(url) {
   return url.split('.')[0]
 }
 
-console.log(domainName('http://google.com'), 'google')
-console.log(domainName('http://google.co.jp'), 'google')
-console.log(domainName('www.xakep.ru'), 'xakep')
-console.log(domainName('https://youtube.com'), 'youtube')
+// console.log(domainName('http://google.com'), 'google')
+// console.log(domainName('http://google.co.jp'), 'google')
+// console.log(domainName('www.xakep.ru'), 'xakep')
+// console.log(domainName('https://youtube.com'), 'youtube')
+
+function incrementString(str) {
+  const match = str.match(/\d+/)
+
+  console.log(match)
+
+  if (!match) return 'matched'
+
+  const numStr = match[0]
+  const prefix = str.slice(0, match.index)
+
+  const newNumStr = (parseInt(numStr, 10) + 1).toString()
+  const preceedingZeros = numStr.length - newNumStr.length
+
+  if (preceedingZeros > 0) {
+    return prefix + newNumStr.padStart(numStr.length, '0')
+  } else {
+    return prefix + newNumStr
+  }
+}
+
+console.log(incrementString('foobar000'), 'foobar001')
+console.log(incrementString('foobar999'), 'foobar1000')
+console.log(incrementString('foobar00999'), 'foobar01000')
+console.log(incrementString('foo'), 'foo1')
+console.log(incrementString('foobar001'), 'foobar002')
+console.log(incrementString('foobar1'), 'foobar2')
+console.log(incrementString('1'), '2')
+console.log(incrementString('009'), '010')
+console.log(incrementString('fo99obar99'), 'fo99obar100')
