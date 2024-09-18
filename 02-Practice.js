@@ -1393,10 +1393,26 @@ function test(str) {
   return str.filter((char, i) => i !== 0 && char !== str.at(-1)).join(' ')
 }
 
-console.log(test(''), null)
-console.log(test('1'), null)
-console.log(test('A1,B2'), null)
-console.log(test('1,2,3'), '2')
-console.log(test('1,2,3,4'), '2 3')
-console.log(test('A1,B2,C3,D4,E5'), 'B2 C3 D4')
-console.log(test('A,1,23,456,78,9,Z'), '1 23 456 78 9')
+// console.log(test(''), null)
+// console.log(test('1'), null)
+// console.log(test('A1,B2'), null)
+// console.log(test('1,2,3'), '2')
+// console.log(test('1,2,3,4'), '2 3')
+// console.log(test('A1,B2,C3,D4,E5'), 'B2 C3 D4')
+// console.log(test('A,1,23,456,78,9,Z'), '1 23 456 78 9')
+
+// domainName(url)
+// takes in a url string
+
+function domainName(url) {
+  // remove https, http://, www.
+  url = url.replace('https://', '')
+  url = url.replace('http://', '')
+  url = url.replace('www.', '')
+  return url.split('.')[0]
+}
+
+console.log(domainName('http://google.com'), 'google')
+console.log(domainName('http://google.co.jp'), 'google')
+console.log(domainName('www.xakep.ru'), 'xakep')
+console.log(domainName('https://youtube.com'), 'youtube')
