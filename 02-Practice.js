@@ -1437,12 +1437,38 @@ function incrementString(str) {
   }
 }
 
-console.log(incrementString('foobar000'), 'foobar001')
-console.log(incrementString('foobar999'), 'foobar1000')
-console.log(incrementString('foobar00999'), 'foobar01000')
-console.log(incrementString('foo'), 'foo1')
-console.log(incrementString('foobar001'), 'foobar002')
-console.log(incrementString('foobar1'), 'foobar2')
-console.log(incrementString('1'), '2')
-console.log(incrementString('009'), '010')
-console.log(incrementString('fo99obar99'), 'fo99obar100')
+// console.log(incrementString('foobar000'), 'foobar001')
+// console.log(incrementString('foobar999'), 'foobar1000')
+// console.log(incrementString('foobar00999'), 'foobar01000')
+// console.log(incrementString('foo'), 'foo1')
+// console.log(incrementString('foobar001'), 'foobar002')
+// console.log(incrementString('foobar1'), 'foobar2')
+// console.log(incrementString('1'), '2')
+// console.log(incrementString('009'), '010')
+// console.log(incrementString('fo99obar99'), 'fo99obar100')
+
+// sort an array by the product of the index and the value.
+// sortByValueAndIndex
+// takes in an array of integers.
+// returns the same array sorted by the multiplication of the value and it's index.
+//
+
+function sortByValueAndIndex(arr) {
+  // get the product of the values and index of each item.
+  // a  good data structure ought to hold and manipulate data while keeping the relationships between then.
+
+  const arrObjects = []
+
+  arr.forEach((value, index) => {
+    arrObjects.push({ value: value, product: value * (index + 1) })
+  })
+  console.log(arr, arrObjects)
+  return arrObjects
+    .sort((a, b) => a.product - b.product)
+    .map((obj) => obj.value)
+}
+
+console.log(sortByValueAndIndex([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5]) //;
+console.log(sortByValueAndIndex([23, 2, 3, 4, 5]), [2, 3, 4, 23, 5]) //;
+console.log(sortByValueAndIndex([26, 2, 3, 4, 5]), [2, 3, 4, 5, 26]) //;
+console.log(sortByValueAndIndex([9, 5, 1, 4, 3]), [1, 9, 5, 3, 4]) //;
