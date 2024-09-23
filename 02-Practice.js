@@ -1468,7 +1468,22 @@ function sortByValueAndIndex(arr) {
     .map((obj) => obj.value)
 }
 
-console.log(sortByValueAndIndex([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5]) //;
-console.log(sortByValueAndIndex([23, 2, 3, 4, 5]), [2, 3, 4, 23, 5]) //;
-console.log(sortByValueAndIndex([26, 2, 3, 4, 5]), [2, 3, 4, 5, 26]) //;
-console.log(sortByValueAndIndex([9, 5, 1, 4, 3]), [1, 9, 5, 3, 4]) //;
+// console.log(sortByValueAndIndex([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5]) //;
+// console.log(sortByValueAndIndex([23, 2, 3, 4, 5]), [2, 3, 4, 23, 5]) //;
+// console.log(sortByValueAndIndex([26, 2, 3, 4, 5]), [2, 3, 4, 5, 26]) //;
+// console.log(sortByValueAndIndex([9, 5, 1, 4, 3]), [1, 9, 5, 3, 4]) //;
+
+function towerBuilder(nFloors) {
+  // build here
+
+  const result = []
+
+  for (let i = 0; i < nFloors; i++) {
+    const spaces = ' '.repeat(nFloors - (i + 1))
+    const stars = '*'.repeat(2 * i + 1)
+    result.push(spaces + stars + spaces)
+  }
+  return result
+}
+
+console.log(towerBuilder(6))
