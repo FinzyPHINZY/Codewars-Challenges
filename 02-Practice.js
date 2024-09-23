@@ -1393,10 +1393,97 @@ function test(str) {
   return str.filter((char, i) => i !== 0 && char !== str.at(-1)).join(' ')
 }
 
-console.log(test(''), null)
-console.log(test('1'), null)
-console.log(test('A1,B2'), null)
-console.log(test('1,2,3'), '2')
-console.log(test('1,2,3,4'), '2 3')
-console.log(test('A1,B2,C3,D4,E5'), 'B2 C3 D4')
-console.log(test('A,1,23,456,78,9,Z'), '1 23 456 78 9')
+// console.log(test(''), null)
+// console.log(test('1'), null)
+// console.log(test('A1,B2'), null)
+// console.log(test('1,2,3'), '2')
+// console.log(test('1,2,3,4'), '2 3')
+// console.log(test('A1,B2,C3,D4,E5'), 'B2 C3 D4')
+// console.log(test('A,1,23,456,78,9,Z'), '1 23 456 78 9')
+
+// domainName(url)
+// takes in a url string
+
+function domainName(url) {
+  // remove https, http://, www.
+  url = url.replace('https://', '')
+  url = url.replace('http://', '')
+  url = url.replace('www.', '')
+  return url.split('.')[0]
+}
+
+// console.log(domainName('http://google.com'), 'google')
+// console.log(domainName('http://google.co.jp'), 'google')
+// console.log(domainName('www.xakep.ru'), 'xakep')
+// console.log(domainName('https://youtube.com'), 'youtube')
+
+function incrementString(str) {
+  const match = str.match(/\d+/)
+
+  console.log(match)
+
+  if (!match) return 'matched'
+
+  const numStr = match[0]
+  const prefix = str.slice(0, match.index)
+
+  const newNumStr = (parseInt(numStr, 10) + 1).toString()
+  const preceedingZeros = numStr.length - newNumStr.length
+
+  if (preceedingZeros > 0) {
+    return prefix + newNumStr.padStart(numStr.length, '0')
+  } else {
+    return prefix + newNumStr
+  }
+}
+
+// console.log(incrementString('foobar000'), 'foobar001')
+// console.log(incrementString('foobar999'), 'foobar1000')
+// console.log(incrementString('foobar00999'), 'foobar01000')
+// console.log(incrementString('foo'), 'foo1')
+// console.log(incrementString('foobar001'), 'foobar002')
+// console.log(incrementString('foobar1'), 'foobar2')
+// console.log(incrementString('1'), '2')
+// console.log(incrementString('009'), '010')
+// console.log(incrementString('fo99obar99'), 'fo99obar100')
+
+// sort an array by the product of the index and the value.
+// sortByValueAndIndex
+// takes in an array of integers.
+// returns the same array sorted by the multiplication of the value and it's index.
+//
+
+function sortByValueAndIndex(arr) {
+  // get the product of the values and index of each item.
+  // a  good data structure ought to hold and manipulate data while keeping the relationships between then.
+
+  const arrObjects = []
+
+  arr.forEach((value, index) => {
+    arrObjects.push({ value: value, product: value * (index + 1) })
+  })
+  console.log(arr, arrObjects)
+  return arrObjects
+    .sort((a, b) => a.product - b.product)
+    .map((obj) => obj.value)
+}
+
+// console.log(sortByValueAndIndex([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5]) //;
+// console.log(sortByValueAndIndex([23, 2, 3, 4, 5]), [2, 3, 4, 23, 5]) //;
+// console.log(sortByValueAndIndex([26, 2, 3, 4, 5]), [2, 3, 4, 5, 26]) //;
+// console.log(sortByValueAndIndex([9, 5, 1, 4, 3]), [1, 9, 5, 3, 4]) //;
+
+function towerBuilder(nFloors) {
+  // build here
+
+  const result = []
+
+  for (let i = 0; i < nFloors; i++) {
+    const spaces = ' '.repeat(nFloors - (i + 1))
+    const stars = '*'.repeat(2 * i + 1)
+    result.push(spaces + stars + spaces)
+  }
+  return result
+}
+
+console.log(towerBuilder(6))
