@@ -1486,4 +1486,50 @@ function towerBuilder(nFloors) {
   return result
 }
 
-console.log(towerBuilder(6))
+// console.log(towerBuilder(6))
+
+// fn sumOfIntegersInString
+// takes in a string (s)
+// return the sum of the integers in each string
+
+function sumOfIntegersInString(s) {
+  // create a variable for sum and current value.
+  let sum = 0
+  let cur = ''
+  // iterage through s.
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i]
+    // check if value is a possible number. if yes add it to current value.
+    // if not, add current value to sum and turn current value into empty string
+
+    if (Number(char) || Number(char) > -1) {
+      cur += char
+    } else {
+      sum += Number(cur)
+      cur = ''
+    }
+  }
+
+  sum += Number(cur)
+
+  // return sum
+  return sum
+}
+
+let exampleTests = [
+  ['12.4', 16],
+  ['h3ll0w0rld', 3],
+  ['2 + 3 = ', 5],
+  [
+    'Our company made approximately 1 million in gross revenue last quarter.',
+    1,
+  ],
+  ['The Great Depression lasted from 1929 to 1939.', 3868],
+  ['Dogs are our best friends.', 0],
+  ['C4t5 are 4m4z1ng.', 18],
+  ['The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog', 3635],
+]
+
+exampleTests.forEach((test) =>
+  console.log(sumOfIntegersInString(test[0]), test[1])
+)
