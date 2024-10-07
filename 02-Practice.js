@@ -1494,26 +1494,31 @@ function towerBuilder(nFloors) {
 
 function sumOfIntegersInString(s) {
   // create a variable for sum and current value.
-  let sum = 0
-  let cur = ''
-  // iterage through s.
-  for (let i = 0; i < s.length; i++) {
-    const char = s[i]
-    // check if value is a possible number. if yes add it to current value.
-    // if not, add current value to sum and turn current value into empty string
+  // let sum = 0
+  // let cur = ''
+  // // iterage through s.
+  // for (let i = 0; i < s.length; i++) {
+  //   const char = s[i]
+  //   // check if value is a possible number. if yes add it to current value.
+  //   // if not, add current value to sum and turn current value into empty string
 
-    if (Number(char) || Number(char) > -1) {
-      cur += char
-    } else {
-      sum += Number(cur)
-      cur = ''
-    }
-  }
+  //   if (Number(char) || Number(char) > -1) {
+  //     cur += char
+  //   } else {
+  //     sum += Number(cur)
+  //     cur = ''
+  //   }
+  // }
 
-  sum += Number(cur)
+  // sum += Number(cur)
 
   // return sum
-  return sum
+  // return sum
+
+  return s
+    .match(/\d+/g)
+    .map(Number)
+    .reduce((sum, num) => sum + num)
 }
 
 let exampleTests = [
