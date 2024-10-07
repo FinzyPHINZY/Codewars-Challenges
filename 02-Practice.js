@@ -1535,6 +1535,43 @@ let exampleTests = [
   ['The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog', 3635],
 ]
 
-exampleTests.forEach((test) =>
-  console.log(sumOfIntegersInString(test[0]), test[1])
-)
+// exampleTests.forEach((test) =>
+//   console.log(sumOfIntegersInString(test[0]), test[1])
+// )
+
+// fn incrementString
+// takes in a string
+// return the number at the end of the string incremented by 1. if theres no number, append 1
+// foo => foo1
+// foo23 => foo24
+// foo99 => foo100
+
+function incrementString(str) {
+  const match = str.match(/(\d+)$/)
+
+  if (match) {
+    const index = match.index
+    const prefix = str.slice(0, index)
+    const numStr = match[0]
+    const newNumStr = String(parseInt(numStr, 10) + 1)
+
+    const preceedingZeros = numStr.length - newNumStr.length
+    if (preceedingZeros > 0) {
+      return prefix + newNumStr.padStart(numStr.length, '0')
+    }
+
+    return prefix + newNumStr
+  } else {
+    return str + 1
+  }
+}
+
+console.log(incrementString('foobar000'), 'foobar001')
+console.log(incrementString('foobar999'), 'foobar1000')
+console.log(incrementString('foobar00999'), 'foobar01000')
+console.log(incrementString('foo'), 'foo1')
+console.log(incrementString('foobar001'), 'foobar002')
+console.log(incrementString('foobar1'), 'foobar2')
+console.log(incrementString('1'), '2')
+console.log(incrementString('009'), '010')
+console.log(incrementString('fo99obar99'), 'fo99obar100')
