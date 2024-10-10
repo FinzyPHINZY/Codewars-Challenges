@@ -1486,4 +1486,92 @@ function towerBuilder(nFloors) {
   return result
 }
 
-console.log(towerBuilder(6))
+// console.log(towerBuilder(6))
+
+// fn sumOfIntegersInString
+// takes in a string (s)
+// return the sum of the integers in each string
+
+function sumOfIntegersInString(s) {
+  // create a variable for sum and current value.
+  // let sum = 0
+  // let cur = ''
+  // // iterage through s.
+  // for (let i = 0; i < s.length; i++) {
+  //   const char = s[i]
+  //   // check if value is a possible number. if yes add it to current value.
+  //   // if not, add current value to sum and turn current value into empty string
+
+  //   if (Number(char) || Number(char) > -1) {
+  //     cur += char
+  //   } else {
+  //     sum += Number(cur)
+  //     cur = ''
+  //   }
+  // }
+
+  // sum += Number(cur)
+
+  // return sum
+  // return sum
+
+  return s
+    .match(/\d+/g)
+    .map(Number)
+    .reduce((sum, num) => sum + num)
+}
+
+let exampleTests = [
+  ['12.4', 16],
+  ['h3ll0w0rld', 3],
+  ['2 + 3 = ', 5],
+  [
+    'Our company made approximately 1 million in gross revenue last quarter.',
+    1,
+  ],
+  ['The Great Depression lasted from 1929 to 1939.', 3868],
+  ['Dogs are our best friends.', 0],
+  ['C4t5 are 4m4z1ng.', 18],
+  ['The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog', 3635],
+]
+
+// exampleTests.forEach((test) =>
+//   console.log(sumOfIntegersInString(test[0]), test[1])
+// )
+
+// fn incrementString
+// takes in a string
+// return the number at the end of the string incremented by 1. if theres no number, append 1
+// foo => foo1
+// foo23 => foo24
+// foo99 => foo100
+
+function incrementString(str) {
+  const match = str.match(/(\d+)$/)
+
+  if (match) {
+    const index = match.index
+    const prefix = str.slice(0, index)
+    const numStr = match[0]
+    const newNumStr = String(parseInt(numStr, 10) + 1)
+
+    const preceedingZeros = numStr.length - newNumStr.length
+    if (preceedingZeros > 0) {
+      return prefix + newNumStr.padStart(numStr.length, '0')
+    }
+
+    return prefix + newNumStr
+  } else {
+    return str + 1
+  }
+}
+
+console.log(incrementString('foobar000'), 'foobar001')
+console.log(incrementString('foobar999'), 'foobar1000')
+console.log(incrementString('foobar00999'), 'foobar01000')
+console.log(incrementString('foo'), 'foo1')
+console.log(incrementString('foobar001'), 'foobar002')
+console.log(incrementString('foobar1'), 'foobar2')
+console.log(incrementString('1'), '2')
+console.log(incrementString('009'), '010')
+console.log(incrementString('fo99obar99'), 'fo99obar100')
