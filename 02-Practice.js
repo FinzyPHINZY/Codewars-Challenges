@@ -1566,12 +1566,48 @@ function incrementString(str) {
   }
 }
 
-console.log(incrementString('foobar000'), 'foobar001')
-console.log(incrementString('foobar999'), 'foobar1000')
-console.log(incrementString('foobar00999'), 'foobar01000')
-console.log(incrementString('foo'), 'foo1')
-console.log(incrementString('foobar001'), 'foobar002')
-console.log(incrementString('foobar1'), 'foobar2')
-console.log(incrementString('1'), '2')
-console.log(incrementString('009'), '010')
-console.log(incrementString('fo99obar99'), 'fo99obar100')
+// console.log(incrementString('foobar000'), 'foobar001')
+// console.log(incrementString('foobar999'), 'foobar1000')
+// console.log(incrementString('foobar00999'), 'foobar01000')
+// console.log(incrementString('foo'), 'foo1')
+// console.log(incrementString('foobar001'), 'foobar002')
+// console.log(incrementString('foobar1'), 'foobar2')
+// console.log(incrementString('1'), '2')
+// console.log(incrementString('009'), '010')
+// console.log(incrementString('fo99obar99'), 'fo99obar100')
+
+// fn toWeirdCase
+// accepts a string
+// returns a new string with all the even indexed characters in each word uppercased and all odd indexed characters in each word lowercased.
+// edge cases: would it contain only strings? strings and spaces.
+
+// string => StRiNg
+// Weird String Case => WeIrD StRiNg CaSe
+
+function toWeirdCase(str) {
+  // split input string by spaces to have each words seperately.
+  return (
+    str
+      .split(' ')
+      // iterate over each word.
+      .map((word) =>
+        word
+          .split('')
+          // for each word, iterate over each char.
+          .map((char, i) =>
+            // if char index is even, convert to uppercase
+            // if char index is odd, convert to lowercase.
+            i % 2 === 0 ? char.toUpperCase() : char.toLowerCase()
+          )
+          .join('')
+      )
+
+      // join each word together to form a string( result )
+      .join(' ')
+  )
+
+  // return result
+}
+
+console.log(toWeirdCase('string'))
+console.log(toWeirdCase('Weird string case'))
