@@ -19,14 +19,14 @@
 
 function towerBuilder(nFloors) {
   // build here
-  let tower = []
+  let tower = [];
 
   for (let i = 0; i < nFloors; i++) {
-    const spaces = ' '.repeat(nFloors - (i - 1))
-    const stars = '*'.repeat(2 * (1 + i))
-    tower.push(spaces + stars + spaces)
+    const spaces = ' '.repeat(nFloors - (i - 1));
+    const stars = '*'.repeat(2 * (1 + i));
+    tower.push(spaces + stars + spaces);
   }
-  return tower
+  return tower;
 }
 
 // console.log(towerBuilder(6))
@@ -49,15 +49,15 @@ function towerBuilder(nFloors) {
 // * Input: [2,2,1,2,1], output = [2,2,2,1]
 
 function dullThings(arr) {
-  const min = arr.indexOf(Math.min(...arr))
-  return arr.filter((_, i) => i !== min)
+  const min = arr.indexOf(Math.min(...arr));
+  return arr.filter((_, i) => i !== min);
 }
 
 // console.log(dullThings([1, 2, 3, 4, 5]));
 // console.log(dullThings([5, 3, 2, 1, 4]));
 // console.log(dullThings([2, 2, 1, 2, 1]));
 
-;('use strict')
+('use strict');
 
 // Happy Holidays fellow Code Warriors!
 // Now, Dasher! Now, Dancer! Now, Prancer, and Vixen! On, Comet! On, Cupid! On, Donder and Blitzen! That's the order Santa wanted his reindeer...right? What do you mean he wants them in order by their last names!? Looks like we need your help Code Warrior!
@@ -109,7 +109,7 @@ function sortReindeer(reindeerNames) {
     //     return 0;
     //   }
     // }
-  )
+  );
 }
 
 // let input = [
@@ -172,7 +172,7 @@ function sortReindeer(reindeerNames) {
 function sortReindeer(reindeerNames) {
   return reindeerNames.sort((a, b) =>
     a.split(' ')[1].localeCompare(b.split(' ')[1])
-  )
+  );
 }
 
 let input = [
@@ -184,7 +184,7 @@ let input = [
   'Cupid Foroutan',
   'Donder Jonker',
   'Blitzen Claus',
-]
+];
 // let output = [
 //   "Prancer Chua",
 //   "Blitzen Claus",
@@ -215,10 +215,10 @@ var Ghost = function () {
   // your code goes here
   this.color = ['white', 'yellow', 'purple', 'red'][
     Math.floor(Math.random() * 4)
-  ]
-  this.fruit = ['orange', 'pineapple']
-  return this
-}
+  ];
+  this.fruit = ['orange', 'pineapple'];
+  return this;
+};
 
 // describe("Ghost", () => {
 //   it("should be one of the specified colors", () => {
@@ -248,14 +248,14 @@ var Ghost = function () {
 
 function array(string) {
   // TODO
-  string = string.split(',')
-  if (string.length < 3) return null
+  string = string.split(',');
+  if (string.length < 3) return null;
 
   const result = string
     .filter((char, i) => i !== 0 && i !== string.length - 1)
-    .join(' ')
+    .join(' ');
 
-  return result
+  return result;
 }
 
 // describe('Sample Tests', function() {
@@ -292,16 +292,16 @@ function array(string) {
 
 function sumMultiples(limit) {
   // find the numbers that are multiples of 3 or 5 below 'limit';
-  let multiples = []
+  let multiples = [];
   for (let i = 0; i < limit; i++) {
     if (i % 3 === 0 || i % 5 === 0) {
-      multiples.push(i)
+      multiples.push(i);
     }
   }
 
-  console.log(multiples)
+  console.log(multiples);
   // return the total
-  return multiples.reduce((sum, num) => sum + num, 0)
+  return multiples.reduce((sum, num) => sum + num, 0);
 }
 
 // console.log(sumMultiples(10));
@@ -320,7 +320,7 @@ function splitAndMerge(string, separator) {
   return string
     .split(' ')
     .map((word) => word.split('').join(separator))
-    .join(' ')
+    .join(' ');
 }
 
 // console.log(splitAndMerge("My name is John", " ")); // == "M y n a m e i s J o h n";
@@ -340,16 +340,16 @@ function splitAndMerge(string, separator) {
 
 function unluckyDays(year) {
   //your code here
-  let count = 0
+  let count = 0;
   for (let i = 0; i < 12; i++) {
-    let date = new Date(year, i, 13)
+    let date = new Date(year, i, 13);
 
     if (date.getDay() === 5) {
-      count++
+      count++;
     }
   }
 
-  return count
+  return count;
 }
 
 // console.log(unluckyDays(2015));
@@ -374,7 +374,7 @@ function unluckyDays(year) {
 
 function toCsvText(array) {
   // good luck
-  console.log(array.join('\n'))
+  console.log(array.join('\n'));
 }
 
 const inputArray = [
@@ -382,7 +382,7 @@ const inputArray = [
   [10, 11, 12, 13, 14],
   [20, 21, 22, 23, 24],
   [30, 31, 32, 33, 34],
-]
+];
 
 // console.log(toCsvText(inputArray));
 
@@ -398,15 +398,15 @@ const inputArray = [
 
 function unluckyDays(year) {
   //your code here
-  let count = 0
+  let count = 0;
   // loop through the year and get the dates that match 13
   for (let i = 0; i < 12; i++) {
-    let date = new Date(year, i, 13)
-    const day = date.getDay()
+    let date = new Date(year, i, 13);
+    const day = date.getDay();
 
-    day === 5 && count++
+    day === 5 && count++;
   }
-  return count
+  return count;
 }
 
 // console.log(unluckyDays(2015));
@@ -435,19 +435,19 @@ function bingo(ticket, win) {
     .map((subArray) => {
       const charCodes = subArray[0]
         .split('')
-        .map((_, i) => subArray[0].charCodeAt(i))
+        .map((_, i) => subArray[0].charCodeAt(i));
 
       return charCodes.reduce((a, b) => {
         if (b === subArray[1]) {
-          return a + 1
+          return a + 1;
         } else {
-          return a
+          return a;
         }
-      }, 0)
+      }, 0);
     })
-    .reduce((a, b) => a + b, 0)
+    .reduce((a, b) => a + b, 0);
 
-  return miniWins >= win ? 'Winner!' : 'Loser!'
+  return miniWins >= win ? 'Winner!' : 'Loser!';
 }
 
 // console.log(
@@ -493,17 +493,17 @@ function bingo(ticket, win) {
 
 function cleanString(s) {
   // ... your code ...
-  let result = []
+  let result = [];
 
   for (let i = 0; i < s.length; i++) {
     if (s[i] === '#') {
-      result.pop()
+      result.pop();
     } else {
-      result.push(s[i])
+      result.push(s[i]);
     }
   }
 
-  return result.join('')
+  return result.join('');
 }
 
 // console.log(cleanString("abc#d##c")); //'ac');
@@ -523,7 +523,7 @@ function cleanString(s) {
 // All inputs will be in the correct format. Strings on tickets are not always the same length.
 
 function bingo(ticket, win) {
-  let count = 0
+  let count = 0;
   // ticket.map((subArray) =>
   //   subArray[0].split("").map((char, i) => subArray[0].charCodeAt(i))
   // );
@@ -533,11 +533,11 @@ function bingo(ticket, win) {
     // return arr[0];
 
     if (arr[0].includes(String.fromCharCode(arr[1]))) {
-      count++
+      count++;
     }
-  })
+  });
 
-  return count >= win ? 'winna' : 'loser'
+  return count >= win ? 'winna' : 'loser';
 }
 
 // console.log(
@@ -553,7 +553,7 @@ function bingo(ticket, win) {
 // console.log(bingo([['ABC', 65], ['HGR', 74], ['BYHT', 74]], 1),) // 'Winner!');
 // console.log(bingo([['HGTYRE', 74], ['BE', 66], ['JKTY', 74]], 3)) //, 'Loser!');
 
-;('use strict')
+('use strict');
 
 // Sort an array by value and index
 // Your task is to sort an array of integer numbers by the product of the value and the index of the positions.
@@ -581,7 +581,7 @@ function sortByValueAndIndex(array) {
       product: value * (i + 1),
     }))
     .sort((a, b) => a.product - b.product)
-    .map((arr) => arr.value)
+    .map((arr) => arr.value);
 }
 
 // console.log(sortByValueAndIndex([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
@@ -601,13 +601,13 @@ function sortByValueAndIndex(array) {
 // All inputs will be in the correct format. Strings on tickets are not always the same length.
 
 function bingo(ticket, win) {
-  let count = 0
+  let count = 0;
   ticket.forEach((arr) => {
-    arr[0] = arr[0].split('')
-    console.log(arr[0])
-    if (arr[0].includes(String.fromCharCode(arr[1]))) count++
-  })
-  return count >= win ? 'winna' : 'loser'
+    arr[0] = arr[0].split('');
+    console.log(arr[0]);
+    if (arr[0].includes(String.fromCharCode(arr[1]))) count++;
+  });
+  return count >= win ? 'winna' : 'loser';
 }
 
 // console.log(
@@ -655,13 +655,13 @@ function bingo(ticket, win) {
 
 // ghost.color //=> "white" or "yellow" or "purple" or "red"
 
-let colors = ['white', 'yellow', 'purple', 'red']
+let colors = ['white', 'yellow', 'purple', 'red'];
 
 var Ghost = function () {
   // your code goes here
-  this.color = colors[Math.floor(Math.random() * colors.length)]
-  return this
-}
+  this.color = colors[Math.floor(Math.random() * colors.length)];
+  return this;
+};
 
 // Test.expect(colors.includes(new Ghost().color));
 
@@ -705,8 +705,8 @@ var Ghost = function () {
 
 function sortReindeer(reindeerNames) {
   return reindeerNames.sort((a, b) => {
-    return a.split(' ')[1].localeCompare(b.split(' ')[1])
-  })
+    return a.split(' ')[1].localeCompare(b.split(' ')[1]);
+  });
 }
 
 let inputNames = [
@@ -718,7 +718,7 @@ let inputNames = [
   'Cupid Foroutan',
   'Donder Jonker',
   'Blitzen Claus',
-]
+];
 // let output = [
 //   "Prancer Chua",
 //   "Blitzen Claus",
@@ -749,7 +749,7 @@ let inputNames = [
 function killer(suspectInfo, dead) {
   //your code here...
   for (const key in suspectInfo) {
-    if (dead.every((person) => suspectInfo[key].includes(person))) return key
+    if (dead.every((person) => suspectInfo[key].includes(person))) return key;
   }
 }
 
@@ -789,7 +789,7 @@ function killer(suspectInfo, dead) {
 // numbersOfLetters(1) --->> ['one', 'three', 'five', 'four]
 
 function numbersOfLetters(num) {
-  const result = []
+  const result = [];
 
   const numbers = [
     'zero',
@@ -802,7 +802,7 @@ function numbersOfLetters(num) {
     'seven',
     'eight',
     'nine',
-  ]
+  ];
 
   // conver numbers to word.
   const numToWord = (num) =>
@@ -810,26 +810,26 @@ function numbersOfLetters(num) {
       .toString()
       .split('')
       .map((number) => numbers[number])
-      .join('')
+      .join('');
 
-  let currentWord = numToWord(num)
+  let currentWord = numToWord(num);
 
   if (currentWord === 'four') {
-    result.push(currentWord)
+    result.push(currentWord);
 
-    return result
+    return result;
   }
 
-  result.push(currentWord)
+  result.push(currentWord);
   while (true) {
-    const nextNum = numToWord(currentWord.length)
+    const nextNum = numToWord(currentWord.length);
 
-    result.push(nextNum)
+    result.push(nextNum);
 
     if (nextNum === 'four') {
-      return result
+      return result;
     } else {
-      currentWord = nextNum
+      currentWord = nextNum;
     }
   }
 }
@@ -869,33 +869,33 @@ function numbersOfLetters(integer) {
     'seven',
     'eight',
     'nine',
-  ]
-  const result = []
+  ];
+  const result = [];
 
   const numToWord = (integer) =>
     integer
       .toString()
       .split('')
       .map((num) => numbers[num])
-      .join('')
+      .join('');
 
-  let currentWord = numToWord(integer)
+  let currentWord = numToWord(integer);
 
-  result.push(currentWord)
+  result.push(currentWord);
 
   if (currentWord === 'four') {
-    return result
+    return result;
   }
 
   while (true) {
-    const nextNum = numToWord(currentWord.length)
-    result.push(nextNum)
+    const nextNum = numToWord(currentWord.length);
+    result.push(nextNum);
 
     if (nextNum === 'four') {
-      return result
+      return result;
     }
 
-    currentWord = nextNum
+    currentWord = nextNum;
   }
 }
 
@@ -915,11 +915,11 @@ function numbersOfLetters(integer) {
 // If a and b have the same length treat a as the longer producing b+reverse(a)+b
 
 function shorterReverseLonger(first, second) {
-  const reverseText = (str) => str.split('').reverse().join('')
+  const reverseText = (str) => str.split('').reverse().join('');
 
   return first.length >= second.length
     ? second + reverseText(first) + second
-    : first + reverseText(second) + first
+    : first + reverseText(second) + first;
 }
 
 // console.log(shorterReverseLonger('first', 'abcde'), 'abcdetsrifabcde')
@@ -942,10 +942,10 @@ function shorterReverseLonger(first, second) {
 // shorterReverseLonger('cat', 'jar') ---->> jartacjar
 
 function shorterReverseLonger(str1, str2) {
-  const reverseStr = (str) => str.split('').reverse().join('')
+  const reverseStr = (str) => str.split('').reverse().join('');
   return str1 >= str2
     ? str2 + reverseStr(str1) + str2
-    : str1 + reverseStr(str2) + str1
+    : str1 + reverseStr(str2) + str1;
 }
 
 // console.log(shorterReverseLonger('first', 'abcde')) //, "abcdetsrifabcde", 'Incorrect answer for a="first", b="abcde"');
@@ -967,7 +967,7 @@ function shorterReverseLonger(str1, str2) {
 // filter_list([1,2,4,5,6.'ai]) // [1,2,3,4,5,6]
 
 function filter_list(array) {
-  return array.filter((value) => typeof value !== 'string')
+  return array.filter((value) => typeof value !== 'string');
 }
 
 // console.log(filter_list([1, 2, 'a', 'b']), [1, 2])
@@ -987,9 +987,9 @@ function filter_list(array) {
 
 function sortArray(arr) {
   // create an output array
-  const result = []
+  const result = [];
 
-  const oddNumbers = arr.filter((num) => num % 2 !== 0).sort((a, b) => a - b)
+  const oddNumbers = arr.filter((num) => num % 2 !== 0).sort((a, b) => a - b);
 
   // iterate over the input array.
   // if the value is odd, push into result the first value in the oddNumbers array
@@ -997,12 +997,12 @@ function sortArray(arr) {
 
   for (const num of arr) {
     if (num % 2 === 0) {
-      result.push(num)
+      result.push(num);
     } else {
-      result.push(oddNumbers.shift())
+      result.push(oddNumbers.shift());
     }
   }
-  return result
+  return result;
 }
 
 // console.log(sortArray([5, 3, 2, 8, 1, 4]), [1, 3, 2, 8, 5, 4])
@@ -1026,19 +1026,19 @@ function sortArray(arr) {
 
 function bingo(ticket, win) {
   // count mini-wins
-  let miniWins = 0
+  let miniWins = 0;
   // min-wins is the number of times the char code in the string matches the integer in the array
   ticket.forEach((subArray) => {
-    const [str, num] = subArray
+    const [str, num] = subArray;
 
-    const charCodes = str.split('').map((char, i) => str.charCodeAt(i))
+    const charCodes = str.split('').map((char, i) => str.charCodeAt(i));
 
     if (charCodes.includes(num)) {
-      miniWins++
+      miniWins++;
     }
-  })
+  });
 
-  return miniWins >= win ? 'Winner!' : 'Loser!'
+  return miniWins >= win ? 'Winner!' : 'Loser!';
 }
 
 // console.log(
@@ -1109,15 +1109,15 @@ function nb_year(p0, percent, aug, p) {
   // run a while loop
   // while total is less than p, multiply p0 * percent + aug
 
-  let total = p0
+  let total = p0;
 
-  let count = 0
+  let count = 0;
   while (total < p) {
-    total += total * (percent / 100) + aug
-    count++
+    total += total * (percent / 100) + aug;
+    count++;
   }
 
-  return count
+  return count;
 }
 
 // console.log(nb_year(1000, 2, 50, 1200), 3)
@@ -1144,21 +1144,21 @@ function nb_year(p0, percent, aug, p) {
 // Attention: If the number has leading zeros the amount of digits should be considered.
 
 function incrementString(str) {
-  const match = str.match(/(\d+)$/)
+  const match = str.match(/(\d+)$/);
 
   if (match) {
-    const numStr = match[0]
-    const prefix = str.slice(0, match.index)
+    const numStr = match[0];
+    const prefix = str.slice(0, match.index);
 
-    const num = (parseInt(numStr, 10) + 1).toString()
-    const preceedingZeros = numStr.length - num.length
+    const num = (parseInt(numStr, 10) + 1).toString();
+    const preceedingZeros = numStr.length - num.length;
 
     const newNumStr =
-      preceedingZeros > 0 ? '0'.repeat(preceedingZeros) + num : num
+      preceedingZeros > 0 ? '0'.repeat(preceedingZeros) + num : num;
 
-    return prefix + newNumStr
+    return prefix + newNumStr;
   } else {
-    return str + 1
+    return str + 1;
   }
 }
 
@@ -1178,8 +1178,8 @@ function incrementString(str) {
 // ["C", "d", "a", "B"])              -->  ["a", "B", "C", "d"]
 
 const sortme = function (names) {
-  return names.sort((a, b) => a.localeCompare(b))
-}
+  return names.sort((a, b) => a.localeCompare(b));
+};
 
 // console.log(sortme(['Hello', 'there', "I'm", 'fine']), [
 //   'fine',
@@ -1214,35 +1214,35 @@ function numbersOfLetters(integer) {
     'seven',
     'eight',
     'nine',
-  ]
+  ];
 
-  let result = []
+  let result = [];
 
   const numToWords = (num) =>
     num
       .toString()
       .split('')
       .map((val) => numberWords[val])
-      .join('')
+      .join('');
 
-  let currentWord = numToWords(integer)
+  let currentWord = numToWords(integer);
 
   if (currentWord === 'four') {
-    result.push(currentWord)
-    return result
+    result.push(currentWord);
+    return result;
   } else {
-    result.push(currentWord)
+    result.push(currentWord);
 
     while (true) {
-      let nextWord = numToWords(currentWord.length)
-      result.push(nextWord)
+      let nextWord = numToWords(currentWord.length);
+      result.push(nextWord);
 
       if (nextWord === 'four') {
-        break
+        break;
       }
-      currentWord = nextWord
+      currentWord = nextWord;
     }
-    return result
+    return result;
   }
 }
 
@@ -1274,24 +1274,24 @@ function numbersOfLetters(integer) {
 // Attention: If the number has leading zeros the amount of digits should be considered.
 
 function incrementString(str) {
-  if (str.length === 1) return String(parseInt(str) + 1)
-  const match = str.match(/\d+$/)
+  if (str.length === 1) return String(parseInt(str) + 1);
+  const match = str.match(/\d+$/);
 
   //
 
   if (match) {
-    const prefix = str.slice(0, match.index)
-    const numStr = match[0]
-    const number = String(parseInt(match[0], 10) + 1)
+    const prefix = str.slice(0, match.index);
+    const numStr = match[0];
+    const number = String(parseInt(match[0], 10) + 1);
 
-    const preceedingZeros = numStr.length - number.length
+    const preceedingZeros = numStr.length - number.length;
 
     const newNumStr =
-      preceedingZeros > 0 ? '0'.repeat(preceedingZeros) + number : number
+      preceedingZeros > 0 ? '0'.repeat(preceedingZeros) + number : number;
 
-    return prefix + newNumStr
+    return prefix + newNumStr;
   }
-  return str + '1'
+  return str + '1';
 }
 
 // console.log(incrementString('foobar000'), 'foobar001')
@@ -1319,17 +1319,17 @@ function incrementString(str) {
 
 function unluckyDays(year) {
   //your code here
-  let count = 0
+  let count = 0;
 
   // find the number of days in a year that are 13
   for (let month = 0; month < 12; month++) {
-    const date = new Date(year, month, 13)
-    console.log(date)
+    const date = new Date(year, month, 13);
+    console.log(date);
     if (date.getDay() === 5) {
-      count++
+      count++;
     }
   }
-  return count
+  return count;
 }
 
 // console.log(unluckyDays(2015))
@@ -1341,7 +1341,7 @@ function unluckyDays(year) {
 
 function sortList(list, sortBy) {
   // iterate through the input using the map method
-  return list.sort((item1, item2) => item2[sortBy] - item1[sortBy])
+  return list.sort((item1, item2) => item2[sortBy] - item1[sortBy]);
 }
 
 const inputSort = [
@@ -1349,7 +1349,7 @@ const inputSort = [
   { a: 3, b: 2 },
   { a: 2, b: 40 },
   { a: 4, b: 12 },
-]
+];
 
 // console.log(sortList(inputSort, 'a'))
 // console.log(sortList(inputSort, 'b'))
@@ -1359,9 +1359,9 @@ const inputSort = [
 // returns a string of the word at the first integer argument multiplied by the second integer argument joined together with an hyphen
 
 function modifyMultiply(str, loc, num) {
-  str = str.split(' ')
+  str = str.split(' ');
 
-  return Array(num).fill(str[loc]).join('-')
+  return Array(num).fill(str[loc]).join('-');
 }
 
 // console.log(modifyMultiply('This is a string', 3, 5))
@@ -1371,11 +1371,11 @@ function modifyMultiply(str, loc, num) {
 // console.log(modifyMultiply("Everything happening around me is very random. I am enjoying the phase, as the journey is far more enjoyable than the destination.",2 ,5), "around-around-around-around-around");
 
 function shorterReverseLonger(str1, str2) {
-  const reverseStr = (str) => str.split('').reverse().join('')
+  const reverseStr = (str) => str.split('').reverse().join('');
 
   return str1.length >= str2.length
     ? str2 + reverseStr(str1) + str2
-    : str1 + reverseStr(str2) + str1
+    : str1 + reverseStr(str2) + str1;
 }
 
 // console.log(shorterReverseLonger('first', 'abcde') === 'abcdetsrifabcde')
@@ -1386,11 +1386,11 @@ function shorterReverseLonger(str1, str2) {
 // console.log(shorterReverseLonger('', '') === '')
 
 function test(str) {
-  str = str.split(',')
+  str = str.split(',');
 
-  if (str.length < 3) return null
+  if (str.length < 3) return null;
 
-  return str.filter((char, i) => i !== 0 && char !== str.at(-1)).join(' ')
+  return str.filter((char, i) => i !== 0 && char !== str.at(-1)).join(' ');
 }
 
 // console.log(test(''), null)
@@ -1406,10 +1406,10 @@ function test(str) {
 
 function domainName(url) {
   // remove https, http://, www.
-  url = url.replace('https://', '')
-  url = url.replace('http://', '')
-  url = url.replace('www.', '')
-  return url.split('.')[0]
+  url = url.replace('https://', '');
+  url = url.replace('http://', '');
+  url = url.replace('www.', '');
+  return url.split('.')[0];
 }
 
 // console.log(domainName('http://google.com'), 'google')
@@ -1418,22 +1418,22 @@ function domainName(url) {
 // console.log(domainName('https://youtube.com'), 'youtube')
 
 function incrementString(str) {
-  const match = str.match(/\d+/)
+  const match = str.match(/\d+/);
 
-  console.log(match)
+  console.log(match);
 
-  if (!match) return 'matched'
+  if (!match) return 'matched';
 
-  const numStr = match[0]
-  const prefix = str.slice(0, match.index)
+  const numStr = match[0];
+  const prefix = str.slice(0, match.index);
 
-  const newNumStr = (parseInt(numStr, 10) + 1).toString()
-  const preceedingZeros = numStr.length - newNumStr.length
+  const newNumStr = (parseInt(numStr, 10) + 1).toString();
+  const preceedingZeros = numStr.length - newNumStr.length;
 
   if (preceedingZeros > 0) {
-    return prefix + newNumStr.padStart(numStr.length, '0')
+    return prefix + newNumStr.padStart(numStr.length, '0');
   } else {
-    return prefix + newNumStr
+    return prefix + newNumStr;
   }
 }
 
@@ -1457,15 +1457,15 @@ function sortByValueAndIndex(arr) {
   // get the product of the values and index of each item.
   // a  good data structure ought to hold and manipulate data while keeping the relationships between then.
 
-  const arrObjects = []
+  const arrObjects = [];
 
   arr.forEach((value, index) => {
-    arrObjects.push({ value: value, product: value * (index + 1) })
-  })
-  console.log(arr, arrObjects)
+    arrObjects.push({ value: value, product: value * (index + 1) });
+  });
+  console.log(arr, arrObjects);
   return arrObjects
     .sort((a, b) => a.product - b.product)
-    .map((obj) => obj.value)
+    .map((obj) => obj.value);
 }
 
 // console.log(sortByValueAndIndex([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5]) //;
@@ -1476,14 +1476,14 @@ function sortByValueAndIndex(arr) {
 function towerBuilder(nFloors) {
   // build here
 
-  const result = []
+  const result = [];
 
   for (let i = 0; i < nFloors; i++) {
-    const spaces = ' '.repeat(nFloors - (i + 1))
-    const stars = '*'.repeat(2 * i + 1)
-    result.push(spaces + stars + spaces)
+    const spaces = ' '.repeat(nFloors - (i + 1));
+    const stars = '*'.repeat(2 * i + 1);
+    result.push(spaces + stars + spaces);
   }
-  return result
+  return result;
 }
 
 // console.log(towerBuilder(6))
@@ -1518,7 +1518,7 @@ function sumOfIntegersInString(s) {
   return s
     .match(/\d+/g)
     .map(Number)
-    .reduce((sum, num) => sum + num)
+    .reduce((sum, num) => sum + num);
 }
 
 let exampleTests = [
@@ -1533,7 +1533,7 @@ let exampleTests = [
   ['Dogs are our best friends.', 0],
   ['C4t5 are 4m4z1ng.', 18],
   ['The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog', 3635],
-]
+];
 
 // exampleTests.forEach((test) =>
 //   console.log(sumOfIntegersInString(test[0]), test[1])
@@ -1547,22 +1547,22 @@ let exampleTests = [
 // foo99 => foo100
 
 function incrementString(str) {
-  const match = str.match(/(\d+)$/)
+  const match = str.match(/(\d+)$/);
 
   if (match) {
-    const index = match.index
-    const prefix = str.slice(0, index)
-    const numStr = match[0]
-    const newNumStr = String(parseInt(numStr, 10) + 1)
+    const index = match.index;
+    const prefix = str.slice(0, index);
+    const numStr = match[0];
+    const newNumStr = String(parseInt(numStr, 10) + 1);
 
-    const preceedingZeros = numStr.length - newNumStr.length
+    const preceedingZeros = numStr.length - newNumStr.length;
     if (preceedingZeros > 0) {
-      return prefix + newNumStr.padStart(numStr.length, '0')
+      return prefix + newNumStr.padStart(numStr.length, '0');
     }
 
-    return prefix + newNumStr
+    return prefix + newNumStr;
   } else {
-    return str + 1
+    return str + 1;
   }
 }
 
@@ -1604,10 +1604,24 @@ function toWeirdCase(str) {
 
       // join each word together to form a string( result )
       .join(' ')
-  )
+  );
 
   // return result
 }
 
-console.log(toWeirdCase('string'))
-console.log(toWeirdCase('Weird string case'))
+// console.log(toWeirdCase('string'));
+// console.log(toWeirdCase('Weird string case'));
+
+const binaryToNumber = function (arr) {
+  let result = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    const value = arr[i];
+    result = result * 2 + value;
+  }
+
+  return result;
+};
+
+console.log(binaryToNumber([0, 0, 0, 1]));
+console.log(binaryToNumber([0, 0, 1, 0]));
