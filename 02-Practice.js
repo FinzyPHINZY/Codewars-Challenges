@@ -1689,4 +1689,36 @@ const orderFood = function (list) {
   return foodOptions;
 };
 
-console.log(orderFood(list1));
+// console.log(orderFood(list1));
+
+// fn getIntSum
+// takes in a string containing a string of letters and numbers
+// returns the sum of the numbers in the string
+
+const getIntSum = function (str) {
+  // get the list of integers in the string
+  const nums = str.match(/\d+/g);
+  console.log(nums);
+  if (!nums) {
+    return 0;
+  }
+
+  return nums.map(Number).reduce((sum, num) => sum + num, 0);
+};
+
+console.log(getIntSum('12.4'), 16);
+console.log(getIntSum('h3ll0w0rld'), 3);
+console.log(getIntSum('2 + 3 = '), 5);
+console.log(
+  getIntSum(
+    'Our company made approximately 1 million in gross revenue last quarter.'
+  ),
+  1
+);
+console.log(getIntSum('The Great Depression lasted from 1929 to 1939.'), 3868);
+console.log(getIntSum('Dogs are our best friends.'), 0);
+console.log(getIntSum('C4t5 are 4m4z1ng.'), 18);
+console.log(
+  getIntSum('The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog'),
+  363
+);
