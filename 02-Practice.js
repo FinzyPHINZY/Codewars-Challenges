@@ -1623,5 +1623,70 @@ const binaryToNumber = function (arr) {
   return result;
 };
 
-console.log(binaryToNumber([0, 0, 0, 1]));
-console.log(binaryToNumber([0, 0, 1, 0]));
+// console.log(binaryToNumber([0, 0, 0, 1]));
+// console.log(binaryToNumber([0, 0, 1, 0]));
+
+// takes in an array of objects containing information about developers.
+// return an object containing the count of food options selected by the developers in the registration form
+
+var list1 = [
+  {
+    firstName: 'Noah',
+    lastName: 'M.',
+    country: 'Switzerland',
+    continent: 'Europe',
+    age: 19,
+    language: 'C',
+    meal: 'vegetarian',
+  },
+  {
+    firstName: 'Anna',
+    lastName: 'R.',
+    country: 'Liechtenstein',
+    continent: 'Europe',
+    age: 52,
+    language: 'JavaScript',
+    meal: 'standard',
+  },
+  {
+    firstName: 'Ramona',
+    lastName: 'R.',
+    country: 'Paraguay',
+    continent: 'Americas',
+    age: 29,
+    language: 'Ruby',
+    meal: 'vegan',
+  },
+  {
+    firstName: 'George',
+    lastName: 'B.',
+    country: 'England',
+    continent: 'Europe',
+    age: 81,
+    language: 'C',
+    meal: 'vegetarian',
+  },
+];
+
+const orderFood = function (list) {
+  // create an empty object
+  const foodOptions = {};
+
+  // iterate through each object in the list
+  list.forEach((dev) => {
+    const meal = dev.meal;
+    console.log(meal);
+    // check if the object.meal exists in the result object.
+    if (foodOptions[meal]) {
+      // if yes, increase the count by one
+      foodOptions[meal]++;
+    } else {
+      // else create it and set it to one
+      foodOptions[meal] = 1;
+    }
+  });
+
+  return foodOptions;
+};
+
+console.log(orderFood(list1));
