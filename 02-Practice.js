@@ -1623,5 +1623,102 @@ const binaryToNumber = function (arr) {
   return result;
 };
 
-console.log(binaryToNumber([0, 0, 0, 1]));
-console.log(binaryToNumber([0, 0, 1, 0]));
+// console.log(binaryToNumber([0, 0, 0, 1]));
+// console.log(binaryToNumber([0, 0, 1, 0]));
+
+// takes in an array of objects containing information about developers.
+// return an object containing the count of food options selected by the developers in the registration form
+
+var list1 = [
+  {
+    firstName: 'Noah',
+    lastName: 'M.',
+    country: 'Switzerland',
+    continent: 'Europe',
+    age: 19,
+    language: 'C',
+    meal: 'vegetarian',
+  },
+  {
+    firstName: 'Anna',
+    lastName: 'R.',
+    country: 'Liechtenstein',
+    continent: 'Europe',
+    age: 52,
+    language: 'JavaScript',
+    meal: 'standard',
+  },
+  {
+    firstName: 'Ramona',
+    lastName: 'R.',
+    country: 'Paraguay',
+    continent: 'Americas',
+    age: 29,
+    language: 'Ruby',
+    meal: 'vegan',
+  },
+  {
+    firstName: 'George',
+    lastName: 'B.',
+    country: 'England',
+    continent: 'Europe',
+    age: 81,
+    language: 'C',
+    meal: 'vegetarian',
+  },
+];
+
+const orderFood = function (list) {
+  // create an empty object
+  const foodOptions = {};
+
+  // iterate through each object in the list
+  list.forEach((dev) => {
+    const meal = dev.meal;
+    console.log(meal);
+    // check if the object.meal exists in the result object.
+    if (foodOptions[meal]) {
+      // if yes, increase the count by one
+      foodOptions[meal]++;
+    } else {
+      // else create it and set it to one
+      foodOptions[meal] = 1;
+    }
+  });
+
+  return foodOptions;
+};
+
+// console.log(orderFood(list1));
+
+// fn getIntSum
+// takes in a string containing a string of letters and numbers
+// returns the sum of the numbers in the string
+
+const getIntSum = function (str) {
+  // get the list of integers in the string
+  const nums = str.match(/\d+/g);
+  console.log(nums);
+  if (!nums) {
+    return 0;
+  }
+
+  return nums.map(Number).reduce((sum, num) => sum + num, 0);
+};
+
+console.log(getIntSum('12.4'), 16);
+console.log(getIntSum('h3ll0w0rld'), 3);
+console.log(getIntSum('2 + 3 = '), 5);
+console.log(
+  getIntSum(
+    'Our company made approximately 1 million in gross revenue last quarter.'
+  ),
+  1
+);
+console.log(getIntSum('The Great Depression lasted from 1929 to 1939.'), 3868);
+console.log(getIntSum('Dogs are our best friends.'), 0);
+console.log(getIntSum('C4t5 are 4m4z1ng.'), 18);
+console.log(
+  getIntSum('The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog'),
+  363
+);
