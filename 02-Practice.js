@@ -1734,7 +1734,58 @@ const sortWithValueAndIndex = function (arr) {
     .map((num) => num.value);
 };
 
-console.log(sortWithValueAndIndex([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
-console.log(sortWithValueAndIndex([23, 2, 3, 4, 5])); // [ 2, 3, 4, 23, 5 ];
-console.log(sortWithValueAndIndex([26, 2, 3, 4, 5])); // [ 2, 3, 4, 5, 26 ];
-console.log(sortWithValueAndIndex([9, 5, 1, 4, 3])); // [ 1, 9, 5, 3, 4 ];
+// console.log(sortWithValueAndIndex([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
+// console.log(sortWithValueAndIndex([23, 2, 3, 4, 5])); // [ 2, 3, 4, 23, 5 ];
+// console.log(sortWithValueAndIndex([26, 2, 3, 4, 5])); // [ 2, 3, 4, 5, 26 ];
+// console.log(sortWithValueAndIndex([9, 5, 1, 4, 3])); // [ 1, 9, 5, 3, 4 ];
+
+// fn numbersOfLetters
+// takes in an integer
+// returns an array of letters of numbers till there is an equilibrium
+
+const numbersOfLetter = function (int) {
+  // create a map of numbers and their corresponding words
+  const map = {
+    0: 'zero',
+    1: 'one',
+    2: 'two',
+    3: 'three',
+    4: 'four',
+    5: 'five',
+    6: 'six',
+    7: 'seven',
+    8: 'eight',
+    9: 'nine',
+  };
+
+  const result = [];
+
+  // convert integet to letters of numbers
+  const numToWord = (num) =>
+    num
+      .toString()
+      .split('')
+      .map((value) => map[value])
+      .join('');
+
+  let current = numToWord(int);
+  // check if it is an equilibrium
+
+  while (true) {
+    result.push(current);
+    current = numToWord(current.length);
+
+    if (current === 'four') {
+      result.push(current);
+      break;
+    }
+  }
+
+  return result;
+};
+
+console.log(numbersOfLetter(1)); //["one", "three", "five", "four"]);
+console.log(numbersOfLetter(12)); // ["onetwo", "six", "three", "five", "four"]);
+console.log(numbersOfLetter(37)); // ["threeseven", "onezero", "seven", "five", "four"]);
+console.log(numbersOfLetter(311)); //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
+console.log(numbersOfLetter(999)); //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
