@@ -1810,4 +1810,55 @@ const bubsort = function (haystack) {
   return haystack;
 };
 
-console.log(bubsort([4.2, 3, 1, 7]));
+// console.log(bubsort([4.2, 3, 1, 7]));
+
+// given two crystal balls that will break if dropped from high enough distance, determine the exact spot in which it will break in the most optimized way
+
+// takes an array of boolean values
+// return the index where the crystal ball will break
+
+const twoCrystalBall = function (arr) {
+  //  iterate through the array and find the spot where it will break.,
+  // to optimize performance, start from the middle of the array. using binary search.
+  // except that, we have two crystal balls. so we are only allowed to break it once
+
+  const jmpAmout = Math.floor(Math.sqrt(arr.length));
+  let left = 0;
+  let right = jmpAmout;
+
+  for (let i = 0; i < arr.length; i += jmpAmout) {
+    console.log(arr.slice(i, i + jmpAmout));
+  }
+};
+
+console.log(
+  twoCrystalBall([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+  ])
+);
