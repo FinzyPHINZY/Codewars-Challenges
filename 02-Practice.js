@@ -1706,19 +1706,35 @@ const getIntSum = function (str) {
   return nums.map(Number).reduce((sum, num) => sum + num, 0);
 };
 
-console.log(getIntSum('12.4'), 16);
-console.log(getIntSum('h3ll0w0rld'), 3);
-console.log(getIntSum('2 + 3 = '), 5);
-console.log(
-  getIntSum(
-    'Our company made approximately 1 million in gross revenue last quarter.'
-  ),
-  1
-);
-console.log(getIntSum('The Great Depression lasted from 1929 to 1939.'), 3868);
-console.log(getIntSum('Dogs are our best friends.'), 0);
-console.log(getIntSum('C4t5 are 4m4z1ng.'), 18);
-console.log(
-  getIntSum('The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog'),
-  363
-);
+// console.log(getIntSum('12.4'), 16);
+// console.log(getIntSum('h3ll0w0rld'), 3);
+// console.log(getIntSum('2 + 3 = '), 5);
+// console.log(
+//   getIntSum(
+//     'Our company made approximately 1 million in gross revenue last quarter.'
+//   ),
+//   1
+// );
+// console.log(getIntSum('The Great Depression lasted from 1929 to 1939.'), 3868);
+// console.log(getIntSum('Dogs are our best friends.'), 0);
+// console.log(getIntSum('C4t5 are 4m4z1ng.'), 18);
+// console.log(
+//   getIntSum('The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog'),
+//   363
+// );
+
+// fn sortByValueAndIndex
+// takes in an array of numbers
+// returns the array by sorting the values by the product of (value, index)
+
+const sortWithValueAndIndex = function (arr) {
+  return arr
+    .map((num, i) => ({ value: num, product: num * (i + 1) }))
+    .sort((a, b) => a.product - b.product)
+    .map((num) => num.value);
+};
+
+console.log(sortWithValueAndIndex([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
+console.log(sortWithValueAndIndex([23, 2, 3, 4, 5])); // [ 2, 3, 4, 23, 5 ];
+console.log(sortWithValueAndIndex([26, 2, 3, 4, 5])); // [ 2, 3, 4, 5, 26 ];
+console.log(sortWithValueAndIndex([9, 5, 1, 4, 3])); // [ 1, 9, 5, 3, 4 ];
