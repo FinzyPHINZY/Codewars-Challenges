@@ -1784,8 +1784,30 @@ const numbersOfLetter = function (int) {
   return result;
 };
 
-console.log(numbersOfLetter(1)); //["one", "three", "five", "four"]);
-console.log(numbersOfLetter(12)); // ["onetwo", "six", "three", "five", "four"]);
-console.log(numbersOfLetter(37)); // ["threeseven", "onezero", "seven", "five", "four"]);
-console.log(numbersOfLetter(311)); //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
-console.log(numbersOfLetter(999)); //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
+// console.log(numbersOfLetter(1)); //["one", "three", "five", "four"]);
+// console.log(numbersOfLetter(12)); // ["onetwo", "six", "three", "five", "four"]);
+// console.log(numbersOfLetter(37)); // ["threeseven", "onezero", "seven", "five", "four"]);
+// console.log(numbersOfLetter(311)); //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
+// console.log(numbersOfLetter(999)); //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
+
+const bubsort = function (haystack) {
+  let sorted = false;
+  let n = haystack.length - 1;
+
+  while (!sorted) {
+    sorted = true;
+
+    for (let i = 0; i < n; i++) {
+      if (haystack[i] > haystack[i + 1]) {
+        const temp = haystack[i];
+        haystack[i] = haystack[i + 1];
+        haystack[i + 1] = temp;
+        sorted = false;
+      }
+    }
+  }
+
+  return haystack;
+};
+
+console.log(bubsort([4.2, 3, 1, 7]));
