@@ -1831,34 +1831,86 @@ const twoCrystalBall = function (arr) {
   }
 };
 
-console.log(
-  twoCrystalBall([
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
-  ])
-);
+// console.log(
+//   twoCrystalBall([
+//     false,
+//     false,
+//     false,
+//     false,
+//     false,
+//     false,
+//     false,
+//     false,
+//     false,
+//     false,
+//     false,
+//     false,
+//     false,
+//     true,
+//     true,
+//     true,
+//     true,
+//     true,
+//     true,
+//     true,
+//     true,
+//     true,
+//     true,
+//     true,
+//     true,
+//     true,
+//     true,
+//   ])
+// );
+
+// Your job is to write a function which increments a string, to create a new string.
+
+//     If the string already ends with a number, the number should be incremented by 1.
+//     If the string does not end with a number. the number 1 should be appended to the new string.
+
+// Examples:
+
+// foo -> foo1
+
+// foobar23 -> foobar24
+
+// foo0042 -> foo0043
+
+// foo9 -> foo10
+
+// foo099 -> foo100
+
+// Attention: If the number has leading zeros the amount of digits should be considered.
+
+function incrementStringg(str) {
+  // get the last digits and index of the string using .match
+  const match = str.match(/(\d+)$/);
+
+  if (!match) {
+    return str + 1;
+  }
+  const prefix = str.slice(0, match.index);
+
+  const numStr = match[0];
+
+  let newNumStr = (parseInt(numStr, 10) + 1).toString();
+  const precedingZerosLength = numStr.length - newNumStr.length;
+  let precedingZeros;
+
+  if (precedingZerosLength > 0) {
+    precedingZeros = '0'.repeat(precedingZerosLength);
+    newNumStr = precedingZeros + newNumStr;
+  }
+
+  return prefix + newNumStr;
+}
+
+console.log(incrementStringg('foobar000'), 'foobar001');
+console.log(incrementStringg('foobar999'), 'foobar1000');
+console.log(incrementStringg('foobar00999'), 'foobar01000');
+console.log(incrementStringg('foo'), 'foo1');
+console.log(incrementStringg('foobar001'), 'foobar002');
+console.log(incrementStringg('foobar1'), 'foobar2');
+console.log(incrementStringg('1'), '2');
+console.log(incrementStringg('009'), '010');
+console.log(incrementStringg('fo99obar99'), 'fo99obar100');
