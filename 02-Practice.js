@@ -1905,12 +1905,38 @@ function incrementStringg(str) {
   return prefix + newNumStr;
 }
 
-console.log(incrementStringg('foobar000'), 'foobar001');
-console.log(incrementStringg('foobar999'), 'foobar1000');
-console.log(incrementStringg('foobar00999'), 'foobar01000');
-console.log(incrementStringg('foo'), 'foo1');
-console.log(incrementStringg('foobar001'), 'foobar002');
-console.log(incrementStringg('foobar1'), 'foobar2');
-console.log(incrementStringg('1'), '2');
-console.log(incrementStringg('009'), '010');
-console.log(incrementStringg('fo99obar99'), 'fo99obar100');
+// console.log(incrementStringg('foobar000'), 'foobar001');
+// console.log(incrementStringg('foobar999'), 'foobar1000');
+// console.log(incrementStringg('foobar00999'), 'foobar01000');
+// console.log(incrementStringg('foo'), 'foo1');
+// console.log(incrementStringg('foobar001'), 'foobar002');
+// console.log(incrementStringg('foobar1'), 'foobar2');
+// console.log(incrementStringg('1'), '2');
+// console.log(incrementStringg('009'), '010');
+// console.log(incrementStringg('fo99obar99'), 'fo99obar100');
+
+// DESCRIPTION:
+// Friday 13th or Black Friday is considered as unlucky day. Calculate how many unlucky days are in the given year.
+// Find the number of Friday 13th in the given year.
+// Input: Year in Gregorian calendar as integer.
+// Output: Number of Black Fridays in the year as an integer.
+// Examples:
+
+// unluckyDays(2015) == 3
+// unluckyDays(1986) == 1
+
+function unluckyDays(year) {
+  //your code here
+  let count = 0;
+
+  for (let month = 0; month < 12; month++) {
+    const date = new Date(year, month, 13);
+
+    if (date.getDay() === 5) count++;
+  }
+
+  return count;
+}
+
+console.log(unluckyDays(2015));
+console.log(unluckyDays(1986));
