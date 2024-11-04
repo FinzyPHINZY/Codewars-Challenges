@@ -1521,19 +1521,19 @@ function sumOfIntegersInString(s) {
     .reduce((sum, num) => sum + num);
 }
 
-let exampleTests = [
-  ['12.4', 16],
-  ['h3ll0w0rld', 3],
-  ['2 + 3 = ', 5],
-  [
-    'Our company made approximately 1 million in gross revenue last quarter.',
-    1,
-  ],
-  ['The Great Depression lasted from 1929 to 1939.', 3868],
-  ['Dogs are our best friends.', 0],
-  ['C4t5 are 4m4z1ng.', 18],
-  ['The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog', 3635],
-];
+// let exampleTests = [
+//   ['12.4', 16],
+//   ['h3ll0w0rld', 3],
+//   ['2 + 3 = ', 5],
+//   [
+//     'Our company made approximately 1 million in gross revenue last quarter.',
+//     1,
+//   ],
+//   ['The Great Depression lasted from 1929 to 1939.', 3868],
+//   ['Dogs are our best friends.', 0],
+//   ['C4t5 are 4m4z1ng.', 18],
+//   ['The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog', 3635],
+// ];
 
 // exampleTests.forEach((test) =>
 //   console.log(sumOfIntegersInString(test[0]), test[1])
@@ -1938,5 +1938,99 @@ function unluckyDays(year) {
   return count;
 }
 
-console.log(unluckyDays(2015));
-console.log(unluckyDays(1986));
+// console.log(unluckyDays(2015));
+// console.log(unluckyDays(1986));
+
+// DESCRIPTION:
+// Time to win the lottery!
+// Given a lottery ticket (ticket), represented by an array of 2-value arrays, you must find out if you've won the jackpot.
+// Example ticket:
+
+// [ [ 'ABC', 65 ], [ 'HGR', 74 ], [ 'BYHT', 74 ] ]
+
+// To do this, you must first count the 'mini-wins' on your ticket. Each subarray has both a string and a number within it. If the character code of any of the characters in the string matches the number, you get a mini win. Note you can only have one mini win per sub array.
+// Once you have counted all of your mini wins, compare that number to the other input provided (win). If your total is more than or equal to (win), return 'Winner!'. Else return 'Loser!'.
+// All inputs will be in the correct format. Strings on tickets are not always the same length.
+
+function bingo(ticket, win) {
+  // count miniWins
+  let miniWins = 0;
+  // check if the character code of any of the chars in the string matches the number.
+  ticket.map((arr) =>
+    arr[0]
+      .split('')
+      .map((char, i) => arr[0].charCodeAt(i))
+      .map((char) => {
+        if (char === arr[1]) {
+          miniWins++;
+        }
+      })
+  );
+  // check if the miniwins count equals or is greater than the win
+
+  return miniWins >= win ? 'Winner!' : 'Loser!';
+}
+
+// console.log(
+//   bingo(
+//     [
+//       ['ABC', 65],
+//       ['HGR', 74],
+//       ['BYHT', 74],
+//     ],
+//     2
+//   ),
+//   'Loser!'
+// );
+// console.log(
+//   bingo(
+//     [
+//       ['ABC', 65],
+//       ['HGR', 74],
+//       ['BYHT', 74],
+//     ],
+//     1
+//   ),
+//   'Winner!'
+// );
+// console.log(
+//   bingo(
+//     [
+//       ['HGTYRE', 74],
+//       ['BE', 66],
+//       ['JKTY', 74],
+//     ],
+//     3
+//   ),
+//   'Loser!'
+// );
+
+// Your task in this kata is to implement a function that calculates the sum of the integers inside a string. For example, in the string "The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog", the sum of the integers is 3635.
+
+// Note: only positive integers will be tested.
+
+function sumOfIntegersInString(s) {
+  const match = s[0].match(/\d+/g);
+
+  if (!match) return 0;
+
+  return match.map(Number).reduce((sum, num) => sum + num, 0) === s[1];
+}
+
+let exampleTests = [
+  ['12.4', 16],
+  ['h3ll0w0rld', 3],
+  ['2 + 3 = ', 5],
+  [
+    'Our company made approximately 1 million in gross revenue last quarter.',
+    1,
+  ],
+  ['The Great Depression lasted from 1929 to 1939.', 3868],
+  ['Dogs are our best friends.', 0],
+  ['C4t5 are 4m4z1ng.', 18],
+  ['The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog', 3635],
+];
+
+exampleTests.forEach((input) => {
+  console.log(sumOfIntegersInString(input));
+});
