@@ -7,4 +7,15 @@
 
 function sevenAte9(str) {
   // code here
+  return str;
 }
+
+const tests = [
+  ['797', '77'],
+  ['7979797', '7777'],
+  ['165561786121789797', '16556178612178977'],
+];
+
+tests.forEach((test) => {
+  console.log(sevenAte9(test[0]), test[1]);
+});
