@@ -38,3 +38,7 @@
 //   Y : 'Y',
 //   Z : '2'
 // }
+
+function toLeetSpeak(str) {
+  return str;
+}
