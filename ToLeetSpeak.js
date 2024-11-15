@@ -10,37 +10,48 @@
 
 // In this kata we use a simple LeetSpeak dialect. Use this alphabet:
 
-// {
-//   A : '@',
-//   B : '8',
-//   C : '(',
-//   D : 'D',
-//   E : '3',
-//   F : 'F',
-//   G : '6',
-//   H : '#',
-//   I : '!',
-//   J : 'J',
-//   K : 'K',
-//   L : '1',
-//   M : 'M',
-//   N : 'N',
-//   O : '0',
-//   P : 'P',
-//   Q : 'Q',
-//   R : 'R',
-//   S : '$',
-//   T : '7',
-//   U : 'U',
-//   V : 'V',
-//   W : 'W',
-//   X : 'X',
-//   Y : 'Y',
-//   Z : '2'
-// }
+const map = {
+  A: '@',
+  B: '8',
+  C: '(',
+  D: 'D',
+  E: '3',
+  F: 'F',
+  G: '6',
+  H: '#',
+  I: '!',
+  J: 'J',
+  K: 'K',
+  L: '1',
+  M: 'M',
+  N: 'N',
+  O: '0',
+  P: 'P',
+  Q: 'Q',
+  R: 'R',
+  S: '$',
+  T: '7',
+  U: 'U',
+  V: 'V',
+  W: 'W',
+  X: 'X',
+  Y: 'Y',
+  Z: '2',
+};
 
 function toLeetSpeak(str) {
-  return str;
+  // split str by spaces.
+  // for each word, split each word, convert every character to leet character, join each word
+  // join words together with spaces
+  return str
+    .split(' ')
+    .map((word) =>
+      word
+        .split('')
+        .map((char) => map[char])
+        .join('')
+    )
+    .join(' ');
 }
 
 console.log(toLeetSpeak('LEET'), '1337');
