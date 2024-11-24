@@ -2130,7 +2130,24 @@ function myLanguages(results) {
 
 function cleanString(s) {
   // ... your code ...
+  const output = [];
+
+  for (const char of s) {
+    if (char === '#') {
+      output.pop();
+    } else {
+      output.push(char);
+    }
+  }
+
+  return output.join('');
 }
 
 console.log(cleanString('abc#d##c'), 'ac');
 console.log(cleanString('abc####d##c#'), '');
+
+// takes in a string of characters including '#'
+// returns the string after applying each '#' as a backspace
+// iterate through the string.
+// if the char isnt '#', add char to output
+// else, remove last char in output
