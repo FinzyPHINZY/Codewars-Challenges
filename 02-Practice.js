@@ -2164,12 +2164,54 @@ function cleanString(s) {
 
 function numbersOfLetters(integer) {
   // code here...
+  const map = [
+    'zero',
+    'one',
+    'two',
+    'three',
+    'four',
+    'five',
+    'six',
+    'seven',
+    'eight',
+    'nine',
+  ];
+
+  const result = [];
+
+  const numToWord = (num) => {
+    return num
+      .toString()
+      .split('')
+      .map((char) => map.at(char))
+      .join('');
+  };
+
+  let currentWord = numToWord(integer);
+
+  if (currentWord === 'four') {
+    result.push(currentWord);
+    return result;
+  } else {
+    result.push(currentWord);
+    while (true) {
+      const nextWord = numToWord(currentWord.length);
+      result.push(nextWord);
+
+      if (nextWord === 'four') {
+        break;
+      } else {
+        currentWord = nextWord;
+      }
+    }
+  }
+
+  return result;
 }
 
-// console.log(numbersOfLetters(4));
-
-// console.log(numbersOfLetters(1)); //["one", "three", "five", "four"]);
-// console.log(numbersOfLetters(12)); // ["onetwo", "six", "three", "five", "four"]);
-// console.log(numbersOfLetters(37)); // ["threeseven", "onezero", "seven", "five", "four"]);
-// console.log(numbersOfLetters(311)); //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
-// console.log(numbersOfLetters(999)); //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
+console.log(numbersOfLetters(4));
+console.log(numbersOfLetters(1)); //["one", "three", "five", "four"]);
+console.log(numbersOfLetters(12)); // ["onetwo", "six", "three", "five", "four"]);
+console.log(numbersOfLetters(37)); // ["threeseven", "onezero", "seven", "five", "four"]);
+console.log(numbersOfLetters(311)); //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
+console.log(numbersOfLetters(999)); //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
