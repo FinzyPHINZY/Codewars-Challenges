@@ -2114,6 +2114,23 @@ function myLanguages(results) {
     .map((lang) => lang[0]);
 }
 
-console.log(myLanguages({ Java: 10, Ruby: 80, Python: 65 }));
-console.log(myLanguages({ Hindi: 60, Greek: 71, Dutch: 93 }));
-console.log(myLanguages({ 'C++': 50, ASM: 10, Haskell: 20 }));
+// console.log(myLanguages({ Java: 10, Ruby: 80, Python: 65 }));
+// console.log(myLanguages({ Hindi: 60, Greek: 71, Dutch: 93 }));
+// console.log(myLanguages({ 'C++': 50, ASM: 10, Haskell: 20 }));
+
+// DESCRIPTION:
+// Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
+// Your task is to process a string with "#" symbols.
+// Examples
+
+// "abc#d##c"      ==>  "ac"
+// "abc##d######"  ==>  ""
+// "#######"       ==>  ""
+// ""              ==>  ""
+
+function cleanString(s) {
+  // ... your code ...
+}
+
+console.log(cleanString('abc#d##c'), 'ac');
+console.log(cleanString('abc####d##c#'), '');
