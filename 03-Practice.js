@@ -185,7 +185,24 @@ function solution(digits) {
 // * 'abc' =>  ['ab', 'c_']
 // * 'abcdef' => ['ab', 'cd', 'ef']
 
-function pair(str) {}
+function pair(str) {
+  if (str.length % 2 !== 0) {
+    str += '_';
+  }
 
+  const result = [];
+
+  for (let i = 0; i < str.length; i += 2) {
+    const subStr = str[i] + str[i + 1];
+    result.push(subStr);
+  }
+  return result;
+}
+
+// takes in a a string
+// returns an array of the argument broken down into substrings.
+// check the length of str.
+// if it's odd, append '_
+// else, break it down into substrings
 console.log(pair('abc'));
 console.log(pair('abcdef'));
