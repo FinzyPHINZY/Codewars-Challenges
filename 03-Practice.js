@@ -10,6 +10,49 @@
 
 function numbersOfLetters(integer) {
   // code here...
+  const map = [
+    'zero',
+    'one',
+    'two',
+    'three',
+    'four',
+    'five',
+    'six',
+    'seven',
+    'eight',
+    'nine',
+  ];
+  const results = [];
+
+  const numToWord = (num) => {
+    return num
+      .toString()
+      .split('')
+      .map((char) => map.at(Number(char)))
+      .join('');
+  };
+
+  let currentWord = numToWord(integer);
+  results.push(currentWord);
+
+  if (currentWord === 'four') {
+    return results;
+  } else {
+    // loop
+    // get a nextword from the currentword and push
+    // if its four, return the array and break. else change currentWord  to nextWord
+    while (true) {
+      const nextWord = numToWord(currentWord.length);
+      results.push(nextWord);
+
+      if (nextWord === 'four') {
+        break;
+      }
+
+      currentWord = nextWord;
+    }
+  }
+  return results;
 }
 
 console.log(numbersOfLetters(4)); // ['four']
@@ -18,3 +61,8 @@ console.log(numbersOfLetters(12)); // ["onetwo", "six", "three", "five", "four"]
 console.log(numbersOfLetters(37)); // ["threeseven", "onezero", "seven", "five", "four"]);
 console.log(numbersOfLetters(311)); //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
 console.log(numbersOfLetters(999)); //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
+
+// takes in an integer
+// returns an array of numbers converted to words (digits written out)
+// the converstion of digits is to happen till an equilibrium is attained.
+// if no equilibrium we use the length of the word to find the equilibrium
