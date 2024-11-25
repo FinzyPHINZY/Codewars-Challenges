@@ -129,9 +129,24 @@ function order(words) {
     .join(' ');
 }
 
-console.log(order('is2 Thi1s T4est 3a') === 'Thi1s is2 3a T4est');
-console.log(
-  order('4of Fo1r pe6ople g3ood th5e the2') ===
-    'Fo1r the2 g3ood 4of th5e pe6ople'
-);
-console.log(order('') === '', 'empty input should return empty string');
+// console.log(order('is2 Thi1s T4est 3a') === 'Thi1s is2 3a T4est');
+// console.log(
+//   order('4of Fo1r pe6ople g3ood th5e the2') ===
+//     'Fo1r the2 g3ood 4of th5e pe6ople'
+// );
+// console.log(order('') === '', 'empty input should return empty string');
+
+// DESCRIPTION:
+// In the following 6 digit number:
+
+// 283910
+
+// 91 is the greatest sequence of 2 consecutive digits.
+// In the following 10 digit number:
+
+// 1234567890
+
+// 67890 is the greatest sequence of 5 consecutive digits.
+// Complete the solution so that it returns the greatest sequence of five consecutive digits found within the number given. The number will be passed in as a string of only digits. It should return a five digit integer. The number passed may be as large as 1000 digits.
+
+function solution(digits) {}
