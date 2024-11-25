@@ -55,14 +55,58 @@ function numbersOfLetters(integer) {
   return results;
 }
 
-console.log(numbersOfLetters(4)); // ['four']
-console.log(numbersOfLetters(1)); //["one", "three", "five", "four"]);
-console.log(numbersOfLetters(12)); // ["onetwo", "six", "three", "five", "four"]);
-console.log(numbersOfLetters(37)); // ["threeseven", "onezero", "seven", "five", "four"]);
-console.log(numbersOfLetters(311)); //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
-console.log(numbersOfLetters(999)); //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(4)); // ['four']
+// console.log(numbersOfLetters(1)); //["one", "three", "five", "four"]);
+// console.log(numbersOfLetters(12)); // ["onetwo", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(37)); // ["threeseven", "onezero", "seven", "five", "four"]);
+// console.log(numbersOfLetters(311)); //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(999)); //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
 
 // takes in an integer
 // returns an array of numbers converted to words (digits written out)
 // the converstion of digits is to happen till an equilibrium is attained.
 // if no equilibrium we use the length of the word to find the equilibrium
+
+// Who is the killer?
+// Some people have been killed!
+// You have managed to narrow the suspects down to just a few. Luckily, you know every person who those suspects have seen on the day of the murders.
+
+// Task.
+// Given a dictionary with all the names of the suspects and everyone that they have seen on that day which may look like this:
+
+// {'James': ['Jacob', 'Bill', 'Lucas'],
+//  'Johnny': ['David', 'Kyle', 'Lucas'],
+//  'Peter': ['Lucy', 'Kyle']}
+// and also a list of the names of the dead people:
+
+// ['Lucas', 'Bill']
+// return the name of the one killer, in our case 'James' because he is the only person that saw both 'Lucas' and 'Bill'
+
+function killer(suspectInfo, dead) {
+  //your code here...
+  for (const [suspect, contacts] of Object.entries(suspectInfo)) {
+    const amITheKiller = dead.every((name) => contacts.includes(name));
+
+    if (amITheKiller) {
+      return suspect;
+    }
+  }
+}
+
+// fn killer
+// takes in an object <string, array> and an array of the dead people.
+// returns a string - the object key whose array contains all the dead people.
+// iterate through the object. using .every(), find the person whose name contains every dead person
+
+console.log(
+  killer(
+    {
+      James: ['Jacob', 'Bill', 'Lucas'],
+      Johnny: ['David', 'Kyle', 'Lucas'],
+      Peter: ['Lucy', 'Kyle'],
+    },
+    ['Lucas', 'Bill']
+  )
+); // "James"
+
+console.log(killer({ Brad: [], Megan: ['Ben', 'Kevin'], Finn: [] }, ['Ben'])); //"Megan"
