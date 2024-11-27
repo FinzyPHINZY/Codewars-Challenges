@@ -204,5 +204,95 @@ function pair(str) {
 // check the length of str.
 // if it's odd, append '_
 // else, break it down into substrings
-console.log(pair('abc'));
-console.log(pair('abcdef'));
+
+// console.log(pair('abc'));
+// console.log(pair('abcdef'));
+
+// Sort an array by value and index
+// Your task is to sort an array of integer numbers by the product of the value and the index of the positions.
+
+// For sorting the index starts at 1, NOT at 0!
+// The sorting has to be ascending.
+// The array will never be null and will always contain numbers.
+
+// Example:
+
+// Input: 23, 2, 3, 4, 5
+// Product of value and index:
+// 23 => 23 * 1 = 23  -> Output-Pos 4
+//  2 =>  2 * 2 = 4   -> Output-Pos 1
+//  3 =>  3 * 3 = 9   -> Output-Pos 2
+//  4 =>  4 * 4 = 16  -> Output-Pos 3
+//  5 =>  5 * 5 = 25  -> Output-Pos 5
+
+// Output: 2, 3, 4, 23, 5
+
+function sortByValueAndIndex(array) {
+  return array
+    .map((num, i) => [num, num * (i + 1)])
+    .sort((a, b) => a[1] - b[1])
+    .map((arr) => arr[0]);
+}
+
+// fn sortByValueAndIndex
+// takes in an array of number
+// returns the array sorted by the product of the values and indices
+// iterate through the array.
+// create an array of the values and product.
+// sort by the product and return the values.
+
+// console.log(sortByValueAndIndex([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
+// console.log(sortByValueAndIndex([23, 2, 3, 4, 5])); // [ 2, 3, 4, 23, 5 ];
+// console.log(sortByValueAndIndex([26, 2, 3, 4, 5])); // [ 2, 3, 4, 5, 26 ];
+// console.log(sortByValueAndIndex([9, 5, 1, 4, 3])); // [ 1, 9, 5, 3, 4 ];
+
+// Your task in this kata is to implement a function that calculates the sum of the integers inside a string. For example, in the string "The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog", the sum of the integers is 3635.
+
+// Note: only positive integers will be tested.
+
+function sumOfIntegersInString(s) {
+  const match = s.match(/\d+/g);
+
+  if (!match) {
+    return 0;
+  }
+
+  return match.map(Number).reduce((sum, num) => sum + num, 0); // what the function name says
+}
+
+let exampleTests = [
+  ['12.4', 16],
+  ['h3ll0w0rld', 3],
+  ['2 + 3 = ', 5],
+  [
+    'Our company made approximately 1 million in gross revenue last quarter.',
+    1,
+  ],
+  ['The Great Depression lasted from 1929 to 1939.', 3868],
+  ['Dogs are our best friends.', 0],
+  ['C4t5 are 4m4z1ng.', 18],
+  ['The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog', 3635],
+];
+
+// exampleTests.forEach((test) =>
+//   console.log(sumOfIntegersInString(test[0]), test[1])
+// );
+
+// Sort the given array of strings in alphabetical order, case insensitive. For example:
+
+// ["Hello", "there", "I'm", "fine"]  -->  ["fine", "Hello", "I'm", "there"]
+// ["C", "d", "a", "B"])              -->  ["a", "B", "C", "d"]
+
+const sortme = function (names) {
+  return names.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+};
+
+console.log(sortme(['Hello', 'there', "I'm", 'fine']), [
+  'fine',
+  'Hello',
+  "I'm",
+  'there',
+]);
+console.log(sortme(['C', 'd', 'a', 'B']), ['a', 'B', 'C', 'd']);
+console.log(sortme(['CodeWars']), ['CodeWars']);
+console.log(sortme([]), []);
