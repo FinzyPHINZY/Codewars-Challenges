@@ -296,3 +296,5 @@ console.log(sortme(['Hello', 'there', "I'm", 'fine']), [
 console.log(sortme(['C', 'd', 'a', 'B']), ['a', 'B', 'C', 'd']);
 console.log(sortme(['CodeWars']), ['CodeWars']);
 console.log(sortme([]), []);
+
+// merge
