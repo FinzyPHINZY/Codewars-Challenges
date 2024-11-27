@@ -274,6 +274,25 @@ let exampleTests = [
   ['The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog', 3635],
 ];
 
-exampleTests.forEach((test) =>
-  console.log(sumOfIntegersInString(test[0]), test[1])
-);
+// exampleTests.forEach((test) =>
+//   console.log(sumOfIntegersInString(test[0]), test[1])
+// );
+
+// Sort the given array of strings in alphabetical order, case insensitive. For example:
+
+// ["Hello", "there", "I'm", "fine"]  -->  ["fine", "Hello", "I'm", "there"]
+// ["C", "d", "a", "B"])              -->  ["a", "B", "C", "d"]
+
+const sortme = function (names) {
+  return names.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+};
+
+console.log(sortme(['Hello', 'there', "I'm", 'fine']), [
+  'fine',
+  'Hello',
+  "I'm",
+  'there',
+]);
+console.log(sortme(['C', 'd', 'a', 'B']), ['a', 'B', 'C', 'd']);
+console.log(sortme(['CodeWars']), ['CodeWars']);
+console.log(sortme([]), []);
