@@ -204,5 +204,34 @@ function pair(str) {
 // check the length of str.
 // if it's odd, append '_
 // else, break it down into substrings
-console.log(pair('abc'));
-console.log(pair('abcdef'));
+// console.log(pair('abc'));
+// console.log(pair('abcdef'));
+
+// In the following 6 digit number:
+
+// 283910
+
+// 91 is the greatest sequence of 2 consecutive digits.
+// In the following 10 digit number:
+
+// 1234567890
+
+// 67890 is the greatest sequence of 5 consecutive digits.
+// Complete the solution so that it returns the greatest sequence of five consecutive digits found within the number given. The number will be passed in as a string of only digits. It should return a five digit integer. The number passed may be as large as 1000 digits.
+
+function consecutiveDigits(digits) {
+  digits = digits.toString();
+
+  let maxSequence = 0;
+
+  for (let i = 0; i < digits.length; ++i) {
+    const sequence = parseInt(digits.slice(i, i + 5));
+    if (sequence > maxSequence) {
+      maxSequence = sequence;
+    }
+  }
+  return maxSequence;
+}
+
+console.log(consecutiveDigits(1234567890));
+console.log(consecutiveDigits(283910));
