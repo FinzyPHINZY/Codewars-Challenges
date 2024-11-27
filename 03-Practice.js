@@ -251,10 +251,16 @@ function sortByValueAndIndex(array) {
 // Note: only positive integers will be tested.
 
 function sumOfIntegersInString(s) {
-  return; // what the function name says
+  const match = s.match(/\d+/g);
+
+  if (!match) {
+    return 0;
+  }
+
+  return match.map(Number).reduce((sum, num) => sum + num, 0); // what the function name says
 }
 
-let = exampleTests = [
+let exampleTests = [
   ['12.4', 16],
   ['h3ll0w0rld', 3],
   ['2 + 3 = ', 5],
@@ -267,3 +273,7 @@ let = exampleTests = [
   ['C4t5 are 4m4z1ng.', 18],
   ['The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog', 3635],
 ];
+
+exampleTests.forEach((test) =>
+  console.log(sumOfIntegersInString(test[0]), test[1])
+);
