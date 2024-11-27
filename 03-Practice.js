@@ -297,6 +297,8 @@ console.log(sortme(['C', 'd', 'a', 'B']), ['a', 'B', 'C', 'd']);
 console.log(sortme(['CodeWars']), ['CodeWars']);
 console.log(sortme([]), []);
 
+// merge
+
 // In the following 6 digit number:
 
 // 283910
