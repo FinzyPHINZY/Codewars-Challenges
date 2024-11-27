@@ -227,7 +227,19 @@ function pair(str) {
 
 // Output: 2, 3, 4, 23, 5
 
-function sortByValueAndIndex(array) {}
+function sortByValueAndIndex(array) {
+  return array
+    .map((num, i) => [num, num * (i + 1)])
+    .sort((a, b) => a[1] - b[1])
+    .map((arr) => arr[0]);
+}
+
+// fn sortByValueAndIndex
+// takes in an array of number
+// returns the array sorted by the product of the values and indices
+// iterate through the array.
+// create an array of the values and product.
+// sort by the product and return the values.
 
 console.log(sortByValueAndIndex([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
 console.log(sortByValueAndIndex([23, 2, 3, 4, 5])); // [ 2, 3, 4, 23, 5 ];
