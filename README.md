@@ -1,5 +1,5 @@
 # CodeWars Challenges Repository
-
+ 
 Welcome to my CodeWars Challenges Repository! Here you'll find a collection of CodeWars kata that I've successfully solved. Each file is named according to its kata rank, providing a quick reference to the difficulty level.
 
 <img src="URL:https://www.codewars.com/users/FinzyPHINZY/badges/large"/>
@@ -29,10 +29,10 @@ The files in this repository are named using the following convention:
 - **extension:** The file extension indicating the programming language used (e.g., .py for Python, .js for JavaScript).
 
 Example: `7 - guess_the_nth_number.js`
-
+ 
 ## How to Use
 
-Feel free to explore the solutions based on your interest or use them for learning purposes. To run the code, make sure you have the necessary environment set up for the respective programming language. Each file is self-contained and includes comments for better understanding.
+Feel free to explore the solutions based on your interest or use them for learning purposes. To run the code, make sure you have the necessary environment set up for the javascript programming language. Each file is self-contained and includes comments for better understanding.
 
 ## Contributing
 
