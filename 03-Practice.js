@@ -388,3 +388,35 @@ function cleanString(s) {
 
 // console.log(cleanString('abc#d##c'), 'ac');
 // console.log(cleanString('abc####d##c#'), '');
+
+// DESCRIPTION:
+// In the following 6 digit number:
+
+// 283910
+
+// 91 is the greatest sequence of 2 consecutive digits.
+// In the following 10 digit number:
+
+// 1234567890
+
+// 67890 is the greatest sequence of 5 consecutive digits.
+// Complete the solution so that it returns the greatest sequence of five consecutive digits found within the number given. The number will be passed in as a string of only digits. It should return a five digit integer. The number passed may be as large as 1000 digits.
+
+function solutionSequence(digits, n) {
+  let result = 0;
+
+  digits = digits.toString();
+
+  for (let i = 0; i < digits.length; i++) {
+    const x = Number(digits.substring(i, i + n));
+
+    if (x > result) {
+      result = x;
+    }
+  }
+
+  return result;
+}
+
+console.log(solutionSequence(283910, 2));
+console.log(solutionSequence(1234567890, 5));
