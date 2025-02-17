@@ -287,15 +287,15 @@ const sortme = function (names) {
   return names.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 };
 
-console.log(sortme(['Hello', 'there', "I'm", 'fine']), [
-  'fine',
-  'Hello',
-  "I'm",
-  'there',
-]);
-console.log(sortme(['C', 'd', 'a', 'B']), ['a', 'B', 'C', 'd']);
-console.log(sortme(['CodeWars']), ['CodeWars']);
-console.log(sortme([]), []);
+// console.log(sortme(['Hello', 'there', "I'm", 'fine']), [
+//   'fine',
+//   'Hello',
+//   "I'm",
+//   'there',
+// ]);
+// console.log(sortme(['C', 'd', 'a', 'B']), ['a', 'B', 'C', 'd']);
+// console.log(sortme(['CodeWars']), ['CodeWars']);
+// console.log(sortme([]), []);
 
 // merge
 
@@ -325,5 +325,35 @@ function consecutiveDigits(digits) {
   return maxSequence;
 }
 
-console.log(consecutiveDigits(1234567890));
-console.log(consecutiveDigits(283910));
+// console.log(consecutiveDigits(1234567890));
+// console.log(consecutiveDigits(283910));
+
+// DESCRIPTION:
+// I will give you an integer. Give me back a shape that is as long and wide as the integer. The integer will be a whole number between 1 and 50.
+// Example
+// n = 3, so I expect a 3x3 square back just like below as a string:
+
+// +++
+// +++
+// +++
+
+function generateShape(integer, row = integer, result) {
+  const result = [];
+  for (let i = 0; i < integer; ++i) {
+    let str = '';
+    for (let j = 0; j < integer; j++) {
+      str += '+';
+    }
+    result.push(str);
+  }
+  return result.join('\n');
+  if (row === 0) return result.join('\n');
+  result.push('+'.repeat(integer));
+  return generateShape(integer, row - 1, result);
+
+  return Array(integer).fill('+'.repeat(integer)).join('\n');
+
+  return ('+'.repeat(integer) + '\n').repeat(integer);
+}
+
+console.log(generateShape(3, 3, []));
