@@ -337,7 +337,7 @@ function consecutiveDigits(digits) {
 // +++
 // +++
 
-function generateShape(integer, row = integer, result) {
+function generateShape(integer) {
   const result = [];
   for (let i = 0; i < integer; ++i) {
     let str = '';
@@ -356,4 +356,35 @@ function generateShape(integer, row = integer, result) {
   return ('+'.repeat(integer) + '\n').repeat(integer);
 }
 
-console.log(generateShape(3, 3, []));
+// console.log(generateShape(3, 3, []));
+
+// DESCRIPTION:
+// Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
+// Your task is to process a string with "#" symbols.
+// Examples
+
+// "abc#d##c"      ==>  "ac"
+// "abc##d######"  ==>  ""
+// "#######"       ==>  ""
+// ""              ==>  ""
+
+function cleanString(s) {
+  // ... your code ...
+  // iterate through s
+  // if i is not #, push it into result. else, remove the last value in the result
+
+  const result = [];
+
+  [...s].forEach((char) => {
+    if (char !== '#') {
+      result.push(char);
+    } else if (char === '#' && result.length > 0) {
+      result.pop();
+    }
+  });
+
+  return result.join('');
+}
+
+// console.log(cleanString('abc#d##c'), 'ac');
+// console.log(cleanString('abc####d##c#'), '');
