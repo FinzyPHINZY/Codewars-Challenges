@@ -81,9 +81,55 @@ function numbersOfLetters(integer) {
   return result;
 }
 
-console.log(numbersOfLetters(4));
-console.log(numbersOfLetters(1)); //["one", "three", "five", "four"]);
-console.log(numbersOfLetters(12)); // ["onetwo", "six", "three", "five", "four"]);
-console.log(numbersOfLetters(37)); // ["threeseven", "onezero", "seven", "five", "four"]);
-console.log(numbersOfLetters(311)); //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
-console.log(numbersOfLetters(999)); //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(4));
+// console.log(numbersOfLetters(1)); //["one", "three", "five", "four"]);
+// console.log(numbersOfLetters(12)); // ["onetwo", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(37)); // ["threeseven", "onezero", "seven", "five", "four"]);
+// console.log(numbersOfLetters(311)); //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(999)); //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
+
+// DESCRIPTION:
+// Write a function partlist that gives all the ways to divide a list (an array) of at least two elements into two non-empty parts.
+
+//     Each two non empty parts will be in a pair (or an array for languages without tuples or a structin C - C: see Examples test Cases - )
+//     Each part will be in a string
+//     Elements of a pair must be in the same order as in the original array.
+
+// Examples of returns in different languages:
+
+// a = ["az", "toto", "picaro", "zone", "kiwi"] -->
+// [["az", "toto picaro zone kiwi"], ["az toto", "picaro zone kiwi"], ["az toto picaro", "zone kiwi"], ["az toto picaro zone", "kiwi"]]
+// or
+//  a = {"az", "toto", "picaro", "zone", "kiwi"} -->
+// {{"az", "toto picaro zone kiwi"}, {"az toto", "picaro zone kiwi"}, {"az toto picaro", "zone kiwi"}, {"az toto picaro zone", "kiwi"}}
+// or
+// a = ["az", "toto", "picaro", "zone", "kiwi"] -->
+// [("az", "toto picaro zone kiwi"), ("az toto", "picaro zone kiwi"), ("az toto picaro", "zone kiwi"), ("az toto picaro zone", "kiwi")]
+// or
+// a = [|"az", "toto", "picaro", "zone", "kiwi"|] -->
+// [("az", "toto picaro zone kiwi"), ("az toto", "picaro zone kiwi"), ("az toto picaro", "zone kiwi"), ("az toto picaro zone", "kiwi")]
+// or
+// a = ["az", "toto", "picaro", "zone", "kiwi"] -->
+// "(az, toto picaro zone kiwi)(az toto, picaro zone kiwi)(az toto picaro, zone kiwi)(az toto picaro zone, kiwi)"
+
+function partlist(arr) {
+  // your code
+  // iterate based on arr length.
+  // based on the pointer..split the arr
+
+  const result = [];
+
+  for (let i = 1; i < arr.length; i++) {
+    const x = arr.slice(0, i).join(' ');
+    const y = arr.slice(i).join(' ');
+
+    // console.log('this is x', x);
+    // console.log('this is y', y);
+
+    result.push([x, y]);
+  }
+
+  return result;
+}
+
+console.log(partlist(['az', 'toto', 'picaro', 'zone', 'kiwi']));
