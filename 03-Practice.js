@@ -287,15 +287,15 @@ const sortme = function (names) {
   return names.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 };
 
-console.log(sortme(['Hello', 'there', "I'm", 'fine']), [
-  'fine',
-  'Hello',
-  "I'm",
-  'there',
-]);
-console.log(sortme(['C', 'd', 'a', 'B']), ['a', 'B', 'C', 'd']);
-console.log(sortme(['CodeWars']), ['CodeWars']);
-console.log(sortme([]), []);
+// console.log(sortme(['Hello', 'there', "I'm", 'fine']), [
+//   'fine',
+//   'Hello',
+//   "I'm",
+//   'there',
+// ]);
+// console.log(sortme(['C', 'd', 'a', 'B']), ['a', 'B', 'C', 'd']);
+// console.log(sortme(['CodeWars']), ['CodeWars']);
+// console.log(sortme([]), []);
 
 // merge
 
@@ -325,5 +325,98 @@ function consecutiveDigits(digits) {
   return maxSequence;
 }
 
-console.log(consecutiveDigits(1234567890));
-console.log(consecutiveDigits(283910));
+// console.log(consecutiveDigits(1234567890));
+// console.log(consecutiveDigits(283910));
+
+// DESCRIPTION:
+// I will give you an integer. Give me back a shape that is as long and wide as the integer. The integer will be a whole number between 1 and 50.
+// Example
+// n = 3, so I expect a 3x3 square back just like below as a string:
+
+// +++
+// +++
+// +++
+
+function generateShape(integer) {
+  const result = [];
+  for (let i = 0; i < integer; ++i) {
+    let str = '';
+    for (let j = 0; j < integer; j++) {
+      str += '+';
+    }
+    result.push(str);
+  }
+  return result.join('\n');
+  if (row === 0) return result.join('\n');
+  result.push('+'.repeat(integer));
+  return generateShape(integer, row - 1, result);
+
+  return Array(integer).fill('+'.repeat(integer)).join('\n');
+
+  return ('+'.repeat(integer) + '\n').repeat(integer);
+}
+
+// console.log(generateShape(3, 3, []));
+
+// DESCRIPTION:
+// Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
+// Your task is to process a string with "#" symbols.
+// Examples
+
+// "abc#d##c"      ==>  "ac"
+// "abc##d######"  ==>  ""
+// "#######"       ==>  ""
+// ""              ==>  ""
+
+function cleanString(s) {
+  // ... your code ...
+  // iterate through s
+  // if i is not #, push it into result. else, remove the last value in the result
+
+  const result = [];
+
+  [...s].forEach((char) => {
+    if (char !== '#') {
+      result.push(char);
+    } else if (char === '#' && result.length > 0) {
+      result.pop();
+    }
+  });
+
+  return result.join('');
+}
+
+// console.log(cleanString('abc#d##c'), 'ac');
+// console.log(cleanString('abc####d##c#'), '');
+
+// DESCRIPTION:
+// In the following 6 digit number:
+
+// 283910
+
+// 91 is the greatest sequence of 2 consecutive digits.
+// In the following 10 digit number:
+
+// 1234567890
+
+// 67890 is the greatest sequence of 5 consecutive digits.
+// Complete the solution so that it returns the greatest sequence of five consecutive digits found within the number given. The number will be passed in as a string of only digits. It should return a five digit integer. The number passed may be as large as 1000 digits.
+
+function solutionSequence(digits, n) {
+  let result = 0;
+
+  digits = digits.toString();
+
+  for (let i = 0; i < digits.length; i++) {
+    const x = Number(digits.substring(i, i + n));
+
+    if (x > result) {
+      result = x;
+    }
+  }
+
+  return result;
+}
+
+console.log(solutionSequence(283910, 2));
+console.log(solutionSequence(1234567890, 5));
