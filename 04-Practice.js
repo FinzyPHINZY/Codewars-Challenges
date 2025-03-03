@@ -145,7 +145,7 @@ function sumOfIntegersInString(s) {
   return match.map(Number).reduce((sum, num) => sum + num, 0); // what the function name says
 }
 
-let = exampleTests = [
+const exampleTests = [
   ['12.4', 16],
   ['h3ll0w0rld', 3],
   ['2 + 3 = ', 5],
@@ -159,6 +159,29 @@ let = exampleTests = [
   ['The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog', 3635],
 ];
 
-exampleTests.forEach((test) => {
-  console.log(sumOfIntegersInString(test[0]) === test[1]);
-});
+// exampleTests.forEach((test) => {
+//   console.log(sumOfIntegersInString(test[0]) === test[1]);
+// });
+
+// DESCRIPTION:
+// I will give you an integer. Give me back a shape that is as long and wide as the integer. The integer will be a whole number between 1 and 50.
+// Example
+// n = 3, so I expect a 3x3 square back just like below as a string:
+
+// +++
+// +++
+// +++
+
+function generateShapeAgain(integer) {
+  return `${'+'.repeat(integer)} \n`.repeat(integer);
+}
+
+function generateShapeRecursively(integer, row = integer, result = []) {
+  if (row === 0) return result.join('\n');
+
+  result.push('+'.repeat(integer));
+
+  return generateShapeRecursively(integer, row - 1, result);
+}
+
+console.log(generateShapeRecursively(3));
