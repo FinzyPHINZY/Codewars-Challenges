@@ -184,4 +184,33 @@ function generateShapeRecursively(integer, row = integer, result = []) {
   return generateShapeRecursively(integer, row - 1, result);
 }
 
-console.log(generateShapeRecursively(3));
+// console.log(generateShapeRecursively(3));
+
+// Implement a function which accepts 2 arguments: string and separator.
+// The expected algorithm: split the string into words by spaces, split each word into separate characters and join them back with the specified separator, join all the resulting "words" back into a sentence with spaces.
+// For example:
+
+// splitAndMerge("My name is John", " ")  ==  "M y n a m e i s J o h n"
+// splitAndMerge("My name is John", "-")  ==  "M-y n-a-m-e i-s J-o-h-n"
+// splitAndMerge("Hello World!", ".")     ==  "H.e.l.l.o W.o.r.l.d.!"
+// splitAndMerge("Hello World!", ",")     ==  "H,e,l,l,o W,o,r,l,d,!"
+
+// fn splitAndMerge
+// takes in two arguments: string and separator
+// return the string splited with seperator.
+// adjust for edge cases.
+
+// iterate through string and split by space.
+// iterate through each splited string and add separator in between.
+
+function splitAndMerge(string, separator) {
+  return string
+    .split(' ')
+    .map((str) => str.split('').join(separator))
+    .join(' ');
+}
+
+console.log(splitAndMerge('My name is John', ' '));
+console.log(splitAndMerge('My name is John', '-'));
+console.log(splitAndMerge('My name is John', '.'));
+console.log(splitAndMerge('My name is John', ','));
