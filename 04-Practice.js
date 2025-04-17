@@ -275,4 +275,42 @@ function generateShape(integer) {
   return ('+'.repeat(integer) + '\n').repeat(integer);
 }
 
-console.log(generateShape(3));
+// console.log(generateShape(3));
+
+// Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
+// Your task is to process a string with "#" symbols.
+// Examples
+
+// "abc#d##c"      ==>  "ac"
+// "abc##d######"  ==>  ""
+// "#######"       ==>  ""
+// ""              ==>  ""
+
+function cleanString(s) {
+  // ... your code ...
+  // iterate through arguments.
+  // if char is not '#', add to result.
+  //  else remove the last char in result
+
+  const result = [];
+
+  for (let char of s) {
+    if (char === '#') {
+      result.pop();
+    } else {
+      result.push(char);
+    }
+  }
+
+  return result.join('');
+}
+
+// describe('cleanString', () => {
+//   it('should work correctly', () => {
+//     assert.strictEqual(cleanString('abc#d##c'), 'ac');
+//     assert.strictEqual(cleanString('abc####d##c#'), '');
+//   });
+// });
+
+console.log(cleanString('abc#d##c'));
+console.log(cleanString('abc####d##c#'));
