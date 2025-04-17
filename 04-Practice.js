@@ -234,9 +234,18 @@ function splitAndMerge(string, separator) {
 
 // Output: 2, 3, 4, 23, 5
 
-function sortByValueAndIndex(array) {}
+function sortByValueAndIndex(array) {
+  return array
+    .map((num, index) => [num, num * (index + 1)])
+    .sort((arr1, arr2) => arr1[1] - arr2[1])
+    .map((arr) => arr[0]);
+}
 
 console.log(sortByValueAndIndex([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
 console.log(sortByValueAndIndex([23, 2, 3, 4, 5])); // [ 2, 3, 4, 23, 5 ];
 console.log(sortByValueAndIndex([26, 2, 3, 4, 5])); // [ 2, 3, 4, 5, 26 ];
 console.log(sortByValueAndIndex([9, 5, 1, 4, 3])); // [ 1, 9, 5, 3, 4 ];
+
+// takes in an array of integers
+// return an array of integers. populated with the product of the input and its inddx sorted ascendingly.
+// iterate through the input array - for each value. keep track of the value and its product with the index. sort using the product.
