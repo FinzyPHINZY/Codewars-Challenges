@@ -241,11 +241,26 @@ function sortByValueAndIndex(array) {
     .map((arr) => arr[0]);
 }
 
-console.log(sortByValueAndIndex([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
-console.log(sortByValueAndIndex([23, 2, 3, 4, 5])); // [ 2, 3, 4, 23, 5 ];
-console.log(sortByValueAndIndex([26, 2, 3, 4, 5])); // [ 2, 3, 4, 5, 26 ];
-console.log(sortByValueAndIndex([9, 5, 1, 4, 3])); // [ 1, 9, 5, 3, 4 ];
+// console.log(sortByValueAndIndex([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
+// console.log(sortByValueAndIndex([23, 2, 3, 4, 5])); // [ 2, 3, 4, 23, 5 ];
+// console.log(sortByValueAndIndex([26, 2, 3, 4, 5])); // [ 2, 3, 4, 5, 26 ];
+// console.log(sortByValueAndIndex([9, 5, 1, 4, 3])); // [ 1, 9, 5, 3, 4 ];
 
 // takes in an array of integers
 // return an array of integers. populated with the product of the input and its inddx sorted ascendingly.
 // iterate through the input array - for each value. keep track of the value and its product with the index. sort using the product.
+
+// DESCRIPTION:
+// I will give you an integer. Give me back a shape that is as long and wide as the integer. The integer will be a whole number between 1 and 50.
+// Example
+// n = 3, so I expect a 3x3 square back just like below as a string:
+
+// +++
+// +++
+// +++
+
+function generateShape(integer) {
+  console.log(integer);
+}
+
+console.log(generateShape(3));
