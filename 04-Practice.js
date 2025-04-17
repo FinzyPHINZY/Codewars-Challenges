@@ -145,7 +145,7 @@ function sumOfIntegersInString(s) {
   return match.map(Number).reduce((sum, num) => sum + num, 0); // what the function name says
 }
 
-let = exampleTests = [
+const exampleTests = [
   ['12.4', 16],
   ['h3ll0w0rld', 3],
   ['2 + 3 = ', 5],
@@ -159,6 +159,158 @@ let = exampleTests = [
   ['The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog', 3635],
 ];
 
-exampleTests.forEach((test) => {
-  console.log(sumOfIntegersInString(test[0]) === test[1]);
-});
+// exampleTests.forEach((test) => {
+//   console.log(sumOfIntegersInString(test[0]) === test[1]);
+// });
+
+// DESCRIPTION:
+// I will give you an integer. Give me back a shape that is as long and wide as the integer. The integer will be a whole number between 1 and 50.
+// Example
+// n = 3, so I expect a 3x3 square back just like below as a string:
+
+// +++
+// +++
+// +++
+
+function generateShapeAgain(integer) {
+  return `${'+'.repeat(integer)} \n`.repeat(integer);
+}
+
+function generateShapeRecursively(integer, row = integer, result = []) {
+  if (row === 0) return result.join('\n');
+
+  result.push('+'.repeat(integer));
+
+  return generateShapeRecursively(integer, row - 1, result);
+}
+
+// console.log(generateShapeRecursively(3));
+
+// Implement a function which accepts 2 arguments: string and separator.
+// The expected algorithm: split the string into words by spaces, split each word into separate characters and join them back with the specified separator, join all the resulting "words" back into a sentence with spaces.
+// For example:
+
+// splitAndMerge("My name is John", " ")  ==  "M y n a m e i s J o h n"
+// splitAndMerge("My name is John", "-")  ==  "M-y n-a-m-e i-s J-o-h-n"
+// splitAndMerge("Hello World!", ".")     ==  "H.e.l.l.o W.o.r.l.d.!"
+// splitAndMerge("Hello World!", ",")     ==  "H,e,l,l,o W,o,r,l,d,!"
+
+// fn splitAndMerge
+// takes in two arguments: string and separator
+// return the string splited with seperator.
+// adjust for edge cases.
+
+// iterate through string and split by space.
+// iterate through each splited string and add separator in between.
+
+function splitAndMerge(string, separator) {
+  return string
+    .split(' ')
+    .map((str) => str.split('').join(separator))
+    .join(' ');
+}
+
+// console.log(splitAndMerge('My name is John', ' '));
+// console.log(splitAndMerge('My name is John', '-'));
+// console.log(splitAndMerge('My name is John', '.'));
+// console.log(splitAndMerge('My name is John', ','));
+
+// Sort an array by value and index
+// Your task is to sort an array of integer numbers by the product of the value and the index of the positions.
+
+// For sorting the index starts at 1, NOT at 0!
+// The sorting has to be ascending.
+// The array will never be null and will always contain numbers.
+
+// Example:
+
+// Input: 23, 2, 3, 4, 5
+// Product of value and index:
+// 23 => 23 * 1 = 23  -> Output-Pos 4
+//  2 =>  2 * 2 = 4   -> Output-Pos 1
+//  3 =>  3 * 3 = 9   -> Output-Pos 2
+//  4 =>  4 * 4 = 16  -> Output-Pos 3
+//  5 =>  5 * 5 = 25  -> Output-Pos 5
+
+// Output: 2, 3, 4, 23, 5
+
+function sortByValueAndIndex(array) {
+  return array
+    .map((num, index) => [num, num * (index + 1)])
+    .sort((arr1, arr2) => arr1[1] - arr2[1])
+    .map((arr) => arr[0]);
+}
+
+// console.log(sortByValueAndIndex([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
+// console.log(sortByValueAndIndex([23, 2, 3, 4, 5])); // [ 2, 3, 4, 23, 5 ];
+// console.log(sortByValueAndIndex([26, 2, 3, 4, 5])); // [ 2, 3, 4, 5, 26 ];
+// console.log(sortByValueAndIndex([9, 5, 1, 4, 3])); // [ 1, 9, 5, 3, 4 ];
+
+// takes in an array of integers
+// return an array of integers. populated with the product of the input and its inddx sorted ascendingly.
+// iterate through the input array - for each value. keep track of the value and its product with the index. sort using the product.
+
+// DESCRIPTION:
+// I will give you an integer. Give me back a shape that is as long and wide as the integer. The integer will be a whole number between 1 and 50.
+// Example
+// n = 3, so I expect a 3x3 square back just like below as a string:
+
+// +++
+// +++
+// +++
+
+function generateShape(integer) {
+  // const shape = [];
+  // for (let i = 0; i < integer; i++) {
+  //   let row = '';
+  //   for (let j = 0; j < integer; j++) {
+  //     row += '+';
+  //   }
+
+  //   shape.push(row);
+  // }
+
+  // return shape.join('\n');
+
+  return ('+'.repeat(integer) + '\n').repeat(integer);
+}
+
+// console.log(generateShape(3));
+
+// Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
+// Your task is to process a string with "#" symbols.
+// Examples
+
+// "abc#d##c"      ==>  "ac"
+// "abc##d######"  ==>  ""
+// "#######"       ==>  ""
+// ""              ==>  ""
+
+function cleanString(s) {
+  // ... your code ...
+  // iterate through arguments.
+  // if char is not '#', add to result.
+  //  else remove the last char in result
+
+  const result = [];
+
+  for (let char of s) {
+    if (char === '#') {
+      result.pop();
+    } else {
+      result.push(char);
+    }
+  }
+
+  return result.join('');
+}
+
+// describe('cleanString', () => {
+//   it('should work correctly', () => {
+//     assert.strictEqual(cleanString('abc#d##c'), 'ac');
+//     assert.strictEqual(cleanString('abc####d##c#'), '');
+//   });
+// });
+
+console.log(cleanString('abc#d##c'));
+console.log(cleanString('abc####d##c#'));
