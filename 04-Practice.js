@@ -327,6 +327,44 @@ function cleanString(s) {
 
 function numbersOfLetters(integer) {
   // code here...
+  const result = [];
+
+  const map = {
+    0: 'zero',
+    1: 'one',
+    2: 'two',
+    3: 'three',
+    4: 'four',
+    5: 'five',
+    6: 'six',
+    7: 'seven',
+    8: 'eight',
+    9: 'nine',
+  };
+
+  const numToString = (num) => {
+    return num
+      .toString()
+      .split('')
+      .map((x) => map[x])
+      .join('');
+  };
+
+  let currentWord = numToString(integer);
+  result.push(currentWord);
+
+  if (currentWord === 'four') {
+    return result;
+  }
+
+  while (currentWord !== 'four') {
+    const newWord = numToString(currentWord.length);
+    result.push(newWord);
+
+    currentWord = newWord;
+  }
+
+  return result;
 }
 
 console.log(numbersOfLetters(4));
