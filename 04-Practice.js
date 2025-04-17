@@ -260,7 +260,19 @@ function sortByValueAndIndex(array) {
 // +++
 
 function generateShape(integer) {
-  console.log(integer);
+  // const shape = [];
+  // for (let i = 0; i < integer; i++) {
+  //   let row = '';
+  //   for (let j = 0; j < integer; j++) {
+  //     row += '+';
+  //   }
+
+  //   shape.push(row);
+  // }
+
+  // return shape.join('\n');
+
+  return ('+'.repeat(integer) + '\n').repeat(integer);
 }
 
 console.log(generateShape(3));
