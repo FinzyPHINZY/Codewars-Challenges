@@ -325,7 +325,7 @@ function cleanString(s) {
 // numbersOfLetters(60) --> ["sixzero", "seven", "five", "four"]
 // numbersOfLetters(1) --> ["one", "three", "five", "four"]
 
-function numbersOfLetters(integer) {
+function numbersOfLetterss(integer) {
   // code here...
   const result = [];
 
@@ -367,10 +367,42 @@ function numbersOfLetters(integer) {
   return result;
 }
 
-console.log(numbersOfLetters(4));
+// console.log(numbersOfLetters(4));
 
-console.log(numbersOfLetters(1)); //["one", "three", "five", "four"]);
-console.log(numbersOfLetters(12)); // ["onetwo", "six", "three", "five", "four"]);
-console.log(numbersOfLetters(37)); // ["threeseven", "onezero", "seven", "five", "four"]);
-console.log(numbersOfLetters(311)); //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
-console.log(numbersOfLetters(999)); //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(1)); //["one", "three", "five", "four"]);
+// console.log(numbersOfLetters(12)); // ["onetwo", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(37)); // ["threeseven", "onezero", "seven", "five", "four"]);
+// console.log(numbersOfLetters(311)); //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(999)); //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
+
+// In the following 6 digit number:
+
+// 283910
+
+// 91 is the greatest sequence of 2 consecutive digits.
+// In the following 10 digit number:
+
+// 1234567890
+
+// 67890 is the greatest sequence of 5 consecutive digits.
+// Complete the solution so that it returns the greatest sequence of five consecutive digits found within the number given. The number will be passed in as a string of only digits. It should return a five digit integer. The number passed may be as large as 1000
+
+function greatestSequenceDigits(number, query) {
+  if (!number || !query) {
+    return 'Invalid parameters';
+  }
+
+  const arr = [];
+
+  const numStr = number.toString();
+
+  for (let i = 0; i < numStr.length; ++i) {
+    const val = numStr.slice(i, i + query);
+    arr.push(val);
+  }
+
+  return Math.max(...arr);
+}
+
+console.log(greatestSequenceDigits(1234567890, 5));
+console.log(greatestSequenceDigits(283910, 2));
