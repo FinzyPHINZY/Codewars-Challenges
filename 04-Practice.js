@@ -312,5 +312,97 @@ function cleanString(s) {
 //   });
 // });
 
-console.log(cleanString('abc#d##c'));
-console.log(cleanString('abc####d##c#'));
+// console.log(cleanString('abc#d##c'));
+// console.log(cleanString('abc####d##c#'));
+
+// If we write out the digits of "60" as English words we get "sixzero"; the number of letters in "sixzero" is seven. The number of letters in "seven" is five. The number of letters in "five" is four. The number of letters in "four" is fou we have reached a stable equilibrium.
+
+// Note: for integers larger than 9, write out the names of each digit in a single word (instead of the proper name of the number in English). For example, write 12 as "onetwo" (instead of twelve), and 999 as "nineninenine" (instead of nine hundred and ninety-nine).
+
+// For any integer between 0 and 999, return an array showing the path from that integer to a stable equilibrium:
+// Examples
+
+// numbersOfLetters(60) --> ["sixzero", "seven", "five", "four"]
+// numbersOfLetters(1) --> ["one", "three", "five", "four"]
+
+function numbersOfLetterss(integer) {
+  // code here...
+  const result = [];
+
+  const map = {
+    0: 'zero',
+    1: 'one',
+    2: 'two',
+    3: 'three',
+    4: 'four',
+    5: 'five',
+    6: 'six',
+    7: 'seven',
+    8: 'eight',
+    9: 'nine',
+  };
+
+  const numToString = (num) => {
+    return num
+      .toString()
+      .split('')
+      .map((x) => map[x])
+      .join('');
+  };
+
+  let currentWord = numToString(integer);
+  result.push(currentWord);
+
+  if (currentWord === 'four') {
+    return result;
+  }
+
+  while (currentWord !== 'four') {
+    const newWord = numToString(currentWord.length);
+    result.push(newWord);
+
+    currentWord = newWord;
+  }
+
+  return result;
+}
+
+// console.log(numbersOfLetters(4));
+
+// console.log(numbersOfLetters(1)); //["one", "three", "five", "four"]);
+// console.log(numbersOfLetters(12)); // ["onetwo", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(37)); // ["threeseven", "onezero", "seven", "five", "four"]);
+// console.log(numbersOfLetters(311)); //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters(999)); //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
+
+// In the following 6 digit number:
+
+// 283910
+
+// 91 is the greatest sequence of 2 consecutive digits.
+// In the following 10 digit number:
+
+// 1234567890
+
+// 67890 is the greatest sequence of 5 consecutive digits.
+// Complete the solution so that it returns the greatest sequence of five consecutive digits found within the number given. The number will be passed in as a string of only digits. It should return a five digit integer. The number passed may be as large as 1000
+
+function greatestSequenceDigits(number, query) {
+  if (!number || !query) {
+    return 'Invalid parameters';
+  }
+
+  const arr = [];
+
+  const numStr = number.toString();
+
+  for (let i = 0; i < numStr.length; ++i) {
+    const val = numStr.slice(i, i + query);
+    arr.push(val);
+  }
+
+  return Math.max(...arr);
+}
+
+console.log(greatestSequenceDigits(1234567890, 5));
+console.log(greatestSequenceDigits(283910, 2));
