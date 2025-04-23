@@ -503,14 +503,41 @@ function balancedNum(num) {
   return leftSum === rightSum ? 'Balanced' : 'Not Balanced';
 }
 
-console.log(balancedNum(7));
-console.log(balancedNum(959));
-console.log(balancedNum(13));
-console.log(balancedNum(432));
-console.log(balancedNum(424));
+// console.log(balancedNum(7));
+// console.log(balancedNum(959));
+// console.log(balancedNum(13));
+// console.log(balancedNum(432));
+// console.log(balancedNum(424));
 
-console.log(balancedNum(1024));
-console.log(balancedNum(66545));
-console.log(balancedNum(295591));
-console.log(balancedNum(1230987));
-console.log(balancedNum(56239814));
+// console.log(balancedNum(1024));
+// console.log(balancedNum(66545));
+// console.log(balancedNum(295591));
+// console.log(balancedNum(1230987));
+// console.log(balancedNum(56239814));
+
+// Our fruit guy has a bag of fruit (represented as an array of strings) where some fruits are rotten. He wants to replace all the rotten pieces of fruit with fresh ones. For example, given ["apple","rottenBanana","apple"] the replaced array should be ["apple","banana","apple"]. Your task is to implement a method that accepts an array of strings containing fruits should returns an array of strings where all the rotten fruits are replaced by good ones.
+// Notes
+
+//     If the array is null/nil/None or empty you should return empty array ([]).
+//     The rotten fruit name will be in this camelcase (rottenFruit).
+//     The returned array should be in lowercase.
+
+// Test.assertDeepEquals(removeRotten(["apple","banana","kiwi","melon","orange"]), ["apple","banana","kiwi","melon","orange"])
+// Test.assertDeepEquals(removeRotten(["rottenApple","rottenBanana","rottenApple","rottenPineapple","rottenKiwi"]), ["apple","banana","apple","pineapple","kiwi"])
+// Test.assertDeepEquals(removeRotten([]), [],"empty array returns empty array")
+// Test.assertDeepEquals(removeRotten(null), [],"null returns empty array")
+// Test.assertDeepEquals(removeRotten(), [])
+// Test.assertDeepEquals(removeRotten(["apple","rottenBanana","rottenApple","pineapple","kiwi"]), ["apple","banana","apple","pineapple","kiwi"])
+
+// const fruit = ["apple", "tomato", "mango", "kiwi","banana", "strawberry", "melon", "blueberry",
+// "rottenBlueberry", "rottenMelon", "rottenApple", "rottenTomato", "rottenMango", "rottenKiwi", "rottenBanana", "rottenStrawberry"]
+
+function removeRotten(fruits) {
+  // iterate through the fruits array.
+  return fruits.map((fruit) => fruit.replace('rotten', '').toLowerCase());
+}
+
+console.log(
+  removeRotten(['apple', 'rottenBanana', 'rottenApple', 'pineapple', 'kiwi']),
+  ['apple', 'banana', 'apple', 'pineapple', 'kiwi']
+);
