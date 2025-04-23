@@ -537,7 +537,42 @@ function removeRotten(fruits) {
   return fruits.map((fruit) => fruit.replace('rotten', '').toLowerCase());
 }
 
-console.log(
-  removeRotten(['apple', 'rottenBanana', 'rottenApple', 'pineapple', 'kiwi']),
-  ['apple', 'banana', 'apple', 'pineapple', 'kiwi']
-);
+// console.log(
+//   removeRotten(['apple', 'rottenBanana', 'rottenApple', 'pineapple', 'kiwi']),
+//   ['apple', 'banana', 'apple', 'pineapple', 'kiwi']
+// );
+
+// Given 2 strings, a and b, return a string of the form: shorter+reverse(longer)+shorter.
+
+// In other words, the shortest string has to be put as prefix and as suffix of the reverse of the longest.
+
+// Strings a and b may be empty, but not null (In C# strings may also be null. Treat them as if they are empty.).
+// If a and b have the same length treat a as the longer producing b+reverse(a)+b
+
+function shorterReverseLonger(a, b) {
+  // check if a and b has the same length
+  // if true, return b+reversed(a)+b
+  if (a.length === b.length) {
+    return `${b}${a.split('').reverse().join('')}${b}`;
+  }
+  // else
+  // find shorter
+  let shorter;
+  let longer;
+  if (a.length > b.length) {
+    shorter = b;
+    longer = a;
+  } else {
+    shorter = a;
+    longer = b;
+  }
+  // return shorter+reverse(longer)+shorter
+  return `${shorter}${longer.split('').reverse().join('')}${shorter}`;
+}
+
+console.log(shorterReverseLonger('first', 'abcde'), 'abcdetsrifabcde');
+console.log(shorterReverseLonger('hello', 'bau'), 'bauollehbau');
+console.log(shorterReverseLonger('fghi', 'abcde'), 'fghiedcbafghi');
+console.log(shorterReverseLonger('hello', ''), 'olleh');
+console.log(shorterReverseLonger('', 'bau'), 'uab');
+console.log(shorterReverseLonger('', ''), '');
