@@ -404,5 +404,202 @@ function greatestSequenceDigits(number, query) {
   return Math.max(...arr);
 }
 
-console.log(greatestSequenceDigits(1234567890, 5));
-console.log(greatestSequenceDigits(283910, 2));
+// console.log(greatestSequenceDigits(1234567890, 5));
+// console.log(greatestSequenceDigits(283910, 2));
+
+// DESCRIPTION:
+// A balanced number is a number where the sum of digits to the left of the middle digit(s) and the sum of digits to the right of the middle digit(s) are equal.
+
+// If the number has an odd number of digits, then there is only one middle digit. (For example, 92645 has one middle digit, 6.) Otherwise, there are two middle digits. (For example, the middle digits of 1301 are 3 and 0.)
+
+// The middle digit(s) should not be considered when determining whether a number is balanced or not, e.g. 413023 is a balanced number because the left sum and right sum are both 5.
+
+// The task
+// Given a number, find if it is balanced, and return the string "Balanced" or "Not Balanced" accordingly. The passed number will always be positive.
+
+// Examples
+// 7 ==> return "Balanced"
+// Explanation:
+// middle digit(s): 7
+// sum of all digits to the left of the middle digit(s) -> 0
+// sum of all digits to the right of the middle digit(s) -> 0
+// 0 and 0 are equal, so it's balanced.
+// 295591 ==> return "Not Balanced"
+// Explanation:
+// middle digit(s): 55
+// sum of all digits to the left of the middle digit(s) -> 11
+// sum of all digits to the right of the middle digit(s) -> 10
+// 11 and 10 are not equal, so it's not balanced.
+// 959 ==> return "Balanced"
+// Explanation:
+// middle digit(s): 5
+// sum of all digits to the left of the middle digit(s) -> 9
+// sum of all digits to the right of the middle digit(s) -> 9
+// 9 and 9 are equal, so it's balanced.
+// 27102983 ==> return "Not Balanced"
+// Explanation:
+// middle digit(s): 02
+// sum of all digits to the left of the middle digit(s) -> 10
+// sum of all digits to the right of the middle digit(s) -> 20
+// 10 and 20 are not equal, so it's not balanced.
+
+// Test Cases:
+
+// describe("Check less than thousand", function () {
+//   it("Check balanced number", function () {
+//     Test.assertEquals(balancedNum(7), "Balanced");
+//     Test.assertEquals(balancedNum(959), "Balanced");
+//     Test.assertEquals(balancedNum(13), "Balanced");
+//     Test.assertEquals(balancedNum(432), "Not Balanced");
+//     Test.assertEquals(balancedNum(424), "Balanced");
+//   });
+//   it("Check Larger number", function () {
+//     Test.assertEquals(balancedNum(1024), "Not Balanced");
+//     Test.assertEquals(balancedNum(66545), "Not Balanced");
+//     Test.assertEquals(balancedNum(295591), "Not Balanced");
+//     Test.assertEquals(balancedNum(1230987), "Not Balanced");
+//     Test.assertEquals(balancedNum(56239814), "Balanced");
+//   });
+// });
+
+function balancedNum(num) {
+  // get middle number index
+
+  const numStr = num.toString();
+
+  const length = numStr.length;
+
+  if (length < 3) return 'Balanced';
+
+  // function to sum numbers in a string;
+  const sumNums = (n) => {
+    // console.log(n.split('').map(Number).reduce(()=>));
+    return n
+      .split('')
+      .map(Number)
+      .reduce((sum, num) => {
+        return sum + num;
+      }, 0);
+  };
+
+  // get sum of left and right numbers
+
+  if (length % 2 !== 0) {
+    const left = numStr.slice(0, length / 2);
+    const right = numStr.slice(-length / 2, length);
+
+    const leftSum = sumNums(left);
+    const rightSum = sumNums(right);
+
+    return leftSum === rightSum ? 'Balanced' : 'Not Balanced';
+  }
+
+  const left = numStr.slice(0, length / 2 - 1);
+  const right = numStr.slice(-(length / 2) + 1, length);
+
+  const leftSum = sumNums(left);
+  const rightSum = sumNums(right);
+
+  return leftSum === rightSum ? 'Balanced' : 'Not Balanced';
+}
+
+// console.log(balancedNum(7));
+// console.log(balancedNum(959));
+// console.log(balancedNum(13));
+// console.log(balancedNum(432));
+// console.log(balancedNum(424));
+
+// console.log(balancedNum(1024));
+// console.log(balancedNum(66545));
+// console.log(balancedNum(295591));
+// console.log(balancedNum(1230987));
+// console.log(balancedNum(56239814));
+
+// Our fruit guy has a bag of fruit (represented as an array of strings) where some fruits are rotten. He wants to replace all the rotten pieces of fruit with fresh ones. For example, given ["apple","rottenBanana","apple"] the replaced array should be ["apple","banana","apple"]. Your task is to implement a method that accepts an array of strings containing fruits should returns an array of strings where all the rotten fruits are replaced by good ones.
+// Notes
+
+//     If the array is null/nil/None or empty you should return empty array ([]).
+//     The rotten fruit name will be in this camelcase (rottenFruit).
+//     The returned array should be in lowercase.
+
+// Test.assertDeepEquals(removeRotten(["apple","banana","kiwi","melon","orange"]), ["apple","banana","kiwi","melon","orange"])
+// Test.assertDeepEquals(removeRotten(["rottenApple","rottenBanana","rottenApple","rottenPineapple","rottenKiwi"]), ["apple","banana","apple","pineapple","kiwi"])
+// Test.assertDeepEquals(removeRotten([]), [],"empty array returns empty array")
+// Test.assertDeepEquals(removeRotten(null), [],"null returns empty array")
+// Test.assertDeepEquals(removeRotten(), [])
+// Test.assertDeepEquals(removeRotten(["apple","rottenBanana","rottenApple","pineapple","kiwi"]), ["apple","banana","apple","pineapple","kiwi"])
+
+// const fruit = ["apple", "tomato", "mango", "kiwi","banana", "strawberry", "melon", "blueberry",
+// "rottenBlueberry", "rottenMelon", "rottenApple", "rottenTomato", "rottenMango", "rottenKiwi", "rottenBanana", "rottenStrawberry"]
+
+function removeRotten(fruits) {
+  // iterate through the fruits array.
+  return fruits.map((fruit) => fruit.replace('rotten', '').toLowerCase());
+}
+
+// console.log(
+//   removeRotten(['apple', 'rottenBanana', 'rottenApple', 'pineapple', 'kiwi']),
+//   ['apple', 'banana', 'apple', 'pineapple', 'kiwi']
+// );
+
+// Given 2 strings, a and b, return a string of the form: shorter+reverse(longer)+shorter.
+
+// In other words, the shortest string has to be put as prefix and as suffix of the reverse of the longest.
+
+// Strings a and b may be empty, but not null (In C# strings may also be null. Treat them as if they are empty.).
+// If a and b have the same length treat a as the longer producing b+reverse(a)+b
+
+function shorterReverseLonger(a, b) {
+  // check if a and b has the same length
+  // if true, return b+reversed(a)+b
+  if (a.length === b.length) {
+    return `${b}${a.split('').reverse().join('')}${b}`;
+  }
+  // else
+  // find shorter
+  let shorter;
+  let longer;
+  if (a.length > b.length) {
+    shorter = b;
+    longer = a;
+  } else {
+    shorter = a;
+    longer = b;
+  }
+  // return shorter+reverse(longer)+shorter
+  return `${shorter}${longer.split('').reverse().join('')}${shorter}`;
+}
+
+// console.log(shorterReverseLonger('first', 'abcde'), 'abcdetsrifabcde');
+// console.log(shorterReverseLonger('hello', 'bau'), 'bauollehbau');
+// console.log(shorterReverseLonger('fghi', 'abcde'), 'fghiedcbafghi');
+// console.log(shorterReverseLonger('hello', ''), 'olleh');
+// console.log(shorterReverseLonger('', 'bau'), 'uab');
+// console.log(shorterReverseLonger('', ''), '');
+
+// You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
+// Implement the function which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:
+
+// []                                -->  "no one likes this"
+// ["Peter"]                         -->  "Peter likes this"
+// ["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
+// ["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
+// ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
+
+// Note: For 4 or more names, the number in "and 2 others" simply increases.
+
+function likeSystem(arr) {
+  if (arr.length === 0) return 'no one likes this';
+  if (arr.length === 1) return `${arr[0]} likes this`;
+  if (arr.length === 2) return `${arr[0]} and ${arr[1]} like this`;
+  if (arr.length === 3) return `${arr[0]}, ${arr[1]} and ${arr[2]} like this`;
+
+  return `${arr[0]}, ${arr[1]} and ${arr.length - 2} others like this`;
+}
+
+console.log(likeSystem([]));
+console.log(likeSystem(['Peter']));
+console.log(likeSystem(['Jacob', 'Alex']));
+console.log(likeSystem(['Max', 'John', 'Mark']));
+console.log(likeSystem(['Alex', 'Jacob', 'Mark', 'Max']));
+console.log(likeSystem(['Jacob', 'Alex', 'Alex', 'Jacob', 'Mark', 'Max']));
