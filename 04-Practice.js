@@ -648,11 +648,53 @@ function toCsvText(array) {
   return array.join('\n');
 }
 
+// console.log(
+//   toCsvText([
+//     [0, 1, 2, 3, 4],
+//     [10, 11, 12, 13, 14],
+//     [20, 21, 22, 23, 24],
+//     [30, 31, 32, 33, 34],
+//   ])
+// );
+
+// Who is the killer?
+// Some people have been killed!
+// You have managed to narrow the suspects down to just a few. Luckily, you know every person who those suspects have seen on the day of the murders.
+
+// Task.
+// Given a dictionary with all the names of the suspects and everyone that they have seen on that day which may look like this:
+
+// {'James': ['Jacob', 'Bill', 'Lucas'],
+//  'Johnny': ['David', 'Kyle', 'Lucas'],
+//  'Peter': ['Lucy', 'Kyle']}
+// and also a list of the names of the dead people:
+
+// ['Lucas', 'Bill']
+// return the name of the one killer, in our case 'James' because he is the only person that saw both 'Lucas' and 'Bill'
+
+function killer(suspectInfo, dead) {
+  //your code here...
+  // takes in two arguments; an object containing the suspects and who they saw; and an array of the victims
+  // iterate through the obbject(suspectInfo) and find who has seen all the victims.
+
+  for (const suspect in suspectInfo) {
+    const isKiller = dead.every((value) =>
+      suspectInfo[suspect].includes(value)
+    );
+
+    if (isKiller) return suspect;
+  }
+}
+
 console.log(
-  toCsvText([
-    [0, 1, 2, 3, 4],
-    [10, 11, 12, 13, 14],
-    [20, 21, 22, 23, 24],
-    [30, 31, 32, 33, 34],
-  ])
-);
+  killer(
+    {
+      James: ['Jacob', 'Bill', 'Lucas'],
+      Johnny: ['David', 'Kyle', 'Lucas'],
+      Peter: ['Lucy', 'Kyle'],
+    },
+    ['Lucas', 'Bill']
+  )
+); // "James"
+
+console.log(killer({ Brad: [], Megan: ['Ben', 'Kevin'], Finn: [] }, ['Ben'])); //"Megan
