@@ -597,9 +597,184 @@ function likeSystem(arr) {
   return `${arr[0]}, ${arr[1]} and ${arr.length - 2} others like this`;
 }
 
-console.log(likeSystem([]));
-console.log(likeSystem(['Peter']));
-console.log(likeSystem(['Jacob', 'Alex']));
-console.log(likeSystem(['Max', 'John', 'Mark']));
-console.log(likeSystem(['Alex', 'Jacob', 'Mark', 'Max']));
-console.log(likeSystem(['Jacob', 'Alex', 'Alex', 'Jacob', 'Mark', 'Max']));
+// console.log(likeSystem([]));
+// console.log(likeSystem(['Peter']));
+// console.log(likeSystem(['Jacob', 'Alex']));
+// console.log(likeSystem(['Max', 'John', 'Mark']));
+// console.log(likeSystem(['Alex', 'Jacob', 'Mark', 'Max']));
+// console.log(likeSystem(['Jacob', 'Alex', 'Alex', 'Jacob', 'Mark', 'Max']));
+
+// In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+// Example
+
+// filter_list([1,2,'a','b']) == [1,2]
+// filter_list([1,'a','b',0,15]) == [1,0,15]
+// filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
+
+const filter_list = (arr) => {
+  // takes in an array of non-negative integers and strings
+  // returns a new array with the strings removed
+  // iterate through the array
+  // check it the value is a string
+  // exclude it.
+
+  return arr.filter((char) => typeof char === 'number');
+};
+
+// console.log(filter_list([1, 2, 'a', 'b']));
+// console.log(filter_list([1, 'a', 'b', 0, 15]));
+// console.log(filter_list([1, 2, 'aasf', '1', '123', 123]));
+
+// DESCRIPTION:
+// Create a function that returns the CSV representation of a two-dimensional numeric array.
+// Example:
+
+// input:
+//  [[ 0, 1, 2, 3, 4 ],
+//   [ 10,11,12,13,14 ],
+//   [ 20,21,22,23,24 ],
+//   [ 30,31,32,33,34 ]]
+
+// output:
+//      '0,1,2,3,4\n'
+//     +'10,11,12,13,14\n'
+//     +'20,21,22,23,24\n'
+//     +'30,31,32,33,34'
+
+// Array's length > 2.
+
+function toCsvText(array) {
+  // good luck
+  return array.join('\n');
+}
+
+// console.log(
+//   toCsvText([
+//     [0, 1, 2, 3, 4],
+//     [10, 11, 12, 13, 14],
+//     [20, 21, 22, 23, 24],
+//     [30, 31, 32, 33, 34],
+//   ])
+// );
+
+// Who is the killer?
+// Some people have been killed!
+// You have managed to narrow the suspects down to just a few. Luckily, you know every person who those suspects have seen on the day of the murders.
+
+// Task.
+// Given a dictionary with all the names of the suspects and everyone that they have seen on that day which may look like this:
+
+// {'James': ['Jacob', 'Bill', 'Lucas'],
+//  'Johnny': ['David', 'Kyle', 'Lucas'],
+//  'Peter': ['Lucy', 'Kyle']}
+// and also a list of the names of the dead people:
+
+// ['Lucas', 'Bill']
+// return the name of the one killer, in our case 'James' because he is the only person that saw both 'Lucas' and 'Bill'
+
+function killer(suspectInfo, dead) {
+  //your code here...
+  // takes in two arguments; an object containing the suspects and who they saw; and an array of the victims
+  // iterate through the obbject(suspectInfo) and find who has seen all the victims.
+
+  for (const suspect in suspectInfo) {
+    const isKiller = dead.every((value) =>
+      suspectInfo[suspect].includes(value)
+    );
+
+    if (isKiller) return suspect;
+  }
+}
+
+// console.log(
+//   killer(
+//     {
+//       James: ['Jacob', 'Bill', 'Lucas'],
+//       Johnny: ['David', 'Kyle', 'Lucas'],
+//       Peter: ['Lucy', 'Kyle'],
+//     },
+//     ['Lucas', 'Bill']
+//   )
+// ); // "James"
+
+// console.log(killer({ Brad: [], Megan: ['Ben', 'Kevin'], Finn: [] }, ['Ben'])); //"Megan
+
+// DESCRIPTION:
+// Time to win the lottery!
+// Given a lottery ticket (ticket), represented by an array of 2-value arrays, you must find out if you've won the jackpot.
+// Example ticket:
+
+// [ [ 'ABC', 65 ], [ 'HGR', 74 ], [ 'BYHT', 74 ] ]
+
+// To do this, you must first count the 'mini-wins' on your ticket. Each subarray has both a string and a number within it. If the character code of any of the characters in the string matches the number, you get a mini win. Note you can only have one mini win per sub array.
+// Once you have counted all of your mini wins, compare that number to the other input provided (win). If your total is more than or equal to (win), return 'Winner!'. Else return 'Loser!'.
+// All inputs will be in the correct format. Strings on tickets are not always the same length.
+
+function bingo(ticket, win) {
+  // iterate through the ticket
+  // for each array in ticket, convert each character in the first element to an array of character code
+
+  const letterToCode = (char) => {
+    return char.charCodeAt(0);
+  };
+
+  let totalWins = 0;
+
+  for (const arr of ticket) {
+    let miniWins = 0;
+    const convert = arr[0]
+      .split('')
+      .map((char) => letterToCode(char))
+      .filter((val) => val === arr[1]);
+
+    totalWins += convert.length;
+  }
+
+  console.log(totalWins);
+  return totalWins >= win ? 'Winner!' : 'Loser!';
+}
+
+// console.log(
+//   bingo(
+//     [
+//       ['ABC', 65],
+//       ['HGR', 74],
+//       ['BYHT', 74],
+//     ],
+//     2
+//   ),
+//   'Loser!'
+// );
+// console.log(
+//   bingo(
+//     [
+//       ['ABC', 65],
+//       ['HGR', 74],
+//       ['BYHT', 74],
+//     ],
+//     1
+//   ),
+//   'Winner!'
+// );
+// // console.log(bingo([['HGTYRE', 74], ['BE', 66], ['JKTY', 74]], 3), 'Loser!');
+
+// You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+// Complete the method which accepts such an array, and returns that single different number.
+// The input array will always be valid! (odd-length >= 3)
+// Examples
+
+// [1, 1, 2] ==> 2
+// [17, 17, 3, 17, 17, 17, 17] ==> 3
+
+function oddArray(arr) {
+  const sortedArr = arr.sort();
+
+  if (sortedArr[0] === sortedArr[1]) {
+    return sortedArr[sortedArr.length - 1];
+  }
+
+  return sortedArr[0];
+}
+
+console.log(oddArray([1, 1, 2]));
+console.log(oddArray([17, 17, 3, 17, 17, 17, 17]));
