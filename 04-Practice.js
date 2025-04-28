@@ -597,9 +597,30 @@ function likeSystem(arr) {
   return `${arr[0]}, ${arr[1]} and ${arr.length - 2} others like this`;
 }
 
-console.log(likeSystem([]));
-console.log(likeSystem(['Peter']));
-console.log(likeSystem(['Jacob', 'Alex']));
-console.log(likeSystem(['Max', 'John', 'Mark']));
-console.log(likeSystem(['Alex', 'Jacob', 'Mark', 'Max']));
-console.log(likeSystem(['Jacob', 'Alex', 'Alex', 'Jacob', 'Mark', 'Max']));
+// console.log(likeSystem([]));
+// console.log(likeSystem(['Peter']));
+// console.log(likeSystem(['Jacob', 'Alex']));
+// console.log(likeSystem(['Max', 'John', 'Mark']));
+// console.log(likeSystem(['Alex', 'Jacob', 'Mark', 'Max']));
+// console.log(likeSystem(['Jacob', 'Alex', 'Alex', 'Jacob', 'Mark', 'Max']));
+
+// In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+// Example
+
+// filter_list([1,2,'a','b']) == [1,2]
+// filter_list([1,'a','b',0,15]) == [1,0,15]
+// filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
+
+const filter_list = (arr) => {
+  // takes in an array of non-negative integers and strings
+  // returns a new array with the strings removed
+  // iterate through the array
+  // check it the value is a string
+  // exclude it.
+
+  return arr.filter((char) => typeof char === 'number');
+};
+
+console.log(filter_list([1, 2, 'a', 'b']));
+console.log(filter_list([1, 'a', 'b', 0, 15]));
+console.log(filter_list([1, 2, 'aasf', '1', '123', 123]));
