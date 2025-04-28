@@ -734,26 +734,47 @@ function bingo(ticket, win) {
   return totalWins >= win ? 'Winner!' : 'Loser!';
 }
 
-console.log(
-  bingo(
-    [
-      ['ABC', 65],
-      ['HGR', 74],
-      ['BYHT', 74],
-    ],
-    2
-  ),
-  'Loser!'
-);
-console.log(
-  bingo(
-    [
-      ['ABC', 65],
-      ['HGR', 74],
-      ['BYHT', 74],
-    ],
-    1
-  ),
-  'Winner!'
-);
-// console.log(bingo([['HGTYRE', 74], ['BE', 66], ['JKTY', 74]], 3), 'Loser!');
+// console.log(
+//   bingo(
+//     [
+//       ['ABC', 65],
+//       ['HGR', 74],
+//       ['BYHT', 74],
+//     ],
+//     2
+//   ),
+//   'Loser!'
+// );
+// console.log(
+//   bingo(
+//     [
+//       ['ABC', 65],
+//       ['HGR', 74],
+//       ['BYHT', 74],
+//     ],
+//     1
+//   ),
+//   'Winner!'
+// );
+// // console.log(bingo([['HGTYRE', 74], ['BE', 66], ['JKTY', 74]], 3), 'Loser!');
+
+// You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+// Complete the method which accepts such an array, and returns that single different number.
+// The input array will always be valid! (odd-length >= 3)
+// Examples
+
+// [1, 1, 2] ==> 2
+// [17, 17, 3, 17, 17, 17, 17] ==> 3
+
+function oddArray(arr) {
+  const sortedArr = arr.sort();
+
+  if (sortedArr[0] === sortedArr[1]) {
+    return sortedArr[sortedArr.length - 1];
+  }
+
+  return sortedArr[0];
+}
+
+console.log(oddArray([1, 1, 2]));
+console.log(oddArray([17, 17, 3, 17, 17, 17, 17]));
