@@ -721,7 +721,6 @@ function bingo(ticket, win) {
   let totalWins = 0;
 
   for (const arr of ticket) {
-    let miniWins = 0;
     const convert = arr[0]
       .split('')
       .map((char) => letterToCode(char))
@@ -776,5 +775,99 @@ function oddArray(arr) {
   return sortedArr[0];
 }
 
-console.log(oddArray([1, 1, 2]));
-console.log(oddArray([17, 17, 3, 17, 17, 17, 17]));
+// console.log(oddArray([1, 1, 2]));
+// console.log(oddArray([17, 17, 3, 17, 17, 17, 17]));
+
+// Sort the given array of strings in alphabetical order, case insensitive. For example:
+
+// ["Hello", "there", "I'm", "fine"]  -->  ["fine", "Hello", "I'm", "there"]
+// ["C", "d", "a", "B"])              -->  ["a", "B", "C", "d"]
+
+const sortme = (names) => {
+  return names.sort((a, b) => a.toLowerCase() - b.toLowerCase());
+};
+
+// console.log(sortme(['Hello', 'there', "I'm", 'fine']), [
+//   'fine',
+//   'Hello',
+//   "I'm",
+//   'there',
+// ]);
+// console.log(sortme(['C', 'd', 'a', 'B']), ['a', 'B', 'C', 'd']);
+// console.log(sortme(['CodeWars']), ['CodeWars']);
+// console.log(sortme([]), []);
+
+// DESCRIPTION:
+// Friday 13th or Black Friday is considered as unlucky day. Calculate how many unlucky days are in the given year.
+// Find the number of Friday 13th in the given year.
+// Input: Year in Gregorian calendar as integer.
+// Output: Number of Black Fridays in the year as an integer.
+// Examples:
+
+// unluckyDays(2015) == 3
+// unluckyDays(1986) == 1
+
+function unluckyDays(year) {
+  //your code here
+  let dayCount = 0;
+  // find the 13th day of each month
+  for (let month = 0; month < 12; month++) {
+    const date = new Date(year, month, 13);
+    if (date.getDay() === 5) dayCount++;
+  }
+
+  return dayCount;
+}
+
+// console.log(unluckyDays(2015));
+// console.log(unluckyDays(1986));
+
+// Your job is to write a function which increments a string, to create a new string.
+
+//     If the string already ends with a number, the number should be incremented by 1.
+//     If the string does not end with a number. the number 1 should be appended to the new string.
+
+// Examples:
+
+// foo -> foo1
+
+// foobar23 -> foobar24
+
+// foo0042 -> foo0043
+
+// foo9 -> foo10
+
+// foo099 -> foo100
+
+// Attention: If the number has leading zeros the amount of digits should be considered.
+
+function incrementString(str) {
+  const match = str.match(/(\d+)$/);
+
+  if (!match) {
+    return `${str}1`;
+  }
+
+  const matchStr = str.slice(0, match.index);
+  const matchNum = str.slice(match.index);
+
+  const formattedNum = (Number(matchNum) + 1).toString();
+
+  const zeroCount = matchNum.length - formattedNum.length;
+
+  const preceedingZeros = '0'.repeat(zeroCount > 0 ? zeroCount : 0);
+
+  const result = matchStr + preceedingZeros + formattedNum;
+
+  return result;
+}
+
+console.log(incrementString('foobar000'), 'foobar001');
+console.log(incrementString('foobar999'), 'foobar1000');
+console.log(incrementString('foobar00999'), 'foobar01000');
+console.log(incrementString('foo'), 'foo1');
+console.log(incrementString('foobar001'), 'foobar002');
+console.log(incrementString('foobar1'), 'foobar2');
+console.log(incrementString('1'), '2');
+console.log(incrementString('009'), '010');
+console.log(incrementString('fo99obar99'), 'fo99obar100');
