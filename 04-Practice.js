@@ -721,7 +721,6 @@ function bingo(ticket, win) {
   let totalWins = 0;
 
   for (const arr of ticket) {
-    let miniWins = 0;
     const convert = arr[0]
       .split('')
       .map((char) => letterToCode(char))
@@ -776,5 +775,24 @@ function oddArray(arr) {
   return sortedArr[0];
 }
 
-console.log(oddArray([1, 1, 2]));
-console.log(oddArray([17, 17, 3, 17, 17, 17, 17]));
+// console.log(oddArray([1, 1, 2]));
+// console.log(oddArray([17, 17, 3, 17, 17, 17, 17]));
+
+// Sort the given array of strings in alphabetical order, case insensitive. For example:
+
+// ["Hello", "there", "I'm", "fine"]  -->  ["fine", "Hello", "I'm", "there"]
+// ["C", "d", "a", "B"])              -->  ["a", "B", "C", "d"]
+
+const sortme = (names) => {
+  return names.sort((a, b) => a.toLowerCase() - b.toLowerCase());
+};
+
+console.log(sortme(['Hello', 'there', "I'm", 'fine']), [
+  'fine',
+  'Hello',
+  "I'm",
+  'there',
+]);
+console.log(sortme(['C', 'd', 'a', 'B']), ['a', 'B', 'C', 'd']);
+console.log(sortme(['CodeWars']), ['CodeWars']);
+console.log(sortme([]), []);
