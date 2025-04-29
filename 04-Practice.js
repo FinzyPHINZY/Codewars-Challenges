@@ -787,12 +787,37 @@ const sortme = (names) => {
   return names.sort((a, b) => a.toLowerCase() - b.toLowerCase());
 };
 
-console.log(sortme(['Hello', 'there', "I'm", 'fine']), [
-  'fine',
-  'Hello',
-  "I'm",
-  'there',
-]);
-console.log(sortme(['C', 'd', 'a', 'B']), ['a', 'B', 'C', 'd']);
-console.log(sortme(['CodeWars']), ['CodeWars']);
-console.log(sortme([]), []);
+// console.log(sortme(['Hello', 'there', "I'm", 'fine']), [
+//   'fine',
+//   'Hello',
+//   "I'm",
+//   'there',
+// ]);
+// console.log(sortme(['C', 'd', 'a', 'B']), ['a', 'B', 'C', 'd']);
+// console.log(sortme(['CodeWars']), ['CodeWars']);
+// console.log(sortme([]), []);
+
+// DESCRIPTION:
+// Friday 13th or Black Friday is considered as unlucky day. Calculate how many unlucky days are in the given year.
+// Find the number of Friday 13th in the given year.
+// Input: Year in Gregorian calendar as integer.
+// Output: Number of Black Fridays in the year as an integer.
+// Examples:
+
+// unluckyDays(2015) == 3
+// unluckyDays(1986) == 1
+
+function unluckyDays(year) {
+  //your code here
+  let dayCount = 0;
+  // find the 13th day of each month
+  for (let month = 0; month < 12; month++) {
+    const date = new Date(year, month, 13);
+    if (date.getDay() === 5) dayCount++;
+  }
+
+  return dayCount;
+}
+
+console.log(unluckyDays(2015));
+console.log(unluckyDays(1986));
