@@ -862,12 +862,82 @@ function incrementString(str) {
   return result;
 }
 
-console.log(incrementString('foobar000'), 'foobar001');
-console.log(incrementString('foobar999'), 'foobar1000');
-console.log(incrementString('foobar00999'), 'foobar01000');
-console.log(incrementString('foo'), 'foo1');
-console.log(incrementString('foobar001'), 'foobar002');
-console.log(incrementString('foobar1'), 'foobar2');
-console.log(incrementString('1'), '2');
-console.log(incrementString('009'), '010');
-console.log(incrementString('fo99obar99'), 'fo99obar100');
+// console.log(incrementString('foobar000'), 'foobar001');
+// console.log(incrementString('foobar999'), 'foobar1000');
+// console.log(incrementString('foobar00999'), 'foobar01000');
+// console.log(incrementString('foo'), 'foo1');
+// console.log(incrementString('foobar001'), 'foobar002');
+// console.log(incrementString('foobar1'), 'foobar2');
+// console.log(incrementString('1'), '2');
+// console.log(incrementString('009'), '010');
+// console.log(incrementString('fo99obar99'), 'fo99obar100');
+
+// DESCRIPTION:
+// In this Kata, you will be given an array of strings and your task is to remove all consecutive duplicate letters from each string in the array.
+// For example:
+
+//     dup(["abracadabra","allottee","assessee"]) = ["abracadabra","alote","asese"].
+//     dup(["kelless","keenness"]) = ["keles","kenes"].
+
+// Strings will be lowercase only, no spaces. See test cases for more examples.
+// Good luck!
+
+function dup(s) {
+  //..
+  // fn dup
+  // takes in an array (s);
+  // returns the array with each element (remove duplicate consecutive characters)
+  // loop through the array
+  // for each item, create a result variable.
+  // if(the current char is not the same with the next, add it to the vary)
+
+  // push the result var into the output array
+
+  const result = [];
+
+  for (const word of s) {
+    let duplicateRemoved = '';
+    for (let i = 0; i < word.length; i++) {
+      const char = word[i];
+      if (char !== word[i + 1]) {
+        duplicateRemoved += char;
+      }
+    }
+    result.push(duplicateRemoved);
+  }
+
+  return result;
+}
+
+console.log(
+  dup(['ccooddddddewwwaaaaarrrrsssss', 'piccaninny', 'hubbubbubboo']),
+  ['codewars', 'picaniny', 'hubububo']
+);
+console.log(dup(['abracadabra', 'allottee', 'assessee']), [
+  'abracadabra',
+  'alote',
+  'asese',
+]);
+console.log(dup(['kelless', 'keenness']), ['keles', 'kenes']);
+console.log(dup(['Woolloomooloo', 'flooddoorroommoonlighters', 'chuchchi']), [
+  'Wolomolo',
+  'flodoromonlighters',
+  'chuchchi',
+]);
+console.log(dup(['adanac', 'soonness', 'toolless', 'ppellee']), [
+  'adanac',
+  'sones',
+  'toles',
+  'pele',
+]);
+console.log(dup(['callalloo', 'feelless', 'heelless']), [
+  'calalo',
+  'feles',
+  'heles',
+]);
+console.log(dup(['putteellinen', 'keenness']), ['putelinen', 'kenes']);
+console.log(dup(['kelless', 'voorraaddoosspullen', 'achcha']), [
+  'keles',
+  'voradospulen',
+  'achcha',
+]);
