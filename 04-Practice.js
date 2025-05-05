@@ -1048,10 +1048,33 @@ function numbersOfLetters2(integer) {
   return result;
 }
 
-console.log(numbersOfLetters2(4));
+// console.log(numbersOfLetters2(4));
 
-console.log(numbersOfLetters2(1)); //["one", "three", "five", "four"]);
-console.log(numbersOfLetters2(12)); // ["onetwo", "six", "three", "five", "four"]);
-console.log(numbersOfLetters2(37)); // ["threeseven", "onezero", "seven", "five", "four"]);
-console.log(numbersOfLetters2(311)); //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
-console.log(numbersOfLetters2(999)); //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters2(1)); //["one", "three", "five", "four"]);
+// console.log(numbersOfLetters2(12)); // ["onetwo", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters2(37)); // ["threeseven", "onezero", "seven", "five", "four"]);
+// console.log(numbersOfLetters2(311)); //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters2(999)); //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
+
+// Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
+
+// * url = "http://github.com/carbonfive/raygun" -> domain name = "github"
+// * url = "http://www.zombie-bites.com"         -> domain name = "zombie-bites"
+// * url = "https://www.cnet.com"                -> domain name = cnet"
+
+function domainName(url) {
+  //your code here
+  //  http:// , https:// or www. with an empty string
+  // split remaining string by '. and return the first value
+
+  return url
+    .replace('https://', '')
+    .replace('http://', '')
+    .replace('www.', '')
+    .split('.')[0];
+}
+
+console.log(domainName('http://google.com'), 'google');
+console.log(domainName('http://google.co.jp'), 'google');
+console.log(domainName('www.xakep.ru'), 'xakep');
+console.log(domainName('https://youtube.com'), 'youtube');
