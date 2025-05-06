@@ -1139,7 +1139,35 @@ function sortByValueAndIndex2(array) {
   return map.sort((a, b) => a.product - b.product).map((val) => val.value);
 }
 
-console.log(sortByValueAndIndex2([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
-console.log(sortByValueAndIndex2([23, 2, 3, 4, 5])); // [ 2, 3, 4, 23, 5 ];
-console.log(sortByValueAndIndex2([26, 2, 3, 4, 5])); // [ 2, 3, 4, 5, 26 ];
-console.log(sortByValueAndIndex2([9, 5, 1, 4, 3])); // [ 1, 9, 5, 3, 4 ];
+// console.log(sortByValueAndIndex2([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
+// console.log(sortByValueAndIndex2([23, 2, 3, 4, 5])); // [ 2, 3, 4, 23, 5 ];
+// console.log(sortByValueAndIndex2([26, 2, 3, 4, 5])); // [ 2, 3, 4, 5, 26 ];
+// console.log(sortByValueAndIndex2([9, 5, 1, 4, 3])); // [ 1, 9, 5, 3, 4 ];
+
+// DESCRIPTION:
+// Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
+// Your task is to process a string with "#" symbols.
+// Examples
+
+// "abc#d##c"      ==>  "ac"
+// "abc##d######"  ==>  ""
+// "#######"       ==>  ""
+// ""              ==>  ""
+
+function cleanString2(s) {
+  // ... your code ...
+  const result = [];
+
+  for (const char of s) {
+    if (char === '#') {
+      result.pop();
+    } else {
+      result.push(char);
+    }
+  }
+
+  return result.join('');
+}
+
+console.log(cleanString2('abc#d##c'), 'ac');
+console.log(cleanString2('abc####d##c#'), '');
