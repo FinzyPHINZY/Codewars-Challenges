@@ -862,12 +862,312 @@ function incrementString(str) {
   return result;
 }
 
-console.log(incrementString('foobar000'), 'foobar001');
-console.log(incrementString('foobar999'), 'foobar1000');
-console.log(incrementString('foobar00999'), 'foobar01000');
-console.log(incrementString('foo'), 'foo1');
-console.log(incrementString('foobar001'), 'foobar002');
-console.log(incrementString('foobar1'), 'foobar2');
-console.log(incrementString('1'), '2');
-console.log(incrementString('009'), '010');
-console.log(incrementString('fo99obar99'), 'fo99obar100');
+// console.log(incrementString('foobar000'), 'foobar001');
+// console.log(incrementString('foobar999'), 'foobar1000');
+// console.log(incrementString('foobar00999'), 'foobar01000');
+// console.log(incrementString('foo'), 'foo1');
+// console.log(incrementString('foobar001'), 'foobar002');
+// console.log(incrementString('foobar1'), 'foobar2');
+// console.log(incrementString('1'), '2');
+// console.log(incrementString('009'), '010');
+// console.log(incrementString('fo99obar99'), 'fo99obar100');
+
+// DESCRIPTION:
+// In this Kata, you will be given an array of strings and your task is to remove all consecutive duplicate letters from each string in the array.
+// For example:
+
+//     dup(["abracadabra","allottee","assessee"]) = ["abracadabra","alote","asese"].
+//     dup(["kelless","keenness"]) = ["keles","kenes"].
+
+// Strings will be lowercase only, no spaces. See test cases for more examples.
+// Good luck!
+
+function dup(s) {
+  //..
+  // fn dup
+  // takes in an array (s);
+  // returns the array with each element (remove duplicate consecutive characters)
+  // loop through the array
+  // for each item, create a result variable.
+  // if(the current char is not the same with the next, add it to the vary)
+
+  // push the result var into the output array
+
+  const result = [];
+
+  for (const word of s) {
+    let duplicateRemoved = '';
+    for (let i = 0; i < word.length; i++) {
+      const char = word[i];
+      if (char !== word[i + 1]) {
+        duplicateRemoved += char;
+      }
+    }
+    result.push(duplicateRemoved);
+  }
+
+  return result;
+}
+
+// console.log(
+//   dup(['ccooddddddewwwaaaaarrrrsssss', 'piccaninny', 'hubbubbubboo']),
+//   ['codewars', 'picaniny', 'hubububo']
+// );
+// console.log(dup(['abracadabra', 'allottee', 'assessee']), [
+//   'abracadabra',
+//   'alote',
+//   'asese',
+// ]);
+// console.log(dup(['kelless', 'keenness']), ['keles', 'kenes']);
+// console.log(dup(['Woolloomooloo', 'flooddoorroommoonlighters', 'chuchchi']), [
+//   'Wolomolo',
+//   'flodoromonlighters',
+//   'chuchchi',
+// ]);
+// console.log(dup(['adanac', 'soonness', 'toolless', 'ppellee']), [
+//   'adanac',
+//   'sones',
+//   'toles',
+//   'pele',
+// ]);
+// console.log(dup(['callalloo', 'feelless', 'heelless']), [
+//   'calalo',
+//   'feles',
+//   'heles',
+// ]);
+// console.log(dup(['putteellinen', 'keenness']), ['putelinen', 'kenes']);
+// console.log(dup(['kelless', 'voorraaddoosspullen', 'achcha']), [
+//   'keles',
+//   'voradospulen',
+//   'achcha',
+// ]);
+
+// DESCRIPTION:
+// Write a function partlist that gives all the ways to divide a list (an array) of at least two elements into two non-empty parts.
+
+//     Each two non empty parts will be in a pair (or an array for languages without tuples or a structin C - C: see Examples test Cases - )
+//     Each part will be in a string
+//     Elements of a pair must be in the same order as in the original array.
+
+// Examples of returns in different languages:
+
+// a = ["az", "toto", "picaro", "zone", "kiwi"] -->
+// [["az", "toto picaro zone kiwi"], ["az toto", "picaro zone kiwi"], ["az toto picaro", "zone kiwi"], ["az toto picaro zone", "kiwi"]]
+// or
+//  a = {"az", "toto", "picaro", "zone", "kiwi"} -->
+// {{"az", "toto picaro zone kiwi"}, {"az toto", "picaro zone kiwi"}, {"az toto picaro", "zone kiwi"}, {"az toto picaro zone", "kiwi"}}
+// or
+// a = ["az", "toto", "picaro", "zone", "kiwi"] -->
+// [("az", "toto picaro zone kiwi"), ("az toto", "picaro zone kiwi"), ("az toto picaro", "zone kiwi"), ("az toto picaro zone", "kiwi")]
+// or
+// a = [|"az", "toto", "picaro", "zone", "kiwi"|] -->
+// [("az", "toto picaro zone kiwi"), ("az toto", "picaro zone kiwi"), ("az toto picaro", "zone kiwi"), ("az toto picaro zone", "kiwi")]
+// or
+// a = ["az", "toto", "picaro", "zone", "kiwi"] -->
+// "(az, toto picaro zone kiwi)(az toto, picaro zone kiwi)(az toto picaro, zone kiwi)(az toto picaro zone, kiwi)"
+
+function partlist2(arr) {
+  // your code
+  const result = [];
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    const part1 = arr.slice(0, i + 1);
+    const part2 = arr.slice(i + 1);
+
+    const combined = [part1.join(' '), part2.join(' ')];
+    result.push(combined);
+  }
+
+  return result;
+}
+
+// console.log(partlist2(['az', 'toto', 'picaro', 'zone', 'kiwi']));
+
+// If we write out the digits of "60" as English words we get "sixzero"; the number of letters in "sixzero" is seven. The number of letters in "seven" is five. The number of letters in "five" is four. The number of letters in "four" is fou we have reached a stable equilibrium.
+
+// Note: for integers larger than 9, write out the names of each digit in a single word (instead of the proper name of the number in English). For example, write 12 as "onetwo" (instead of twelve), and 999 as "nineninenine" (instead of nine hundred and ninety-nine).
+
+// For any integer between 0 and 999, return an array showing the path from that integer to a stable equilibrium:
+// Examples
+
+// numbersOfLetters(60) --> ["sixzero", "seven", "five", "four"]
+// numbersOfLetters(1) --> ["one", "three", "five", "four"]
+
+function numbersOfLetters2(integer) {
+  // code here...
+
+  const map = {
+    0: 'zero',
+    1: 'one',
+    2: 'two',
+    3: 'three',
+    4: 'four',
+    5: 'five',
+    6: 'six',
+    7: 'seven',
+    8: 'eight',
+    9: 'nine',
+  };
+
+  const result = [];
+
+  const numToString = (num) => {
+    return num
+      .toString()
+      .split('')
+      .map((x) => map[x])
+      .join('');
+  };
+
+  // check if current value is an equilibrium.
+  // if yes; return the result.
+
+  // else, push to the result array
+  // create a while loop. if the current value is an equilibrium, return the result.
+  // else, convert to newword, push to array and run again.
+
+  let currentWord = numToString(integer);
+
+  result.push(currentWord);
+
+  if (currentWord === 'four') {
+    return result;
+  }
+
+  while (true) {
+    const newWord = numToString(currentWord.length);
+    result.push(newWord);
+
+    if (newWord === 'four') {
+      break;
+    }
+
+    currentWord = newWord;
+  }
+
+  return result;
+}
+
+// console.log(numbersOfLetters2(4));
+
+// console.log(numbersOfLetters2(1)); //["one", "three", "five", "four"]);
+// console.log(numbersOfLetters2(12)); // ["onetwo", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters2(37)); // ["threeseven", "onezero", "seven", "five", "four"]);
+// console.log(numbersOfLetters2(311)); //, ["threeoneone", "oneone", "six", "three", "five", "four"]);
+// console.log(numbersOfLetters2(999)); //, ["nineninenine", "onetwo", "six", "three", "five", "four"]);
+
+// Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
+
+// * url = "http://github.com/carbonfive/raygun" -> domain name = "github"
+// * url = "http://www.zombie-bites.com"         -> domain name = "zombie-bites"
+// * url = "https://www.cnet.com"                -> domain name = cnet"
+
+function domainName(url) {
+  //your code here
+  //  http:// , https:// or www. with an empty string
+  // split remaining string by '. and return the first value
+
+  return url
+    .replace('https://', '')
+    .replace('http://', '')
+    .replace('www.', '')
+    .split('.')[0];
+}
+
+// console.log(domainName('http://google.com'), 'google');
+// console.log(domainName('http://google.co.jp'), 'google');
+// console.log(domainName('www.xakep.ru'), 'xakep');
+// console.log(domainName('https://youtube.com'), 'youtube');
+
+// DESCRIPTION:
+// Your job at E-Corp is both boring and difficult. It isn't made any easier by the fact that everyone constantly wants to have a meeting with you, and that the meeting rooms are always taken!
+
+// In this kata, you will be given an array. Each value represents a meeting room. Your job? Find the first empty one and return its index (N.B. There may be more than one empty room in some test cases).
+
+// 'X' --> busy
+// 'O' --> empty
+// If all rooms are busy, return "None available!"
+
+function meeting(x) {
+  // iterate through the array
+  // check if the current value is 'O'
+  // if yes, return the index of the value
+  // else, return "None available!"
+
+  for (let i = 0; i < x.length; i++) {
+    if (x[i] === 'O') {
+      return i;
+    }
+  }
+
+  return 'None available!';
+}
+
+// console.log(meeting(['X', 'O', 'X'])); //, 1);
+// console.log(meeting(['O', 'X', 'X', 'X', 'X'])); //, 0);
+// console.log(meeting(['X', 'X', 'X', 'X', 'X'])); //, 'None available!');
+
+// Sort an array by value and index
+// Your task is to sort an array of integer numbers by the product of the value and the index of the positions.
+
+// For sorting the index starts at 1, NOT at 0!
+// The sorting has to be ascending.
+// The array will never be null and will always contain numbers.
+
+// Example:
+
+// Input: 23, 2, 3, 4, 5
+// Product of value and index:
+// 23 => 23 * 1 = 23  -> Output-Pos 4
+//  2 =>  2 * 2 = 4   -> Output-Pos 1
+//  3 =>  3 * 3 = 9   -> Output-Pos 2
+//  4 =>  4 * 4 = 16  -> Output-Pos 3
+//  5 =>  5 * 5 = 25  -> Output-Pos 5
+
+// Output: 2, 3, 4, 23, 5
+
+// takes in an array of numbers
+// return the array sorted by the product of the value and the index of the positions
+// keep track of the value and product of the value and index
+
+function sortByValueAndIndex2(array) {
+  const map = array.map((val, index) => ({
+    value: val,
+    product: val * (index + 1),
+  }));
+
+  return map.sort((a, b) => a.product - b.product).map((val) => val.value);
+}
+
+// console.log(sortByValueAndIndex2([1, 2, 3, 4, 5])); // [ 1, 2, 3, 4, 5 ];
+// console.log(sortByValueAndIndex2([23, 2, 3, 4, 5])); // [ 2, 3, 4, 23, 5 ];
+// console.log(sortByValueAndIndex2([26, 2, 3, 4, 5])); // [ 2, 3, 4, 5, 26 ];
+// console.log(sortByValueAndIndex2([9, 5, 1, 4, 3])); // [ 1, 9, 5, 3, 4 ];
+
+// DESCRIPTION:
+// Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
+// Your task is to process a string with "#" symbols.
+// Examples
+
+// "abc#d##c"      ==>  "ac"
+// "abc##d######"  ==>  ""
+// "#######"       ==>  ""
+// ""              ==>  ""
+
+function cleanString2(s) {
+  // ... your code ...
+  const result = [];
+
+  for (const char of s) {
+    if (char === '#') {
+      result.pop();
+    } else {
+      result.push(char);
+    }
+  }
+
+  return result.join('');
+}
+
+console.log(cleanString2('abc#d##c'), 'ac');
+console.log(cleanString2('abc####d##c#'), '');
