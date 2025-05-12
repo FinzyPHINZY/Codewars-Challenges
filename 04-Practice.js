@@ -1213,8 +1213,16 @@ function order(words) {
 // [1, 1, 1]  =>  [1]
 // []  =>  []
 
-function twoHighest() {
+function twoHighest(arr) {
   //code here
+
+  if (arr.length < 2) return arr;
+
+  const sorted = arr.sort((a, b) => b - a);
+
+  const set = new Set(sorted);
+
+  return [...set].slice(0, 2);
 }
 
 console.log(twoHighest([])); //, [])
