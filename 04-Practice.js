@@ -1225,12 +1225,44 @@ function twoHighest(arr) {
   return [...set].slice(0, 2);
 }
 
-console.log(twoHighest([])); //, [])
-console.log(twoHighest([15])); //, [15])
-console.log(twoHighest([15, 20, 20, 17])); //, [20, 17])
-console.log(
-  twoHighest([
-    67512, 3074, 12811, 12239, 25921, 21664, 19780, 95875, 71359, 85466, 36894,
-    11177, 13197, 95875, 75104, 71915, 7095, 25945, 8608, 88147, 60532, 29569,
-  ])
-); //: expected [ 95875, 95875 ] to deeply equal [ 95875, 88147 ]
+// console.log(twoHighest([])); //, [])
+// console.log(twoHighest([15])); //, [15])
+// console.log(twoHighest([15, 20, 20, 17])); //, [20, 17])
+// console.log(
+//   twoHighest([
+//     67512, 3074, 12811, 12239, 25921, 21664, 19780, 95875, 71359, 85466, 36894,
+//     11177, 13197, 95875, 75104, 71915, 7095, 25945, 8608, 88147, 60532, 29569,
+//   ])
+// ); //: expected [ 95875, 95875 ] to deeply equal [ 95875, 88147 ]
+
+// DESCRIPTION:
+// If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+// Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
+
+// Additionally, if the number is negative, return 0.
+
+// Note: If the number is a multiple of both 3 and 5, only count it once.
+
+// Courtesy of projecteuler.net (Problem 1)
+
+// Test Cases:
+
+// describe("basic tests", function () {
+//   test(10, 23);
+// });
+
+function multiplesOf3and5(number) {
+  if (number < 0) return 0;
+  const validNumbers = [];
+
+  for (let i = 1; i < number; ++i) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      validNumbers.push(i);
+    }
+  }
+
+  return validNumbers.reduce((sum, num) => sum + num, 0);
+}
+
+console.log(multiplesOf3and5(10));
