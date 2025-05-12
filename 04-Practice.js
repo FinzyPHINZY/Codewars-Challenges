@@ -1196,9 +1196,33 @@ function order(words) {
   return sortedWords;
 }
 
-console.log(order('is2 Thi1s T4est 3a'), 'Thi1s is2 3a T4est');
+// console.log(order('is2 Thi1s T4est 3a'), 'Thi1s is2 3a T4est');
+// console.log(
+//   order('4of Fo1r pe6ople g3ood th5e the2'),
+//   'Fo1r the2 g3ood 4of th5e pe6ople'
+// );
+// console.log(order(''), '', 'empty input should return empty string');
+
+// In this kata, your job is to return the two distinct highest values in a list. If there're less than 2 unique values, return as many of them, as possible.
+
+// The result should also be ordered from highest to lowest.
+
+// Examples:
+
+// [4, 10, 10, 9]  =>  [10, 9]
+// [1, 1, 1]  =>  [1]
+// []  =>  []
+
+function twoHighest() {
+  //code here
+}
+
+console.log(twoHighest([])); //, [])
+console.log(twoHighest([15])); //, [15])
+console.log(twoHighest([15, 20, 20, 17])); //, [20, 17])
 console.log(
-  order('4of Fo1r pe6ople g3ood th5e the2'),
-  'Fo1r the2 g3ood 4of th5e pe6ople'
-);
-console.log(order(''), '', 'empty input should return empty string');
+  twoHighest([
+    67512, 3074, 12811, 12239, 25921, 21664, 19780, 95875, 71359, 85466, 36894,
+    11177, 13197, 95875, 75104, 71915, 7095, 25945, 8608, 88147, 60532, 29569,
+  ])
+); //: expected [ 95875, 95875 ] to deeply equal [ 95875, 88147 ]
