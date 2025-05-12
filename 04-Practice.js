@@ -1265,4 +1265,62 @@ function multiplesOf3and5(number) {
   return validNumbers.reduce((sum, num) => sum + num, 0);
 }
 
-console.log(multiplesOf3and5(10));
+// console.log(multiplesOf3and5(10));
+
+// Write a function that takes a string of braces, and determines if the order of the braces is valid. It should return true if the string is valid, and false if it's invalid.
+
+// This Kata is similar to the Valid Parentheses Kata, but introduces new characters: brackets [], and curly braces {}. Thanks to @arnedag for the idea!
+
+// All input strings will be nonempty, and will only consist of parentheses, brackets and curly braces: ()[]{}.
+
+// What is considered Valid?
+// A string of braces is considered valid if all braces are matched with the correct brace.
+
+// Examples
+// "(){}[]"   =>  True
+// "([{}])"   =>  True
+// "(}"       =>  False
+// "[(])"     =>  False
+// "[({})](]" =>  False
+
+function validBraces(braces) {
+  //TODO
+  // create a stack
+  // create a map object for opening and closing braces
+  // iterate through the braces
+  // if its an open bracket. push it to the stack
+  // if its a closing bracket, check if it matches the last opening bracket
+  // if yes,,,pop the last bracket. if no, return false
+
+  const map = {
+    '(': ')',
+    '{': '}',
+    '[': ']',
+  };
+
+  const stack = [];
+
+  for (const brace of braces) {
+    if (map[brace]) {
+      stack.push(brace);
+    } else {
+      const lastBrace = stack.pop();
+      if (brace !== map[lastBrace]) {
+        return false;
+      } else {
+        continue;
+      }
+    }
+  }
+
+  if (stack.length === 0) return true;
+
+  return false;
+}
+
+console.log(validBraces('()))', false));
+console.log(validBraces('()', true));
+console.log(validBraces('[]', true));
+console.log(validBraces('{}', true));
+console.log(validBraces('(){}[]', true));
+console.log(validBraces('([{}])', true));
