@@ -1169,5 +1169,158 @@ function cleanString2(s) {
   return result.join('');
 }
 
-console.log(cleanString2('abc#d##c'), 'ac');
-console.log(cleanString2('abc####d##c#'), '');
+// console.log(cleanString2('abc#d##c'), 'ac');
+// console.log(cleanString2('abc####d##c#'), '');
+
+// DESCRIPTION:
+// Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+// Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+// If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.
+// Examples
+
+// "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+// "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+// ""  -->  ""
+
+function order(words) {
+  // ...
+
+  if (!words.length) {
+    return '';
+  }
+
+  const sortedWords = words
+    .split(' ')
+    .sort((a, b) => a.match(/\d/) - b.match(/\d/))
+    .join(' ');
+  return sortedWords;
+}
+
+// console.log(order('is2 Thi1s T4est 3a'), 'Thi1s is2 3a T4est');
+// console.log(
+//   order('4of Fo1r pe6ople g3ood th5e the2'),
+//   'Fo1r the2 g3ood 4of th5e pe6ople'
+// );
+// console.log(order(''), '', 'empty input should return empty string');
+
+// In this kata, your job is to return the two distinct highest values in a list. If there're less than 2 unique values, return as many of them, as possible.
+
+// The result should also be ordered from highest to lowest.
+
+// Examples:
+
+// [4, 10, 10, 9]  =>  [10, 9]
+// [1, 1, 1]  =>  [1]
+// []  =>  []
+
+function twoHighest(arr) {
+  //code here
+
+  if (arr.length < 2) return arr;
+
+  const sorted = arr.sort((a, b) => b - a);
+
+  const set = new Set(sorted);
+
+  return [...set].slice(0, 2);
+}
+
+// console.log(twoHighest([])); //, [])
+// console.log(twoHighest([15])); //, [15])
+// console.log(twoHighest([15, 20, 20, 17])); //, [20, 17])
+// console.log(
+//   twoHighest([
+//     67512, 3074, 12811, 12239, 25921, 21664, 19780, 95875, 71359, 85466, 36894,
+//     11177, 13197, 95875, 75104, 71915, 7095, 25945, 8608, 88147, 60532, 29569,
+//   ])
+// ); //: expected [ 95875, 95875 ] to deeply equal [ 95875, 88147 ]
+
+// DESCRIPTION:
+// If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+// Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
+
+// Additionally, if the number is negative, return 0.
+
+// Note: If the number is a multiple of both 3 and 5, only count it once.
+
+// Courtesy of projecteuler.net (Problem 1)
+
+// Test Cases:
+
+// describe("basic tests", function () {
+//   test(10, 23);
+// });
+
+function multiplesOf3and5(number) {
+  if (number < 0) return 0;
+  const validNumbers = [];
+
+  for (let i = 1; i < number; ++i) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      validNumbers.push(i);
+    }
+  }
+
+  return validNumbers.reduce((sum, num) => sum + num, 0);
+}
+
+// console.log(multiplesOf3and5(10));
+
+// Write a function that takes a string of braces, and determines if the order of the braces is valid. It should return true if the string is valid, and false if it's invalid.
+
+// This Kata is similar to the Valid Parentheses Kata, but introduces new characters: brackets [], and curly braces {}. Thanks to @arnedag for the idea!
+
+// All input strings will be nonempty, and will only consist of parentheses, brackets and curly braces: ()[]{}.
+
+// What is considered Valid?
+// A string of braces is considered valid if all braces are matched with the correct brace.
+
+// Examples
+// "(){}[]"   =>  True
+// "([{}])"   =>  True
+// "(}"       =>  False
+// "[(])"     =>  False
+// "[({})](]" =>  False
+
+function validBraces(braces) {
+  //TODO
+  // create a stack
+  // create a map object for opening and closing braces
+  // iterate through the braces
+  // if its an open bracket. push it to the stack
+  // if its a closing bracket, check if it matches the last opening bracket
+  // if yes,,,pop the last bracket. if no, return false
+
+  const map = {
+    '(': ')',
+    '{': '}',
+    '[': ']',
+  };
+
+  const stack = [];
+
+  for (const brace of braces) {
+    if (map[brace]) {
+      stack.push(brace);
+    } else {
+      const lastBrace = stack.pop();
+      if (brace !== map[lastBrace]) {
+        return false;
+      } else {
+        continue;
+      }
+    }
+  }
+
+  if (stack.length === 0) return true;
+
+  return false;
+}
+
+console.log(validBraces('()))', false));
+console.log(validBraces('()', true));
+console.log(validBraces('[]', true));
+console.log(validBraces('{}', true));
+console.log(validBraces('(){}[]', true));
+console.log(validBraces('([{}])', true));
